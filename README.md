@@ -1,3 +1,9 @@
+# TODO
+* AT THE END: check **ALL** grammer for ALL TEXT 
+* Status 'dot' variant doesnt reset styling when my status changes.
+* Hackathon cards?
+* Resume?
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
