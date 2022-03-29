@@ -120,13 +120,12 @@ export default function SearchAppBar(props) {
     }
     var thisUrl = ""
     const goSearch = (e) => { // on enter
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && thisUrl) {
             window.location.href = "#" + thisUrl
         }
     }
     const doSearch = (e) => {
         setFound(0);
-        var _found = 0;
         let query = e.target.value
         const allTags = document.querySelectorAll(".MuiChip-colorPrimary .MuiChip-label")
         const defaultStyle = allTags[0].style
@@ -135,19 +134,16 @@ export default function SearchAppBar(props) {
                 node.style = defaultStyle // to reset
                 if (node.innerHTML?.toLowerCase().includes(query.toLowerCase())) {
                     node.style = "background-color: #c2a800;display: table;";
-                    _found++;
-                    //window.location.href = "#"+node.innerHTML
+                    setFound(_found=> _found+1);
                     thisUrl = node.innerHTML
                     //window.find(query) // TODO: make this actually good (atleast make it not stop typing after it found something)
                 }
-                //setFound(0); // FIXME: make counter work here
             })
         } else {
             allTags.forEach((node) => {
                 node.style = defaultStyle // reset all values [redundant]
             })
         }
-        setFound(_found)
     }
     /*  // FOR QOTD
         fetch("https://zenquotes.io/api?api=today", { mode: "no-cors",headers: {"Access-Control-Allow-Origin": "*"} })

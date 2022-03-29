@@ -1,8 +1,11 @@
 # TODO
-* AT THE END: check **ALL** grammer for ALL TEXT 
-* Status 'dot' variant doesnt reset styling when my status changes.
+* change subdomain to `showcase.zavaar.net` ?
 * Hackathon cards?
+* Status 'dot' variant doesn't reset styling when my status changes.
+* "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
 * Resume?
+* CHANGE `manifest.json`
+* take better linkedin pic 😃
 
 # Getting Started with Create React App
 
