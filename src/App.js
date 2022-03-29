@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { UserContext } from "./contexts";
-import { Button, ButtonGroup, Container, Typography, Link, Tooltip, Fab } from '@material-ui/core';
+import { Button, ButtonGroup, Container, Typography, Link, Tooltip, Fab, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
@@ -14,8 +14,6 @@ import Home from "./components/main/Home"
 // Comps
 import Nav from "./components/Nav";
 import Footer from './components/Footer';
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,8 +34,17 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [state, dispatch] = React.useContext(UserContext)
+  //if (state.isLoading) // TODO PUT BACKDROP LOGIC HERE, and LINKEDIN BADGE EMBED
   return (
+    
     <Container maxWidth="lg" className={classes.bg}>
+    {/* <Backdrop
+  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+  open={open}
+  onClick={handleClose}
+>
+  <CircularProgress color="inherit" />
+</Backdrop> */}
       <Nav />
       {state.focus === "portfolio"
         ?
@@ -45,7 +52,7 @@ function App() {
         :
         <Home />
       }
-      <Divider />
+      <br />
       {/* FOOTER */}
       <Grid container xs={12}>
         <Grid item xs={12}>

@@ -1,9 +1,14 @@
 export const reducer = (state, action) => {
     switch (action.type) {
-        case "nav":
+        case "UI_nav":
             return {
                 ...state,
                 focus: action.focus
+            }
+        case "UI_isLoading":
+            return {
+                ...state,
+                isLoading: action.isLoading
             }
         default:
             return state
@@ -11,5 +16,6 @@ export const reducer = (state, action) => {
 }
 
 export const initialState = {
-    focus: "home"
+    focus: "home",
+    isLoading: false
 } 

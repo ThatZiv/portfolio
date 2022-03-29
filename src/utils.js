@@ -13,7 +13,7 @@ const traverseNodes = (node, text) => {
             if ("innerText" in child) {
                 text += child.innerText
             }
-            if (child.childNodes.length == 0) {
+            if (child.childNodes.length === 0) {
                 return
             }
             traverseNodes(child, text)

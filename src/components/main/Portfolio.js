@@ -4,6 +4,8 @@ import { Button, ButtonGroup, Container, Typography, Link, Tooltip, Fab } from '
 import MediaCard from "../MediaCard"
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Grow from '@mui/material/Grow';
+
 
 import Section from '../Section';
 //import Status from './components/Status';
@@ -43,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Portfolio() {
     const classes = useStyles();
-    return (<Grid
+    return (<Grow in timeout={500}><Grid
         justifyContent="flex-start"
         style={{ marginTop: "10px" }}
         container spacing={2}>
@@ -83,5 +85,5 @@ export default function Portfolio() {
                 <Webserver.components.links />
             </Section>
         </MediaCard>
-    </Grid>)
+    </Grid></Grow>)
 }

@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Drawer from '@mui/material/Drawer';
-import { Avatar, ListItem, List, Container, Divider, Button, Grid, Link, Badge } from '@material-ui/core';
+import { Avatar, ListItem, List, Container, Divider, Button, Grid, Link, Badge, Slide } from '@material-ui/core';
 import Stack from '@mui/material/Stack';
 import preval from 'preval.macro';
 import SocialMedia from "./SocialMedia";
@@ -105,107 +105,109 @@ const SearchAppBar = (props) => {
 
     // http://jsfiddle.net/wjLmx/23/ <- SEARCH FUNCTION
     return (
-        <div>
-            <Drawer anchor="left" open={drawer} onClose={toggleDrawer(false)}>
-                <Container>
-                    <List>
-                        <br />
-                        <Grid container >
-                            <Grid item>
-                                <Stack direction="row" spacing={2}>
-                                    <Status dot pattern='/\"Zua\"/g'
-                                        url="https://discord.com/api/guilds/406653822929207298/widget.json">
-                                        <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me.jfif"></Avatar>
-                                    </Status>
-                                    <br />
-                                    <br />
-                                </Stack></Grid>
-                            <Grid item>
-                                <Typography variant="h4" style={{ fontFamily: "Arvo, sans-serif", color: "whitesmoke" }}>&nbsp;&nbsp;&nbsp;Zavaar Shah</Typography>
+        <Slide direction="down" in mountOnEnter unmountOnExit>
+            <div>
+                <Drawer anchor="left" open={drawer} onClose={toggleDrawer(false)}>
+                    <Container>
+                        <List>
+                            <br />
+                            <Grid container >
+                                <Grid item>
+                                    <Stack direction="row" spacing={2}>
+                                        <Status dot pattern='/\"Zua\"/g'
+                                            url="https://discord.com/api/guilds/406653822929207298/widget.json">
+                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me.jfif"></Avatar>
+                                        </Status>
+                                        <br />
+                                        <br />
+                                    </Stack></Grid>
+                                <Grid item>
+                                    <Typography variant="h4" style={{ fontFamily: "Arvo, sans-serif", color: "whitesmoke" }}>&nbsp;&nbsp;&nbsp;Zavaar Shah</Typography>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                        <Divider style={{ marginTop: 10, marginBottom: 10 }} />
-                        <Typography style={{ fontStyle: "italic" }} variant="body2" sx={{ "width": 300 }}>
-                            Passionate computer science student at Wayne State University who seeks to employ innovative new technologies
-                            and methodologies in the workplace.
-                        </Typography>
-                        <br />
-                        <Grid container spacing={1}>
-                            <Grid item>
-                                <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
+                            <Divider style={{ marginTop: 10, marginBottom: 10 }} />
+                            <Typography style={{ fontStyle: "italic" }} variant="body2" sx={{ "width": 300 }}>
+                                Passionate computer science student at Wayne State University who seeks to employ innovative new technologies
+                                and methodologies in the workplace.
+                            </Typography>
+                            <br />
+                            <Grid container spacing={1}>
+                                <Grid item>
+                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
+                                </Grid>
+                                <Grid item>
+                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" />
+                                </Grid>
+                                <Grid item>
+                                    <SocialMedia url="https://github.com/thatziv" />
+                                </Grid>
+                                <Grid item>
+                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" />
+                                </Grid>
                             </Grid>
-                            <Grid item>
-                                <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" />
-                            </Grid>
-                            <Grid item>
-                                <SocialMedia url="https://github.com/thatziv" />
-                            </Grid>
-                            <Grid item>
-                                <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" />
-                            </Grid>
-                        </Grid>
-                    </List>
-                    <div style={{
-                        position: "absolute",
-                        bottom: 0,
-                        textAlign: "left",
-                        maxWidth: 250,
-                        color: "#575757",
-                        fontStyle: "italic",
-                    }}>
-                        <Typography variant="subtitle2">
-                            Last updated on {dateCompiled}
-                        </Typography>
-                    </div>
-                </Container>
-            </Drawer>
-            <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
-                    <Toolbar>
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="open drawer"
-                            sx={{ mr: 2 }}
-                            onClick={toggleDrawer(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography
-                            variant="h3"
-                            noWrap
-                            component="div"
-                            style={{ fontFamily: "Teko, sans-serif" }}
-                            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                        >
-                            {capFirstLetter(state.focus)} - Zavaar Shah
-                        </Typography>
-                        <MenuItem key="Home" onClick={() => dispatch({ type: "nav", focus: "home" })}>
-                            <Typography textAlign="center">Home</Typography>
-                        </MenuItem>
-                        <MenuItem key="Portfolio" onClick={() => dispatch({ type: "nav", focus: "portfolio" })}>
-                            <Typography textAlign="center">Portfolio</Typography>
-                        </MenuItem>
-                        {/* <Button>
+                        </List>
+                        <div style={{
+                            position: "absolute",
+                            bottom: 0,
+                            textAlign: "left",
+                            maxWidth: 250,
+                            color: "#575757",
+                            fontStyle: "italic",
+                        }}>
+                            <Typography variant="subtitle2">
+                                Last updated on {dateCompiled}
+                            </Typography>
+                        </div>
+                    </Container>
+                </Drawer>
+                <Box sx={{ flexGrow: 1 }}>
+                    <AppBar position="static">
+                        <Toolbar>
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="open drawer"
+                                sx={{ mr: 2 }}
+                                onClick={toggleDrawer(true)}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Typography
+                                variant="h3"
+                                noWrap
+                                component="div"
+                                style={{ fontFamily: "Teko, sans-serif" }}
+                                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                            >
+                                {capFirstLetter(state.focus)} - Zavaar Shah
+                            </Typography>
+                            <MenuItem key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
+                                <Typography textAlign="center">Home</Typography>
+                            </MenuItem>
+                            <MenuItem key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
+                                <Typography textAlign="center">Portfolio</Typography>
+                            </MenuItem>
+                            {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
-                        {state.focus === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
-                            <SearchIconWrapper>
-                                <Badge color="secondary" badgeContent={found}>
-                                    <SearchIcon />
-                                </Badge>
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                                placeholder="Search Tags…"
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>}
+                            {state.focus === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
+                                <SearchIconWrapper>
+                                    <Badge color="secondary" badgeContent={found}>
+                                        <SearchIcon />
+                                    </Badge>
+                                </SearchIconWrapper>
+                                <StyledInputBase
+                                    placeholder="Search Tags…"
+                                    inputProps={{ 'aria-label': 'search' }}
+                                />
+                            </Search>}
 
-                    </Toolbar>
-                </AppBar>
-            </Box>
-        </div>
+                        </Toolbar>
+                    </AppBar>
+                </Box>
+            </div>
+        </Slide>
     );
 }
 
