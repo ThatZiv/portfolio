@@ -223,7 +223,7 @@ export default function SearchAppBar(props) {
                             style={{ fontFamily: "Teko, sans-serif" }}
                             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         >
-                            Zavaar Shah
+                            Portfolio - Zavaar Shah
                         </Typography>
                         {/* LOGO: */}
                         {/* <Button>

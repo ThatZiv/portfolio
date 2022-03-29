@@ -4,7 +4,7 @@
 * Status 'dot' variant doesn't reset styling when my status changes.
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
 * Resume?
-* CHANGE `manifest.json`
+* make og:description meta tags have my preamble
 * take better linkedin pic 😃
 
 # Getting Started with Create React App
