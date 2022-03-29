@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, ButtonGroup, Container, Typography, Link, Tooltip, Fab } from '@material-ui/core';
 import MediaCard from "./components/MediaCard"
 import { makeStyles } from '@material-ui/core/styles';
@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  const [focus, setFocus] = useState(null) // null is home
   return (
     <Container maxWidth="lg" className={classes.bg}>
       <Nav />
@@ -79,16 +80,16 @@ function App() {
         {/* Garage */}
         <MediaCard {...Garage.meta}>
           <Section icon="fa-solid fa-images" title="Gallery">
-            <Garage.components.pictures/>
+            <Garage.components.pictures />
           </Section>
           <Section icon="fa-solid fa-chart-line" title="Statistics">
-            <Garage.components.statistics/>
+            <Garage.components.statistics />
           </Section>
         </MediaCard>
         {/* WEBSERVER */}
         <MediaCard {...Webserver.meta}>
           <Section icon="fa-solid fa-chart-line" title="Statistics">
-            <Webserver.components.statistics/>
+            <Webserver.components.statistics />
           </Section>
           <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
             <Webserver.components.links />
