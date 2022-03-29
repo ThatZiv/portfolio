@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { UserContext } from "../contexts"
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -6,14 +7,16 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
+import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Drawer from '@mui/material/Drawer';
 import { Avatar, ListItem, List, Container, Divider, Button, Grid, Link, Badge } from '@material-ui/core';
 import Stack from '@mui/material/Stack';
 import preval from 'preval.macro';
-import SocialMedia from "./SocialMedia"
+import SocialMedia from "./SocialMedia";
 import Status from './Status';
+import { capFirstLetter } from '../utils';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
 
@@ -59,65 +62,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function SearchAppBar(props) {
-    const [state, setState] = React.useState(false)
+const SearchAppBar = (props) => {
+    const [drawer, setDrawer] = React.useState(false)
     const [found, setFound] = React.useState(0)
-    /* React.useEffect(() => {
-        setFound(0);
-    }) */
+    const [state, dispatch] = React.useContext(UserContext)
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
-        setState(open);
+        setDrawer(open);
     };
-
-
-    /**
-     * @description Gets entire document's innerText values (recursively)
-     * @param {Node} node DOM node element 
-     * @param {string} text empty string
-     * @returns {string} final innerText pool of entire document 
-     * @deprecated
-     */
-    const traverseNodes = (node, text) => {
-        if ("childNodes" in node) {
-            text += node?.innerText
-            node.childNodes.forEach((child) => {
-                if ("innerText" in child) {
-                    text += child.innerText
-                }
-                if (child.childNodes.length == 0) {
-                    return
-                }
-                traverseNodes(child, text)
-            })
-            return text
-        }
-    }
-
-
-    /**
-     * FIXME: reset node.style attributes to default when not found. 
-     * @description highlights dom element if match is in innerText of node
-     * @param {Node} node DOM element
-     * @param {string} match query match for searching
-     * @deprecated
-     */
-    const traverseNodes2 = (node, match) => {
-        const defaultStyle = node.style;
-        if (node.innerText?.toLowerCase().includes(match.toLowerCase())) {
-            console.log(node.innerText)
-            node.style += "background-color: #c2a800;";
-        } else {
-            node.style = defaultStyle
-        }
-        if ("childNodes" in node) {
-            node.childNodes.forEach((child) => {
-                traverseNodes2(child, match)
-            })
-        }
-    }
     var thisUrl = ""
     const goSearch = (e) => { // on enter
         if (e.key === 'Enter' && thisUrl) {
@@ -127,14 +81,14 @@ export default function SearchAppBar(props) {
     const doSearch = (e) => {
         setFound(0);
         let query = e.target.value
-        const allTags = document.querySelectorAll(".MuiChip-colorPrimary .MuiChip-label")
+        const allTags = document.querySelectorAll(".MuiChip-colorPrimary .MuiChip-label") // all tags
         const defaultStyle = allTags[0].style
         if (query?.length) {
             allTags.forEach((node) => {
                 node.style = defaultStyle // to reset
                 if (node.innerHTML?.toLowerCase().includes(query.toLowerCase())) {
                     node.style = "background-color: #c2a800;display: table;";
-                    setFound(_found=> _found+1);
+                    setFound(_found => _found + 1);
                     thisUrl = node.innerHTML
                     //window.find(query) // TODO: make this actually good (atleast make it not stop typing after it found something)
                 }
@@ -152,7 +106,7 @@ export default function SearchAppBar(props) {
     // http://jsfiddle.net/wjLmx/23/ <- SEARCH FUNCTION
     return (
         <div>
-            <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
+            <Drawer anchor="left" open={drawer} onClose={toggleDrawer(false)}>
                 <Container>
                     <List>
                         <br />
@@ -198,9 +152,11 @@ export default function SearchAppBar(props) {
                         maxWidth: 250,
                         color: "#575757",
                         fontStyle: "italic",
-                    }}><Typography variant="subtitle2">
+                    }}>
+                        <Typography variant="subtitle2">
                             Last updated on {dateCompiled}
-                        </Typography></div>
+                        </Typography>
+                    </div>
                 </Container>
             </Drawer>
             <Box sx={{ flexGrow: 1 }}>
@@ -223,13 +179,18 @@ export default function SearchAppBar(props) {
                             style={{ fontFamily: "Teko, sans-serif" }}
                             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         >
-                            Portfolio - Zavaar Shah
+                            {capFirstLetter(state.focus)} - Zavaar Shah
                         </Typography>
-                        {/* LOGO: */}
+                        <MenuItem key="Home" onClick={() => dispatch({ type: "nav", focus: "home" })}>
+                            <Typography textAlign="center">Home</Typography>
+                        </MenuItem>
+                        <MenuItem key="Portfolio" onClick={() => dispatch({ type: "nav", focus: "portfolio" })}>
+                            <Typography textAlign="center">Portfolio</Typography>
+                        </MenuItem>
                         {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
-                        <Search onChange={doSearch} onKeyUp={goSearch}>
+                        {state.focus === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
                             <SearchIconWrapper>
                                 <Badge color="secondary" badgeContent={found}>
                                     <SearchIcon />
@@ -239,10 +200,13 @@ export default function SearchAppBar(props) {
                                 placeholder="Search Tags…"
                                 inputProps={{ 'aria-label': 'search' }}
                             />
-                        </Search>
+                        </Search>}
+
                     </Toolbar>
                 </AppBar>
             </Box>
         </div>
     );
 }
+
+export default SearchAppBar

@@ -1,7 +1,6 @@
 import { Button, ButtonGroup, Container, Typography, Link, makeStyles, Tooltip } from '@material-ui/core';
-
+import { capFirstLetter } from "../utils"
 export default function SocialMedia(props) {
-    const capFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
     const getIconFromUrl = (url, _icon) => {
         const icon = (d, _icon) => <i className={`fa-${d ? "brands" : "solid"} fa-${d ? d.toLowerCase() : _icon}`}></i>
         var service;

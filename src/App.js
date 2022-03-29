@@ -1,25 +1,21 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
+import { UserContext } from "./contexts";
 import { Button, ButtonGroup, Container, Typography, Link, Tooltip, Fab } from '@material-ui/core';
-import MediaCard from "./components/MediaCard"
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
 //import ExpandMoreIcon from '@mui/icons/ExpandMore';
+
+// Main Comps
+import Portfolio from "./components/main/Portfolio"
+import Home from "./components/main/Home"
+
 // Comps
 import Nav from "./components/Nav";
-import Section from './components/Section';
 import Footer from './components/Footer';
-import Status from './components/Status';
 
-// Content
-import Jeva from './sections/Jeva';
-import FiveM from './sections/FiveM';
-import Webserver from './sections/Webserver';
-import Garage from './sections/Garage';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,67 +31,21 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(23),
     fontWeight: theme.typography.fontWeightRegular,
   },
-  listView: {
-    width: '100%',
-    padding: "10px",
-    borderRadius: "5px",
-    backgroundColor: theme.palette.background.default,
-  },
-  paper: {
-    padding: theme.spacing(2),
-  }
 }));
 
 function App() {
   const classes = useStyles();
-  const [focus, setFocus] = useState(null) // null is home
+  const [state, dispatch] = React.useContext(UserContext)
   return (
     <Container maxWidth="lg" className={classes.bg}>
       <Nav />
-      {/* <h2>THE PORTFOLIO OF ZAVAAR</h2> */}
+      {state.focus === "portfolio"
+        ?
+        <Portfolio />
+        :
+        <Home />
+      }
       <Divider />
-
-      <Grid
-        justifyContent="flex-start"
-        style={{ marginTop: "10px" }}
-        container spacing={2}>
-        {/* JEVA */}
-        <MediaCard {...Jeva.meta}>
-          <Section icon="fa-solid fa-chart-line" title="Statistics">
-            <Jeva.components.statistics />
-          </Section>
-          <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
-            <Jeva.components.links />
-          </Section>
-        </MediaCard>
-        {/* FIVEM BOT */}
-        <MediaCard {...FiveM.meta}>
-          <Section icon="fa-solid fa-chart-line" title="Statistics">
-            <FiveM.components.statistics />
-          </Section>
-          <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
-            <FiveM.components.links />
-          </Section>
-        </MediaCard>
-        {/* Garage */}
-        <MediaCard {...Garage.meta}>
-          <Section icon="fa-solid fa-images" title="Gallery">
-            <Garage.components.pictures />
-          </Section>
-          <Section icon="fa-solid fa-chart-line" title="Statistics">
-            <Garage.components.statistics />
-          </Section>
-        </MediaCard>
-        {/* WEBSERVER */}
-        <MediaCard {...Webserver.meta}>
-          <Section icon="fa-solid fa-chart-line" title="Statistics">
-            <Webserver.components.statistics />
-          </Section>
-          <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
-            <Webserver.components.links />
-          </Section>
-        </MediaCard>
-      </Grid>
       {/* FOOTER */}
       <Grid container xs={12}>
         <Grid item xs={12}>
