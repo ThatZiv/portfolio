@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#161616",
     padding: "20px",
     borderRadius: "5px",
-    boxShadow: "8px 5px 5px #111111"
+    boxShadow: "1px 1px 1px rgba(11,11,11,25)"
   },
   heading: {
     fontSize: theme.typography.pxToRem(23),
