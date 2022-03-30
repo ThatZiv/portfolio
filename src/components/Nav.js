@@ -15,6 +15,7 @@ import { Avatar, ListItem, List, Container, Divider, Button, Grid, Link, Badge, 
 import Stack from '@mui/material/Stack';
 import preval from 'preval.macro';
 import SocialMedia from "./SocialMedia";
+import my from "../sections"
 import Status from './Status';
 import { capFirstLetter } from '../utils';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
@@ -122,13 +123,12 @@ const SearchAppBar = (props) => {
                                         <br />
                                     </Stack></Grid>
                                 <Grid item>
-                                    <Typography variant="h4" style={{ fontFamily: "Arvo, sans-serif", color: "whitesmoke" }}>&nbsp;&nbsp;Zavaar Shah</Typography>
+                                    <Typography variant="h4" style={{ fontFamily: "Arvo, sans-serif", color: "whitesmoke" }}>&nbsp;&nbsp;{my.name}</Typography>
                                 </Grid>
                             </Grid>
                             <Divider style={{ marginTop: 10, marginBottom: 10 }} />
                             <Typography style={{ fontStyle: "italic" }} variant="body2" sx={{ "width": 300 }}>
-                                Passionate computer science student at Wayne State University who seeks to employ innovative new technologies
-                                and methodologies in the workplace.
+                                {my.preamble}
                             </Typography>
                             <br />
                             <Grid container spacing={1}>

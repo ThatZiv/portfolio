@@ -16,7 +16,7 @@ export default function SocialMedia(props) {
                 <Link underline="none"
                     variant="h4" href={url}>
                     <Button style={{ backgroundColor: "#fdfdfd", color: "#1f1f1f" }}>
-                        {icon(service, props?.icon)}{props?.showName && <div>&nbsp; {props?.name}</div>}
+                        {icon(service, props?.icon)}{props?.showName && <div>&nbsp; {props?.name || capFirstLetter(service)}</div>}
                     </Button>
                 </Link>
             </Tooltip>
