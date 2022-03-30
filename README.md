@@ -1,10 +1,10 @@
 # TODO
 * Hackathon cards?
-* Status 'dot' variant doesn't reset styling when my status changes.
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
 * Resume?
 * make og:description meta tags have my preamble
 * take better linkedin pic 😃
+* memory leak issue with unmounting animations?
 
 # Getting Started with Create React App
 

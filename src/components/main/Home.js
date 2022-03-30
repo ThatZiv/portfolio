@@ -28,24 +28,31 @@ export default function Home() {
             ref={containerRef}
         >
             {/*  xs={isShown ? 6 : 0} */}
-            <Grid style={{ marginBottom: 10, paddingBottom: 5 }} sm={isShown ? 6 : 0} item>
+            <Grid item>
+                <Fade in timeout={500}>
+                    <Avatar sx={{ width: 250, height: 250, bgcolor: indigo[500] }} className={"Media", classes.pic} alt={my.name} src="/pics/me_clear.png" />
+                </Fade>
+            </Grid>
+            <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>
                 <Grow timeout={1200} in={isShown} mountOnEnter unmountOnExit>
                     <Typography style={{ fontFamily: "Blinker, sans-serif" }} variant="h3" component="div">Welcome.</Typography>
                 </Grow>
-                <Delayed wait={2500}>
+                <Delayed wait={2750}>
                     <Slide timeout={750} direction="up" container={containerRef.current} in>
-                        <Typography color="gray" variant="body1">My name is {my.name}.</Typography>
+                        <div>
+                            <Typography color="gray" variant="body1">My name is {my.name}.</Typography>
+                            <Typography variant="subtitle1" >
+                                {my.preamble}
+                            </Typography>
+                        </div>
                     </Slide>
                 </Delayed>
-                <Delayed wait={3500}>
+                {/* <Delayed wait={3500}>
                     <Slide direction="right" timeout={1000} container={containerRef.current} in>
-                        <Typography variant="subtitle1" >
-                            {my.preamble}
-                        </Typography>
                     </Slide>
-                </Delayed>
-                <Delayed wait={5000}>
-                    <Fade in timeout={5000}>
+                </Delayed> */}
+                <Delayed wait={4500}>
+                    <Fade in timeout={5500}>
                         <Grid container spacing={1}>
                             <Grid item>
                                 <SocialMedia showName icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
@@ -63,11 +70,7 @@ export default function Home() {
                     </Fade>
                 </Delayed>
             </Grid>
-            <Grid item>
-                <Fade in timeout={500}>
-                    <Avatar sx={{ width: 250, height: 250, bgcolor: indigo[800] }} className={"Media", classes.pic} alt="Zavaar Shah" src="/pics/me_clear.png" />
-                </Fade>
-            </Grid>
+            
         </Grid>
     </div></Grow>)
 }

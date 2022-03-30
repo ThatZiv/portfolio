@@ -11,13 +11,17 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Drawer from '@mui/material/Drawer';
-import { Avatar, ListItem, List, Container, Divider, Button, Grid, Link, Badge, Slide } from '@material-ui/core';
+import { Avatar, ListItem, List, Container, Divider, Button, Grid, Link, Badge, Slide, makeStyles } from '@material-ui/core';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
 import preval from 'preval.macro';
 import SocialMedia from "./SocialMedia";
 import my from "../sections"
 import Status from './Status';
 import { capFirstLetter } from '../utils';
+import Section from './Section';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
 
@@ -62,6 +66,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         },
     },
 }));
+
+const navItemStyling = { border: "2px dashed", borderRadius: 4, borderColor: "#393939" }
 
 var thisUrl = ""
 const SearchAppBar = (props) => {
@@ -110,7 +116,7 @@ const SearchAppBar = (props) => {
             <div>
                 <Drawer anchor="left" open={drawer} onClose={toggleDrawer(false)}>
                     <Container>
-                        <List>
+                        <List key="descriptionMe">
                             <br />
                             <Grid container >
                                 <Grid item>
@@ -146,11 +152,30 @@ const SearchAppBar = (props) => {
                                 </Grid>
                             </Grid>
                         </List>
+
+                        {/* NAVIGATION (in drawer) */}
+                        <Section icon="fa-solid fa-compass" title="Navigation">
+                            <Grid container spacing={1}>
+                                <Grid item> {/* FIXME: dont know why className 'classes.items' not work but this does instead...  */}
+                                    <MenuItem style={navItemStyling} key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
+                                        <Typography textAlign="center">Home</Typography>
+                                    </MenuItem>
+                                </Grid>
+                                <Grid item>
+                                    <MenuItem key="Portfolio" style={navItemStyling} onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
+                                        <Typography textAlign="center">Portfolio</Typography>
+                                    </MenuItem>
+                                </Grid>
+                            </Grid>
+                        </Section>
                         <div style={{
                             position: "absolute",
                             bottom: 0,
                             textAlign: "left",
-                            maxWidth: 250,
+                            zIndex: -9999,
+                            maxWidth: 275,
                             color: "#575757",
                             fontStyle: "italic",
                         }}>
@@ -182,6 +207,7 @@ const SearchAppBar = (props) => {
                             >
                                 {capFirstLetter(state.focus)}
                             </Typography>
+                            {/* NAVIGATION (on navbar) */}
                             <MenuItem key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
                                 <Typography textAlign="center">Home</Typography>
                             </MenuItem>
@@ -207,7 +233,7 @@ const SearchAppBar = (props) => {
                     </AppBar>
                 </Box>
             </div>
-        </Slide>
+        </Slide >
     );
 }
 
