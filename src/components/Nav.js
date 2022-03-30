@@ -155,16 +155,16 @@ const SearchAppBar = (props) => {
 
                         {/* NAVIGATION (in drawer) */}
                         <Section icon="fa-solid fa-compass" title="Navigation">
-                            <Grid container spacing={1}>
+                            <Grid container onClick={()=>setDrawer(false)} spacing={1}>
                                 <Grid item> {/* FIXME: dont know why className 'classes.items' not work but this does instead...  */}
                                     <MenuItem style={navItemStyling} key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
-                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
+                                        <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
                                         <Typography textAlign="center">Home</Typography>
                                     </MenuItem>
                                 </Grid>
                                 <Grid item>
-                                    <MenuItem key="Portfolio" style={navItemStyling} onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
+                                    <MenuItem style={navItemStyling} key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
+                                        <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
                                         <Typography textAlign="center">Portfolio</Typography>
                                     </MenuItem>
                                 </Grid>
