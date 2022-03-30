@@ -62,6 +62,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
+var thisUrl = ""
 const SearchAppBar = (props) => {
     const [drawer, setDrawer] = React.useState(false)
     const [found, setFound] = React.useState(0)
@@ -72,9 +73,8 @@ const SearchAppBar = (props) => {
         }
         setDrawer(open);
     };
-    var thisUrl = ""
     const goSearch = (e) => { // on enter
-        if (e.key === 'Enter' && thisUrl) {
+        if (e.key === 'Enter') {
             window.location.href = "#" + thisUrl
         }
     }
@@ -122,7 +122,7 @@ const SearchAppBar = (props) => {
                                         <br />
                                     </Stack></Grid>
                                 <Grid item>
-                                    <Typography variant="h4" style={{ fontFamily: "Arvo, sans-serif", color: "whitesmoke" }}>&nbsp;&nbsp;&nbsp;Zavaar Shah</Typography>
+                                    <Typography variant="h4" style={{ fontFamily: "Arvo, sans-serif", color: "whitesmoke" }}>&nbsp;&nbsp;Zavaar Shah</Typography>
                                 </Grid>
                             </Grid>
                             <Divider style={{ marginTop: 10, marginBottom: 10 }} />
@@ -180,7 +180,7 @@ const SearchAppBar = (props) => {
                                 style={{ fontFamily: "Teko, sans-serif" }}
                                 sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                             >
-                                {capFirstLetter(state.focus)} - Zavaar Shah
+                                {capFirstLetter(state.focus)}
                             </Typography>
                             <MenuItem key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
                                 <Typography textAlign="center">Home</Typography>

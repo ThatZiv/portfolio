@@ -1,5 +1,4 @@
 # TODO
-* change subdomain to `showcase.zavaar.net` ?
 * Hackathon cards?
 * Status 'dot' variant doesn't reset styling when my status changes.
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
