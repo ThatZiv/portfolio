@@ -15,6 +15,7 @@ import Jeva from '../../sections/Jeva';
 import FiveM from '../../sections/FiveM';
 import Webserver from '../../sections/Webserver';
 import Garage from '../../sections/Garage';
+import Hackathon from '../../sections/Hackathon';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -78,6 +79,15 @@ export default function Portfolio() {
         </MediaCard>
         {/* WEBSERVER */}
         <MediaCard {...Webserver.meta}>
+            <Section icon="fa-solid fa-chart-line" title="Statistics">
+                <Webserver.components.statistics />
+            </Section>
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <Webserver.components.links />
+            </Section>
+        </MediaCard>
+        {/* Hackathon'21 */}
+        <MediaCard {...Hackathon.meta}>
             <Section icon="fa-solid fa-chart-line" title="Statistics">
                 <Webserver.components.statistics />
             </Section>
