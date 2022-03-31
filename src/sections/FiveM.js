@@ -6,7 +6,7 @@ import SocialMedia from '../components/SocialMedia';
 export default {
     meta: {
         title: "FiveM Bot",
-        banner: "FiveM.png",
+        banner: "/pics/FiveM.png",
         complete: false,
         tags: "JavaScript,NodeJS,Deployment Pipelines,NoSQL,FiveM,Bot,Agile,Version Control,Server Management,Database Migration & Management",
         description: `FiveM Bot is a Discord chat bot that makes monitoring game servers for server adminstrators easy. 

@@ -4,7 +4,7 @@ import Gallery from "../components/Gallery"
 export default {
     meta: {
         title: "zGarage",
-        banner: "garage.gif",
+        banner: "/pics/garage.gif",
         complete: true,
         tags: "NodeJS,JavaScript,Python,C/C++,WebSockets,REST API,Full Stack,UI/UX,Web Proxy,FFMPEG,Embedded Systems,Product Design,Closed-source",
         objectives: `Upgraded traditional radio frequency garage door to trigger from smartphone application.

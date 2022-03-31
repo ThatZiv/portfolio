@@ -5,7 +5,7 @@ import SocialMedia from '../components/SocialMedia';
 export default {
     meta: {
         title: "zWebserver",
-        banner: "Webserver.PNG",
+        banner: "/pics/Webserver.PNG",
         complete: false,
         tags: "Webserver,NodeJS,JavaScript,Python,RESTful,CRUD,NoSQL,MongoDB,Express,Full Stack,UI/UX,Closed-source,Templating (server-side rendering)",
         objectives: `Created webserver using Express.js, Pug.js, MongoDB, and Mongoose JS to deploy and develop projects.|Designed user-interface using CSS, Express.js, Bootstrap CSS, and Pug.js to display content.|Built REST API using Express.js, MongoDB, Canvas.js to perform various operations like generating dynamic images.|Programmed data scraper API using Python and Express.js to scrape and parse website data.`,

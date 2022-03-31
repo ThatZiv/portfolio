@@ -53,7 +53,7 @@ export default function MediaCard(props) {
                     <CardActionArea onClick={handleExpandClick}>
                         <CardMedia
                             className={classes.media}
-                            image={`/pics/${props.banner}`}
+                            image={props.banner}
                             title={props.title}
                         />
                         <CardContent className={classes.cardcontent}>
