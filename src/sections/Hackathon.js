@@ -4,7 +4,7 @@ import { Divider, Grid, Typography } from "@mui/material";
 
 export default {
     meta: {
-        title: "WSU Hackathon '21",
+        title: "Hackathon '21",
         banner: "https://github.com/ThatZiv/hackathon2021wsu/raw/main/pics/chat.PNG?raw=true",
         complete: true,
         tags: "NodeJS,Git,HTML/CSS,Express.js,Socket.io,Bootstrap,Pair Programming,Collaborative,Production,UI/UX,Hackathon,Competition",

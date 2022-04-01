@@ -15,7 +15,8 @@ import Jeva from '../../sections/Jeva';
 import FiveM from '../../sections/FiveM';
 import Webserver from '../../sections/Webserver';
 import Garage from '../../sections/Garage';
-import Hackathon from '../../sections/Hackathon';
+import Hackathon from '../../sections/Hackathon'; // '21
+import Hackathon2 from '../../sections/Hackathon2'; // '22
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -90,6 +91,18 @@ export default function Portfolio() {
         <MediaCard {...Hackathon.meta}>
             <Section icon="fa-solid fa-bookmark" title="Description">
                 <Hackathon.components.description />
+            </Section>
+            <Section icon="fa-solid fa-images" title="Gallery">
+                <Hackathon.components.pictures />
+            </Section>
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <Hackathon.components.links />
+            </Section>
+        </MediaCard>
+        {/* Hackathon'22 */}
+        <MediaCard {...Hackathon2.meta}>
+            <Section icon="fa-solid fa-bookmark" title="Description">
+                <Hackathon2.components.description />
             </Section>
             <Section icon="fa-solid fa-images" title="Gallery">
                 <Hackathon.components.pictures />
