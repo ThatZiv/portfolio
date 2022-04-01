@@ -1,4 +1,5 @@
 import { Button, ButtonGroup, Container, Typography, Link, makeStyles, Tooltip } from '@material-ui/core';
+import { indigo } from '@material-ui/core/colors';
 import { capFirstLetter } from "../utils"
 export default function SocialMedia(props) {
     const getIconFromUrl = (url, _icon) => {
@@ -13,8 +14,9 @@ export default function SocialMedia(props) {
         return (
             <Tooltip title={service ? capFirstLetter(service) : (props?.showName && props.url !== "#" ? props.url : props?.name) || props.icon}>
                 <Link underline="none"
-                    variant="h4" href={url} target={props.url === "#" ? "_self" : "_blank" }>
-                    <Button style={{ backgroundColor: "#fdfdfd", color: "#1f1f1f" }}>
+                    variant="h4" href={url} target={props.url === "#" ? "_self" : "_blank"}>
+                    {/* OLD STYLE:  { backgroundColor: "#fdfdfd", color: "#1f1f1f" } */}
+                    <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd" }}>
                         {icon(service, props?.icon)}{props?.showName && <div>&nbsp; {props?.name || capFirstLetter(service)}</div>}
                     </Button>
                 </Link>
