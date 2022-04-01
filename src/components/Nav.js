@@ -24,6 +24,7 @@ import { capFirstLetter } from '../utils';
 import Section from './Section';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
+// TODO: this file is too big: split nav bar and drawer into two separate subcomponents.
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',

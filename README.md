@@ -1,12 +1,15 @@
 # TODO
-* Hackathon cards?
-* "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
-* Resume?
-* make og:description meta tags have my preamble
-* take better linkedin pic 😃
-* memory leak issue with unmounting animations?
+* **Hackathon '22 card**
 * **CHANGE BG**
 * on-nav btns are not all caps like mui example's
+* Resume?
+* make og:description meta tags have my preamble
+
+# FIXME
+* memory leak issue with unmounting animations
+* "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
+
+______
 
 # Getting Started with Create React App
 
