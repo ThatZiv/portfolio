@@ -68,7 +68,7 @@ function SwipeableTextMobileStepper(props) {
                     maxHeight: "100%",
                     maxWidth: "100%",
                 }}
-                interval={7500}
+                interval={props.timeout || 7500}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
             >

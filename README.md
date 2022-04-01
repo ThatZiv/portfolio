@@ -5,6 +5,8 @@
 * make og:description meta tags have my preamble
 * take better linkedin pic 😃
 * memory leak issue with unmounting animations?
+* **CHANGE BG**
+* on-nav btns are not all caps like mui example's
 
 # Getting Started with Create React App
 

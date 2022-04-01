@@ -88,11 +88,14 @@ export default function Portfolio() {
         </MediaCard>
         {/* Hackathon'21 */}
         <MediaCard {...Hackathon.meta}>
-            <Section icon="fa-solid fa-chart-line" title="Statistics">
-                <Webserver.components.statistics />
+            <Section icon="fa-solid fa-bookmark" title="Description">
+                <Hackathon.components.description />
+            </Section>
+            <Section icon="fa-solid fa-images" title="Gallery">
+                <Hackathon.components.pictures />
             </Section>
             <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
-                <Webserver.components.links />
+                <Hackathon.components.links />
             </Section>
         </MediaCard>
     </Grid></Grow>)

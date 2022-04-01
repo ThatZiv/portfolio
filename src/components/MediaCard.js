@@ -57,7 +57,7 @@ export default function MediaCard(props) {
                             title={props.title}
                         />
                         <CardContent className={classes.cardcontent}>
-                            <Grid container>
+                            <Grid justifyContent='space-between' container>
                                 <Grid item xs={10} sm>
                                     <Typography gutterBottom variant="h3" style={{ fontFamily: "Bebas Neue" }} component="h2">
                                         {props.title}

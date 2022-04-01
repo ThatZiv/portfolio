@@ -10,11 +10,10 @@ export default function SocialMedia(props) {
             var urlSplit = _url.hostname.split(".")
             service = urlSplit.length === 3 ? urlSplit[1] : urlSplit[0]
         } catch (e) { }
-        //console.log(icon(service, props?.icon))
         return (
-            <Tooltip title={service ? capFirstLetter(service) : (props?.showName ? props.url : props?.name) || props.icon}>
+            <Tooltip title={service ? capFirstLetter(service) : (props?.showName && props.url !== "#" ? props.url : props?.name) || props.icon}>
                 <Link underline="none"
-                    variant="h4" href={url}>
+                    variant="h4" href={url} target={props.url === "#" ? "_self" : "_blank" }>
                     <Button style={{ backgroundColor: "#fdfdfd", color: "#1f1f1f" }}>
                         {icon(service, props?.icon)}{props?.showName && <div>&nbsp; {props?.name || capFirstLetter(service)}</div>}
                     </Button>

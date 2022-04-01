@@ -8,9 +8,9 @@ import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 //import ExpandMoreIcon from '@mui/icons/ExpandMore';
 
-// Main Comps
-import Portfolio from "./components/main/Portfolio"
-import Home from "./components/main/Home"
+// Main pages
+import Portfolio from "./components/pages/Portfolio"
+import Home from "./components/pages/Home"
 
 // Comps
 import Nav from "./components/Nav";

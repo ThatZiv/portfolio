@@ -154,7 +154,7 @@ const SearchAppBar = (props) => {
                         </List>
 
                         {/* NAVIGATION (in drawer) */}
-                        <Section icon="fa-solid fa-compass" title="Navigation">
+                        <Section icon="fa-solid fa-bars" title="Pages">
                             <Grid container onClick={()=>setDrawer(false)} spacing={1}>
                                 <Grid item> {/* FIXME: dont know why className 'classes.items' not work but this does instead...  */}
                                     <MenuItem style={navItemStyling} key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
