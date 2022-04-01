@@ -4,6 +4,7 @@
 * on-nav btns are not all caps like mui example's
 * Resume?
 * make og:description meta tags have my preamble
+* nav (in-drawer) navigation page WIDTH (minor nitpicking)
 
 # FIXME
 * memory leak issue with unmounting animations
