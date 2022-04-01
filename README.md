@@ -1,5 +1,5 @@
 # TODO
-* **Hackathon '22 card**
+* haptic project card
 * **CHANGE BG**
 * on-nav btns are not all caps like mui example's
 * Resume?
