@@ -105,10 +105,10 @@ export default function Portfolio() {
                 <Hackathon2.components.description />
             </Section>
             <Section icon="fa-solid fa-images" title="Gallery">
-                <Hackathon.components.pictures />
+                <Hackathon2.components.pictures />
             </Section>
             <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
-                <Hackathon.components.links />
+                <Hackathon2.components.links />
             </Section>
         </MediaCard>
     </Grid></Grow>)

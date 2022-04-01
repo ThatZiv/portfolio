@@ -7,12 +7,12 @@ export default {
         title: "Hackathon '21",
         banner: "https://github.com/ThatZiv/hackathon2021wsu/raw/main/pics/chat.PNG?raw=true",
         complete: true,
-        tags: "NodeJS,Git,HTML/CSS,Express.js,Socket.io,Bootstrap,Pair Programming,Collaborative,Production,UI/UX,Hackathon,Competition",
+        tags: "NodeJS,Git,HTML/CSS,Express.js,Socket.io,Bootstrap,Pair Programming,Collaborative,Production,UI/UX,Hackathon,Open-source,Competition",
         //objectives: `Usually from resume.`, // Objectives are seperated by PIPE '|'
         description: `A hackathon is a timed event that usually spans over
-        24 hours in which computer programmers compete to develop a
+        48 hours in which computer programmers compete to develop a
         software project, usually in teams. For this event, I partnered with
-        three other programmers to develop a social media chatting platform
+        three other programmers to develop a social media chat platform
         using intricate web technologies. Our project was awarded the "Most Technical" 
         award at the Society of Computer Developers' Fall 2021 Hackathon hosted at Wayne State University.`,
         timeline: [
@@ -33,6 +33,10 @@ function pictures() {
         {
             label: "Award Ceremony (myself on the left)",
             imgPath: "/pics/ext/hackathonGroup.png",
+        },
+        {
+            label: "Awards",
+            imgPath: "/pics/ext/hackathonAward.jpg",
         },
         {
             label: "Problem Statement",

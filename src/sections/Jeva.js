@@ -63,7 +63,7 @@ function links() {
 
 function statistics() {
     return (
-        <Grid container spacing={1} sm>
+        <Grid container spacing={1}>
             {/* <Typography variant="h5">GitHub</Typography> */}
             <Grid item>
                 <a href="https://github.com/jevajs/jeva"><img className="Media" src="https://gh-card.dev/repos/jevajs/jeva.svg" /></a>

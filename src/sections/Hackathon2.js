@@ -1,47 +1,45 @@
 import SocialMedia from "../components/SocialMedia";
 import Gallery from "../components/Gallery";
 import { Divider, Grid, Typography } from "@mui/material";
-import YouTubeEmbed from "../components/YouTubeEmbed"
+import YouTubeEmbed from "../components/YouTubeEmbed";
+import Gist from "react-gist";
+import Section from "../components/Section";
 
 export default {
     meta: {
         title: "Hackathon '22",
         banner: "/pics/hackathon2.jpg",
         complete: true,
-        tags: "NodeJS,Git,HTML/CSS,Express.js,Socket.io,Bootstrap,Pair Programming,Collaborative,Production,UI/UX,Hackathon,Competition",
+        tags: "Python,MIDI,Threading,Processes,Automation,I/O,Socket.io,PM2 Runtime,ctypes (Python library),Console-Based,Hackathon,Open-source,Git,Competition",
         //objectives: `Usually from resume.`, // Objectives are seperated by PIPE '|'
         description: `A hackathon is a timed event that usually spans over
-        24 hours in which computer programmers compete to develop a
-        software project, usually in teams. For this event, I partnered with
-        three other programmers to develop a social media chatting platform
-        using intricate web technologies. Our project was awarded the "Most Technical" 
-        award at the Society of Computer Developers' Fall 2021 Hackathon hosted at Wayne State University.`,
+        48 hours in which computer programmers compete to develop a
+        software project, usually in teams. Since the theme of the Hackathon was "Life at Home," 
+        my project was centered around making life easier at home. Specifically, 
+        automating redundant tasks when working at home.
+        My project was awarded 3rd place at the Society of Computer Developers' Winter 2022 Hackathon 
+        hosted at Wayne State University.`,
         timeline: [
-            ["December 12, 2022", "Hackathon begins. Group came to consensus on building a chat application."],
-            ["November 12, 2021", "HTTP webserver and websocket server are setup."],
-            ["November 13, 2021", "User and chat room hierarchy data structures are built."],
-            ["November 13, 2021", "Backend is complete with a CRUD subsystem."],
-            ["November 14, 2021", "Created HTML skeleton for login and main chatting page."],
-            ["November 14, 2021", "Backend and frontend are linked, making the site entirely functional."],
-            ["November 14, 2021", "Frontend styling is completed using Bootstrap CSS."],
-            ["November 14, 2021", "Submitted project on GitHub for judges to evaluate."],
+            ["February 4, 2022", "Hackathon begins. I decided to do something with musical instrument digital interface (MIDI) technology as means of automating tasks with."],
+            ["February 4, 2022", "Research and self-documentation of my personal MIDI keyboard."],
+            ["February 4, 2022", "With the research, parsing data influx from the MIDI keyboard became doable."],
+            ["February 5, 2022", "Completed dynamically mapped keyboard values in Python for further parsing."],
+            ["February 5, 2022", "Translated all keymapped values to certain hard-coded actions executed on the host computer."],
+            ["February 6, 2022", "Finished presentation video and slides."],
+            ["February 6, 2022", "Submitted project on GitHub for judges to evaluate."],
         ]
     }, components: { links, description, pictures }
 }
 
 function pictures() {
-    return <div><Gallery timeout={10000} images={[
+    return <div><Gallery timeout={7500} images={[
         {
-            label: "Award Ceremony (myself on the left)",
-            imgPath: "/pics/ext/hackathonGroup.png",
+            label: "Award Ceremony",
+            imgPath: "/pics/ext/hackathon2Group.jpg",
         },
         {
-            label: "Problem Statement",
-            imgPath: "/pics/ext/hackathonShowcase.png",
-        },
-        {
-            label: "Finished Product",
-            imgPath: "https://raw.githubusercontent.com/ThatZiv/hackathon2021wsu/main/pics/chat.PNG",
+            label: "Awards",
+            imgPath: "/pics/ext/hackathon2Award.jpg",
         },
     ]} />
         <br />
@@ -54,7 +52,7 @@ function pictures() {
                 minWidth: "100%",
                 maxHeight: "100%",
                 maxWidth: "100%",
-            }} title="View Presentation Slides" src="/pics/ext/Hackathon_Slides.pdf" frameBorder="0">This browser does not support viewing this file.</iframe>
+            }} title="View Presentation Slides" src="/pics/ext/Hackathon_Slides2.pdf" frameBorder="0">This browser does not support viewing this file.</iframe>
         </div>
     </div>
 }
@@ -62,12 +60,26 @@ function pictures() {
 
 function links() {
     return (
-        <Grid spacing={1} container>
-            <Grid item>
-                <SocialMedia showName url="https://github.com/ThatZiv/hackathon2021wsu/" />
+        <Grid spacing={1} xs={12} container>
+            <Grid xs={12} item>
+                <YouTubeEmbed id="MZsUFm2aQ58" />
             </Grid>
             <Grid item>
-                <SocialMedia name="View Presentation" icon="fa-solid fa-file-pdf" showName url="/pics/ext/Hackathon_Slides.pdf" />
+                <SocialMedia showName url="https://github.com/ThatZiv/hackathon2022wsu/" />
+            </Grid>
+            <Grid item>
+                <SocialMedia name="View Presentation" icon="fa-solid fa-file-pdf" showName url="/pics/ext/Hackathon_Slides2.pdf" />
+            </Grid>
+            <Grid xs={12} item>
+                <Section icon="fa-solid fa-star" title="More Information">
+                    <Grid container xs={12}> {/* Another container needed so the gist embed can span to the entire div */}
+                        <Grid item sm>
+                            <div className="Media">
+                                <Gist id="2a0564b3eff66cd172a4b1395f474325" type="md" />
+                            </div>
+                        </Grid>
+                    </Grid>
+                </Section>
             </Grid>
         </Grid>
     )
@@ -79,7 +91,7 @@ function description() {
             <i>Taken from <a href="https://github.com/ThatZiv/hackathon2022wsu/blob/main/README.md">README.md</a> from the repository:</i>
             <h1 id="-midi-macros-hackathon-2022-wsu"><code>MIDI Macros</code> - Hackathon 2022 WSU</h1>
             <p><code>MIDI Macros</code> allows users to bind efficient shortcuts/macros to their MIDI keyboard and increase productivity while working at home. </p>
-            <YouTubeEmbed id="MZsUFm2aQ58"/>
+            <YouTubeEmbed id="MZsUFm2aQ58" />
             <h2 >Contributor:</h2>
             <ul>
                 <li><a href="https://github.com/thatziv">@thatziv</a></li>
