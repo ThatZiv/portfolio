@@ -5,6 +5,7 @@ import { Button, ButtonGroup, Container, Typography, Link, Tooltip, Fab, Box, } 
 import { Backdrop, CircularProgress } from "@mui/material"
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import { capFirstLetter } from './utils';
 import Divider from '@material-ui/core/Divider';
 //import ExpandMoreIcon from '@mui/icons/ExpandMore';
 
@@ -37,6 +38,7 @@ function App() {
   const [loading, setLoading] = React.useState(false)
   const [state, dispatch] = React.useContext(UserContext)
   React.useEffect(() => { // this is makeshift
+    document.title = capFirstLetter(state.focus) + " | Zavaar Shah"
     setLoading(true)
     setTimeout(()=> {
       setLoading(false)
@@ -56,7 +58,7 @@ function App() {
         }
         <br />
         {/* FOOTER */}
-        <Grid container xs={12}>
+        <Grid container>
           <Grid item xs={12}>
             <Footer />
           </Grid>

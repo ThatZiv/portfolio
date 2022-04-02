@@ -10,17 +10,16 @@ export default {
         title: "Hackathon '22",
         banner: "/pics/hackathon2.jpg",
         complete: true,
-        tags: "Python,MIDI,Threading,Processes,Automation,I/O,Socket.io,PM2 Runtime,ctypes (Python library),Console-Based,Hackathon,Open-source,Git,Competition",
+        tags: "Python,MIDI,Threading,Processes,Automation,I/O,PM2 Runtime,ctypes (Python library),Console-Based,Hackathon,Open-source,Git,Competition",
         //objectives: `Usually from resume.`, // Objectives are seperated by PIPE '|'
-        description: `A hackathon is a timed event that usually spans over
-        48 hours in which computer programmers compete to develop a
-        software project, usually in teams. Since the theme of the Hackathon was "Life at Home," 
-        my project was centered around making life easier at home. Specifically, 
-        automating redundant tasks when working at home.
-        My project was awarded 3rd place at the Society of Computer Developers' Winter 2022 Hackathon 
+        description: `The theme of this Hackathon was "Life at Home" so
+        my project became centered around making life easier at home. Specifically, 
+        automating redundant tasks when working at home. Since I had a USB piano laying around, 
+        I thought that it would be a good idea to utilize that by creating macro shortcuts with a click of a piano key.
+        My project was awarded 3rd place at the Winter 2022 Hackathon 
         hosted at Wayne State University.`,
         timeline: [
-            ["February 4, 2022", "Hackathon begins. I decided to do something with musical instrument digital interface (MIDI) technology as means of automating tasks with."],
+            ["February 4, 2022", "Hackathon begins. I decided to do something with musical instrument digital interface (MIDI) technology as a means of automating tasks with."],
             ["February 4, 2022", "Research and self-documentation of my personal MIDI keyboard."],
             ["February 4, 2022", "With the research, parsing data influx from the MIDI keyboard became doable."],
             ["February 5, 2022", "Completed dynamically mapped keyboard values in Python for further parsing."],
@@ -60,7 +59,7 @@ function pictures() {
 
 function links() {
     return (
-        <Grid spacing={1} xs={12} container>
+        <Grid spacing={1} container>
             <Grid xs={12} item>
                 <YouTubeEmbed id="MZsUFm2aQ58" />
             </Grid>
@@ -72,7 +71,7 @@ function links() {
             </Grid>
             <Grid xs={12} item>
                 <Section icon="fa-solid fa-star" title="More Information">
-                    <Grid container xs={12}> {/* Another container needed so the gist embed can span to the entire div */}
+                    <Grid container> {/* Another container needed so the gist embed can span to the entire div */}
                         <Grid item sm>
                             <div className="Media">
                                 <Gist id="2a0564b3eff66cd172a4b1395f474325" type="md" />

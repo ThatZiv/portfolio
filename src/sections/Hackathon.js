@@ -12,9 +12,9 @@ export default {
         description: `A hackathon is a timed event that usually spans over
         48 hours in which computer programmers compete to develop a
         software project, usually in teams. For this event, I partnered with
-        three other programmers to develop a social media chat platform
-        using intricate web technologies. Our project was awarded the "Most Technical" 
-        award at the Society of Computer Developers' Fall 2021 Hackathon hosted at Wayne State University.`,
+        three other programmers to develop a social media chatting platform
+        using intricate web technologies such as Socket.io and Express.js. Our project was awarded the "Most Technical" 
+        award at the fall 2021 Hackathon hosted at Wayne State University.`,
         timeline: [
             ["November 12, 2021", "Hackathon begins. Group came to consensus on building a chat application."],
             ["November 12, 2021", "HTTP webserver and websocket server are setup."],

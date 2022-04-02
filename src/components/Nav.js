@@ -153,24 +153,28 @@ const SearchAppBar = (props) => {
                                 </Grid>
                             </Grid>
                         </List>
-
                         {/* NAVIGATION (in drawer) */}
-                        <Section icon="fa-solid fa-bars" title="Pages">
-                            <Grid container onClick={()=>setDrawer(false)} spacing={1}>
-                                <Grid item> {/* FIXME: dont know why className 'classes.items' not work but this does instead...  */}
-                                    <MenuItem style={navItemStyling} key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
-                                        <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
-                                        <Typography textAlign="center">Home</Typography>
-                                    </MenuItem>
-                                </Grid>
-                                <Grid item>
-                                    <MenuItem style={navItemStyling} key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                        <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
-                                        <Typography textAlign="center">Portfolio</Typography>
-                                    </MenuItem>
-                                </Grid>
+                        <Grid container>
+                            <Grid item style={{width: "94%"}}> {/* custom width is just to match with buttons above */}
+                                <Section icon="fa-solid fa-bars" title="Pages">
+                                    <Grid container onClick={() => setDrawer(false)} spacing={1}>
+                                        <Grid item> {/* FIXME: dont know why className 'classes.items' not work but this does instead...  */}
+                                            <MenuItem style={navItemStyling} key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
+                                                <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
+                                                <Typography textAlign="center">Home</Typography>
+                                            </MenuItem>
+                                        </Grid>
+                                        <Grid item>
+                                            <MenuItem style={navItemStyling} key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
+                                                <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
+                                                <Typography textAlign="center">Portfolio</Typography>
+                                            </MenuItem>
+                                        </Grid>
+                                    </Grid>
+                                </Section>
                             </Grid>
-                        </Section>
+                        </Grid>
+
                         <div style={{
                             position: "absolute",
                             bottom: 0,
@@ -180,7 +184,7 @@ const SearchAppBar = (props) => {
                             color: "#575757",
                             fontStyle: "italic",
                         }}>
-                            <Typography variant="subtitle2">
+                            <Typography style={{fontSize: '0.95rem'}} variant="subtitle2">
                                 Last updated on {dateCompiled}
                             </Typography>
                         </div>
