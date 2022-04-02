@@ -229,7 +229,7 @@ const SearchAppBar = (props) => {
                                     </Badge>
                                 </SearchIconWrapper>
                                 <StyledInputBase
-                                    placeholder="Search Tags…"
+                                    placeholder="Tags"
                                     inputProps={{ 'aria-label': 'search' }}
                                 />
                             </Search>}
