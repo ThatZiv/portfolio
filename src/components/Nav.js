@@ -69,6 +69,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const navItemStyling = { border: "2px dashed", borderRadius: 4, borderColor: "#393939" }
+const navBarItemStyling = { fontWeight: 500}
 
 var thisUrl = ""
 const SearchAppBar = (props) => {
@@ -214,10 +215,10 @@ const SearchAppBar = (props) => {
                             </Typography>
                             {/* NAVIGATION (on navbar) */}
                             <MenuItem key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
-                                <Typography textAlign="center">Home</Typography>
+                                <Typography style={navBarItemStyling} textAlign="center">Home</Typography>
                             </MenuItem>
                             <MenuItem key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                <Typography textAlign="center">Portfolio</Typography>
+                                <Typography style={navBarItemStyling} textAlign="center">Portfolio</Typography>
                             </MenuItem>
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
