@@ -7,6 +7,7 @@
 * nav (in-drawer) navigation page WIDTH (minor nitpicking)
 
 # FIXME
+* Mozilla trys to autodownload embedded pdf file on mobile when opening
 * memory leak issue with unmounting animations
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
 
