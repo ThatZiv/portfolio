@@ -32,7 +32,7 @@ function pictures() {
     return <div><Gallery timeout={10000} images={[
         {
             label: "Award Ceremony (myself on the left)",
-            imgPath: "/pics/ext/hackathonGroup.png",
+            imgPath: "/pics/ext/hackathonGroup_.png",
         },
         {
             label: "Awards",
@@ -40,7 +40,7 @@ function pictures() {
         },
         {
             label: "Problem Statement",
-            imgPath: "/pics/ext/hackathonShowcase.png",
+            imgPath: "/pics/ext/hackathonProblem.png",
         },
         {
             label: "Finished Product",
