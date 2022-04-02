@@ -1,5 +1,6 @@
 import { Typography, Link, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import my from "../sections"
 
 const useStyles = makeStyles({
     root: {
@@ -14,7 +15,7 @@ export default function Footer() {
     const classes = useStyles()
     return (
         <Typography variant='subtitle1' className={classes.root}>
-            Made by Zavaar Shah with&nbsp;
+            Made by {my.name} with&nbsp;
             <Tooltip title="www.mui.com">
                 <Link href="https://mui.com/">MUI</Link>
             </Tooltip> &&nbsp;

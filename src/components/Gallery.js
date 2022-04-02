@@ -3,6 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
 import Paper from '@mui/material/Paper';
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
@@ -11,30 +12,8 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import theme from "../Theme"
 import { makeStyles } from '@material-ui/core/styles';
+import { Divider } from '@mui/material';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-/* const images = [
-  {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Bird',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Bali, Indonesia',
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-]; */
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,7 +41,7 @@ function SwipeableTextMobileStepper(props) {
         setActiveStep(step);
     };
     return (
-        <Box sx={{ flexGrow: 1 }} className={classes.root+" Media"}>
+        <Box sx={{ flexGrow: 1 }} className={classes.root, "Media"}>
             <Paper
                 square
                 elevation={0}
@@ -72,42 +51,47 @@ function SwipeableTextMobileStepper(props) {
                     alignItems: 'center',
                     height: 50,
                     maxHeight: "100%",
-                    maxWidth: "100%",                    
+                    maxWidth: "100%",
                     pl: 2,
                     bgcolor: theme.palette.background.default
                 }}
             >
-                <Typography>{props.images[activeStep].label}</Typography>
+                <Typography variant="body1">
+                    <Link href={props.images[activeStep].imgPath} target="_blank">{props.images[activeStep].label}
+                    </Link>
+                </Typography>
             </Paper>
             <AutoPlaySwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={activeStep}
                 sx={{
                     maxHeight: "100%",
-                    maxWidth: "100%",  
+                    maxWidth: "100%",
                 }}
-                interval={7500}
+                interval={props.timeout || 7500}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
             >
                 {props.images.map((step, index) => (
-                    <div key={step.label}>
-                        {Math.abs(activeStep - index) <= 2 ? (
-                            <Box
-                                component="img"
-                                sx={{
-                                    maxHeight: 300,
-                                    display: 'block',
-                                    //maxWidth: "auto",
-                                    overflow: 'hidden',
-                                    width: '100%',
-                                    height: "100%"
-                                }}
-                                src={step.imgPath}
-                                alt={step.label}
-                            />
-                        ) : null}
-                    </div>
+                    <Link underline="none" href={step.imgPath} target="_blank">
+                        <div key={step.label}>
+                            {Math.abs(activeStep - index) <= 2 ? (
+                                <Box
+                                    component="img"
+                                    sx={{
+                                        maxHeight: 300,
+                                        display: 'block',
+                                        //maxWidth: "auto",
+                                        overflow: 'hidden',
+                                        width: '100%',
+                                        height: "100%"
+                                    }}
+                                    src={step.imgPath}
+                                    alt={step.label}
+                                />
+                            ) : null}
+                        </div>
+                    </Link>
                 ))}
             </AutoPlaySwipeableViews>
             <MobileStepper
@@ -140,6 +124,7 @@ function SwipeableTextMobileStepper(props) {
                     </Button>
                 }
             />
+            <Typography sx={{ textAlign: "center", marginTop: 1.5 }} variant="subtitle2" color="gray">Click picture to enlarge</Typography>
         </Box>
     );
 }

@@ -8,7 +8,7 @@ import Status from "../components/Status"
 export default {
     meta: {
         title: "Jeva",
-        banner: "Jeva.jpg",
+        banner: "/pics/Jeva.jpg",
         complete: false,
         tags: "Tutorials,Lua,HTML/CSS,JavaScript,GameDev,Graphic Design,Video Editing,Version Control (Git),Open-source,Programming,Jeva,YouTube",
         objectives: `Created several YouTube videos for advanced programmers explaining how to use JavaScript, Lua, and HTML/CSS in a gaming environment.
@@ -63,16 +63,16 @@ function links() {
 
 function statistics() {
     return (
-        <Grid container spacing={1} sm>
+        <Grid container spacing={1}>
             {/* <Typography variant="h5">GitHub</Typography> */}
             <Grid item>
-                <a href="https://github.com/jevajs/jeva"><img className="Media" src="https://gh-card.dev/repos/jevajs/jeva.svg" /></a>
+                <a href="https://github.com/jevajs/jeva"><img className="Media" alt="githubJevaCard" src="https://gh-card.dev/repos/jevajs/jeva.svg" /></a>
             </Grid>
             <Grid item>
-                <iframe className="Media" src="https://socialblade.com/widget?v=1&u=jevajs" scrolling="no" frameBorder="0"></iframe>
+                <iframe title="socialBlade1" className="Media" src="https://socialblade.com/widget?v=1&u=jevajs" scrolling="no" frameBorder="0"></iframe>
             </Grid>
             <Grid item>
-                <iframe className="Media" src="https://socialblade.com/widget?v=2&u=jevajs" scrolling="no" frameBorder="0"></iframe>
+                <iframe title="socialBlade2" className="Media" src="https://socialblade.com/widget?v=2&u=jevajs" scrolling="no" frameBorder="0"></iframe>
             </Grid>
         </Grid>
     )
