@@ -5,6 +5,7 @@
 * Resume?
 * make og:description meta tags have my preamble
 * nav (in-drawer) navigation page WIDTH (minor nitpicking)
+* arcylic main container
 
 # FIXME
 * Mozilla trys to autodownload embedded pdf file on mobile when opening
