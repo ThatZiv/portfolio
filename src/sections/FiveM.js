@@ -31,6 +31,10 @@ export default {
 }
 
 function statistics() {
+    let getDate = () => {
+        let d = new Date(); 
+        return d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate()
+    }
     return (
         <Grid container spacing={1}>
             <Grid item>
@@ -50,6 +54,18 @@ function statistics() {
                 <img src="https://top.gg/api/widget/upvotes/483787947070586880.svg" alt="Discord Bots" />
                 <img src="https://top.gg/api/widget/servers/483787947070586880.svg" alt="Discord Bots" />
                 <img src="https://top.gg/api/widget/owner/483787947070586880.svg" alt="Discord Bots" />
+            </Grid>
+            <Grid style={{width: "100%", "minHeight": 500}} item>
+                <iframe
+                    id="trends-widget-2"
+                    src={`https://trends.google.com/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22fivem%20bot%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%222013-01-01%20${getDate()}%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&tz=240&forceMobileMode=false&isPreviewMode=true&eq=date%3Dall%26q%3Dfivem%2520bot&hl=enUS`}
+                    width="100%"
+                    height="450px"
+                    frameborder="0"
+                    scrolling="0"
+                    style={{borderRadius: 5}}
+                    title="fivembot_trends"
+                />
             </Grid>
         </Grid>
     )

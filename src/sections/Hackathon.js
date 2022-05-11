@@ -7,7 +7,7 @@ export default {
         title: "Hackathon '21",
         banner: "https://github.com/ThatZiv/hackathon2021wsu/raw/main/pics/chat.PNG?raw=true",
         complete: true,
-        tags: "NodeJS,Git,HTML/CSS,Express.js,Socket.io,Bootstrap,Pair Programming,Collaborative,Production,UI/UX,Hackathon,Open-source,Competition",
+        tags: "NodeJS,Git,HTML/CSS,Express.js,Socket.io,Bootstrap,Pair Programming,Collaborative,Full Stack,UI/UX,Hackathon,Open-source,Competition",
         //objectives: `Usually from resume.`, // Objectives are seperated by PIPE '|'
         description: `A hackathon is a timed event that usually spans over
         48 hours in which computer programmers compete to develop a

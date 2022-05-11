@@ -125,7 +125,7 @@ const SearchAppBar = (props) => {
                                     <Stack direction="row" spacing={2}>
                                         <Status dot pattern='/\"Zua\"/g'
                                             url="https://discord.com/api/guilds/406653822929207298/widget.json">
-                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me.jfif"></Avatar>
+                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me_clear_new2.png"></Avatar>
                                         </Status>
                                         <br />
                                         <br />

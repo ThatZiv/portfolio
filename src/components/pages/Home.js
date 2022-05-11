@@ -32,7 +32,10 @@ export default function Home() {
             {/*  xs={isShown ? 6 : 0} */}
             <Grid item>
                 <Fade in timeout={500}>
-                    <Avatar sx={{ width: 250, height: 250, bgcolor: indigo[500] }} className={["Media", classes.pic].join(" ")} alt={my.name} src="/pics/me_clear.png" />
+                    <Avatar sx={{ width: 250, height: 250, bgcolor: indigo[500] }}
+                        className={["Media", classes.pic].join(" ")}
+                        alt={my.name}
+                        src="/pics/me_clear2.png" />
                 </Fade>
             </Grid>
             <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>
