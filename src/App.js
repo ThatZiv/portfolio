@@ -16,6 +16,7 @@ import Home from "./components/pages/Home"
 // Comps
 import Nav from "./components/Nav";
 import Footer from './components/Footer';
+import AlertDialog from './components/AlertDialog';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,19 +38,26 @@ function App() {
   const classes = useStyles();
   const [loading, setLoading] = React.useState(false)
   const [state, dispatch] = React.useContext(UserContext)
+  const [dialog, setDialog] = React.useState()
   React.useEffect(() => { // this is makeshift
     document.title = capFirstLetter(state.focus) + " | Zavaar Shah"
+    window.gtag("send", "pageview") // TODO: make pageview for new 'page' change
     setLoading(true)
-    setTimeout(()=> {
+    setTimeout(() => {
       setLoading(false)
     }, 350)
   }, [state.focus])
-  
+  React.useEffect(() => {
+    setDialog(state.dialog)
+    console.log(dialog)
+  }, [state.dialog])
+
   return (
     <div>
       <Container maxWidth="lg" className={classes.bg}>
 
         <Nav />
+        {/* Main container */}
         {state.focus === "portfolio"
           ?
           <Portfolio />
@@ -70,6 +78,7 @@ function App() {
       >
         <CircularProgress color="inherit" />
       </Backdrop>
+      <AlertDialog open={state.dialog?.open} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
     </div>
   );
 }

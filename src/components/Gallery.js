@@ -41,7 +41,7 @@ function SwipeableTextMobileStepper(props) {
         setActiveStep(step);
     };
     return (
-        <Box sx={{ flexGrow: 1 }} className={classes.root, "Media"}>
+        <Box sx={{ flexGrow: 1 }} className={[classes.root, "Media"].join(" ")}>
             <Paper
                 square
                 elevation={0}

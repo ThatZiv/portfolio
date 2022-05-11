@@ -1,7 +1,16 @@
 import { Button, ButtonGroup, Container, Typography, Link, makeStyles, Tooltip } from '@material-ui/core';
 import { indigo } from '@material-ui/core/colors';
+import { useContext, useState, useEffect } from 'react';
 import { capFirstLetter } from "../utils"
+import AlertDialog from './AlertDialog';
+import { UserContext } from "../contexts";
+
 export default function SocialMedia(props) {
+    const [state, dispatch] = useContext(UserContext);
+    /* const [dialog, setDialog] = useState(false)
+    useEffect(() => {
+        setDialog(state.dialog)
+    }, [state.dialog.open]) */
     const getIconFromUrl = (url, _icon) => {
         const icon = (d, _icon) => <i className={`fa-${d ? "brands" : "solid"} fa-${d ? d.toLowerCase() : _icon}`}></i>
         var service;
@@ -12,15 +21,28 @@ export default function SocialMedia(props) {
             service = urlSplit.length === 3 ? urlSplit[1] : urlSplit[0]
         } catch (e) { }
         return (
-            <Tooltip title={service ? capFirstLetter(service) : (props?.showName && props.url !== "#" ? props.url : props?.name) || props.icon}>
-                <Link underline="none"
-                    variant="h4" href={url} target={props.url === "#" ? "_self" : "_blank"}>
-                    {/* OLD STYLE:  { backgroundColor: "#fdfdfd", color: "#1f1f1f" } */}
-                    <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd" }}>
-                        {icon(service, props?.icon)}{props?.showName && <div>&nbsp; {props?.name || capFirstLetter(service)}</div>}
-                    </Button>
-                </Link>
-            </Tooltip>
+            <div onClick={() => {
+                if (service && !props.confirmation) {
+                    dispatch({
+                        type: "UI_dialog",
+                        dialog: {
+                            open: true,
+                            title: `${service ? "External " : ''}Redirect Notice`,
+                            content: `Would you like to leave this site and continue to ${url}`
+                        }
+                    })
+                }
+            }}>
+                <Tooltip title={service ? capFirstLetter(service) : (props?.showName && props.url !== "#" ? props.url : props?.name) || props.icon}>
+                    <Link underline="none"
+                        variant="h4" href={url} target={props.url === "#" ? "_self" : "_blank"}>
+                        {/* OLD STYLE:  { backgroundColor: "#fdfdfd", color: "#1f1f1f" } */}
+                        <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd" }}>
+                            {icon(service, props?.icon)}{props?.showName && <div>&nbsp; {props?.name || capFirstLetter(service)}</div>}
+                        </Button>
+                    </Link>
+                </Tooltip>
+            </div>
         )
     }
     return (

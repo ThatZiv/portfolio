@@ -35,7 +35,8 @@ export default function Home() {
                     <Avatar sx={{ width: 250, height: 250, bgcolor: indigo[500] }}
                         className={["Media", classes.pic].join(" ")}
                         alt={my.name}
-                        src="/pics/me_clear2.png" />
+                        src="/pics/me_clear_new2.png" />
+                        {/*// TODO: replace bg avatar img? */} 
                 </Fade>
             </Grid>
             <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>

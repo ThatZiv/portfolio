@@ -9,7 +9,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Chip from '@material-ui/core/Chip';
 import { Divider, Zoom, Grow } from '@material-ui/core';
 
 import Tags from "./Tags"
@@ -17,7 +16,6 @@ import Objectives from "./Objectives"
 import Section from './Section';
 import Timeline from './Timeline';
 import DateRange from './DateRange';
-import Status from "./Status"
 
 const useStyles = makeStyles((theme) => ({
     media: {
@@ -43,6 +41,7 @@ export default function MediaCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const handleExpandClick = () => {
+        window.gtag("send", "ui_card_expand") // FIXME: fix ui interaction metrics
         setExpanded(!expanded);
     };
     return (

@@ -11,7 +11,7 @@ export default {
         tags: "JavaScript,NodeJS,Deployment Pipelines,NoSQL,FiveM,Bot,Agile,React,Docker,Version Control,Server Management,Database Migration & Management",
         description: `FiveM Bot is a Discord chat bot that makes monitoring game servers for server adminstrators easy. 
     Users can view game server metadata such as player count, player retention, server status, and more through Discord.
-    This automation suite is used by tens of thousands of people every day, while maintaining a 99.6% service uptime.`,
+    This automation suite is used by tens of thousands of people every day, while maintaining a 99.7% service uptime.`,
         objectives: `Built monitoring process using custom-built API and database infrastructure
     |Integrated Patreon REST API to process monetary subscription purchases.
     |Encrypted and stored user-data with AES encryption to secure user data in database.`,
