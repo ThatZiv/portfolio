@@ -63,8 +63,8 @@ export default function Home() {
                         </div>
                     </Slide>
                 </Delayed> */}
-                <Delayed wait={2500}>
-                    <Fade in timeout={5500}>
+                <Delayed wait={1000}>
+                    <Fade in timeout={5000}>
                         <Grid container spacing={1}>
                             <Grid item>
                                 <SocialMedia showName icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
