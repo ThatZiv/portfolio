@@ -141,16 +141,16 @@ const SearchAppBar = (props) => {
                             <br />
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
+                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com"/>
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" />
+                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" confirmation/>
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia url="https://github.com/thatziv" />
+                                    <SocialMedia url="https://github.com/thatziv" confirmation/>
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" />
+                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" confirmation/>
                                 </Grid>
                             </Grid>
                         </List>

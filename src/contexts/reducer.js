@@ -23,5 +23,5 @@ export const reducer = (state, action) => {
 export const initialState = {
     focus: "home",
     isLoading: false,
-    dialog: { open: false, title: '', content: '' },
+    dialog: { open: false, title: '', content: '', callback: () => { } },
 } 

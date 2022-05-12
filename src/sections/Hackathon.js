@@ -67,10 +67,10 @@ function links() {
     return (
         <Grid spacing={1} container>
             <Grid item>
-                <SocialMedia showName url="https://github.com/ThatZiv/hackathon2021wsu/" />
+                <SocialMedia showName url="https://github.com/ThatZiv/hackathon2021wsu/" confirmation/>
             </Grid>
             <Grid item>
-                <SocialMedia name="View Presentation" icon="fa-solid fa-file-pdf" showName url="/pics/ext/Hackathon_Slides.pdf" />
+                <SocialMedia name="View Presentation" icon="fa-solid fa-file-pdf" showName url="/pics/ext/Hackathon_Slides.pdf"/>
             </Grid>
         </Grid>
     )

@@ -74,7 +74,7 @@ function statistics() {
 function links() {
     return (
         <div>
-            <SocialMedia icon="arrow-up-right-from-square" name="Use the bot" url="https://top.gg/bot/483787947070586880" />
+            <SocialMedia icon="arrow-up-right-from-square" name="Use the bot" url="https://top.gg/bot/483787947070586880" confirmation/>
             <YouTubeEmbed id="qphtBvXSusE" />
             <br />
             <Grid alignItems="baseline" container spacing={1}>

@@ -6,7 +6,12 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { DialogContentText } from '@material-ui/core';
 import { UserContext } from "../contexts";
+import { indigo } from '@material-ui/core/colors';
 // https://stackoverflow.com/questions/65256599/how-to-make-snackbar-a-global-component-withcontext
+const btnStyle = {
+  color: indigo[400]
+}
+// TODO: Replace this [SocialMedia btns] with router page for redirect links (like linkedin)
 const AlertDialog = (props) => {
   const { title, children, callback, open } = props;
   /* const [open, setOpen] = React.useState(false);
@@ -15,7 +20,7 @@ const AlertDialog = (props) => {
   };
   */
   const handleAbort = () => {
-    dispatch({type: "UI_dialog", open: false, content: '', title: '' })
+    dispatch({type: "UI_dialog", open: false, content: '', title: '', callback: () => {} })
   }
   const [state, dispatch] = React.useContext(UserContext)
   return (
@@ -34,8 +39,8 @@ const AlertDialog = (props) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleAbort}>Cancel</Button>
-        <Button onClick={callback} autoFocus>
+        <Button style={btnStyle} onClick={handleAbort}>Cancel</Button>
+        <Button style={btnStyle} onClick={callback} autoFocus>
           Continue
         </Button>
       </DialogActions>

@@ -70,10 +70,10 @@ export default function Home() {
                                 <SocialMedia showName icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
                             </Grid>
                             <Grid item>
-                                <SocialMedia showName url="https://www.linkedin.com/in/zavaar-shah" />
+                                <SocialMedia showName url="https://www.linkedin.com/in/zavaar-shah" confirmation/>
                             </Grid>
                             <Grid item>
-                                <SocialMedia showName url="https://github.com/thatziv" />
+                                <SocialMedia showName url="https://github.com/thatziv" confirmation/>
                             </Grid>
                             <Grid item>
                                 <div onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>

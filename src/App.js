@@ -49,7 +49,6 @@ function App() {
   }, [state.focus])
   React.useEffect(() => {
     setDialog(state.dialog)
-    console.log(dialog)
   }, [state.dialog])
 
   return (
@@ -78,7 +77,7 @@ function App() {
       >
         <CircularProgress color="inherit" />
       </Backdrop>
-      <AlertDialog open={state.dialog?.open} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
+      <AlertDialog open={state.dialog?.open} callback={state.dialog?.callback} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
     </div>
   );
 }

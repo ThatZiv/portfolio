@@ -35,7 +35,7 @@ function links() {
     return (<div>
         <YouTubeEmbed id="Ci-EuLhFeOY" />
         <br />
-        <Grid container spacing={1}>
+        <Grid container spacing={1}> {/* // TODO: these links are not SocialMedia comps, convert them (for confirmation dialog)... */}
             <Grid item xs>
                 <Button variant="contained" style={{ backgroundColor: "#e6342e", color: "white" }} href="https://youtube.com/jevajs">
                     <i className="fa-brands fa-youtube" /> &nbsp;YouTube
