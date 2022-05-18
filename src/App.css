@@ -132,3 +132,13 @@ a.visited {
   opacity: 0;
   transition: opacity 2000ms;
 }
+
+/* https://stackoverflow.com/questions/44522299/css-only-acrylic-material-from-fluent-design-system */
+.acrylic {
+  padding: 4em 6em;
+  position: relative;
+  background: rgba(0,0,0,0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin: 7px;
+}

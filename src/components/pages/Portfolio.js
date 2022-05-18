@@ -17,6 +17,7 @@ import Webserver from '../../sections/Webserver';
 import Garage from '../../sections/Garage';
 import Hackathon from '../../sections/Hackathon'; // '21
 import Hackathon2 from '../../sections/Hackathon2'; // '22
+import BE1200 from '../../sections/BE1200';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -109,6 +110,18 @@ export default function Portfolio() {
             </Section>
             <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
                 <Hackathon2.components.links />
+            </Section>
+        </MediaCard>
+        {/* BE1200 Final Project */}
+        <MediaCard {...BE1200.meta}>
+            <Section icon="fa-solid fa-bookmark" title="Description">
+                <BE1200.components.description />
+            </Section>
+            {/* <Section icon="fa-solid fa-images" title="Gallery">
+                <BE1200.components.pictures />
+            </Section> */}
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <BE1200.components.links />
             </Section>
         </MediaCard>
     </Grid></Grow>)

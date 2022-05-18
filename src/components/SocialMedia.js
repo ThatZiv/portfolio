@@ -16,7 +16,8 @@ export default function SocialMedia(props) {
             var urlSplit = _url.hostname.split(".")
             service = urlSplit.length === 3 ? urlSplit[1] : urlSplit[0]
         } catch (e) { }
-        const showDialog = service || props.confirmation
+        let showDialog = service || props.confirmation
+        showDialog = false // FIXME: currently showing dialogues are disabled here.
         return (
             <div onClick={() => {
                 if (showDialog) {

@@ -1,14 +1,18 @@
 # TODO
-* haptic project card
-* **CHANGE BG**
-* on-nav btns are not all caps like mui example's
+* zhud, osaim, be1200 proj cards
+* ~~**CHANGE BG**~~
+* improve on-nav buttons (look better)
 * Resume?
 * make og:description meta tags have my preamble
-* nav (in-drawer) navigation page WIDTH (minor nitpicking)
+* ~~nav (in-drawer) navigation page WIDTH (minor nitpicking)~~
 * arcylic main container
+* home page (tabs: skills,github stats, etc.)
+* Router integration for pages
+* google analytics (for diff btns)
+* ? Redirect page (like linkedin) ?
 
 # FIXME
-* Mozilla trys to autodownload embedded pdf file on mobile when opening
+* Mozilla tries to autodownload embedded pdf file on mobile when opening
 * memory leak issue with unmounting animations
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
 

@@ -57,12 +57,12 @@ export default function MediaCard(props) {
                         />
                         <CardContent className={classes.cardcontent}>
                             <Grid justifyContent='space-between' container>
-                                <Grid item xs={10} sm>
-                                    <Typography gutterBottom variant="h3" style={{ fontFamily: "Bebas Neue" }} component="h2">
+                                <Grid item xs={10}>
+                                    <Typography gutterBottom variant="h3" style={{ fontFamily: "Bebas Neue"}} component="h2">
                                         {props.title}
                                     </Typography>
                                 </Grid>
-                                <Grid item sm>
+                                <Grid item xs={4} sm>
                                     <DateRange {...props} />
                                 </Grid>
                             </Grid>
