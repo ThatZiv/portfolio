@@ -117,9 +117,9 @@ export default function Portfolio() {
             <Section icon="fa-solid fa-bookmark" title="Description">
                 <BE1200.components.description />
             </Section>
-            {/* <Section icon="fa-solid fa-images" title="Gallery">
+            <Section icon="fa-solid fa-images" title="Gallery">
                 <BE1200.components.pictures />
-            </Section> */}
+            </Section>
             <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
                 <BE1200.components.links />
             </Section>

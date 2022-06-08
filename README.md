@@ -10,11 +10,13 @@
 * Router integration for pages
 * google analytics (for diff btns)
 * ? Redirect page (like linkedin) ?
+* gradient avatar bg (animation)
 
 # FIXME
 * Mozilla tries to autodownload embedded pdf file on mobile when opening
 * memory leak issue with unmounting animations
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
+* Gallery image expand dialogue does not close after clicking continue
 
 ______
 
