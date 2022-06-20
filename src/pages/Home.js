@@ -1,11 +1,11 @@
 import { Container, Grid, Typography, Slide, Grow, Fade, Avatar, Collapse, Zoom } from "@mui/material";
 import { makeStyles } from '@material-ui/core/styles';
 import { useState, useRef, useContext } from "react";
-import { UserContext } from "../../contexts"
+import { UserContext } from "../contexts"
 import { indigo } from "@material-ui/core/colors";
-import Delayed from "../Delayed";
-import SocialMedia from "../SocialMedia";
-import my from "../../sections";
+import Delayed from "../components/Delayed";
+import SocialMedia from "../components/SocialMedia";
+import my from "../sections";
 const useStyles = makeStyles({
     root: {
         padding: 50
@@ -35,7 +35,7 @@ export default function Home() {
                     <Avatar sx={{ width: 250, height: 250, bgcolor: indigo[500] }}
                         className={["Media", classes.pic].join(" ")}
                         alt={my.name}
-                        src="/pics/me_clear_new2.png" />
+                        src="/pics/me_clear_new_bg.png" />
                         {/*// TODO: replace bg avatar img? */} 
                 </Fade>
             </Grid>

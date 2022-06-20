@@ -1,15 +1,16 @@
 # TODO
-* zhud, osaim, be1200 proj cards
+* make proj cards (when expanded on desktop) stack on columns, not by rows
+* zhud, osaim, proj cards
 * ~~**CHANGE BG**~~
 * improve on-nav buttons (look better)
 * Resume?
 * make og:description meta tags have my preamble
 * ~~nav (in-drawer) navigation page WIDTH (minor nitpicking)~~
-* arcylic main container
 * home page (tabs: skills,github stats, etc.)
 * Router integration for pages
+* arcylic main container
 * google analytics (for diff btns)
-* ? Redirect page (like linkedin) ?
+* ~~? Redirect page (like linkedin) ?~~ - waste of time tbh
 * gradient avatar bg (animation)
 
 # FIXME

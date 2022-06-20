@@ -10,8 +10,8 @@ import Divider from '@material-ui/core/Divider';
 //import ExpandMoreIcon from '@mui/icons/ExpandMore';
 
 // Main pages
-import Portfolio from "./components/pages/Portfolio"
-import Home from "./components/pages/Home"
+import Portfolio from "./pages/Portfolio"
+import Home from "./pages/Home"
 
 // Comps
 import Nav from "./components/Nav";

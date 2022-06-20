@@ -16,6 +16,7 @@ import Objectives from "./Objectives"
 import Section from './Section';
 import Timeline from './Timeline';
 import DateRange from './DateRange';
+import MainDialog from './MainDialog'
 
 const useStyles = makeStyles((theme) => ({
     media: {
@@ -40,14 +41,20 @@ const useStyles = makeStyles((theme) => ({
 export default function MediaCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
+    const [cardSize, setCardSize] = React.useState(6);
+    //let cardWidth = 6
     const handleExpandClick = () => {
         window.gtag("send", "ui_card_expand") // FIXME: fix ui interaction metrics
+        setCardSize(6) // TODO: make cards expand to full width for desktop-sized screens
+        // setCardSize(expanded ? 6 : 12) // TODO: make cards expand to full width for desktop-sized screens
         setExpanded(!expanded);
     };
     return (
         /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
         <Grow in timeout={700}>
-            <Grid item xs={12} md={6} lg={6}>
+        {/* selection border logic below */}
+        {/* style={ expanded ? {border: "2px solid  #3f51b5"} : {border: null}} */}
+            <Grid item xs={12} md={cardSize} lg={cardSize}>
                 <Card elevation={3}>
                     <CardActionArea onClick={handleExpandClick}>
                         <CardMedia
@@ -77,6 +84,8 @@ export default function MediaCard(props) {
                         <Divider style={{ marginRight: "18px", marginLeft: "18px" }} />
                         <CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
+                            <MainDialog></MainDialog>
+                                {props.prechildren}
                                 {props.objectives && <Section icon={"fa-solid fa-list"} title="Deliverables">
                                     <Objectives list={props.objectives} />
                                 </Section>}

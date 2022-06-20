@@ -28,6 +28,7 @@ export default {
             ["Late-December 2020", "Ad revenue peaks at an all-time high with over 1M monetized playbacks."],
             ["June 2, 2021", "Channel reaches 20K subscribers, 2M views, and over 10M impressions."],
         ],
+        prechildren: <YouTubeEmbed id="Ci-EuLhFeOY" />
     }, components: { links, statistics }
 }
 

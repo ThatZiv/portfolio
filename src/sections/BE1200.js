@@ -5,6 +5,8 @@ import YouTubeEmbed from "../components/YouTubeEmbed";
 import Gist from "react-gist";
 import Section from "../components/Section";
 
+// NOTE: some images are embedded (base64)
+
 export default {
     meta: {
         title: "Haptic Walking Device",
