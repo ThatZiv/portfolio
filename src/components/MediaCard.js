@@ -89,7 +89,6 @@ export default function MediaCard(props) {
                         <Divider style={{ marginRight: "18px", marginLeft: "18px" }} />
                         <CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                <MainDialog></MainDialog>
                                 {props.prechildren}
                                 {props.objectives && <Section icon={"fa-solid fa-list"} title="Deliverables">
                                     <Objectives list={props.objectives} />

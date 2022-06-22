@@ -24,4 +24,5 @@ RUN git clone https://github.com/thatziv/portfolio/tree/dev
 RUN cd ~/portfolio
 RUN npm install -g react-scripts
 RUN npm install -y
+EXPOSE 3000
 RUN npm run start

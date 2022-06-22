@@ -6,6 +6,7 @@ import { indigo } from "@material-ui/core/colors";
 import Delayed from "../components/Delayed";
 import SocialMedia from "../components/SocialMedia";
 import my from "../sections";
+import { Divider } from "@material-ui/core";
 const useStyles = makeStyles({
     root: {
         padding: 50
@@ -32,11 +33,11 @@ export default function Home() {
             {/*  xs={isShown ? 6 : 0} */}
             <Grid item>
                 <Fade in timeout={500}>
-                    <Avatar sx={{ width: 250, height: 250, bgcolor: indigo[500] }}
+                    <Avatar sx={{ width: 275, height: 275, bgcolor: indigo[500] }}
                         className={["Media", classes.pic].join(" ")}
                         alt={my.name}
                         src="/pics/me_clear_new_bg.png" />
-                        {/*// TODO: replace bg avatar img? */} 
+                    {/*// TODO: replace bg avatar img? */}
                 </Fade>
             </Grid>
             <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>
@@ -70,10 +71,10 @@ export default function Home() {
                                 <SocialMedia showName icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
                             </Grid>
                             <Grid item>
-                                <SocialMedia showName url="https://www.linkedin.com/in/zavaar-shah" confirmation/>
+                                <SocialMedia showName url="https://www.linkedin.com/in/zavaar-shah" confirmation />
                             </Grid>
                             <Grid item>
-                                <SocialMedia showName url="https://github.com/thatziv" confirmation/>
+                                <SocialMedia showName url="https://github.com/thatziv" confirmation />
                             </Grid>
                             <Grid item>
                                 <div onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
@@ -83,6 +84,16 @@ export default function Home() {
                         </Grid>
                     </Fade>
                 </Delayed>
+                <Grid item>
+                    <Delayed wait={1000}>
+                        <Fade in timeout={6000}>
+                            <div>
+                                <Divider style={{marginTop: 12}}/>
+                                <my.skills></my.skills>
+                            </div>
+                        </Fade>
+                    </Delayed>
+                </Grid>
             </Grid>
 
         </Grid>
