@@ -26,7 +26,8 @@ export default {
             ["February 5, 2022", "Translated all keymapped values to certain hard-coded actions executed on the host computer."],
             ["February 6, 2022", "Finished presentation video and slides."],
             ["February 6, 2022", "Submitted project on GitHub for judges to evaluate."],
-        ]
+        ],
+        prechildren: <YouTubeEmbed id="MZsUFm2aQ58" />
     }, components: { links, description, pictures }
 }
 

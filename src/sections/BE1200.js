@@ -1,7 +1,6 @@
 import SocialMedia from "../components/SocialMedia";
 import Gallery from "../components/Gallery";
 import { Divider, Grid, Typography } from "@mui/material";
-import YouTubeEmbed from "../components/YouTubeEmbed";
 import Gist from "react-gist";
 import Section from "../components/Section";
 

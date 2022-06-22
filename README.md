@@ -17,6 +17,7 @@
 * Mozilla tries to autodownload embedded pdf file on mobile when opening
 * memory leak issue with unmounting animations
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
+* Gallery images are stretched out unreasonably (find a way to control that warping)
 * Gallery image expand dialogue does not close after clicking continue
 
 ______

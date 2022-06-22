@@ -42,20 +42,28 @@ export default function MediaCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
     const [cardSize, setCardSize] = React.useState(6);
+    const cardRef = React.useRef(null)
     //let cardWidth = 6
+    const executeScroll = () => cardRef.current.scrollIntoView()
     const handleExpandClick = () => {
         window.gtag("send", "ui_card_expand") // FIXME: fix ui interaction metrics
-        setCardSize(6) // TODO: make cards expand to full width for desktop-sized screens
-        // setCardSize(expanded ? 6 : 12) // TODO: make cards expand to full width for desktop-sized screens
+        //setCardSize(6) // TODO: make cards expand to full width for desktop-sized screens
+        setCardSize(expanded ? 6 : 12) // TODO: make cards expand to full width for desktop-sized screens
+
+        if (!expanded) {
+            executeScroll() // scroll to focused card
+        } 
         setExpanded(!expanded);
     };
+    const handleCardFocus = (id) => {
+        window.location.href = "#" + id
+    }
     return (
         /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
         <Grow in timeout={700}>
-        {/* selection border logic below */}
-        {/* style={ expanded ? {border: "2px solid  #3f51b5"} : {border: null}} */}
+            {/* selection border logic below */}
             <Grid item xs={12} md={cardSize} lg={cardSize}>
-                <Card elevation={3}>
+                <Card ref={cardRef} style={expanded ? { border: "2px solid  #3f51b5" } : { border: null }} elevation={3}>
                     <CardActionArea onClick={handleExpandClick}>
                         <CardMedia
                             className={classes.media}
@@ -65,11 +73,11 @@ export default function MediaCard(props) {
                         <CardContent className={classes.cardcontent}>
                             <Grid justifyContent='space-between' container>
                                 <Grid item xs={10}>
-                                    <Typography gutterBottom variant="h3" style={{ fontFamily: "Bebas Neue"}} component="h2">
+                                    <Typography gutterBottom variant="h3" style={{ fontFamily: "Bebas Neue" }} component="h2">
                                         {props.title}
                                     </Typography>
                                 </Grid>
-                                <Grid item xs={4} sm>
+                                <Grid item sm>
                                     <DateRange {...props} />
                                 </Grid>
                             </Grid>
@@ -84,7 +92,7 @@ export default function MediaCard(props) {
                         <Divider style={{ marginRight: "18px", marginLeft: "18px" }} />
                         <CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
-                            <MainDialog></MainDialog>
+                                <MainDialog></MainDialog>
                                 {props.prechildren}
                                 {props.objectives && <Section icon={"fa-solid fa-list"} title="Deliverables">
                                     <Objectives list={props.objectives} />
@@ -104,7 +112,6 @@ export default function MediaCard(props) {
                     <Button onClick={handleExpandClick} style={{ paddingBottom: 20, paddingTop: 20 }} size="small" color="primary">
                         {expanded ? "Less" : "More"}
                     </Button>
-
                 </Card>
             </Grid>
         </Grow>

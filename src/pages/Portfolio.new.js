@@ -55,13 +55,19 @@ const columnProps = {
 // TODO: Make Desktop & Mobile component render from the same way (not statically like this)
 export default function Portfolio() {
     //const classes = useStyles();
-    /*     const { width } = useViewport()
-        const breakpoint = 1275 */
-    return <Grow in timeout={500}>
-        <Grid
-            justifyContent="flex-start"
-            style={{ marginTop: "10px" }}
-            container spacing={2}>
+    const { width } = useViewport()
+    const breakpoint = 1275
+    console.log(width)
+    return width < breakpoint ? <MobileComponent /> : <DesktopComponent />
+
+
+}
+
+function DesktopComponent() {
+    return <Grid
+        style={{ marginTop: 0 }}
+        container spacing={2}>
+        <Grid {...columnProps}>
             {/* JEVA */}
             <MediaCard {...Jeva.meta}>
                 <Section icon="fa-solid fa-chart-line" title="Statistics">
@@ -98,6 +104,8 @@ export default function Portfolio() {
                     <Webserver.components.links />
                 </Section>
             </MediaCard>
+        </Grid>
+        <Grid {...columnProps}>
             {/* Hackathon'21 */}
             <MediaCard {...Hackathon.meta}>
                 <Section icon="fa-solid fa-bookmark" title="Description">
@@ -135,5 +143,85 @@ export default function Portfolio() {
                 </Section>
             </MediaCard>
         </Grid>
-    </Grow>
+    </Grid>
+}
+
+function MobileComponent() {
+    return <Grid
+        justifyContent="flex-start"
+        style={{ marginTop: "10px" }}
+        container spacing={2}>
+        {/* JEVA */}
+        <MediaCard {...Jeva.meta}>
+            <Section icon="fa-solid fa-chart-line" title="Statistics">
+                <Jeva.components.statistics />
+            </Section>
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <Jeva.components.links />
+            </Section>
+        </MediaCard>
+        {/* FIVEM BOT */}
+        <MediaCard {...FiveM.meta}>
+            <Section icon="fa-solid fa-chart-line" title="Statistics">
+                <FiveM.components.statistics />
+            </Section>
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <FiveM.components.links />
+            </Section>
+        </MediaCard>
+        {/* Garage */}
+        <MediaCard {...Garage.meta}>
+            <Section icon="fa-solid fa-images" title="Gallery">
+                <Garage.components.pictures />
+            </Section>
+            <Section icon="fa-solid fa-chart-line" title="Statistics">
+                <Garage.components.statistics />
+            </Section>
+        </MediaCard>
+        {/* WEBSERVER */}
+        <MediaCard {...Webserver.meta}>
+            <Section icon="fa-solid fa-chart-line" title="Statistics">
+                <Webserver.components.statistics />
+            </Section>
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <Webserver.components.links />
+            </Section>
+        </MediaCard>
+        {/* Hackathon'21 */}
+        <MediaCard {...Hackathon.meta}>
+            <Section icon="fa-solid fa-bookmark" title="Description">
+                <Hackathon.components.description />
+            </Section>
+            <Section icon="fa-solid fa-images" title="Gallery">
+                <Hackathon.components.pictures />
+            </Section>
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <Hackathon.components.links />
+            </Section>
+        </MediaCard>
+        {/* Hackathon'22 */}
+        <MediaCard {...Hackathon2.meta}>
+            <Section icon="fa-solid fa-bookmark" title="Description">
+                <Hackathon2.components.description />
+            </Section>
+            <Section icon="fa-solid fa-images" title="Gallery">
+                <Hackathon2.components.pictures />
+            </Section>
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <Hackathon2.components.links />
+            </Section>
+        </MediaCard>
+        {/* BE1200 Final Project */}
+        <MediaCard {...BE1200.meta}>
+            <Section icon="fa-solid fa-bookmark" title="Description">
+                <BE1200.components.description />
+            </Section>
+            <Section icon="fa-solid fa-images" title="Gallery">
+                <BE1200.components.pictures />
+            </Section>
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                <BE1200.components.links />
+            </Section>
+        </MediaCard>
+    </Grid>
 }

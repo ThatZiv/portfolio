@@ -142,3 +142,8 @@ a.visited {
   backdrop-filter: blur(10px);
   margin: 7px;
 }
+
+.wide-div {
+  width: calc(100vw - 20px);
+  margin-left: calc(-50vw + 50% + 10px);
+}
