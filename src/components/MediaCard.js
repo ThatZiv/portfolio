@@ -55,9 +55,6 @@ export default function MediaCard(props) {
         } 
         setExpanded(!expanded);
     };
-    const handleCardFocus = (id) => {
-        window.location.href = "#" + id
-    }
     return (
         /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
         <Grow in timeout={700}>
