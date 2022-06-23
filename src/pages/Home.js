@@ -37,10 +37,7 @@ export default function Home() {
                         className={["Media", classes.pic].join(" ")}
                         alt={my.name}
                         src="/pics/me_clear_new_bg.png" />
-                    {/*// TODO: replace bg avatar img? */}
                 </Fade>
-{/*                 <img alt="top langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thatziv&layout=compact&theme=dark&count_private=true&&langs_count=11&hide_border=true&bg_color=#010101&border_radius=3&show_owner=true"/>
-  // TODO: ADD GITHUB STAT OF SOME SORT UNDER AVATAR PIC*/}
             </Grid>
             <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>
                 <Grow timeout={1200} in={isShown} mountOnEnter unmountOnExit>
@@ -86,16 +83,15 @@ export default function Home() {
                         </Grid>
                     </Fade>
                 </Delayed>
-                <Grid item>
-                    <Delayed wait={1000}>
-                        <Fade in timeout={6000}>
-                            <div>
-                                <Divider style={{marginTop: 12}}/>
-                                <my.skills></my.skills>
-                            </div>
-                        </Fade>
-                    </Delayed>
-                </Grid>
+            </Grid>
+
+            <Grid item md={isShown ? 10 : 0} sm={isShown ? 10 : 0} xs={isShown ? 12 : 0}>
+                <Slide in={isShown} container={containerRef.current} direction="up" timeout={350} mountOnEnter unmountOnExit>
+                    <div>
+                        <Divider style={{ marginTop: 12 }} />
+                        <my.skills />
+                    </div>
+                </Slide>
             </Grid>
 
         </Grid>
