@@ -33,6 +33,18 @@ const TabMenu = (props) => {
             </div>
         </Box>
     }
+    const ShieldsIoBadges = (props) => {
+        return props.data.map((val, index) => {
+            var topic = parseTopicFromURL(val)
+            return <Grid item>
+                <Tooltip title={topic} target="_blank">
+                    <Link href={`https://google.com/search?q=${topic}`}>
+                        <img alt={`secondary lang ${index} ${topic}`} src={val} />
+                    </Link>
+                </Tooltip>
+            </Grid>
+        })
+    }
     return (
         <Box sx={{ width: '100%' }}>
             <Tabs
@@ -52,39 +64,28 @@ const TabMenu = (props) => {
                 interval={10000}
                 onChangeIndex={handleChangeIndex}
             >
+                {/* Languages */}
                 <TabEntry index={0}>
                     <Grid container
                         justifyContent="flex-start"
                         alignItems="center"
                         spacing={1}>
                         <Grid item container sm spacing={1}>
-                            {my.langs.primary.map((val, index) => {
-                                var topic = parseTopicFromURL(val)
-                                return <Grid item>
-                                    <Tooltip title={topic}>
-                                        <Link href={`https://google.com/search?q=${topic}`}>
-                                            <img alt={`primary lang ${index} ${topic}`} src={val} />
-                                        </Link>
-                                    </Tooltip>
-                                </Grid>
-                            })}
+                            <ShieldsIoBadges data={my.langs.primary} />
+                        </Grid>
+                        <Divider/> 
+                        <Grid item sm>
+                            <img alt="top langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thatziv&layout=compact&theme=dark&count_private=true&&langs_count=11&hide_border=true&bg_color=#010101&border_radius=3&show_owner=true"/>
                         </Grid>
                     </Grid>
                 </TabEntry>
+                {/* Frameworks & Libraries */}
                 <TabEntry index={1}>
                     <Grid container spacing={1}>
-                        {my.langs.secondary.map((val, index) => {
-                            var topic = parseTopicFromURL(val)
-                            return <Grid item>
-                                <Tooltip title={topic}>
-                                    <Link href={`https://google.com/search?q=${topic}`}>
-                                        <img alt={`secondary lang ${index} ${topic}`} src={val} />
-                                    </Link>
-                                </Tooltip>
-                            </Grid>
-                        })}
+                        <ShieldsIoBadges data={my.langs.secondary} />
                     </Grid>
                 </TabEntry>
+                {/* Tools  // TODO: NEED TO GET RID OF FIRST SET OF LOGOS (they dont fit nicely)*/}
                 <TabEntry index={2}>
                     <Grid container
                         justifyContent="flex-start"
@@ -94,9 +95,7 @@ const TabMenu = (props) => {
                             <img alt="tools" src={`https://skillicons.dev/icons?i=${my.tools.primary}&perline=6`} />
                         </Grid>
                         <Grid item container sm spacing={1}>
-                            {my.tools.secondary.map((val, index) => {
-                                return <Grid item><img alt={`secondary tool ${index}`} src={val} /></Grid>
-                            })}
+                            <ShieldsIoBadges data={my.tools.secondary}/>
                         </Grid>
                     </Grid>
                 </TabEntry>
@@ -129,7 +128,7 @@ const my = {
         ],
         secondary: [ // these are frameworks
             "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white",
-            "https://img.shields.io/badge/Babel-F9DC3E?style=for-the-badge&logo=babel&logoColor=white",
+            "https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black",
             "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white",
             "https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white",
             "https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white",
@@ -148,6 +147,7 @@ const my = {
             "https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white",
             "https://img.shields.io/badge/Node--Red-8F0000?style=for-the-badge&logo=nodered&logoColor=white",
             "https://img.shields.io/badge/Pug-E3C29B?style=for-the-badge&logo=pug&logoColor=black",
+            "https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"
         ]
     },
     "tools": {
@@ -168,6 +168,7 @@ const my = {
             "https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white",
             "https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white",
             "https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=GitHub%20Pages&logoColor=white",
+            "https://img.shields.io/badge/ovh-%23123F6D.svg?style=for-the-badge&logo=ovh&logoColor=#123F6D"
         ]
     },
     "skills": TabMenu

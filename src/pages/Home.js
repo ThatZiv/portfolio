@@ -39,6 +39,8 @@ export default function Home() {
                         src="/pics/me_clear_new_bg.png" />
                     {/*// TODO: replace bg avatar img? */}
                 </Fade>
+{/*                 <img alt="top langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thatziv&layout=compact&theme=dark&count_private=true&&langs_count=11&hide_border=true&bg_color=#010101&border_radius=3&show_owner=true"/>
+  // TODO: ADD GITHUB STAT OF SOME SORT UNDER AVATAR PIC*/}
             </Grid>
             <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>
                 <Grow timeout={1200} in={isShown} mountOnEnter unmountOnExit>
