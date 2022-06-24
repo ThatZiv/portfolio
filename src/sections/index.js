@@ -5,13 +5,13 @@ import Box from '@mui/material/Box';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import theme from "../Theme"
-import { Divider, Grid, Link, Tooltip } from '@material-ui/core';
+import { Divider, Fade, Grid, Grow, Link, Tooltip } from '@material-ui/core';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const parseTopicFromURL = (url) => { // works only for img.shields.to badges
     try {
         let _url = new URL(url)
-        return _url.searchParams.get('logo')
+        return _url.pathname.replace("/badge/", '').split('-')[0]
     } catch (e) {
         return null
     }
@@ -79,14 +79,18 @@ const TabMenu = (props) => {
                         <Grid item>
                             <Tooltip title="www.github.com/ThatZiv?tab=repositories">
                                 <Link href="https://github.com/ThatZiv?tab=repositories" target="_blank">
-                                    <img alt="top langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thatziv&layout=compact&theme=dark&count_private=true&&langs_count=11&hide_border=true&bg_color=#121212&border_radius=3&show_owner=true" />
+                                    <Fade timeout={575} in mountOnEnter unmountOnExit>
+                                        <img alt="top langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thatziv&layout=compact&theme=dark&count_private=true&&langs_count=11&hide_border=true&bg_color=#121212&border_radius=3&show_owner=true" />
+                                    </Fade>
                                 </Link>
                             </Tooltip>
                         </Grid>
                         <Grid item>
                             <Tooltip title="www.github.com/ThatZiv">
                                 <Link href="https://github.com/ThatZiv" target="_blank">
-                                    <img alt="gh profile stats" src="https://github-readme-stats.vercel.app/api?username=thatziv&count_private=true&theme=dark&show_icons=true&hide_border=true&hide_rank=true&include_all_commits=true&bg_color=#121212&border_radius=3" />
+                                    <Fade timeout={575} in mountOnEnter unmountOnExit>
+                                        <img alt="gh profile stats" src="https://github-readme-stats.vercel.app/api?username=thatziv&count_private=true&theme=dark&show_icons=true&hide_border=true&hide_rank=true&include_all_commits=true&bg_color=#121212&border_radius=3" />
+                                    </Fade>
                                 </Link>
                             </Tooltip>
                         </Grid>
@@ -96,6 +100,7 @@ const TabMenu = (props) => {
                 <TabEntry index={1}>
                     <Grid container spacing={1}>
                         <ShieldsIoBadges data={my.langs.secondary} />
+                        <ShieldsIoBadges data={my.langs.extra} />
                     </Grid>
                 </TabEntry>
                 {/* Tools  */}
@@ -162,7 +167,26 @@ const my = {
             "https://img.shields.io/badge/Node--Red-8F0000?style=for-the-badge&logo=nodered&logoColor=white",
             "https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white",
             "https://img.shields.io/badge/Pug-E3C29B?style=for-the-badge&logo=pug&logoColor=black",
-            "https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"
+            "https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens",
+            "https://img.shields.io/badge/OAuth-2.0-white?style=for-the-badge&logo=Oauth2",
+            "https://img.shields.io/badge/Twilio-API-F22F46?style=for-the-badge&logo=Twilio&logoColor=white",
+            "https://img.shields.io/badge/Patreon-API-F96854?style=for-the-badge&logo=Patreon",
+            "https://img.shields.io/badge/GitHub-API-white?style=for-the-badge&logo=GitHub",
+            "https://img.shields.io/badge/Spotify-API-1ED760?style=for-the-badge&logo=Spotify",
+            "https://img.shields.io/badge/discord.js-API-5865F2?style=for-the-badge&logo=Discord",
+            "https://img.shields.io/badge/tmi.js-API-9146FF?style=for-the-badge&logo=Twitch",
+        ],
+        extra: [
+            "https://img.shields.io/badge/Brain.js-yellow?style=flat-square",
+            "https://img.shields.io/badge/PyGame-informational?style=flat-square",
+            "https://img.shields.io/badge/YTDL-red?style=flat-square",
+            "https://img.shields.io/badge/Hugo-blueviolet?style=flat-square",
+            "https://img.shields.io/badge/ArcGIS-API-blue?style=flat-square",
+            "https://img.shields.io/badge/ActionsOnGoogle-yellowgreen?style=flat-square",
+            "https://img.shields.io/badge/MongooseJS-e6557e?style=flat-square",
+            "https://img.shields.io/badge/Deta-CLI-ff69c9?style=flat-square",
+            "https://img.shields.io/badge/PM2-Daemon-50b575?style=flat-square",
+
         ]
     },
     "tools": {
