@@ -10,6 +10,11 @@ export const reducer = (state, action) => {
                 ...state,
                 isLoading: action.isLoading
             }
+        case "UI_dialog":
+            return {
+                ...state,
+                dialog: action.dialog
+            }
         default:
             return state
     }
@@ -17,5 +22,6 @@ export const reducer = (state, action) => {
 
 export const initialState = {
     focus: "home",
-    isLoading: false
+    isLoading: false,
+    dialog: { open: false, title: '', content: '', callback: () => { } },
 } 

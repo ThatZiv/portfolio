@@ -32,14 +32,14 @@ function links() {
         <Grid item>
 
             {/* <Typography variant="h6">Home Page: </Typography> */}
-            <SocialMedia icon="house" name="Home Page" url="https://zavaar.net/" showName/>
+            <SocialMedia icon="house" name="Home Page" url="https://zavaar.net/" showName confirmation/>
 
         </Grid>
         <Grid item>
-            <SocialMedia icon="server" name="Zua API Home" url="https://zavaar.net/api" showName/>
+            <SocialMedia icon="server" name="Zua API Home" url="https://zavaar.net/api" showName confirmation/>
         </Grid>
         <Grid item>
-            <SocialMedia icon="desktop" name="User-interface Sample" url="https://zavaar.net/static/" showName/>
+            <SocialMedia icon="desktop" name="User-interface Sample" url="https://zavaar.net/static/" showName confirmation/>
         </Grid>
     </Grid>
 }

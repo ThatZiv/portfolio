@@ -9,15 +9,15 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Chip from '@material-ui/core/Chip';
 import { Divider, Zoom, Grow } from '@material-ui/core';
+import ReactGA from "react-ga"
 
 import Tags from "./Tags"
 import Objectives from "./Objectives"
 import Section from './Section';
 import Timeline from './Timeline';
 import DateRange from './DateRange';
-import Status from "./Status"
+// import MainDialog from './MainDialog'
 
 const useStyles = makeStyles((theme) => ({
     media: {
@@ -42,15 +42,29 @@ const useStyles = makeStyles((theme) => ({
 export default function MediaCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
+    const [cardSize, setCardSize] = React.useState(6);
+    const cardRef = React.useRef(null)
+    //let cardWidth = 6
+    const executeScroll = () => cardRef.current.scrollIntoView()
     const handleExpandClick = () => {
+        //setCardSize(6) // TODO: make cards expand to full width for desktop-sized screens
+        setCardSize(expanded ? 6 : 12) // TODO: make cards expand to full width for desktop-sized screens
+
+        if (!expanded) {
+            executeScroll() // scroll to focused card
+        }
         setExpanded(!expanded);
     };
+    const gaCardExpandHandle = (cardName = "none") => {
+        ReactGA.event({category: "z_ui-card-expand", label: cardName, action: cardName}) // TODO: see if this works on prod
+    }
     return (
         /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
         <Grow in timeout={700}>
-            <Grid item xs={12} md={6} lg={6}>
-                <Card elevation={3}>
-                    <CardActionArea onClick={handleExpandClick}>
+            {/* selection border logic below */}
+            <Grid item xs={12} md={cardSize} lg={cardSize}>
+                <Card ref={cardRef} style={expanded ? { border: "2px solid  #3f51b5" } : { border: null }} elevation={3}>
+                    <CardActionArea onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title)}}>
                         <CardMedia
                             className={classes.media}
                             image={props.banner}
@@ -58,7 +72,7 @@ export default function MediaCard(props) {
                         />
                         <CardContent className={classes.cardcontent}>
                             <Grid justifyContent='space-between' container>
-                                <Grid item xs={10} sm>
+                                <Grid item xs={10}>
                                     <Typography gutterBottom variant="h3" style={{ fontFamily: "Bebas Neue" }} component="h2">
                                         {props.title}
                                     </Typography>
@@ -78,6 +92,7 @@ export default function MediaCard(props) {
                         <Divider style={{ marginRight: "18px", marginLeft: "18px" }} />
                         <CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
+                                {props.prechildren}
                                 {props.objectives && <Section icon={"fa-solid fa-list"} title="Deliverables">
                                     <Objectives list={props.objectives} />
                                 </Section>}
@@ -93,10 +108,9 @@ export default function MediaCard(props) {
                             {props.tags.split(",").map(tag => { return <Grid item><Tags>{tag}</Tags></Grid> })}
                         </Grid>}
                     </CardActions>
-                    <Button onClick={handleExpandClick} style={{ paddingBottom: 20, paddingTop: 20 }} size="small" color="primary">
+                    <Button onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title)}} style={{ paddingBottom: 20, paddingTop: 20 }} size="small" color="primary">
                         {expanded ? "Less" : "More"}
                     </Button>
-
                 </Card>
             </Grid>
         </Grow>

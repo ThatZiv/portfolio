@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { UserProvider } from "./contexts"
 import theme from "./Theme"
+
+//ctx
+import { UserProvider } from "./contexts"
+import { ViewportProvider } from './contexts/viewport'; // will be used in the future
 
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline>
-          <App />
+            <App />
         </CssBaseline>
       </ThemeProvider>
     </UserProvider>

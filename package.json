@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": ".",
   "private": false,
   "dependencies": {
@@ -20,6 +20,7 @@
     "preval.macro": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-ga": "^3.3.1",
     "react-gist": "^1.2.4",
     "react-markdown": "^8.0.2",
     "react-scripts": "^5.0.0",

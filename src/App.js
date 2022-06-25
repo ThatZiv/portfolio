@@ -6,16 +6,21 @@ import { Backdrop, CircularProgress } from "@mui/material"
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { capFirstLetter } from './utils';
-import Divider from '@material-ui/core/Divider';
-//import ExpandMoreIcon from '@mui/icons/ExpandMore';
+import ReactGA from "react-ga"
 
 // Main pages
-import Portfolio from "./components/pages/Portfolio"
-import Home from "./components/pages/Home"
+import Portfolio from "./pages/Portfolio"
+import Home from "./pages/Home"
 
 // Comps
 import Nav from "./components/Nav";
 import Footer from './components/Footer';
+import AlertDialog from './components/AlertDialog';
+
+
+// Google Analytics
+const TRACKING_ID = "G-48EJRL7D42";
+ReactGA.initialize(TRACKING_ID);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,19 +42,25 @@ function App() {
   const classes = useStyles();
   const [loading, setLoading] = React.useState(false)
   const [state, dispatch] = React.useContext(UserContext)
+  const [dialog, setDialog] = React.useState()
   React.useEffect(() => { // this is makeshift
     document.title = capFirstLetter(state.focus) + " | Zavaar Shah"
+    ReactGA.pageview("/" + state.focus) // TODO: see if this works on prod
     setLoading(true)
-    setTimeout(()=> {
+    setTimeout(() => {
       setLoading(false)
-    }, 350)
+    }, 340)
   }, [state.focus])
-  
+  React.useEffect(() => {
+    setDialog(state.dialog)
+  }, [state.dialog])
+
   return (
     <div>
       <Container maxWidth="lg" className={classes.bg}>
 
         <Nav />
+        {/* Main container */}
         {state.focus === "portfolio"
           ?
           <Portfolio />
@@ -70,6 +81,7 @@ function App() {
       >
         <CircularProgress color="inherit" />
       </Backdrop>
+      <AlertDialog open={state.dialog?.open} callback={state.dialog?.callback} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
     </div>
   );
 }

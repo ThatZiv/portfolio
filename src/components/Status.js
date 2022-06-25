@@ -94,6 +94,6 @@ export default function Status(props) {
                     variant="dot">{props.children}</StyledBadge>
             ))
         }
-    </div >
+    </div>
 
 }

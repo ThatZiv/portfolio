@@ -69,6 +69,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const navItemStyling = { border: "2px dashed", borderRadius: 4, borderColor: "#393939" }
+const navBarItemStyling = { fontWeight: 500}
 
 var thisUrl = ""
 const SearchAppBar = (props) => {
@@ -124,7 +125,7 @@ const SearchAppBar = (props) => {
                                     <Stack direction="row" spacing={2}>
                                         <Status dot pattern='/\"Zua\"/g'
                                             url="https://discord.com/api/guilds/406653822929207298/widget.json">
-                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me.jfif"></Avatar>
+                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me_clear_new2.png"></Avatar>
                                         </Status>
                                         <br />
                                         <br />
@@ -140,16 +141,16 @@ const SearchAppBar = (props) => {
                             <br />
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
+                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com"/>
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" />
+                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" confirmation/>
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia url="https://github.com/thatziv" />
+                                    <SocialMedia url="https://github.com/thatziv" confirmation/>
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" />
+                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" confirmation/>
                                 </Grid>
                             </Grid>
                         </List>
@@ -214,10 +215,10 @@ const SearchAppBar = (props) => {
                             </Typography>
                             {/* NAVIGATION (on navbar) */}
                             <MenuItem key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
-                                <Typography textAlign="center">Home</Typography>
+                                <Typography style={navBarItemStyling} textAlign="center">Home</Typography>
                             </MenuItem>
                             <MenuItem key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                <Typography textAlign="center">Portfolio</Typography>
+                                <Typography style={navBarItemStyling} textAlign="center">Portfolio</Typography>
                             </MenuItem>
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
@@ -229,7 +230,7 @@ const SearchAppBar = (props) => {
                                     </Badge>
                                 </SearchIconWrapper>
                                 <StyledInputBase
-                                    placeholder="Search Tags…"
+                                    placeholder="Tags"
                                     inputProps={{ 'aria-label': 'search' }}
                                 />
                             </Search>}

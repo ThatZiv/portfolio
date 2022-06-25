@@ -26,7 +26,8 @@ export default {
             ["February 5, 2022", "Translated all keymapped values to certain hard-coded actions executed on the host computer."],
             ["February 6, 2022", "Finished presentation video and slides."],
             ["February 6, 2022", "Submitted project on GitHub for judges to evaluate."],
-        ]
+        ],
+        prechildren: <YouTubeEmbed id="MZsUFm2aQ58" />
     }, components: { links, description, pictures }
 }
 
@@ -64,10 +65,10 @@ function links() {
                 <YouTubeEmbed id="MZsUFm2aQ58" />
             </Grid>
             <Grid item>
-                <SocialMedia showName url="https://github.com/ThatZiv/hackathon2022wsu/" />
+                <SocialMedia showName url="https://github.com/ThatZiv/hackathon2022wsu/" confirmation/>
             </Grid>
             <Grid item>
-                <SocialMedia name="View Presentation" icon="fa-solid fa-file-pdf" showName url="/pics/ext/Hackathon_Slides2.pdf" />
+                <SocialMedia name="View Presentation" icon="fa-solid fa-file-pdf" showName url="/pics/ext/Hackathon_Slides2.pdf"/>
             </Grid>
             <Grid xs={12} item>
                 <Section icon="fa-solid fa-star" title="More Information">

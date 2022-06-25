@@ -28,6 +28,7 @@ export default {
             ["Late-December 2020", "Ad revenue peaks at an all-time high with over 1M monetized playbacks."],
             ["June 2, 2021", "Channel reaches 20K subscribers, 2M views, and over 10M impressions."],
         ],
+        prechildren: <YouTubeEmbed id="Ci-EuLhFeOY" />
     }, components: { links, statistics }
 }
 
@@ -35,7 +36,7 @@ function links() {
     return (<div>
         <YouTubeEmbed id="Ci-EuLhFeOY" />
         <br />
-        <Grid container spacing={1}>
+        <Grid container spacing={1}> {/* // TODO: these links are not SocialMedia comps, convert them (for confirmation dialog)... */}
             <Grid item xs>
                 <Button variant="contained" style={{ backgroundColor: "#e6342e", color: "white" }} href="https://youtube.com/jevajs">
                     <i className="fa-brands fa-youtube" /> &nbsp;YouTube

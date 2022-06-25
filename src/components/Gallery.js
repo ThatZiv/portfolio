@@ -13,6 +13,7 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import theme from "../Theme"
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@mui/material';
+import { UserContext } from "../contexts";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SwipeableTextMobileStepper(props) {
+    const [state, dispatch] = React.useContext(UserContext);
     const [activeStep, setActiveStep] = React.useState(0);
     const maxSteps = props.images.length;
     const classes = useStyles()
@@ -41,7 +43,7 @@ function SwipeableTextMobileStepper(props) {
         setActiveStep(step);
     };
     return (
-        <Box sx={{ flexGrow: 1 }} className={classes.root, "Media"}>
+        <Box sx={{ flexGrow: 1 }} className={[classes.root, "Media"].join(" ")}>
             <Paper
                 square
                 elevation={0}
@@ -73,7 +75,19 @@ function SwipeableTextMobileStepper(props) {
                 enableMouseEvents
             >
                 {props.images.map((step, index) => (
-                    <Link underline="none" href={step.imgPath} target="_blank">
+                    <div onClick={() => {
+                        dispatch({
+                            type: "UI_dialog",
+                            dialog: {
+                                open: true,
+                                title: `Open File`,
+                                content: `Would you like to open the image: ${step.imgPath.split("/").pop()}?`,
+                                callback: () => {
+                                    window.open(step.imgPath, "_blank")
+                                }
+                            }
+                        })
+                    }}>
                         <div key={step.label}>
                             {Math.abs(activeStep - index) <= 2 ? (
                                 <Box
@@ -91,7 +105,7 @@ function SwipeableTextMobileStepper(props) {
                                 />
                             ) : null}
                         </div>
-                    </Link>
+                    </div>
                 ))}
             </AutoPlaySwipeableViews>
             <MobileStepper

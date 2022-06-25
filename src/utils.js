@@ -52,6 +52,7 @@ const traverseNodes2 = (node, match) => {
  */
 const capFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
-export  {
-    traverseNodes, traverseNodes2, capFirstLetter,
+
+export {
+    traverseNodes, traverseNodes2, capFirstLetter
 }
