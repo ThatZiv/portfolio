@@ -6,8 +6,7 @@ import { Backdrop, CircularProgress } from "@mui/material"
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { capFirstLetter } from './utils';
-import Divider from '@material-ui/core/Divider';
-//import ExpandMoreIcon from '@mui/icons/ExpandMore';
+import ReactGA from "react-ga"
 
 // Main pages
 import Portfolio from "./pages/Portfolio"
@@ -17,6 +16,11 @@ import Home from "./pages/Home"
 import Nav from "./components/Nav";
 import Footer from './components/Footer';
 import AlertDialog from './components/AlertDialog';
+
+
+// Google Analytics
+const TRACKING_ID = "G-48EJRL7D42";
+ReactGA.initialize(TRACKING_ID);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,11 +45,11 @@ function App() {
   const [dialog, setDialog] = React.useState()
   React.useEffect(() => { // this is makeshift
     document.title = capFirstLetter(state.focus) + " | Zavaar Shah"
-    window.gtag("send", "pageview") // TODO: make pageview for new 'page' change
+    ReactGA.pageview("/" + state.focus) // TODO: see if this works on prod
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 350)
+    }, 340)
   }, [state.focus])
   React.useEffect(() => {
     setDialog(state.dialog)

@@ -1,15 +1,16 @@
 # TODO
-* make proj cards (when expanded on desktop) stack on columns, not by rows
+* make proj cards (when expanded on desktop) stack on columns, not by rows -- **WIP**
 * zhud, osaim, proj cards
 * ~~**CHANGE BG**~~
 * improve on-nav buttons (look better)
 * Resume?
+* make preloader actually wait until everything loads in (not just statically wait)
 * make og:description meta tags have my preamble
 * ~~nav (in-drawer) navigation page WIDTH (minor nitpicking)~~
-* home page (tabs: skills,github stats, etc.)
+* ~~home page (tabs: skills,github stats, etc.)~~
 * Router integration for pages
 * arcylic main container
-* google analytics (for diff btns)
+* google analytics (for diff btns) -- **TESTING**
 * ~~? Redirect page (like linkedin) ?~~ - waste of time tbh
 * gradient avatar bg (animation)
 
