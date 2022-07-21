@@ -20,6 +20,7 @@
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
 * Gallery images are stretched out unreasonably (find a way to control that warping)
 * Gallery image expand dialogue does not close after clicking continue
+* Can't swipe right on home page tabs
 
 ______
 

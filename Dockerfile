@@ -14,15 +14,9 @@ RUN source ~/.bashrc
 RUN nvm install v16.6.1
 RUN nvm use v16.6.1
 
-# install git
-RUN sudo apt-get install git -y
-
-# clone repo
-RUN git clone https://github.com/thatziv/portfolio/tree/dev
-
-# run code
-RUN cd ~/portfolio
+# run code (source will be from mounted volume)
+RUN cd /root/portfolio
 RUN npm install -g react-scripts
 RUN npm install -y
 EXPOSE 3000
-RUN npm run start
+ENTRYPOINT ["npm", "run", "start"]

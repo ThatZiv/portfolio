@@ -36,7 +36,7 @@ export default function Home() {
                     <Avatar sx={{ width: 275, height: 275, bgcolor: indigo[500] }}
                         className={["Media", classes.pic].join(" ")}
                         alt={my.name}
-                        src="/pics/me_clear_new_bg.png" />
+                        src="/pics/me_3_prof_bg_2.jpg" />
                 </Fade>
             </Grid>
             <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>
