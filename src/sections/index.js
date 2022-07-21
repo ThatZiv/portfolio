@@ -37,7 +37,7 @@ const TabMenu = (props) => {
         return props.data.map((val, index) => {
             var topic = parseTopicFromURL(val)
             return <Grid item>
-                <Tooltip title={topic} target="_blank">
+                <Tooltip title={decodeURIComponent(topic).replace('_', ' ')} target="_blank">
                     <Link href={`https://google.com/search?q=${topic}`}>
                         <img alt={`secondary lang ${index} ${topic}`} src={val} />
                     </Link>
@@ -60,7 +60,7 @@ const TabMenu = (props) => {
                 <Tab value={2} label="Tools" />
             </Tabs>
             <AutoPlaySwipeableViews
-                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} // FIXME: cant swipe right
                 index={value}
                 interval={8500}
                 onChangeIndex={handleChangeIndex}
