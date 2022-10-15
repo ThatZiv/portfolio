@@ -6,7 +6,14 @@ import { Backdrop, CircularProgress } from "@mui/material"
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { capFirstLetter } from './utils';
-import ReactGA from "react-ga"
+import ReactGA from "react-ga";
+import {
+  HashRouter as Router,
+  Route,
+  Routes,
+  Navigate as Redirect,
+  useNavigate as useHistory
+} from "react-router-dom";
 
 // Main pages
 import Portfolio from "./pages/Portfolio"
@@ -16,6 +23,7 @@ import Home from "./pages/Home"
 import Nav from "./components/Nav";
 import Footer from './components/Footer';
 import AlertDialog from './components/AlertDialog';
+import pages from './pages';
 
 
 // Google Analytics
@@ -45,44 +53,46 @@ function App() {
   const [dialog, setDialog] = React.useState()
   React.useEffect(() => { // this is makeshift
     document.title = capFirstLetter(state.focus) + " | Zavaar Shah"
-    ReactGA.pageview("/" + state.focus) // TODO: see if this works on prod
+    ReactGA.pageview("/" + state.focus)
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
     }, 340)
-  }, [state.focus])
+  }, [state.focus]) // TODO: convert this preloader onto new routing method
+
   React.useEffect(() => {
     setDialog(state.dialog)
   }, [state.dialog])
-
   return (
-    <div>
-      <Container maxWidth="lg" className={classes.bg}>
+    <Router>
+      <div>
+        <Container maxWidth="lg" className={classes.bg}>
 
-        <Nav />
-        {/* Main container */}
-        {state.focus === "portfolio"
-          ?
-          <Portfolio />
-          :
-          <Home />
-        }
-        <br />
-        {/* FOOTER */}
-        <Grid container>
-          <Grid item xs={12}>
-            <Footer />
+          <Nav />
+          {/* Main container */}
+          <Routes>
+            {pages.map(({ label, location, component, href }) =>
+              <Route path={location} element={href ? <Redirect push to={href} /> : component} />
+            )}
+            <Route path="/" element={Home}/>
+          </Routes>
+          <br />
+          {/* FOOTER */}
+          <Grid container>
+            <Grid item xs={12}>
+              <Footer />
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-      <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={loading}
-      >
-        <CircularProgress color="inherit" />
-      </Backdrop>
-      <AlertDialog open={state.dialog?.open} callback={state.dialog?.callback} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
-    </div>
+        </Container>
+        <Backdrop
+          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={loading}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+        <AlertDialog open={state.dialog?.open} callback={state.dialog?.callback} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
+      </div>
+    </Router>
   );
 }
 

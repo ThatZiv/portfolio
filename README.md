@@ -1,5 +1,5 @@
 # TODO
-* make proj cards (when expanded on desktop) stack on columns, not by rows -- **WIP**
+* ~~make proj cards (when expanded on desktop) stack on columns, not by rows -- **WIP**~~
 * zhud, osaim, proj cards
 * ~~**CHANGE BG**~~
 * improve on-nav buttons (look better)
@@ -9,8 +9,7 @@
 * ~~nav (in-drawer) navigation page WIDTH (minor nitpicking)~~
 * ~~home page (tabs: skills,github stats, etc.)~~
 * Router integration for pages
-* arcylic main container
-* google analytics (for diff btns) -- **TESTING**
+* google analytics (for diff btns) -- **WIP**
 * ~~? Redirect page (like linkedin) ?~~ - waste of time tbh
 * gradient avatar bg (animation)
 
@@ -18,7 +17,7 @@
 * Mozilla tries to autodownload embedded pdf file on mobile when opening
 * memory leak issue with unmounting animations
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
-* Gallery images are stretched out unreasonably (find a way to control that warping)
+~~* Gallery images are stretched out unreasonably (find a way to control that warping)~~
 * Gallery image expand dialogue does not close after clicking continue
 * Can't swipe right on home page tabs
 

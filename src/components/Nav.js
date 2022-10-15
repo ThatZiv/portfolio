@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Drawer from '@mui/material/Drawer';
-import { Avatar, ListItem, List, Container, Divider, Button, Grid, Link, Badge, Slide, makeStyles } from '@material-ui/core';
+import { Avatar, ListItem, List, Container, Divider, Button, Grid, Badge, Slide, makeStyles } from '@material-ui/core';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -22,6 +22,8 @@ import my from "../sections"
 import Status from './Status';
 import { capFirstLetter } from '../utils';
 import Section from './Section';
+import pages from '../pages';
+import { Link } from 'react-router-dom';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
 // TODO: this file is too big: split nav bar and drawer into two separate subcomponents.
@@ -69,7 +71,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const navItemStyling = { border: "2px dashed", borderRadius: 4, borderColor: "#393939" }
-const navBarItemStyling = { fontWeight: 500}
+const navBarItemStyling = { fontWeight: 500 }
 
 var thisUrl = ""
 const SearchAppBar = (props) => {
@@ -125,7 +127,7 @@ const SearchAppBar = (props) => {
                                     <Stack direction="row" spacing={2}>
                                         <Status dot pattern='/\"Zua\"/g'
                                             url="https://discord.com/api/guilds/406653822929207298/widget.json">
-                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me_3_prof_bg_2.jpg"/>
+                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me_3_prof_bg_2.jpg" />
                                         </Status>
                                         <br />
                                         <br />
@@ -141,22 +143,22 @@ const SearchAppBar = (props) => {
                             <br />
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com"/>
+                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" confirmation/>
+                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" confirmation />
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia url="https://github.com/thatziv" confirmation/>
+                                    <SocialMedia url="https://github.com/thatziv" confirmation />
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" confirmation/>
+                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" confirmation />
                                 </Grid>
                             </Grid>
                         </List>
                         {/* NAVIGATION (in drawer) */}
                         <Grid container>
-                            <Grid item style={{width: "94%"}}> {/* custom width is just to match with buttons above */}
+                            <Grid item style={{ width: "94%" }}> {/* custom width is just to match with buttons above */}
                                 <Section icon="fa-solid fa-bars" title="Pages">
                                     <Grid container onClick={() => setDrawer(false)} spacing={1}>
                                         <Grid item> {/* FIXME: dont know why className 'classes.items' not work but this does instead...  */}
@@ -185,7 +187,7 @@ const SearchAppBar = (props) => {
                             color: "#575757",
                             fontStyle: "italic",
                         }}>
-                            <Typography style={{fontSize: '0.95rem'}} variant="subtitle2">
+                            <Typography style={{ fontSize: '0.95rem' }} variant="subtitle2">
                                 Last updated on {dateCompiled}
                             </Typography>
                         </div>
@@ -214,12 +216,14 @@ const SearchAppBar = (props) => {
                                 {capFirstLetter(state.focus)}
                             </Typography>
                             {/* NAVIGATION (on navbar) */}
-                            <MenuItem key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
-                                <Typography style={navBarItemStyling} textAlign="center">Home</Typography>
-                            </MenuItem>
-                            <MenuItem key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                <Typography style={navBarItemStyling} textAlign="center">Portfolio</Typography>
-                            </MenuItem>
+                            {pages.map(({ label, location }) => (
+                                <Link style={{ textDecoration: "none", color: "white" }} to={location}>
+                                    <MenuItem key="Home">
+                                        <Typography style={navBarItemStyling} textAlign="center">{capFirstLetter(label)}</Typography>
+                                    </MenuItem>
+                                </Link>
+                            ))}
+
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
