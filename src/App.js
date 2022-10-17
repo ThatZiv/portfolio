@@ -15,17 +15,22 @@ import {
   useNavigate as useHistory
 } from "react-router-dom";
 
-// Main pages
+/* // Main pages
 import Portfolio from "./pages/Portfolio"
-import Home from "./pages/Home"
+import Home from "./pages/Home" */
 
 // Comps
 import Nav from "./components/Nav";
 import Footer from './components/Footer';
 import AlertDialog from './components/AlertDialog';
+import BackdropProgress from './components/BackdropProgress';
+
 import pages from './pages';
 
-
+// component pre-loader (react.lazy)
+/* var preloadedPages = {}
+pages.map(({ label, component }) => preloadedPages[label] = React.lazy(() => import(component)))
+console.log(preloadedPages) */
 // Google Analytics
 const TRACKING_ID = "G-48EJRL7D42";
 ReactGA.initialize(TRACKING_ID);
@@ -70,12 +75,14 @@ function App() {
 
           <Nav />
           {/* Main container */}
-          <Routes>
-            {pages.map(({ label, location, component, href }) =>
-              <Route path={location} element={href ? <Redirect push to={href} /> : component} />
-            )}
-            <Route path="/" element={Home}/>
-          </Routes>
+          <React.Suspense fallback={<BackdropProgress/>}>
+            <Routes>
+              1 {pages.map(({ label, location, component, href }) =>
+                <Route path={location} element={href ? <Redirect push to={href} /> : React.createElement(component)} />
+              )}
+
+            </Routes>
+          </React.Suspense>
           <br />
           {/* FOOTER */}
           <Grid container>
