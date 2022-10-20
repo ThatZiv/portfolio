@@ -34,6 +34,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "dev": "docker compose up",
     "eject": "react-scripts eject",
     "deploytest": "cp -r -f build/* ../deploy/portfolio && serve -p 3000 ../deploy",
     "predeploy": "npm run build",
