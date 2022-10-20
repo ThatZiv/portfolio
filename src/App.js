@@ -72,7 +72,6 @@ function App() {
     <Router>
       <div>
         <Container maxWidth="lg" className={classes.bg}>
-
           <Nav />
           {/* Main container */}
           <React.Suspense fallback={<BackdropProgress/>}>

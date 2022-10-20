@@ -23,7 +23,7 @@ import Status from './Status';
 import { capFirstLetter } from '../utils';
 import Section from './Section';
 import pages from '../pages';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
 // TODO: this file is too big: split nav bar and drawer into two separate subcomponents.
@@ -75,7 +75,7 @@ const navBarItemStyling = { fontWeight: 500 }
 
 var thisUrl = ""
 const SearchAppBar = (props) => {
-    const page = window.location.href.split("/").pop()
+    const [page, setPage] = React.useState("/")
     const [drawer, setDrawer] = React.useState(false)
     const [found, setFound] = React.useState(0)
     const [state, dispatch] = React.useContext(UserContext)
@@ -87,9 +87,15 @@ const SearchAppBar = (props) => {
     };
     const goSearch = (e) => { // on enter
         if (e.key === 'Enter') {
-            window.location.href = "#" + thisUrl
+            document.querySelector("#"+thisUrl).scrollIntoView({behavior: "smooth"})
         }
     }
+
+    const location = useLocation();
+
+    React.useEffect(() => {
+        setPage(location.pathname.split("/").pop())
+    }, [location]);
     const doSearch = (e) => {
         setFound(0);
         let query = e.target.value
