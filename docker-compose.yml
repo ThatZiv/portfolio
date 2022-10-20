@@ -2,12 +2,14 @@ version: '3'
 services:
   app:
     build: .
+    stdin_open: true
     volumes:
-      - .:/usr/src/app
+      - ./:/usr/src/app
       - /usr/src/app/node_modules
     container_name: portfolio-temp
     restart: always
+    environment:
+      - WATCHPACK_POLLING=true
     ports:
       - 3000:3000
-      - 9229:9229
     command: npm start

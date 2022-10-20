@@ -64,7 +64,7 @@ function App() {
       setLoading(false)
     }, 340)
   }, [state.focus]) // TODO: convert this preloader onto new routing method
-
+  
   React.useEffect(() => {
     setDialog(state.dialog)
   }, [state.dialog])

@@ -75,6 +75,7 @@ const navBarItemStyling = { fontWeight: 500 }
 
 var thisUrl = ""
 const SearchAppBar = (props) => {
+    const page = window.location.href.split("/").pop()
     const [drawer, setDrawer] = React.useState(false)
     const [found, setFound] = React.useState(0)
     const [state, dispatch] = React.useContext(UserContext)
@@ -227,7 +228,7 @@ const SearchAppBar = (props) => {
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
-                            {state.focus === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
+                            {page === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
                                 <SearchIconWrapper>
                                     <Badge color="secondary" badgeContent={found}>
                                         <SearchIcon />
