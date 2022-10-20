@@ -12,7 +12,8 @@ import {
   Route,
   Routes,
   Navigate as Redirect,
-  useNavigate as useHistory
+  useNavigate as useHistory,
+  useLocation
 } from "react-router-dom";
 
 /* // Main pages
@@ -56,15 +57,16 @@ function App() {
   const [loading, setLoading] = React.useState(false)
   const [state, dispatch] = React.useContext(UserContext)
   const [dialog, setDialog] = React.useState()
-  React.useEffect(() => { // this is makeshift
+  const location = useLocation();
+  React.useEffect(() => {
+    dispatch({ type: "UI_nav", focus: location.pathname.split("/").pop() }) // dispatch usage deprecated now
     document.title = capFirstLetter(state.focus) + " | Zavaar Shah"
     ReactGA.pageview("/" + state.focus)
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 340)
-  }, [state.focus]) // TODO: convert this preloader onto new routing method
-  
+    }, 300)
+  }, [location]);
   React.useEffect(() => {
     setDialog(state.dialog)
   }, [state.dialog])

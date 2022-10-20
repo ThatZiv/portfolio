@@ -6,6 +6,8 @@ const pages = [
     { label: "portfolio", location: "/portfolio", component: React.lazy(() => import("./Portfolio")) }
 ]
 
+// PARSED ROUTES HERE
+
 export default pages;
 
 /* @deprecated
