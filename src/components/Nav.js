@@ -11,10 +11,12 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Drawer from '@mui/material/Drawer';
-import { Avatar, ListItem, List, Container, Divider, Button, Grid, Link, Badge, Slide, makeStyles } from '@material-ui/core';
+import { Avatar, ListItem, List, Container, Divider, Button, Grid, Badge, Slide, makeStyles, ButtonGroup, Tooltip } from '@material-ui/core';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import EastIcon from '@mui/icons-material/East';
+import StartIcon from '@mui/icons-material/Start';
 import Stack from '@mui/material/Stack';
 import preval from 'preval.macro';
 import SocialMedia from "./SocialMedia";
@@ -22,6 +24,9 @@ import my from "../sections"
 import Status from './Status';
 import { capFirstLetter } from '../utils';
 import Section from './Section';
+import pages from '../pages';
+import { Link, useLocation } from 'react-router-dom';
+import { Launch } from '@mui/icons-material';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
 // TODO: this file is too big: split nav bar and drawer into two separate subcomponents.
@@ -55,6 +60,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
         padding: theme.spacing(1, 1, 1, 0),
+        border: "0.35px solid gray",
+        borderTopLeftRadius: 6,
+        borderBottomLeftRadius: 6,
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
@@ -69,10 +77,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const navItemStyling = { border: "2px dashed", borderRadius: 4, borderColor: "#393939" }
-const navBarItemStyling = { fontWeight: 500}
+const navBarItemStyling = { fontWeight: 500 }
 
 var thisUrl = ""
 const SearchAppBar = (props) => {
+    // const [page, setPage] = React.useState("/")
     const [drawer, setDrawer] = React.useState(false)
     const [found, setFound] = React.useState(0)
     const [state, dispatch] = React.useContext(UserContext)
@@ -82,23 +91,30 @@ const SearchAppBar = (props) => {
         }
         setDrawer(open);
     };
-    const goSearch = (e) => { // on enter
-        if (e.key === 'Enter') {
-            window.location.href = "#" + thisUrl
+    const goSearch = (e) => { // on tag search bar enter or that search button click
+        if ((e.key === 'Enter' || e.type === "click") && thisUrl) {
+            const targetTag = document.querySelector(`div[tag="${thisUrl}"].MuiChip-colorPrimary`)
+            targetTag.scrollIntoView({ behavior: "smooth" })
         }
     }
+
+    /*const location = useLocation();
+
+     React.useEffect(() => {
+        setPage(location.pathname.split("/").pop())
+    }, [location]); */
     const doSearch = (e) => {
         setFound(0);
         let query = e.target.value
-        const allTags = document.querySelectorAll(".MuiChip-colorPrimary .MuiChip-label") // all tags
+        const allTags = document.querySelectorAll("div[tag].MuiChip-colorPrimary") // all tags
         const defaultStyle = allTags[0].style
         if (query?.length) {
             allTags.forEach((node) => {
                 node.style = defaultStyle // to reset
-                if (node.innerHTML?.toLowerCase().includes(query.toLowerCase())) {
-                    node.style = "background-color: #c2a800;display: table;";
+                if (node?.getAttribute("tag")?.toLowerCase().includes(query.toLowerCase().replace(" ", "_"))) { // this equates the potential tag name with the search query looking for tags
+                    node.style = "background-color: #c2a800;";
                     setFound(_found => _found + 1);
-                    thisUrl = node.innerHTML
+                    thisUrl = node.getAttribute("tag")
                     //window.find(query) // TODO: make this actually good (atleast make it not stop typing after it found something)
                 }
             })
@@ -120,12 +136,12 @@ const SearchAppBar = (props) => {
                     <Container>
                         <List key="descriptionMe">
                             <br />
-                            <Grid container >
+                            <Grid container>
                                 <Grid item>
                                     <Stack direction="row" spacing={2}>
                                         <Status dot pattern='/\"Zua\"/g'
                                             url="https://discord.com/api/guilds/406653822929207298/widget.json">
-                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me_3_prof_bg_2.jpg"/>
+                                            <Avatar sx={{ width: 50, height: 50 }} alt="me" src="/pics/me_3_prof_bg_2.jpg" />
                                         </Status>
                                         <br />
                                         <br />
@@ -141,38 +157,35 @@ const SearchAppBar = (props) => {
                             <br />
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com"/>
+                                    <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" confirmation/>
+                                    <SocialMedia url="https://www.linkedin.com/in/zavaar-shah" confirmation />
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia url="https://github.com/thatziv" confirmation/>
+                                    <SocialMedia url="https://github.com/thatziv" confirmation />
                                 </Grid>
                                 <Grid item>
-                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" confirmation/>
+                                    <SocialMedia icon="globe" name="Website" url="https://zavaar.net/" confirmation />
                                 </Grid>
                             </Grid>
                         </List>
                         {/* NAVIGATION (in drawer) */}
                         <Grid container>
-                            <Grid item style={{width: "94%"}}> {/* custom width is just to match with buttons above */}
-                                <Section icon="fa-solid fa-bars" title="Pages">
-                                    <Grid container onClick={() => setDrawer(false)} spacing={1}>
-                                        <Grid item> {/* FIXME: dont know why className 'classes.items' not work but this does instead...  */}
-                                            <MenuItem style={navItemStyling} key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
-                                                <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
-                                                <Typography textAlign="center">Home</Typography>
-                                            </MenuItem>
-                                        </Grid>
-                                        <Grid item>
-                                            <MenuItem style={navItemStyling} key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                                <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
-                                                <Typography textAlign="center">Portfolio</Typography>
-                                            </MenuItem>
-                                        </Grid>
-                                    </Grid>
-                                </Section>
+                            <Grid item style={{ width: "94%" }}>
+                                <ButtonGroup orientation="vertical"
+                                    aria-label="vertical contained button group"
+                                    variant="contained" style={{ width: "100%" }}>
+                                    {pages.map(({ label, location, icon }) =>
+                                        <Tooltip title={`Go to the "${label}" page`} placement="right-start">
+                                            <Link style={{ textDecoration: "none", color: "white" }} onClick={() => { setDrawer(false) }} to={location}>
+                                                <Button style={{ width: '100%' }} variant='text' key={`${label}_drawer`}>
+                                                    <i className={icon} style={{ marginRight: 5 }}></i>{capFirstLetter(label)}
+                                                </Button>
+                                            </Link>
+                                        </Tooltip>
+                                    )}
+                                </ButtonGroup>
                             </Grid>
                         </Grid>
 
@@ -185,7 +198,7 @@ const SearchAppBar = (props) => {
                             color: "#575757",
                             fontStyle: "italic",
                         }}>
-                            <Typography style={{fontSize: '0.95rem'}} variant="subtitle2">
+                            <Typography style={{ fontSize: '0.95rem' }} variant="subtitle2">
                                 Last updated on {dateCompiled}
                             </Typography>
                         </div>
@@ -209,30 +222,48 @@ const SearchAppBar = (props) => {
                                 noWrap
                                 component="div"
                                 style={{ fontFamily: "Teko, sans-serif" }}
-                                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                                sx={{ flexGrow: 1, display: { xs: state.focus === "home" ? "flex" : 'none', sm: 'block' } }}
                             >
                                 {capFirstLetter(state.focus)}
                             </Typography>
+
+
                             {/* NAVIGATION (on navbar) */}
-                            <MenuItem key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
-                                <Typography style={navBarItemStyling} textAlign="center">Home</Typography>
-                            </MenuItem>
-                            <MenuItem key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                <Typography style={navBarItemStyling} textAlign="center">Portfolio</Typography>
-                            </MenuItem>
+                            {/* style={{ display: { xs: 'none', sm: 'block' } }} */}
+
+                            <Box sx={{ display: { xs: 'none', sm: 'block' } }} >
+                                <Grid container justifyContent="flex-end">
+                                    <ButtonGroup variant='outlined'>
+                                        {pages.map(({ label, location, icon }) => (
+                                            <Link style={{ textDecoration: "none", color: "white" }} to={location}>
+                                                <Button key={`${label}_mainNav`}>
+                                                    <i className={icon} style={{ marginRight: 3 }} />
+                                                    <Typography style={navBarItemStyling} textAlign="center">{capFirstLetter(label)}</Typography>
+                                                </Button>
+                                            </Link>
+                                        ))}
+                                    </ButtonGroup>
+                                </Grid>
+                            </Box>
+
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
-                            {state.focus === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
-                                <SearchIconWrapper>
-                                    <Badge color="secondary" badgeContent={found}>
-                                        <SearchIcon />
-                                    </Badge>
-                                </SearchIconWrapper>
-                                <StyledInputBase
-                                    placeholder="Tags"
-                                    inputProps={{ 'aria-label': 'search' }}
-                                />
+                            {state.focus !== "home" && <Search onChange={doSearch} onKeyUp={goSearch}>
+                                <ButtonGroup variant="outlined" aria-label="outlined primary button group">
+                                    <SearchIconWrapper>
+                                        <Badge color="secondary" badgeContent={found}>
+                                            <SearchIcon />
+                                        </Badge>
+                                    </SearchIconWrapper>
+                                    <StyledInputBase
+                                        placeholder="Search Terms"
+                                        inputProps={{ 'aria-label': 'search' }}
+                                    />
+
+                                    <Button onClick={goSearch} variant='contained'><EastIcon /></Button>
+
+                                </ButtonGroup>
                             </Search>}
 
                         </Toolbar>

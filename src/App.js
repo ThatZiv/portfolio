@@ -6,18 +6,30 @@ import { Backdrop, CircularProgress } from "@mui/material"
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { capFirstLetter } from './utils';
-import ReactGA from "react-ga"
+import ReactGA from "react-ga";
+import {
+  Route,
+  Routes,
+  Navigate as Redirect,
+  useLocation
+} from "react-router-dom";
 
-// Main pages
+/* // Main pages
 import Portfolio from "./pages/Portfolio"
-import Home from "./pages/Home"
+import Home from "./pages/Home" */
 
 // Comps
 import Nav from "./components/Nav";
 import Footer from './components/Footer';
 import AlertDialog from './components/AlertDialog';
+import BackdropProgress from './components/BackdropProgress';
 
+import pages from './pages';
 
+// component pre-loader (react.lazy)
+/* var preloadedPages = {}
+pages.map(({ label, component }) => preloadedPages[label] = React.lazy(() => import(component)))
+console.log(preloadedPages) */
 // Google Analytics
 const TRACKING_ID = "G-48EJRL7D42";
 ReactGA.initialize(TRACKING_ID);
@@ -43,46 +55,48 @@ function App() {
   const [loading, setLoading] = React.useState(false)
   const [state, dispatch] = React.useContext(UserContext)
   const [dialog, setDialog] = React.useState()
-  React.useEffect(() => { // this is makeshift
+  const location = useLocation();
+  React.useEffect(() => {
+    dispatch({ type: "UI_nav", focus: location.pathname?.split("/").pop() || "home" }) // dispatch usage SHOULD deprecated now
     document.title = capFirstLetter(state.focus) + " | Zavaar Shah"
-    ReactGA.pageview("/" + state.focus) // TODO: see if this works on prod
+    ReactGA.pageview("/" + state.focus)
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 340)
-  }, [state.focus])
+    }, 300)
+  }, [location, state.focus]);
   React.useEffect(() => {
     setDialog(state.dialog)
   }, [state.dialog])
-
   return (
-    <div>
-      <Container maxWidth="lg" className={classes.bg}>
+      <div>
+        <Container maxWidth="lg" className={classes.bg}>
+          <Nav />
+          {/* Main container */}
+          <React.Suspense fallback={<BackdropProgress/>}>
+            <Routes>
+              {pages.map(({ label, location, component, href }) =>
+                <Route path={location} element={href ? <Redirect push to={href} /> : React.createElement(component)} />
+              )}
 
-        <Nav />
-        {/* Main container */}
-        {state.focus === "portfolio"
-          ?
-          <Portfolio />
-          :
-          <Home />
-        }
-        <br />
-        {/* FOOTER */}
-        <Grid container>
-          <Grid item xs={12}>
-            <Footer />
+            </Routes>
+          </React.Suspense>
+          <br />
+          {/* FOOTER */}
+          <Grid container>
+            <Grid item xs={12}>
+              <Footer />
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-      <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={loading}
-      >
-        <CircularProgress color="inherit" />
-      </Backdrop>
-      <AlertDialog open={state.dialog?.open} callback={state.dialog?.callback} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
-    </div>
+        </Container>
+        <Backdrop
+          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={loading}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+        <AlertDialog open={state.dialog?.open} callback={state.dialog?.callback} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
+      </div>
   );
 }
 

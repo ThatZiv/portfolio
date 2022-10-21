@@ -14,13 +14,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 // https://mui.com/components/material-icons/
-var _id = 0;
 export default function Tags(props) {
   const classes = useStyles();
-  _id++;
+  const tagId = props.children?.replace(' ', '_')
   return (
     <div className={classes.root}>
-      <Chip id={props.children}
+      <Chip
+        tag={tagId}
         color="primary"
         icon={<Icon className="material-icons-outlined">tag</Icon>}
         label={props.children} />
