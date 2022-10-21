@@ -222,23 +222,30 @@ const SearchAppBar = (props) => {
                                 noWrap
                                 component="div"
                                 style={{ fontFamily: "Teko, sans-serif" }}
-                                sx={{ flexGrow: 5, display: { xs: 'none', sm: 'block' } }}
+                                sx={{ flexGrow: 1, display: { xs: state.focus === "home" ? "flex" : 'none', sm: 'block' } }}
                             >
                                 {capFirstLetter(state.focus)}
                             </Typography>
+
+
                             {/* NAVIGATION (on navbar) */}
-                            <ButtonGroup variant='contained'>
-                                <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                                    {pages.map(({ label, location, icon }) => (
-                                        <Link style={{ textDecoration: "none", color: "white" }} to={location}>
-                                            <Button key={`${label}_mainNav`}>
-                                                <i className={icon} style={{ marginRight: 3 }} />
-                                                <Typography style={navBarItemStyling} textAlign="center">{capFirstLetter(label)}</Typography>
-                                            </Button>
-                                        </Link>
-                                    ))}
-                                </Box>
-                            </ButtonGroup>
+                            {/* style={{ display: { xs: 'none', sm: 'block' } }} */}
+
+                            <Box sx={{ display: { xs: 'none', sm: 'block' } }} >
+                                <Grid container justifyContent="flex-end">
+                                    <ButtonGroup variant='outlined'>
+                                        {pages.map(({ label, location, icon }) => (
+                                            <Link style={{ textDecoration: "none", color: "white" }} to={location}>
+                                                <Button key={`${label}_mainNav`}>
+                                                    <i className={icon} style={{ marginRight: 3 }} />
+                                                    <Typography style={navBarItemStyling} textAlign="center">{capFirstLetter(label)}</Typography>
+                                                </Button>
+                                            </Link>
+                                        ))}
+                                    </ButtonGroup>
+                                </Grid>
+                            </Box>
+
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
