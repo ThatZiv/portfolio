@@ -59,26 +59,25 @@ function App() {
   const [dialog, setDialog] = React.useState()
   const location = useLocation();
   React.useEffect(() => {
-    dispatch({ type: "UI_nav", focus: location.pathname.split("/").pop() }) // dispatch usage deprecated now
+    dispatch({ type: "UI_nav", focus: location.pathname?.split("/").pop() || "Home" }) // dispatch usage SHOULD deprecated now
     document.title = capFirstLetter(state.focus) + " | Zavaar Shah"
     ReactGA.pageview("/" + state.focus)
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
     }, 300)
-  }, [location]);
+  }, [location, state.focus]);
   React.useEffect(() => {
     setDialog(state.dialog)
   }, [state.dialog])
   return (
-    <Router>
       <div>
         <Container maxWidth="lg" className={classes.bg}>
           <Nav />
           {/* Main container */}
           <React.Suspense fallback={<BackdropProgress/>}>
             <Routes>
-              1 {pages.map(({ label, location, component, href }) =>
+              {pages.map(({ label, location, component, href }) =>
                 <Route path={location} element={href ? <Redirect push to={href} /> : React.createElement(component)} />
               )}
 
@@ -100,7 +99,6 @@ function App() {
         </Backdrop>
         <AlertDialog open={state.dialog?.open} callback={state.dialog?.callback} title={state.dialog?.title}>{state.dialog?.content}</AlertDialog>
       </div>
-    </Router>
   );
 }
 

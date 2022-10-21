@@ -10,13 +10,16 @@ import theme from "./Theme"
 //ctx
 import { UserProvider } from "./contexts"
 import { ViewportProvider } from './contexts/viewport'; // will be used in the future
+import { HashRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline>
+          <Router>
             <App />
+          </Router>
         </CssBaseline>
       </ThemeProvider>
     </UserProvider>
