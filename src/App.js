@@ -8,11 +8,9 @@ import Grid from '@material-ui/core/Grid';
 import { capFirstLetter } from './utils';
 import ReactGA from "react-ga";
 import {
-  HashRouter as Router,
   Route,
   Routes,
   Navigate as Redirect,
-  useNavigate as useHistory,
   useLocation
 } from "react-router-dom";
 

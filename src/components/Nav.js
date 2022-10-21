@@ -11,10 +11,11 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Drawer from '@mui/material/Drawer';
-import { Avatar, ListItem, List, Container, Divider, Button, Grid, Badge, Slide, makeStyles } from '@material-ui/core';
+import { Avatar, ListItem, List, Container, Divider, Button, Grid, Badge, Slide, makeStyles, ButtonGroup } from '@material-ui/core';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import EastIcon from '@mui/icons-material/East';
 import Stack from '@mui/material/Stack';
 import preval from 'preval.macro';
 import SocialMedia from "./SocialMedia";
@@ -57,6 +58,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
         padding: theme.spacing(1, 1, 1, 0),
+        border: "0.35px solid gray",
+        borderTopLeftRadius: 6,
+        borderBottomLeftRadius: 6,
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
@@ -75,7 +79,7 @@ const navBarItemStyling = { fontWeight: 500 }
 
 var thisUrl = ""
 const SearchAppBar = (props) => {
-    const [page, setPage] = React.useState("/")
+    // const [page, setPage] = React.useState("/")
     const [drawer, setDrawer] = React.useState(false)
     const [found, setFound] = React.useState(0)
     const [state, dispatch] = React.useContext(UserContext)
@@ -85,29 +89,30 @@ const SearchAppBar = (props) => {
         }
         setDrawer(open);
     };
-    const goSearch = (e) => { // on enter
-        if (e.key === 'Enter') {
-            document.querySelector("#"+thisUrl).scrollIntoView({behavior: "smooth"})
+    const goSearch = (e) => { // on tag search bar enter or that search button click
+        if ((e.key === 'Enter' || e.type === "click") && thisUrl) {
+            const targetTag = document.querySelector(`div[tag="${thisUrl}"].MuiChip-colorPrimary`)
+            targetTag.scrollIntoView({ behavior: "smooth" })
         }
     }
 
-    const location = useLocation();
+    /*const location = useLocation();
 
-    React.useEffect(() => {
+     React.useEffect(() => {
         setPage(location.pathname.split("/").pop())
-    }, [location]);
+    }, [location]); */
     const doSearch = (e) => {
         setFound(0);
         let query = e.target.value
-        const allTags = document.querySelectorAll(".MuiChip-colorPrimary .MuiChip-label") // all tags
+        const allTags = document.querySelectorAll("div[tag].MuiChip-colorPrimary") // all tags
         const defaultStyle = allTags[0].style
         if (query?.length) {
             allTags.forEach((node) => {
                 node.style = defaultStyle // to reset
-                if (node.innerHTML?.toLowerCase().includes(query.toLowerCase())) {
-                    node.style = "background-color: #c2a800;display: table;";
+                if (node?.getAttribute("tag")?.toLowerCase().includes(query.toLowerCase().replace(" ", "_"))) { // this equates the potential tag name with the search query looking for tags
+                    node.style = "background-color: #c2a800;";
                     setFound(_found => _found + 1);
-                    thisUrl = node.innerHTML
+                    thisUrl = node.getAttribute("tag")
                     //window.find(query) // TODO: make this actually good (atleast make it not stop typing after it found something)
                 }
             })
@@ -165,10 +170,11 @@ const SearchAppBar = (props) => {
                         </List>
                         {/* NAVIGATION (in drawer) */}
                         <Grid container>
-                            <Grid item style={{ width: "94%" }}> {/* custom width is just to match with buttons above */}
+                            {/* //TODO: Make this in-drawer  */}
+                            {/* <Grid item style={{ width: "94%" }}> 
                                 <Section icon="fa-solid fa-bars" title="Pages">
                                     <Grid container onClick={() => setDrawer(false)} spacing={1}>
-                                        <Grid item> {/* FIXME: dont know why className 'classes.items' not work but this does instead...  */}
+                                        <Grid item>
                                             <MenuItem style={navItemStyling} key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
                                                 <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
                                                 <Typography textAlign="center">Home</Typography>
@@ -182,7 +188,7 @@ const SearchAppBar = (props) => {
                                         </Grid>
                                     </Grid>
                                 </Section>
-                            </Grid>
+                            </Grid> */}
                         </Grid>
 
                         <div style={{
@@ -234,16 +240,19 @@ const SearchAppBar = (props) => {
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
-                            {page === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
-                                <SearchIconWrapper>
-                                    <Badge color="secondary" badgeContent={found}>
-                                        <SearchIcon />
-                                    </Badge>
-                                </SearchIconWrapper>
-                                <StyledInputBase
-                                    placeholder="Tags"
-                                    inputProps={{ 'aria-label': 'search' }}
-                                />
+                            {state.focus === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
+                                <ButtonGroup variant="outlined" aria-label="outlined primary button group">
+                                    <SearchIconWrapper>
+                                        <Badge color="secondary" badgeContent={found}>
+                                            <SearchIcon />
+                                        </Badge>
+                                    </SearchIconWrapper>
+                                    <StyledInputBase
+                                        placeholder="Search Terms"
+                                        inputProps={{ 'aria-label': 'search' }}
+                                    />
+                                    <Button onClick={goSearch} variant='contained'><EastIcon /></Button>
+                                </ButtonGroup>
                             </Search>}
 
                         </Toolbar>
