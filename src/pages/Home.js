@@ -75,11 +75,6 @@ export default function Home() {
                             <Grid item>
                                 <SocialMedia showName url="https://github.com/thatziv" confirmation />
                             </Grid>
-                            <Grid item>
-                                <div onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                    <SocialMedia showName icon="book-bookmark" name="Portfolio" url="#" />
-                                </div>
-                            </Grid>
                         </Grid>
                     </Fade>
                 </Delayed>

@@ -16,6 +16,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import EastIcon from '@mui/icons-material/East';
+import StartIcon from '@mui/icons-material/Start';
 import Stack from '@mui/material/Stack';
 import preval from 'preval.macro';
 import SocialMedia from "./SocialMedia";
@@ -25,6 +26,7 @@ import { capFirstLetter } from '../utils';
 import Section from './Section';
 import pages from '../pages';
 import { Link, useLocation } from 'react-router-dom';
+import { Launch } from '@mui/icons-material';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
 // TODO: this file is too big: split nav bar and drawer into two separate subcomponents.
@@ -134,7 +136,7 @@ const SearchAppBar = (props) => {
                     <Container>
                         <List key="descriptionMe">
                             <br />
-                            <Grid container >
+                            <Grid container>
                                 <Grid item>
                                     <Stack direction="row" spacing={2}>
                                         <Status dot pattern='/\"Zua\"/g'
@@ -170,25 +172,19 @@ const SearchAppBar = (props) => {
                         </List>
                         {/* NAVIGATION (in drawer) */}
                         <Grid container>
-                            {/* //TODO: Make this in-drawer  */}
-                            {/* <Grid item style={{ width: "94%" }}> 
-                                <Section icon="fa-solid fa-bars" title="Pages">
-                                    <Grid container onClick={() => setDrawer(false)} spacing={1}>
-                                        <Grid item>
-                                            <MenuItem style={navItemStyling} key="Home" onClick={() => dispatch({ type: "UI_nav", focus: "home" })}>
-                                                <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
-                                                <Typography textAlign="center">Home</Typography>
-                                            </MenuItem>
-                                        </Grid>
-                                        <Grid item>
-                                            <MenuItem style={navItemStyling} key="Portfolio" onClick={() => dispatch({ type: "UI_nav", focus: "portfolio" })}>
-                                                <i className="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;
-                                                <Typography textAlign="center">Portfolio</Typography>
-                                            </MenuItem>
-                                        </Grid>
-                                    </Grid>
-                                </Section>
-                            </Grid> */}
+                            <Grid item style={{ width: "94%" }}>
+                                <ButtonGroup orientation="vertical"
+                                    aria-label="vertical contained button group"
+                                    variant="contained" style={{ width: "100%" }}>
+                                    {pages.map(({ label, location, icon }) =>
+                                        <Link style={{ textDecoration: "none", color: "white" }} onClick={() => { setDrawer(false) }} to={location}>
+                                            <Button key={`${label}_drawer`}>
+                                                {icon}{capFirstLetter(label)}
+                                            </Button>
+                                        </Link>
+                                    )}
+                                </ButtonGroup>
+                            </Grid>
                         </Grid>
 
                         <div style={{
@@ -224,19 +220,21 @@ const SearchAppBar = (props) => {
                                 noWrap
                                 component="div"
                                 style={{ fontFamily: "Teko, sans-serif" }}
-                                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                                sx={{ flexGrow: 5, display: { xs: 'none', sm: 'block' } }}
                             >
                                 {capFirstLetter(state.focus)}
                             </Typography>
                             {/* NAVIGATION (on navbar) */}
-                            {pages.map(({ label, location }) => (
-                                <Link style={{ textDecoration: "none", color: "white" }} to={location}>
-                                    <MenuItem key="Home">
-                                        <Typography style={navBarItemStyling} textAlign="center">{capFirstLetter(label)}</Typography>
-                                    </MenuItem>
-                                </Link>
-                            ))}
 
+                            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                                {pages.map(({ label, location }) => (
+                                    <Link style={{ textDecoration: "none", color: "white" }} to={location}>
+                                        <Button key={`${label}_mainNav`}>
+                                            <Typography style={navBarItemStyling} textAlign="center">{capFirstLetter(label)}</Typography>
+                                        </Button>
+                                    </Link>
+                                ))}
+                            </Box>
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
@@ -251,7 +249,9 @@ const SearchAppBar = (props) => {
                                         placeholder="Search Terms"
                                         inputProps={{ 'aria-label': 'search' }}
                                     />
+
                                     <Button onClick={goSearch} variant='contained'><EastIcon /></Button>
+
                                 </ButtonGroup>
                             </Search>}
 
