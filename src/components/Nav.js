@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Drawer from '@mui/material/Drawer';
-import { Avatar, ListItem, List, Container, Divider, Button, Grid, Badge, Slide, makeStyles, ButtonGroup } from '@material-ui/core';
+import { Avatar, ListItem, List, Container, Divider, Button, Grid, Badge, Slide, makeStyles, ButtonGroup, Tooltip } from '@material-ui/core';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -177,11 +177,13 @@ const SearchAppBar = (props) => {
                                     aria-label="vertical contained button group"
                                     variant="contained" style={{ width: "100%" }}>
                                     {pages.map(({ label, location, icon }) =>
-                                        <Link style={{ textDecoration: "none", color: "white" }} onClick={() => { setDrawer(false) }} to={location}>
-                                            <Button key={`${label}_drawer`}>
-                                                {icon}{capFirstLetter(label)}
-                                            </Button>
-                                        </Link>
+                                        <Tooltip title={`Go to the "${label}" page`} placement="right-start">
+                                            <Link style={{ textDecoration: "none", color: "white" }} onClick={() => { setDrawer(false) }} to={location}>
+                                                <Button style={{ width: '100%' }} variant='text' key={`${label}_drawer`}>
+                                                    <i className={icon} style={{ marginRight: 5 }}></i>{capFirstLetter(label)}
+                                                </Button>
+                                            </Link>
+                                        </Tooltip>
                                     )}
                                 </ButtonGroup>
                             </Grid>
@@ -225,20 +227,22 @@ const SearchAppBar = (props) => {
                                 {capFirstLetter(state.focus)}
                             </Typography>
                             {/* NAVIGATION (on navbar) */}
-
-                            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                                {pages.map(({ label, location }) => (
-                                    <Link style={{ textDecoration: "none", color: "white" }} to={location}>
-                                        <Button key={`${label}_mainNav`}>
-                                            <Typography style={navBarItemStyling} textAlign="center">{capFirstLetter(label)}</Typography>
-                                        </Button>
-                                    </Link>
-                                ))}
-                            </Box>
+                            <ButtonGroup variant='contained'>
+                                <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                                    {pages.map(({ label, location, icon }) => (
+                                        <Link style={{ textDecoration: "none", color: "white" }} to={location}>
+                                            <Button key={`${label}_mainNav`}>
+                                                <i className={icon} style={{ marginRight: 3 }} />
+                                                <Typography style={navBarItemStyling} textAlign="center">{capFirstLetter(label)}</Typography>
+                                            </Button>
+                                        </Link>
+                                    ))}
+                                </Box>
+                            </ButtonGroup>
                             {/* <Button>
                             <Avatar onClick={toggleDrawer(true)} sx={{ width: 24, height: 24 }} src="/main.png"></Avatar>
                         </Button> */}
-                            {state.focus === "portfolio" && <Search onChange={doSearch} onKeyUp={goSearch}>
+                            {state.focus !== "home" && <Search onChange={doSearch} onKeyUp={goSearch}>
                                 <ButtonGroup variant="outlined" aria-label="outlined primary button group">
                                     <SearchIconWrapper>
                                         <Badge color="secondary" badgeContent={found}>
