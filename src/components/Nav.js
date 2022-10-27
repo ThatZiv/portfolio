@@ -27,6 +27,7 @@ import Section from './Section';
 import pages from '../pages';
 import { Link, useLocation } from 'react-router-dom';
 import { Launch } from '@mui/icons-material';
+import { ArrowDropDown } from '@material-ui/icons';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
 // TODO: this file is too big: split nav bar and drawer into two separate subcomponents.
@@ -151,10 +152,25 @@ const SearchAppBar = (props) => {
                                 </Grid>
                             </Grid>
                             <Divider style={{ marginTop: 10, marginBottom: 10 }} />
-                            <Typography style={{ fontStyle: "italic" }} variant="body2" sx={{ "width": 300 }}>
-                                {my.preamble}
-                            </Typography>
-                            <br />
+
+                            {/* NAVIGATION (in drawer) */}
+                            <Grid container>
+                                <Grid item style={{ width: "100%" }}>
+                                    <ButtonGroup orientation="vertical"
+                                        aria-label="vertical contained button group"
+                                        variant="text" style={{ width: "100%" }}>
+                                        {pages.map(({ label, location, icon }) =>
+                                            <Tooltip title={`Go to the "${label}" page`} placement="right-start">
+                                                <Link style={{ textDecoration: "none", color: "white" }} onClick={() => { setDrawer(false) }} to={location}>
+                                                    <Button style={{ width: '100%', marginBottom: 5 }} variant='outlined' key={`${label}_drawer`}>
+                                                        <i className={icon} style={{ marginRight: 5 }}></i>{capFirstLetter(label)}
+                                                    </Button>
+                                                </Link>
+                                            </Tooltip>
+                                        )}
+                                    </ButtonGroup>
+                                </Grid>
+                            </Grid>
                             <Grid container spacing={1}>
                                 <Grid item>
                                     <SocialMedia icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
@@ -170,24 +186,6 @@ const SearchAppBar = (props) => {
                                 </Grid>
                             </Grid>
                         </List>
-                        {/* NAVIGATION (in drawer) */}
-                        <Grid container>
-                            <Grid item style={{ width: "94%" }}>
-                                <ButtonGroup orientation="vertical"
-                                    aria-label="vertical contained button group"
-                                    variant="contained" style={{ width: "100%" }}>
-                                    {pages.map(({ label, location, icon }) =>
-                                        <Tooltip title={`Go to the "${label}" page`} placement="right-start">
-                                            <Link style={{ textDecoration: "none", color: "white" }} onClick={() => { setDrawer(false) }} to={location}>
-                                                <Button style={{ width: '100%' }} variant='text' key={`${label}_drawer`}>
-                                                    <i className={icon} style={{ marginRight: 5 }}></i>{capFirstLetter(label)}
-                                                </Button>
-                                            </Link>
-                                        </Tooltip>
-                                    )}
-                                </ButtonGroup>
-                            </Grid>
-                        </Grid>
 
                         <div style={{
                             position: "absolute",
@@ -225,6 +223,11 @@ const SearchAppBar = (props) => {
                                 sx={{ flexGrow: 1, display: { xs: state.focus === "home" ? "flex" : 'none', sm: 'block' } }}
                             >
                                 {capFirstLetter(state.focus)}
+                                <Box sx={{ display: { xs: 'block', sm: 'none' } }} >
+                                <Tooltip title="Navigate">
+                                    <div onClick={toggleDrawer(true)}><ArrowDropDown /></div>
+                                    </Tooltip>
+                                </Box>
                             </Typography>
 
 
