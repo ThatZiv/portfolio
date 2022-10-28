@@ -236,7 +236,7 @@ const SearchAppBar = (props) => {
 
                             <Box sx={{ display: { xs: 'none', sm: 'block' } }} >
                                 <Grid container justifyContent="flex-end">
-                                    <ButtonGroup variant='outlined'>
+                                    <ButtonGroup variant='text'>
                                         {pages.map(({ label, location, icon }) => (
                                             <Link style={{ textDecoration: "none", color: "white" }} to={location}>
                                                 <Button key={`${label}_mainNav`}>

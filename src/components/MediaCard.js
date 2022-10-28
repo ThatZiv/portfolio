@@ -42,13 +42,13 @@ const useStyles = makeStyles((theme) => ({
 export default function MediaCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-    const [cardSize, setCardSize] = React.useState(6);
+    const [cardSize, setCardSize] = React.useState(props.size || 6);
     const cardRef = React.useRef(null)
     //let cardWidth = 6
     const executeScroll = () => cardRef.current.scrollIntoView()
     const handleExpandClick = () => {
         //setCardSize(6) // TODO: make cards expand to full width for desktop-sized screens
-        setCardSize(expanded ? 6 : 12) // TODO: make cards expand to full width for desktop-sized screens
+        setCardSize(expanded ? (props.size || 6) : 12) // TODO: make cards expand to full width for desktop-sized screens
 
         if (!expanded) {
             executeScroll() // scroll to focused card
@@ -62,7 +62,7 @@ export default function MediaCard(props) {
         /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
         <Grow in timeout={700}>
             {/* selection border logic below */}
-            <Grid item xs={12} md={cardSize} lg={cardSize}>
+            <Grid item xs={12} md={cardSize || props.size} lg={cardSize || props.size}>
                 <Card ref={cardRef} style={expanded ? { border: "2px solid  #3f51b5" } : { border: null }} elevation={3}>
                     <CardActionArea onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title)}}>
                         <CardMedia

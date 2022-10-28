@@ -82,8 +82,8 @@ export default function Home() {
                                 <Grid item>
                                     <Tooltip title={capFirstLetter(label)}>
                                         <Link style={{textDecoration: "none"}} to={location}>
-                                            <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd", marginTop: 4}}>
-                                                <icon className={icon} />&nbsp;{capFirstLetter(label)}
+                                            <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd", marginTop: 4}}> {/* Match the style with the "SocialMedia.js" btns */}
+                                                <icon className={icon} />&nbsp;&nbsp;<div>{capFirstLetter(label)}</div>
                                             </Button>
                                         </Link>
                                     </Tooltip>

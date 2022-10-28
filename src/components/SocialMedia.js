@@ -8,7 +8,7 @@ import { UserContext } from "../contexts";
 
 export default function SocialMedia(props) {
     const [state, dispatch] = useContext(UserContext);
-    const getIconFromUrl = (url, _icon) => {
+    const main = (url, _icon) => {
         const icon = (d, _icon) => <i className={`fa-${d ? "brands" : "solid"} fa-${d ? d.toLowerCase() : _icon}`}></i>
         var service;
         try {
@@ -50,7 +50,7 @@ export default function SocialMedia(props) {
     }
     return (
         <div>
-            {getIconFromUrl(props.url)}
+            {main(props.url)}
         </div>
     )
 }
