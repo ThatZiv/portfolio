@@ -1,5 +1,5 @@
 import React from "react"
-
+// @broken
 export default function Hover({ children, inactive }) {
     const [isHovering, setIsHovering] = React.useState(false);
 
@@ -12,7 +12,7 @@ export default function Hover({ children, inactive }) {
     };
     return (
         <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            {isHovering ? children : inactive}
+            {isHovering ? React.createElement(children) : React.createElement(inactive)}
         </div>
     )
 }

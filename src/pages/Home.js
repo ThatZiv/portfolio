@@ -6,7 +6,10 @@ import { indigo } from "@material-ui/core/colors";
 import Delayed from "../components/Delayed";
 import SocialMedia from "../components/SocialMedia";
 import my from "../sections";
-import { Divider } from "@material-ui/core";
+import { Button, Divider, Tooltip } from "@material-ui/core";
+import pages from ".";
+import { capFirstLetter } from "../utils";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles({
     root: {
         padding: 50
@@ -75,6 +78,17 @@ export default function Home() {
                             <Grid item>
                                 <SocialMedia showName url="https://github.com/thatziv" confirmation />
                             </Grid>
+                            {pages.map(({ label, location, icon }) => (
+                                <Grid item>
+                                    <Tooltip title={capFirstLetter(label)}>
+                                        <Link style={{textDecoration: "none"}} to={location}>
+                                            <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd", marginTop: 4}}>
+                                                <icon className={icon} />&nbsp;{capFirstLetter(label)}
+                                            </Button>
+                                        </Link>
+                                    </Tooltip>
+                                </Grid>
+                            ))}
                         </Grid>
                     </Fade>
                 </Delayed>
