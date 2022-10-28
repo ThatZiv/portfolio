@@ -197,7 +197,8 @@ const SearchAppBar = (props) => {
                             fontStyle: "italic",
                         }}>
                             <Typography style={{ fontSize: '0.95rem' }} variant="subtitle2">
-                                Last updated on {dateCompiled}
+                                Last <a style={{ textDecoration: "none", colorAdjust: "exact" }}
+                                    target="_blank" rel="noreferrer" href="https://github.com/ThatZiv/portfolio/commits/master">updated</a> on {dateCompiled}
                             </Typography>
                         </div>
                     </Container>
@@ -224,8 +225,8 @@ const SearchAppBar = (props) => {
                             >
                                 {capFirstLetter(state.focus)}
                                 <Box sx={{ display: { xs: 'block', sm: 'none' } }} >
-                                <Tooltip title="Navigate">
-                                    <div onClick={toggleDrawer(true)}><ArrowDropDown /></div>
+                                    <Tooltip title="Navigate">
+                                        <div onClick={toggleDrawer(true)}><ArrowDropDown /></div>
                                     </Tooltip>
                                 </Box>
                             </Typography>

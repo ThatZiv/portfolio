@@ -17,6 +17,7 @@ import Objectives from "./Objectives"
 import Section from './Section';
 import Timeline from './Timeline';
 import DateRange from './DateRange';
+import ReactMarkdown from 'react-markdown';
 // import MainDialog from './MainDialog'
 
 const useStyles = makeStyles((theme) => ({
@@ -83,7 +84,7 @@ export default function MediaCard(props) {
                             </Grid>
                             <Grid item>
                                 <Typography variant="body2" color="textSecondary" >
-                                    {props.description}
+                                    <ReactMarkdown>{props.description}</ReactMarkdown>
                                 </Typography>
                             </Grid>
                         </CardContent>
