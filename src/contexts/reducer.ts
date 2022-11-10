@@ -1,4 +1,9 @@
-export const reducer = (state, action) => {
+type Action = {
+    type: string,
+    [key: string]: any
+}
+
+export const reducer = (state: Object, action: Action) => {
     switch (action.type) {
         case "UI_nav":
             return {

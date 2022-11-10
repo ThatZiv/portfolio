@@ -6,6 +6,10 @@ import { capFirstLetter } from "../utils"
 //import AlertDialog from './AlertDialog';
 import { UserContext } from "../contexts";
 
+type Props = {
+    
+}
+
 export default function SocialMedia(props) {
     const [state, dispatch] = useContext(UserContext);
     const main = (url, _icon) => {

@@ -3,10 +3,14 @@ import { reducer, initialState } from "./reducer"
 
 export const UserContext = React.createContext({
   state: initialState,
-  dispatch: () => null
+  dispatch: (): void => null
 })
 
-export const UserProvider = ({ children }) => {
+type Props = {
+  children: React.Component
+}
+
+export const UserProvider = ({ children }: Props) => {
   const [state, dispatch] = React.useReducer(reducer, initialState)
 
   return (
