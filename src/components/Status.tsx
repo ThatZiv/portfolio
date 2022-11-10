@@ -1,3 +1,4 @@
+import React from "react";
 import { Chip, Grid, Link, Paper } from "@material-ui/core"
 import { Typography } from "@material-ui/core"
 import { useEffect, useState } from "react"
@@ -7,9 +8,18 @@ import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 // import Avatar from '@mui/material/Avatar';
 // import Stack from '@mui/material/Stack';
+
+interface Props {
+    paper?: boolean,
+    dot?: boolean,
+    url: string,
+    children: React.Component,
+    pattern: string // gets converted to a regex formula later on
+}
+
 const StyledBadge = styled(Badge, {
     shouldForwardProp: (prop) => prop !== "color" && prop !== 'status'
-})(({ theme, status }) => ({
+})(({ theme, status }: {theme?: any, status: boolean}) => ({
     '& .MuiBadge-badge': {
         backgroundColor: status ? green[500] : grey[500],
         color: status ? green[500] : grey[500],
@@ -38,10 +48,10 @@ const StyledBadge = styled(Badge, {
     },
 }));
 
-export default function Status(props) {
+export default function Status(props: Props) {
     const [webData, setWebData] = useState(null)
     const [error, setError] = useState(null)
-    const getHostname = (url) => {
+    const getHostname = (url: string): string => {
         var _url = new URL(url)
         return _url.hostname
     }

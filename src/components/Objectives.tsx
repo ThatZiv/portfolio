@@ -19,11 +19,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function ListItemLink(props) {
+/* function ListItemLink(props) {
     return <ListItem button component="a" {...props} />;
+} */
+
+interface Props {
+    list: string,
 }
 
-export default function SimpleList(props) {
+export default function SimpleList(props: Props) {
     const classes = useStyles();
 
     return (

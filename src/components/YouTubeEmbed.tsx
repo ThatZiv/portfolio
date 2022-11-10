@@ -1,4 +1,6 @@
-export default function Embed(props) {
+import React from "react";
+
+export default function Embed(props: { id: string }) {
     return (<div className="video-responsive">
         <iframe width="480" height="270"
             src={`https://www.youtube-nocookie.com/embed/${props.id}`}

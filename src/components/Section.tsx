@@ -4,13 +4,19 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { createStyles, Theme, Typography } from '@material-ui/core';
 
 //icons
 import Icon from '@material-ui/core/Icon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const useStyles = makeStyles((theme) => ({
+type Props = {
+    children: React.Component,
+    icon: string,
+    title: string
+}
+
+const useStyles = makeStyles<Theme>((theme) => createStyles({
     root: {
         width: '100%',
         padding: "10px",
@@ -26,12 +32,13 @@ const useStyles = makeStyles((theme) => ({
     },
     heading: {
         fontSize: theme.typography.pxToRem(25),
+        //@ts-ignore
         fontWeight: theme.typography.fontWeightRegular,
         fontFamily: "Teko, sans-serif"
     },
 }));
 
-export default function Section(props) {
+export default function Section(props: Props) {
     const classes = useStyles();
     //https://v4.mui.com/components/accordion/
     return (

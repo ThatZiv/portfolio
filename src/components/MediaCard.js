@@ -12,8 +12,8 @@ import Grid from '@material-ui/core/Grid';
 import { Divider, Zoom, Grow } from '@material-ui/core';
 import ReactGA from "react-ga"
 
-import Tags from "./Tags"
-import Objectives from "./Objectives"
+import Tags from "./Tags";
+import Objectives from "./Objectives";
 import Section from './Section';
 import Timeline from './Timeline';
 import DateRange from './DateRange';
