@@ -14,7 +14,7 @@ const pages = [
         component: React.lazy(() => import("./Portfolio"))
     },
     {
-        label: "Employment", location: "employment",
+        label: "employment", location: "employment",
         icon: "fa-solid fa-briefcase",
         component: React.lazy(() => import("./Employment"))
     }

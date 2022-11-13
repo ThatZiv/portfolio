@@ -160,7 +160,7 @@ const SearchAppBar = (props) => {
                                         aria-label="vertical contained button group"
                                         variant="text" style={{ width: "100%" }}>
                                         {pages.map(({ label, location, icon }) =>
-                                            <Tooltip title={`Go to the "${label}" page`} placement="right-start">
+                                            <Tooltip title={`Navigate to "${label}"`} placement="right-start">
                                                 <Link style={{ textDecoration: "none", color: "white" }} onClick={() => { setDrawer(false) }} to={location}>
                                                     <Button style={{ width: '100%', marginBottom: 5 }} variant='outlined' key={`${label}_drawer`}>
                                                         <i className={icon} style={{ marginRight: 5 }}></i>{capFirstLetter(label)}
