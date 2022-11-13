@@ -33,10 +33,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "dev": "docker compose up",
     "eject": "react-scripts eject",
-    "deploytest": "cp -r -f build/* ../deploy/portfolio && serve -p 3000 ../deploy",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -45,6 +45,15 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "browserslist": {
     "production": [
@@ -59,7 +68,12 @@
     ]
   },
   "devDependencies": {
+    "babel-jest": "^29.3.1",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-relay": "^14.1.0",
     "gh-pages": "^3.2.3",
-    "jest": "^27.5.1"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "react-test-renderer": "^17.0.0"
   }
 }
