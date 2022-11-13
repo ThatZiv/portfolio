@@ -35,9 +35,9 @@ export default function SimpleList(props) {
                     </Typography>
                 </Typography> */}
                 {props.list.split("|").map(objective => {
-                    return (<div><ListItem key={objective} divider>
+                    return (<ListItem key={objective} divider>
                         <ListItemText primary={objective} />
-                    </ListItem></div>)
+                    </ListItem>)
                 })}
             </List>
         </div>
