@@ -8,16 +8,12 @@ import Objectives from "../components/Objectives";
 import Gallery from "../components/Gallery";
 describe('Tests components', () => {
 
-  afterEach(() => {
-    jest.resetAllMocks();
-  })
-
   test("Footer", () => {
     const footerInstance = TestRenderer.create(<Footer />);
     expect(footerInstance.toJSON().children.join("")).toContain("Made by Zavaar Shah");
   })
 
-  describe("DateRange Tests", () => {
+  describe("DateRange", () => {
     const testData = [
       ["December 31, 1969", "When clocks started to count up!"],
       ["January 1, 1970", "The day of reckoning..."]
@@ -31,19 +27,19 @@ describe('Tests components', () => {
     })
   })
 
-  test("Tags renders correctly", () => {
+  test("Tags", () => {
     const testContent = "Test-Driven Development"
     const tag = TestRenderer.create(<Tags>{testContent}</Tags>);
     expect(tag.toJSON().children[0].children[1].children[0]).toBe(testContent)
   })
 
-  test("YouTubeEmbed renders", () => {
+  test("YouTubeEmbed", () => {
     const id = "dQw4w9WgXcQ"
     const embed = TestRenderer.create(<YouTubeEmbed id={id} />)
     expect(embed.toJSON().children[0].props.src).toBe(`https://www.youtube-nocookie.com/embed/${id}`)
   })
 
-  test("Objectives renders correctly", () => {
+  test("Objectives", () => {
     const objectives = "One|Two|Three|Four|Five"
     const embed = TestRenderer.create(<Objectives list={objectives} />).toJSON()
     const scrapedObjectives = embed.children[0].children.map((objective) => objective.children[0].children[0].children[0])
