@@ -7,6 +7,11 @@ import YouTubeEmbed from "../components/YouTubeEmbed";
 import Objectives from "../components/Objectives";
 import Gallery from "../components/Gallery";
 describe('Tests components', () => {
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  })
+
   test("Footer", () => {
     const footerInstance = TestRenderer.create(<Footer />);
     expect(footerInstance.toJSON().children.join("")).toContain("Made by Zavaar Shah");
@@ -52,7 +57,7 @@ describe('Tests components', () => {
       { "label": "This is me right now.", "imgPath": "//test/img2" },
     ]
     const gallery = TestRenderer.create(<Gallery images={galleryData} />).toJSON()
-
+    console.log(gallery)
   }) */
 
 });
