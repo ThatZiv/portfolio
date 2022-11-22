@@ -14,20 +14,10 @@ export default function Employment() {
             container spacing={2}>
             <MediaCard {...Doxim.meta} size={12}>
                 <Section icon="fa-solid fa-circle-info" title="More Info">
-                    <Grid container>
-                        <Grid item xs={12}>
-                            <YouTubeEmbed id="eU-eX6Akb2w" />
-                        </Grid>
-                        <Grid item sm>
-                            <i>Taken from www.doxim.com: </i><br/>
-                            <Typography variant="caption">
-                            The Doxim Platform helps clients communicate reliably and effectively, improves cross-sell and upsell opportunities, and drives increased loyalty and wallet share through personalized communications and easy-to-use payment processes. The platform addresses key digitization, operational efficiency, and customer experience challenges through our suite of plug-and-play, integrated, SaaS software and technology solutions. Learn more at <a href="https://www.doxim.com/">www.doxim.com</a>.
-                            </Typography>
-                        </Grid>
-                    </Grid>
+                    <Doxim.components.MoreInfo/>
                 </Section>
                 <Section icon="fa-solid fa-star" title="Welcoming">
-                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6941068042143510528" height="1000px" width="100%" frameBorder="0" allowFullscreen="" title="Embedded post"></iframe>
+                    <Doxim.components.Welcoming/>
                 </Section>
             </MediaCard>
         </Grid>
