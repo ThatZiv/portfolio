@@ -57,7 +57,7 @@ export default function MediaCard(props) {
         setExpanded(!expanded);
     };
     const gaCardExpandHandle = (cardName = "none") => {
-        ReactGA.event({category: "z_ui-card-expand", label: cardName, action: cardName}) // TODO: see if this works on prod
+        ReactGA.event({ category: "z_ui-card-expand", label: cardName, action: cardName }) // TODO: see if this works on prod
     }
     return (
         /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
@@ -65,7 +65,7 @@ export default function MediaCard(props) {
             {/* selection border logic below */}
             <Grid item xs={12} md={cardSize || props.size} lg={cardSize || props.size}>
                 <Card ref={cardRef} style={expanded ? { border: "2px solid  #3f51b5" } : { border: null }} elevation={3}>
-                    <CardActionArea onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title)}}>
+                    <CardActionArea onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title) }}>
                         <CardMedia
                             className={classes.media}
                             image={props.banner}
@@ -83,7 +83,7 @@ export default function MediaCard(props) {
                                 </Grid>
                             </Grid>
                             <Grid item>
-                                <Typography variant="body2" color="textSecondary" >
+                                <Typography variant="body2" color="textSecondary">
                                     <ReactMarkdown>{props.description}</ReactMarkdown>
                                 </Typography>
                             </Grid>
@@ -109,7 +109,7 @@ export default function MediaCard(props) {
                             {props.tags.split(",").map(tag => { return <Grid item><Tags>{tag}</Tags></Grid> })}
                         </Grid>}
                     </CardActions>
-                    <Button onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title)}} style={{ paddingBottom: 20, paddingTop: 20 }} size="small" color="primary">
+                    <Button onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title) }} style={{ paddingBottom: 20, paddingTop: 20 }} size="small" color="primary">
                         {expanded ? "Less" : "More"}
                     </Button>
                 </Card>

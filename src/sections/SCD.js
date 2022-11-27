@@ -4,17 +4,21 @@ import { Grow, Typography } from "@mui/material"
 import YouTubeEmbed from "../components/YouTubeEmbed"
 export default {
     meta: {
-        title: "Doxim",
-        description: `\`Implementation Programming Intern\`  at Doxim. Doxim is the customer communications management and engagement technology leader serving highly regulated markets, including financial services, utilities and healthcare. We provide omnichannel document and payment solutions that transform experiences and strengthen engagement throughout the entire lifecycle [www.doxim.com](https://www.doxim.com).`,
+        title: "Society of Computer Developers",
+        description: `\`Software Lead\`  at Society of Computer Developers (SCD) at Wayne State University. Society of Computer Developers is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill building workshops, hackathons, coding nights, and social events!`,
         banner: "/pics/doxim.png",
         complete: false,
-        tags: "C#,PowerShell,MySQL,Agile,Scripting,Virtualization Environments,Internship,Pair Programming,Doxim",
+        tags: "TypeScript,JavaScript,Python,C/C++,HTML/CSS,PowerShell,MongoDB,React.js,Agile,Scripting,Pair Programming,SCD",
         objectives: `Parsed and extracted data from text files using C# and PowerShell to create billing statements.
         |Managed credit union workflows to ensure organized and optimized month-end billing deliveries.
         |Designed proof-of-concept for virtual machine manager full-stack web project.
         |Created automation scripts for the composition, storage, and archival of business-critical documents. `, // Objectives are seperated by PIPE '|'
         timeline: [
-            ["May 2nd, 2022", "Internship begins."]
+            ["September 2021", "Joined SCD as a member."],
+            ["October 2021", "Recruited with the leadership position of \`Secretary\`."],
+            ["February 2022", "Promoted to \`Software Lead\`."],
+            // events hosted, website development, etc. (MAKE MD COMPATIBLE FOR LINKS)
+            // also link github here
         ],
     }, components: { MoreInfo, Welcoming }
 }
