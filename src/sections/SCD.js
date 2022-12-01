@@ -6,7 +6,7 @@ export default {
     meta: {
         title: "Society of Computer Developers",
         description: `\`Software Lead\`  at Society of Computer Developers (SCD) at Wayne State University. Society of Computer Developers is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill building workshops, hackathons, coding nights, and social events!`,
-        banner: "/pics/doxim.png",
+        banner: "/pics/scd.png",
         complete: false,
         tags: "TypeScript,JavaScript,Python,C/C++,HTML/CSS,PowerShell,MongoDB,React.js,Agile,Scripting,Pair Programming,SCD",
         objectives: `Parsed and extracted data from text files using C# and PowerShell to create billing statements.

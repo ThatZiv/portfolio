@@ -30,7 +30,7 @@ export default function Experience() {
             </Section>
             <Section icon="fa-solid fa-book-open-reader" title="Leadership" open>
                 <LayoutGrid>
-                    <MediaCard {...SCD.meta} size={12}></MediaCard>
+                    <MediaCard {...SCD.meta}></MediaCard>
                 </LayoutGrid>
             </Section>
         </div>
