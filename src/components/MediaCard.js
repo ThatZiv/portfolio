@@ -49,8 +49,7 @@ export default function MediaCard(props) {
     const executeScroll = () => cardRef.current.scrollIntoView()
     const handleExpandClick = () => {
         //setCardSize(6) // TODO: make cards expand to full width for desktop-sized screens
-        setCardSize(expanded ? (props.size || 6) : 12) // TODO: make cards expand to full width for desktop-sized screens
-
+        setCardSize(expanded ? (props.size || 6) : 12)
         if (!expanded) {
             executeScroll() // scroll to focused card
         }

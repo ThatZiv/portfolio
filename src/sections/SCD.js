@@ -51,7 +51,7 @@ export default {
             ["October 19, 2022", "Hosted Docker & Containerization workshop."],
             ["November 28, 2022", "Hosted React.js (web framework) workshop."]
         ],
-    }, components: { Lectures, Welcoming }
+    }, components: { Lectures, Lecture }
 }
 
 function Lecture({ children, YouTubeID: id, title }) {
@@ -81,13 +81,6 @@ function Lectures() {
             <Lecture title="Dynamic Website Project (2/4)" YouTubeID="rXnBDTKaH3Y" />
             <Lecture title="Dynamic Website Project (3/4)" YouTubeID="xxyelsQcz58" />
             <Lecture title="Dynamic Website Project (4/4)" YouTubeID="AQg_lSHrwHs" />
-            
         </Grid>
     )
-}
-
-function Welcoming() {
-    return (<div>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6941068042143510528" height="1000px" width="100%" frameBorder="0" allowFullScreen="" title="Embedded post"></iframe>
-    </div>)
 }

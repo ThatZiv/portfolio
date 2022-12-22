@@ -5,6 +5,7 @@ import MediaCard from "../components/MediaCard"
 import Section from "../components/Section"
 import YouTubeEmbed from "../components/YouTubeEmbed"
 import Doxim from "../sections/Doxim"
+import GDSC from "../sections/GDSC"
 import SCD from "../sections/SCD"
 
 export const LayoutGrid = ({ children }) => <Grid
@@ -30,9 +31,16 @@ export default function Experience() {
             </Section>
             <Section icon="fa-solid fa-book-open-reader" title="Leadership" open>
                 <LayoutGrid>
+                    {/* SCD */}
                     <MediaCard prechildren={<Section icon="fa-solid fa-video" title="My Lectures">
                         <SCD.components.Lectures />
                     </Section>} {...SCD.meta}>
+                    </MediaCard>
+                    {/* GDSC */}
+                    <MediaCard prechildren={<Section icon="fa-solid fa-video" title="My Lectures">
+                        <GDSC.components.Lectures/>
+                    </Section>} 
+                    {...GDSC.meta}>
                     </MediaCard>
                 </LayoutGrid>
             </Section>
