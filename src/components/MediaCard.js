@@ -84,7 +84,7 @@ export default function MediaCard(props) {
                             </Grid>
                             <Grid item>
                                 <Typography variant="body2" color="textSecondary">
-                                    <ReactMarkdown>{props.description}</ReactMarkdown>
+                                    <ReactMarkdown linkTarget="_blank">{props.description}</ReactMarkdown>
                                 </Typography>
                             </Grid>
                         </CardContent>

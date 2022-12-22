@@ -5,7 +5,8 @@ import YouTubeEmbed from "../components/YouTubeEmbed"
 export default {
     meta: {
         title: "Doxim",
-        description: `\`Implementation Programming Intern\`  at Doxim. Doxim is the customer communications management and engagement technology leader serving highly regulated markets, including financial services, utilities and healthcare. We provide omnichannel document and payment solutions that transform experiences and strengthen engagement throughout the entire lifecycle [www.doxim.com](https://www.doxim.com).`,
+        description: `## Implementation Programming Intern 
+[Doxim](https://doxim.com/) is the customer communications management and engagement technology leader serving highly regulated markets, including financial services, utilities and healthcare. We provide omnichannel document and payment solutions that transform experiences and strengthen engagement throughout the entire lifecycle.`,
         banner: "/pics/doxim.png",
         complete: false,
         tags: "C#,PowerShell,MySQL,Agile,Scripting,Virtualization Environments,Internship,Pair Programming,Doxim",

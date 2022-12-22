@@ -147,3 +147,17 @@ a.visited {
   width: calc(100vw - 20px);
   margin-left: calc(-50vw + 50% + 10px);
 }
+
+/* href styling */
+a.visited {
+  color: #3489eb;
+}
+
+a {
+  color: #3997ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
