@@ -30,7 +30,10 @@ export default function Experience() {
             </Section>
             <Section icon="fa-solid fa-book-open-reader" title="Leadership" open>
                 <LayoutGrid>
-                    <MediaCard {...SCD.meta}></MediaCard>
+                    <MediaCard prechildren={<Section icon="fa-solid fa-video" title="My Lectures">
+                        <SCD.components.Lectures />
+                    </Section>} {...SCD.meta}>
+                    </MediaCard>
                 </LayoutGrid>
             </Section>
         </div>

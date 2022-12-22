@@ -1,5 +1,5 @@
 import React from "react"
-import { Grid } from "@material-ui/core"
+import { Grid, Divider } from "@material-ui/core"
 import { Grow, Typography } from "@mui/material"
 import YouTubeEmbed from "../components/YouTubeEmbed"
 
@@ -33,7 +33,7 @@ export default {
 [Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill building workshops, hackathons, coding nights, and social events!`,
         banner: "/pics/scd.png",
         complete: false,
-        tags: "TypeScript,JavaScript,Python,C/C++,HTML/CSS,PowerShell,MongoDB,React.js,Agile,Pair Programming,SCD",
+        tags: "TypeScript,JavaScript,Python,C/C++,HTML/CSS,Docker,Full Stack,Web Scraping,REST API,JS DOM,MongoDB,React.js,Agile,Pair Programming,SCD",
         objectives: `Created and hosted programming-related workshop events for students.
 |Tutored and assisted students with coursework and other programming related content.
 |Developed and managed official club website to display dynamic RSS & ICal feed using React, Express, and MongoDB.`, // Objectives are seperated by PIPE '|'
@@ -51,23 +51,39 @@ export default {
             ["October 19, 2022", "Hosted Docker & Containerization workshop."],
             ["November 28, 2022", "Hosted React.js (web framework) workshop."]
         ],
-    }, components: { MoreInfo, Welcoming }
+    }, components: { Lectures, Welcoming }
 }
 
-function MoreInfo() {
-    return (<div>
-        <Grid container>
-            <Grid item xs={12}>
-                <YouTubeEmbed id="eU-eX6Akb2w" />
-            </Grid>
-            <Grid item sm>
-                <i>Taken from https://www.doxim.com: </i><br />
-                <Typography variant="caption">
-                    The Doxim Platform helps clients communicate reliably and effectively, improves cross-sell and upsell opportunities, and drives increased loyalty and wallet share through personalized communications and easy-to-use payment processes. The platform addresses key digitization, operational efficiency, and customer experience challenges through our suite of plug-and-play, integrated, SaaS software and technology solutions. Learn more at <a href="https://www.doxim.com/">www.doxim.com</a>.
+function Lecture({ children, YouTubeID: id, title }) {
+    return (
+        <Grid item xs={12} md={6} lg={6}>
+            <div style={{ padding: 10 }}>
+                <Typography align="Left" style={{ fontFamily: "Teko" }} variant="h4">
+                    {title}
                 </Typography>
-            </Grid>
+                <YouTubeEmbed id={id} />
+                {children}
+            </div>
+                <Divider style={{ marginRight: 18, marginLeft: 18, marginTop: 8 }}/>
         </Grid>
-    </div>)
+    )
+}
+
+function Lectures() {
+    return (
+        <Grid container>
+            <Lecture title="React.js" YouTubeID="S7wWg11tZxM" />
+            <Lecture title="Docker" YouTubeID="MrE1uvzuJW8" />
+            <Lecture title="Full Stack (REST API Part 2)" YouTubeID="9OlMQpivP2Q" />
+            <Lecture title="REST API Development" YouTubeID="UAWJ37Dmvz0" />
+            <Lecture title="Web Scraping" YouTubeID="WOwC2NeDyF4" />
+            <Lecture title="Dynamic Website Project (1/4)" YouTubeID="tyCX7s3QfyY" />
+            <Lecture title="Dynamic Website Project (2/4)" YouTubeID="rXnBDTKaH3Y" />
+            <Lecture title="Dynamic Website Project (3/4)" YouTubeID="xxyelsQcz58" />
+            <Lecture title="Dynamic Website Project (4/4)" YouTubeID="AQg_lSHrwHs" />
+            
+        </Grid>
+    )
 }
 
 function Welcoming() {
