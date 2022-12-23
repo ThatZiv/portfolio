@@ -79,7 +79,7 @@ export default function Home() {
                                 <SocialMedia showName url="https://github.com/thatziv" confirmation />
                             </Grid>
                             {pages.map(({ label, location, icon }) => (
-                                <Grid item>
+                                label !== "home" && <Grid item>
                                     <Tooltip title={capFirstLetter(label)}>
                                         <Link style={{textDecoration: "none"}} to={location}>
                                             <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd", marginTop: 4}}> {/* Match the style with the "SocialMedia.js" btns */}
