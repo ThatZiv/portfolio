@@ -5,7 +5,7 @@ services:
     stdin_open: true
     volumes:
       - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      - /usr/src/app/node_modules # make this bind mnt to client
     container_name: portfolio-temp
     restart: always
     environment:

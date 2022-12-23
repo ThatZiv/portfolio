@@ -33,11 +33,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Section(props) {
     const classes = useStyles();
+    const panel = "section_1";
+    const [expanded, setExpanded] = React.useState(props?.open && panel);
+
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
     //https://v4.mui.com/components/accordion/
     return (
-        <Accordion className={classes.root}>
+        <Accordion className={classes.root} onChange={handleChange(panel)} defaultExpanded={props?.open} expanded={expanded === panel}>
             <AccordionSummary expandIcon={<Icon className="material-icons-outlined">expand_more</Icon>}>
-                <Typography className={classes.heading}><div><i className={props.icon}/>&nbsp;&nbsp;{props.title}</div></Typography>
+                <Typography className={classes.heading}><div><i className={props.icon} />&nbsp;&nbsp;{props.title}</div></Typography>
             </AccordionSummary>
             <AccordionDetails>
                 {props.children}

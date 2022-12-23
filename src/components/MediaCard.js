@@ -17,6 +17,7 @@ import Objectives from "./Objectives"
 import Section from './Section';
 import Timeline from './Timeline';
 import DateRange from './DateRange';
+import ReactMarkdown from 'react-markdown';
 // import MainDialog from './MainDialog'
 
 const useStyles = makeStyles((theme) => ({
@@ -42,29 +43,28 @@ const useStyles = makeStyles((theme) => ({
 export default function MediaCard(props) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-    const [cardSize, setCardSize] = React.useState(6);
+    const [cardSize, setCardSize] = React.useState(props.size || 6);
     const cardRef = React.useRef(null)
     //let cardWidth = 6
     const executeScroll = () => cardRef.current.scrollIntoView()
     const handleExpandClick = () => {
         //setCardSize(6) // TODO: make cards expand to full width for desktop-sized screens
-        setCardSize(expanded ? 6 : 12) // TODO: make cards expand to full width for desktop-sized screens
-
+        setCardSize(expanded ? (props.size || 6) : 12)
         if (!expanded) {
             executeScroll() // scroll to focused card
         }
         setExpanded(!expanded);
     };
     const gaCardExpandHandle = (cardName = "none") => {
-        ReactGA.event({category: "z_ui-card-expand", label: cardName, action: cardName}) // TODO: see if this works on prod
+        ReactGA.event({ category: "z_ui-card-expand", label: cardName, action: cardName }) // TODO: see if this works on prod
     }
     return (
         /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
         <Grow in timeout={700}>
             {/* selection border logic below */}
-            <Grid item xs={12} md={cardSize} lg={cardSize}>
+            <Grid item xs={12} md={cardSize || props.size} lg={cardSize || props.size}>
                 <Card ref={cardRef} style={expanded ? { border: "2px solid  #3f51b5" } : { border: null }} elevation={3}>
-                    <CardActionArea onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title)}}>
+                    <CardActionArea onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title) }}>
                         <CardMedia
                             className={classes.media}
                             image={props.banner}
@@ -82,8 +82,8 @@ export default function MediaCard(props) {
                                 </Grid>
                             </Grid>
                             <Grid item>
-                                <Typography variant="body2" color="textSecondary" >
-                                    {props.description}
+                                <Typography variant="body2" color="textSecondary">
+                                    <ReactMarkdown linkTarget="_blank">{props.description}</ReactMarkdown>
                                 </Typography>
                             </Grid>
                         </CardContent>
@@ -108,7 +108,7 @@ export default function MediaCard(props) {
                             {props.tags.split(",").map(tag => { return <Grid item><Tags>{tag}</Tags></Grid> })}
                         </Grid>}
                     </CardActions>
-                    <Button onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title)}} style={{ paddingBottom: 20, paddingTop: 20 }} size="small" color="primary">
+                    <Button onClick={() => { handleExpandClick(); gaCardExpandHandle(props.title) }} style={{ paddingBottom: 20, paddingTop: 20 }} size="small" color="primary">
                         {expanded ? "Less" : "More"}
                     </Button>
                 </Card>

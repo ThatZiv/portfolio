@@ -4,6 +4,7 @@ import StepLabel from '@mui/material/StepLabel';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
 import Typography from '@mui/material/Typography';
+import ReactMarkdown from 'react-markdown';
 import { indigo, } from '@material-ui/core/colors/';
 import { Grid } from '@material-ui/core';
 // https://mui.com/components/steppers/
@@ -21,6 +22,7 @@ export default function Timeline(props) {
                         <Step active={true} key={index}>
                             <StepLabel optional={<Typography style={{ "color": "gray" }} variant="caption">{date}</Typography>}>
                                 <Typography style={{ "color": "whitesmoke" }} variant="body2">{event}</Typography>
+                                {/* TODO: figure out how to use MD (currently it screws up the spacing) */}
                             </StepLabel>
                         </Step>
                     )
