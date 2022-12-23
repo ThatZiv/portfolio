@@ -157,6 +157,7 @@ const my = {
             "https://img.shields.io/badge/Socket.io-010101?&style=for-the-badge&logo=Socket.io&logoColor=white",
             "https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white",
             "https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white",
+            "https://img.shields.io/badge/Jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white",
             "https://img.shields.io/badge/ThreeJs-black?style=for-the-badge&logo=three.js&logoColor=white",
             "https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white",
             "https://img.shields.io/badge/Pug-E3C29B?style=for-the-badge&logo=pug&logoColor=black",
@@ -165,6 +166,7 @@ const my = {
             "https://img.shields.io/badge/Twilio-API-F22F46?style=for-the-badge&logo=Twilio&logoColor=white",
             "https://img.shields.io/badge/Patreon-API-F96854?style=for-the-badge&logo=Patreon",
             "https://img.shields.io/badge/GitHub-API-white?style=for-the-badge&logo=GitHub",
+            "https://img.shields.io/badge/Github%20Actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white",
             "https://img.shields.io/badge/Spotify-API-1ED760?style=for-the-badge&logo=Spotify",
             "https://img.shields.io/badge/discord.js-API-5865F2?style=for-the-badge&logo=Discord",
             "https://img.shields.io/badge/tmi.js-API-9146FF?style=for-the-badge&logo=Twitch",
@@ -197,7 +199,8 @@ const my = {
             "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
             "https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white",
             "https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white",
-            "https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white",
+            "https://img.shields.io/badge/Redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white",
+            "https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white",
             "https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white",
             "https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=Raspberry%20Pi&logoColor=white",
             "https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black",
@@ -219,7 +222,6 @@ const my = {
             "https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white",
             "https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white",
             "https://img.shields.io/badge/tmux-1BB91F?style=for-the-badge&logo=tmux&logoColor=white",
-            "https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=GitHub%20Pages&logoColor=white",
         ]
     },
     "skills": TabMenu
