@@ -35,12 +35,15 @@ export default function Experience() {
                     <MediaCard prechildren={<Section icon="fa-solid fa-video" title="My Lectures">
                         <SCD.components.Lectures />
                     </Section>} {...SCD.meta}>
+                        <Section icon="fa-solid fa-code" title="Code Contributions">
+                            <SCD.components.Contribs />
+                        </Section>
                     </MediaCard>
                     {/* GDSC */}
                     <MediaCard prechildren={<Section icon="fa-solid fa-video" title="My Lectures">
-                        <GDSC.components.Lectures/>
-                    </Section>} 
-                    {...GDSC.meta}>
+                        <GDSC.components.Lectures />
+                    </Section>}
+                        {...GDSC.meta}>
                     </MediaCard>
                 </LayoutGrid>
             </Section>

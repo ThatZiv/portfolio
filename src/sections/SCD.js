@@ -1,8 +1,7 @@
 import React from "react"
-import { Grid, Divider } from "@material-ui/core"
-import { Grow, Typography } from "@mui/material"
-import YouTubeEmbed from "../components/YouTubeEmbed"
-
+import { Grid } from "@material-ui/core"
+import Contributions from "../components/Contributions"
+import Lecture from "../components/Lecture"
 /* 
 * REACT 
 https://www.linkedin.com/feed/update/urn:li:activity:7000594870914465793
@@ -51,23 +50,9 @@ export default {
             ["October 19, 2022", "Hosted Docker & Containerization workshop."],
             ["November 28, 2022", "Hosted React.js (web framework) workshop."]
         ],
-    }, components: { Lectures, Lecture }
+    }, components: { Lectures, Lecture, Contribs }
 }
 
-function Lecture({ children, YouTubeID: id, title }) {
-    return (
-        <Grid item xs={12} md={6} lg={6}>
-            <div style={{ padding: 10 }}>
-                <Typography align="Left" style={{ fontFamily: "Teko" }} variant="h4">
-                    {title}
-                </Typography>
-                <YouTubeEmbed id={id} />
-                {children}
-            </div>
-                <Divider style={{ marginRight: 18, marginLeft: 18, marginTop: 8 }}/>
-        </Grid>
-    )
-}
 
 function Lectures() {
     return (
@@ -84,3 +69,28 @@ function Lectures() {
         </Grid>
     )
 }
+
+function Contribs() {
+    return <Contributions repos={["WSU-Society-of-Computer-Developers/workshops",
+        "WSU-Society-of-Computer-Developers/website2",
+        "WSU-Society-of-Computer-Developers/dynamic-website-project"]} title="WSU SCD Repository" />
+}
+/* 
+function Contributions() {
+    const repos = [
+        "WSU-Society-of-Computer-Developers/workshops",
+        "WSU-Society-of-Computer-Developers/website2",
+        "WSU-Society-of-Computer-Developers/dynamic-website-project"
+    ]
+    return (
+        <Grid container justifyContent="space-between" alignItems="center">
+            {repos.map((val, index) => <Grid item>
+                <Tooltip placement="top" title={"https://github.com/" + val}>
+                    <a target="_blank" href={"https://github.com/" + val}>
+                        <img alt={`WSU SCD Repo #${index + 1}`} className="Media" src={`https://gh-card.dev/repos/${val}.svg?fullname=`} />
+                    </a>
+                </Tooltip>
+            </Grid>)}
+        </Grid>
+    )
+} */

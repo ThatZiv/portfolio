@@ -149,7 +149,6 @@ const my = {
             "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
             "https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
             "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
-            "https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00",
             "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
             "https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white",
             "https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white",
