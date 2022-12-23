@@ -29,13 +29,13 @@ export default {
     meta: {
         title: "Society of Computer Developers",
         description: `## Software Lead
-[Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill building workshops, hackathons, coding nights, and social events!`,
+[Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill-building workshops, hackathons, coding nights, and social events!`,
         banner: "/pics/scd.png",
         complete: false,
         tags: "TypeScript,JavaScript,Python,C/C++,HTML/CSS,Docker,Full Stack,Web Scraping,REST API,JS DOM,MongoDB,React.js,Agile,Pair Programming,SCD",
         objectives: `Created and hosted programming-related workshop events for students.
-|Tutored and assisted students with coursework and other programming related content.
-|Developed and managed official club website to display dynamic RSS & ICal feed using React, Express, and MongoDB.`, // Objectives are seperated by PIPE '|'
+|Tutored and assisted students with coursework and other programming-related content.
+|Developed and managed official club website to display dynamic content using React, Express, and MongoDB.`, // Objectives are seperated by PIPE '|'
         timeline: [
             ["September 2021", "Joined SCD as a member."],
             ["October 2021", "Recruited as Secretary."],
