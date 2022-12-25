@@ -15,7 +15,7 @@ export default function Footer() {
     const classes = useStyles()
     return (
         <Typography variant='subtitle1' className={classes.root}>
-            Made by {my.name} with&nbsp;
+            Created by {my.name} with&nbsp;
             <Tooltip title="www.mui.com">
                 <Link href="https://mui.com/">MUI</Link>
             </Tooltip> &&nbsp;
