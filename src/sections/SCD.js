@@ -2,6 +2,7 @@ import React from "react"
 import { Grid } from "@material-ui/core"
 import Contributions from "../components/Contributions"
 import Lecture from "../components/Lecture"
+import SocialMedia from "../components/SocialMedia"
 /* 
 * REACT 
 https://www.linkedin.com/feed/update/urn:li:activity:7000594870914465793
@@ -50,9 +51,8 @@ export default {
             ["October 19, 2022", "Hosted Docker & Containerization workshop."],
             ["November 28, 2022", "Hosted React.js (web framework) workshop."]
         ],
-    }, components: { Lectures, Lecture, Contribs }
+    }, components: { Lectures, Lecture, Contribs, Links }
 }
-
 
 function Lectures() {
     return (
@@ -70,27 +70,28 @@ function Lectures() {
     )
 }
 
+function Links() {
+    return (<Grid container spacing={2}>
+        <Grid item>
+            <SocialMedia name="GetInvolved" icon="fa-solid fa-graduation-cap" url="https://getinvolved.wayne.edu/organization/scd" />
+        </Grid>
+        <Grid item>
+            <SocialMedia icon="fa-brands fa-instagram" url="https://www.instagram.com/scd_wsu/" />
+        </Grid>
+        <Grid item>
+            <SocialMedia icon="fa-brands fa-linkedin" url="https://www.linkedin.com/company/society-of-computer-developers/" />
+        </Grid>
+        <Grid item>
+            <SocialMedia icon="fa-brands fa-facebook" url="https://www.facebook.com/scdwsu" />
+        </Grid>
+        <Grid item>
+            <SocialMedia icon="fa-brands fa-twitter" url="https://twitter.com/scd_wsu" />
+        </Grid>
+    </Grid>)
+}
+
 function Contribs() {
     return <Contributions repos={["WSU-Society-of-Computer-Developers/workshops",
         "WSU-Society-of-Computer-Developers/website2",
         "WSU-Society-of-Computer-Developers/dynamic-website-project"]} title="WSU SCD Repository" />
 }
-/* 
-function Contributions() {
-    const repos = [
-        "WSU-Society-of-Computer-Developers/workshops",
-        "WSU-Society-of-Computer-Developers/website2",
-        "WSU-Society-of-Computer-Developers/dynamic-website-project"
-    ]
-    return (
-        <Grid container justifyContent="space-between" alignItems="center">
-            {repos.map((val, index) => <Grid item>
-                <Tooltip placement="top" title={"https://github.com/" + val}>
-                    <a target="_blank" href={"https://github.com/" + val}>
-                        <img alt={`WSU SCD Repo #${index + 1}`} className="Media" src={`https://gh-card.dev/repos/${val}.svg?fullname=`} />
-                    </a>
-                </Tooltip>
-            </Grid>)}
-        </Grid>
-    )
-} */

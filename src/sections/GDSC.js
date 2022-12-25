@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
 import React from "react"
-import SCD from "./SCD";
-const { Lecture } = SCD.components;
+import SocialMedia from "../components/SocialMedia";
+import Lecture from "../components/Lecture";
 
 export default {
     meta: {
@@ -17,7 +17,7 @@ export default {
             ["November, 2022", "Hosted Android Study Jams Event (1/2)"],
             ["December, 2022", "Hosted Android Study Jams Event (2/2)"]
         ],
-    }, components: { Lectures, statistics }
+    }, components: { Lectures, Links }
 }
 
 function Lectures() {
@@ -27,8 +27,19 @@ function Lectures() {
     </Grid>)
 }
 
-function statistics() {
-    return (<div>
-        ...
-    </div>)
+function Links() {
+    return (<Grid container spacing={2}>
+        <Grid item>
+            <SocialMedia name="GetInvolved" icon="fa-solid fa-graduation-cap" url="https://getinvolved.wayne.edu/organization/gdsc" />
+        </Grid>
+        <Grid item>
+            <SocialMedia icon="fa-brands fa-instagram" url="https://www.instagram.com/gdsc.waynestate/" />
+        </Grid>
+        <Grid item>
+            <SocialMedia icon="fa-brands fa-linkedin-in" url="https://www.linkedin.com/company/gdsc-wsu/" />
+        </Grid>
+        <Grid item>
+            <SocialMedia icon="fa-brands fa-google" url="https://developers.google.com/community/gdsc" />
+        </Grid>
+    </Grid>)
 }
