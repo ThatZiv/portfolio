@@ -4,7 +4,7 @@ import { Button, ButtonGroup, Container, Grid, Typography } from '@material-ui/c
 import YouTubeEmbed from "../components/YouTubeEmbed"
 import Status from "../components/Status"
 // all static content of the Jeva project
-
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "Jeva",

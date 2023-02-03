@@ -2,7 +2,7 @@ import { Grid } from "@material-ui/core";
 import React from "react"
 import SocialMedia from "../components/SocialMedia";
 import Lecture from "../components/Lecture";
-
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "Google Developer Student Club at WSU",

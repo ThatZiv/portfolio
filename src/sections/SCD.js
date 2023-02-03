@@ -26,6 +26,9 @@ https://www.youtube.com/watch?v=WOwC2NeDyF4
 https://www.linkedin.com/feed/update/urn:li:activity:6903139263051898880
 
 */
+
+// import { SectionType } from "../types/section"
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "Society of Computer Developers",

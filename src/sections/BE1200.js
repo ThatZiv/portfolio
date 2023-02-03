@@ -5,7 +5,10 @@ import Gist from "react-gist";
 import Section from "../components/Section";
 
 // NOTE: some images are embedded (base64)
+// TODO: make these NOT embedded (very large)
 
+
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "Haptic Walking Device",

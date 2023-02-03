@@ -1,7 +1,7 @@
 import SocialMedia from "../components/SocialMedia";
 import Gallery from "../components/Gallery";
 import { Divider, Grid, Typography } from "@mui/material";
-
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "Hackathon '21",
