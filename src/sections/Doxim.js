@@ -2,6 +2,8 @@ import React from "react"
 import { Grid } from "@material-ui/core"
 import { Grow, Typography } from "@mui/material"
 import YouTubeEmbed from "../components/YouTubeEmbed"
+
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "Doxim",

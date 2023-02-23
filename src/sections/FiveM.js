@@ -8,7 +8,7 @@ const getDate = () => {
     let d = new Date();
     return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate()
 }
-
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "FiveM Bot",

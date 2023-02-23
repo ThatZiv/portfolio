@@ -38,12 +38,18 @@ export default function Experience() {
                         <Section icon="fa-solid fa-code" title="Code Contributions">
                             <SCD.components.Contribs />
                         </Section>
+                        <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                            <SCD.components.Links />
+                        </Section>
                     </MediaCard>
                     {/* GDSC */}
                     <MediaCard prechildren={<Section icon="fa-solid fa-video" title="My Lectures">
                         <GDSC.components.Lectures />
                     </Section>}
                         {...GDSC.meta}>
+                        <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                            <GDSC.components.Links />
+                        </Section>
                     </MediaCard>
                 </LayoutGrid>
             </Section>

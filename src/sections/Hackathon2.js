@@ -4,7 +4,7 @@ import { Divider, Grid, Typography } from "@mui/material";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 import Gist from "react-gist";
 import Section from "../components/Section";
-
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "Hackathon '22",

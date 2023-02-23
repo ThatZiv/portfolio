@@ -1,16 +1,22 @@
-export default {
+import { SectionType } from "../types/section"
+/** 
+ * @type {SectionType}
+*/
+const Section = {
     meta: {
         title: "Card title",
         banner: "card picture (ex. pic.png)",
         complete: false,
-        tags: "Tags,Are,Seperated,Only,With,Commas",
-        objectives: `Usually from resume.`, // Objectives are seperated by PIPE '|'
+        tags: "Tags,Are,Separated,Only,With,Commas",
+        objectives: `Usually from resume.`, // Objectives are separated by PIPE '|'
         description: `Card content description`,
         timeline: [
             ["December 31, 1969", "When clocks started to count up!"]
         ],
     }, components: { links, statistics }
 }
+
+export default Section
 
 function links() {
     return (<div>
@@ -21,5 +27,5 @@ function links() {
 function statistics() {
     return (<div>
         ...
-    </div>) 
+    </div>)
 }

@@ -10,7 +10,7 @@ describe('Tests components', () => {
 
   test("Footer", () => {
     const footerInstance = TestRenderer.create(<Footer />);
-    expect(footerInstance.toJSON().children.join("")).toContain("Made by Zavaar Shah");
+    expect(footerInstance.toJSON().children.join("")).toContain("Created by Zavaar Shah");
   })
 
   describe("DateRange", () => {

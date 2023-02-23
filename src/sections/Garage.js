@@ -1,6 +1,6 @@
 import Status from "../components/Status"
 import Gallery from "../components/Gallery"
-
+/** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "zGarage",
