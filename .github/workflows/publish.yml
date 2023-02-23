@@ -44,15 +44,14 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
       
-    - name: Build & deploy
-      run: |
-        git config --global user.name $user_name
-        git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
-        npm run deploy
+    - name: Build
+      run: npm run build
       env:
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        GH_PAT: ${{ secrets.GH_ACCESS_TOKEN }}
-        repository: ${{ github.repository }}
-        CI: ""
+        CI: "" # to ignore warnings as errors (bad practice, i know)
+        
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
