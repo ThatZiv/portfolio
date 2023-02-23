@@ -32,7 +32,7 @@ https://www.linkedin.com/feed/update/urn:li:activity:6903139263051898880
 export default {
     meta: {
         title: "Society of Computer Developers",
-        description: `## Software Lead
+        description: `## Vice President
 [Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill-building workshops, hackathons, coding nights, and social events!`,
         banner: "/pics/scd.png",
         complete: false,
@@ -52,7 +52,8 @@ export default {
             ["September 2022", "Orchestrated month-long dynamic website project with weekly meetings."],
             ["October 2022", "Completed preview build of club website for production."],
             ["October 19, 2022", "Hosted Docker & Containerization workshop."],
-            ["November 28, 2022", "Hosted React.js (web framework) workshop."]
+            ["November 28, 2022", "Hosted React.js (web framework) workshop."],
+            ["January 2023", "Promoted to Vice President"],
         ],
     }, components: { Lectures, Lecture, Contribs, Links }
 }
@@ -94,7 +95,11 @@ function Links() {
 }
 
 function Contribs() {
-    return <Contributions repos={["WSU-Society-of-Computer-Developers/workshops",
+    return <Contributions repos={[
+        "WSU-Society-of-Computer-Developers/workshops",
         "WSU-Society-of-Computer-Developers/website2",
-        "WSU-Society-of-Computer-Developers/dynamic-website-project"]} title="WSU SCD Repository" />
+        "WSU-Society-of-Computer-Developers/dynamic-website-project",
+        "WSU-Society-of-Computer-Developers/verify-service",
+        "WSU-Society-of-Computer-Developers/waynehacks-website"
+    ]} title="WSU SCD Repository" />
 }

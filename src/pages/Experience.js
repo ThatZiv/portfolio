@@ -35,7 +35,7 @@ export default function Experience() {
                     <MediaCard prechildren={<Section icon="fa-solid fa-video" title="My Lectures">
                         <SCD.components.Lectures />
                     </Section>} {...SCD.meta}>
-                        <Section icon="fa-solid fa-code" title="Code Contributions">
+                        <Section icon="fa-solid fa-code" title="Code">
                             <SCD.components.Contribs />
                         </Section>
                         <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">

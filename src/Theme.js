@@ -1,6 +1,11 @@
-import { createTheme } from '@material-ui/core/styles'
-import { indigo, green } from '@material-ui/core/colors/';
+import { useTheme, createTheme } from '@material-ui/core/styles';
+import { indigo, green } from '@material-ui/core/colors';
+// import blue from '@mui/material/colors/blue';
 // Dark theme
+export const colors = {
+    default: indigo[500],
+    text: "#fdfdfd"
+}
 export default createTheme({
     palette: {
         type: "dark",
@@ -10,25 +15,5 @@ export default createTheme({
             paper: "#1c1c1c",
             default: "#121212"
         }
-    },
-    /* a: {
-        textDecorations: "none",
-        visited: {
-            color: "blue"
-        }
-    }, */
-    MuiStepLabel: { // Not sure this does anyting CHECK: "App.css"
-        labelContainer: { color: "white !important" },
-        root: {
-            color: "white",
-            '&$completed': {
-                color: 'pink',
-            },
-            '&$active': {
-                color: 'red',
-            },
-        },
-        active: {},
-        completed: {},
     },
 });
