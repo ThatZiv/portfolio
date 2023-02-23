@@ -5,6 +5,7 @@ import ReactGA from "react-ga"
 import { capFirstLetter } from "../utils"
 //import AlertDialog from './AlertDialog';
 import { UserContext } from "../contexts";
+import { colors } from '../Theme';
 
 export default function SocialMedia(props) {
     const [state, dispatch] = useContext(UserContext);
@@ -16,7 +17,7 @@ export default function SocialMedia(props) {
             var _url = new URL(url)
             var urlSplit = _url.hostname.split(".")
             service = urlSplit.length === 3 ? urlSplit[1] : urlSplit[0]
-            ReactGA.event({category: "z_ui-button-redirect", label: service, action: service}) // TODO: see if this works on prod
+            ReactGA.event({ category: "z_ui-button-redirect", label: service, action: service }) // TODO: see if this works on prod
         } catch (e) { }
         let showDialog = service || props.confirmation
         showDialog = false // FIXME: currently showing dialogues are disabled here.
@@ -38,9 +39,9 @@ export default function SocialMedia(props) {
             }}>
                 <Tooltip title={service ? capFirstLetter(service) : (props?.showName && props.url !== "#" ? props.url : props?.name) || props.icon}>
                     <Link underline="none"
-                        variant="h4" {...showDialog || {href: url} } target={props.url === "#" ? "_self" : "_blank"}>
+                        variant="h4" {...showDialog || { href: url }} target={props.url === "#" ? "_self" : "_blank"}>
                         {/* OLD STYLE:  { backgroundColor: "#fdfdfd", color: "#1f1f1f" } */}
-                        <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd" }}>
+                        <Button style={{ backgroundColor: colors.default, color: colors.text }}>
                             {icon(service, props?.icon)}{props?.showName && <div>&nbsp; {props?.name || capFirstLetter(service)}</div>}
                         </Button>
                     </Link>

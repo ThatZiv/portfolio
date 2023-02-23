@@ -10,7 +10,7 @@ export default {
         title: "Hackathon '22",
         banner: "/pics/hackathon2.jpg",
         complete: true,
-        tags: "Python,MIDI,Threading,Processes,Automation,I/O,PM2 Runtime,ctypes (Python library),Console-Based,Hackathon,Open-source,Git,Competition",
+        tags: "Python,MIDI,Threading,Processes,Automation,I/O,Daemonization,ctypes (Python library),Console Application,Hackathon,Open-source,Git,Competition",
         //objectives: `Usually from resume.`, // Objectives are seperated by PIPE '|'
         description: `The theme of this Hackathon was "Life at Home" so
         my project became centered around making life easier at home. Specifically, 

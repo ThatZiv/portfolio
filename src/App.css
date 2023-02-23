@@ -95,10 +95,10 @@
   color: whitesmoke !important;
 }
 
-.MuiAppBar-root {
+/* .MuiAppBar-root {
   background-color: #3f51b5 !important;
 }
-
+ */
 .MuiMobileStepper-dot .MuiMobileStepper-root { /* This doesn't work */
   background-color: "#fff"  !important;
   color: "#fff" !important;

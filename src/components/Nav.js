@@ -28,6 +28,7 @@ import pages from '../pages';
 import { Link, useLocation } from 'react-router-dom';
 import { Launch } from '@mui/icons-material';
 import { ArrowDropDown } from '@material-ui/icons';
+import { colors } from '../Theme';
 const dateCompiled = preval(`module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`)
 
 // TODO: this file is too big: split nav bar and drawer into two separate subcomponents.
@@ -129,7 +130,6 @@ const SearchAppBar = (props) => {
         fetch("https://zenquotes.io/api?api=today", { mode: "no-cors",headers: {"Access-Control-Allow-Origin": "*"} })
             .then(data => data.json).then(json=> {...}) */
 
-    // http://jsfiddle.net/wjLmx/23/ <- SEARCH FUNCTION
     return (
         <Slide direction="down" in mountOnEnter unmountOnExit>
             <div>
@@ -160,7 +160,7 @@ const SearchAppBar = (props) => {
                                         aria-label="vertical contained button group"
                                         variant="text" style={{ width: "100%" }}>
                                         {pages.map(({ label, location, icon }) =>
-                                            <Tooltip title={`Navigate to "${label}"`} placement="right-start">
+                                            <Tooltip title={`Navigate to ${label}`} placement="right-start">
                                                 <Link style={{ textDecoration: "none", color: "white" }} onClick={() => { setDrawer(false) }} to={location}>
                                                     <Button style={{ width: '100%', marginBottom: 5 }} variant='outlined' key={`${label}_drawer`}>
                                                         <i className={icon} style={{ marginRight: 5 }}></i>{capFirstLetter(label)}
@@ -204,7 +204,7 @@ const SearchAppBar = (props) => {
                     </Container>
                 </Drawer>
                 <Box sx={{ flexGrow: 1 }}>
-                    <AppBar position="static">
+                    <AppBar position="static" sx={{ backgroundColor: colors.default }}>
                         <Toolbar>
                             <IconButton
                                 size="large"
@@ -238,7 +238,7 @@ const SearchAppBar = (props) => {
                             <Box sx={{ display: { xs: 'none', sm: 'block' } }} >
                                 <Grid container justifyContent="flex-end">
                                     <ButtonGroup variant='text'>
-                                        {pages.map(({ label, location, icon }) => (
+                                        {pages.filter(({ label }) => label !== state.focus).map(({ label, location, icon }) => (
                                             <Link style={{ textDecoration: "none", color: "white" }} to={location}>
                                                 <Button key={`${label}_mainNav`}>
                                                     <i className={icon} style={{ marginRight: 3 }} />
@@ -274,7 +274,7 @@ const SearchAppBar = (props) => {
                     </AppBar>
                 </Box>
             </div>
-        </Slide >
+        </Slide>
     );
 }
 
