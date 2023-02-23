@@ -142,9 +142,10 @@ const my = {
             "https://img.shields.io/badge/powershell-5391FE?style=for-the-badge&logo=powershell&logoColor=white"
         ],
         secondary: [ // these are frameworks
-            "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white",
             "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+            "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
             "https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+            "https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white",
             "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
             "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
             "https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white",
@@ -210,7 +211,6 @@ const my = {
             "https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white",
             "https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white",
             "https://img.shields.io/badge/Adobe%20after%20affects-CF96FD?style=for-the-badge&logo=Adobe%20after%20effects&logoColor=393665",
-            "https://img.shields.io/badge/Adobe%20Creative%20Cloud-DA1F26?style=for-the-badge&logo=Adobe%20Creative%20Cloud&logoColor=white",
             "https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobe%20illustrator&logoColor=white",
             "https://img.shields.io/badge/Adobe%20Lightroom-31A8FF?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white",
             "https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=Adobe%20Photoshop&logoColor=black",

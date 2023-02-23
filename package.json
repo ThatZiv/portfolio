@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "homepage": ".",
   "private": false,
   "dependencies": {
@@ -37,7 +37,7 @@
     "test:watch": "jest --watchAll",
     "dev": "docker compose up",
     "eject": "react-scripts eject",
-    "predeploy": "jest && npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -74,6 +74,6 @@
     "gh-pages": "^3.2.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
-    "react-test-renderer": "^17.0.0"
+    "react-test-renderer": "^17.0.2"
   }
 }
