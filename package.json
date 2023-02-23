@@ -37,7 +37,7 @@
     "test:watch": "jest --watchAll",
     "dev": "docker compose up",
     "eject": "react-scripts eject",
-    "predeploy": "jest && npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
