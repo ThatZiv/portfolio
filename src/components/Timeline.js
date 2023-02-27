@@ -9,7 +9,7 @@ import { indigo, } from '@material-ui/core/colors/';
 import { Grid } from '@material-ui/core';
 // https://mui.com/components/steppers/
 
-/** @param {import("../types/comps/Timeline").TimelineProps} props */
+/** @param {import("../types/comps/Timeline").Timeline} props */
 export default function Timeline(props) {
     const [activeStep, setActiveStep] = useState(0); // all steps will be active
     return (<div style={{ "color": "whitesmoke" }}>

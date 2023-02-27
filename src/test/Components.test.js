@@ -56,7 +56,7 @@ describe('Tests components', () => {
     ]
     let originalContents = new Set()
     for (let i = 0; i < testData.length; i++) {
-      originalContents.add((i+1).toString()).add(testData[i][0]).add(testData[i][1])
+      originalContents.add((i + 1).toString()).add(testData[i][0]).add(testData[i][1])
     }
     const tlElement = TestRenderer.create(<Timeline steps={testData} />).toJSON()
     let orderedContents = new Set()
@@ -73,6 +73,10 @@ describe('Tests components', () => {
     }
     traverseTree(tlElement.children[1].children[1])
     expect(areSetsEqual(orderedContents, originalContents)).toBe(true)
+  })
+
+  test("Section", () => {
+    
   })
   /* test("Gallery", () => {
     const galleryData = [

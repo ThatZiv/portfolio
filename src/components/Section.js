@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+/** @param {import("../types/comps/Section").Section} props */
 export default function Section(props) {
     const classes = useStyles();
     const panel = "section_1";
