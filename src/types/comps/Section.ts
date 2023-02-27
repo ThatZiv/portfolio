@@ -1,3 +1,5 @@
+import React from "react";
+
 /**
  * An customizable accordion component
  * @interface
@@ -19,4 +21,9 @@ export declare interface Section {
      * @type {string}
      */
     title: string,
+    /**
+     * Accordion inner-content
+     * @type {any}
+     */
+    children: any
 }

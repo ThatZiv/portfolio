@@ -8,6 +8,26 @@ import Objectives from "../components/Objectives";
 import Gallery from "../components/Gallery";
 import Timeline from "../components/Timeline";
 import { areSetsEqual } from "../utils";
+import Section from "../components/Section";
+
+/**
+ * Traverses a `TestRenderer` json tree to its constituents
+ * @param {*} tree 
+ * @param {function} cb 
+ * @void
+ */
+const traverseTree = (tree, cb) => {
+  if (tree && typeof (tree) === "string") {
+    cb(tree)
+    return;
+  }
+  if (tree.children) {
+    for (let child of tree?.children) {
+      traverseTree(child, cb)
+    }
+  }
+}
+
 describe('Tests components', () => {
 
   test("Footer", () => {
@@ -60,23 +80,22 @@ describe('Tests components', () => {
     }
     const tlElement = TestRenderer.create(<Timeline steps={testData} />).toJSON()
     let orderedContents = new Set()
-    const traverseTree = (tree) => {
-      if (tree && typeof (tree) === "string") {
-        orderedContents.add(tree)
-        return;
-      }
-      if (tree.children) {
-        for (let child of tree?.children) {
-          traverseTree(child)
-        }
-      }
-    }
-    traverseTree(tlElement.children[1].children[1])
+
+    traverseTree(tlElement.children[1].children[1], (tree) => {
+      orderedContents.add(tree)
+    })
     expect(areSetsEqual(orderedContents, originalContents)).toBe(true)
   })
 
   test("Section", () => {
-    
+    const heading = "My Accordion heading"
+    const icon = "fs-brands fa-facebook"
+    const children = <h1>My inner content</h1>
+    const sectionElement = TestRenderer.create(<Section title={heading} icon={icon}>{children}</Section>).toJSON()
+    let expectedContent = new Set(['  ', 'My Accordion heading', 'expand_more', 'My inner content'])
+    let content = new Set()
+    traverseTree(sectionElement, (val) => { content.add(val) })
+    expect(areSetsEqual(expectedContent, content)).toBeTruthy()
   })
   /* test("Gallery", () => {
     const galleryData = [

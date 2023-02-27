@@ -1,4 +1,7 @@
-// for intellisense
+/**
+ * Section entry for each MediaCard entry (different to Section.ts component typing)
+ * @interface
+ */
 export declare interface Section {
     meta: {
         /** Title of the card */
