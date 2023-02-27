@@ -6,6 +6,8 @@ import Tags from "../components/Tags";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 import Objectives from "../components/Objectives";
 import Gallery from "../components/Gallery";
+import Timeline from "../components/Timeline";
+import { areSetsEqual } from "../utils";
 describe('Tests components', () => {
 
   test("Footer", () => {
@@ -47,6 +49,31 @@ describe('Tests components', () => {
     expect(scrapedObjectives).toEqual(tArr)
   })
 
+  test("Timeline", () => {
+    const testData = [
+      ["December 31, 1969", "When clocks started to count up!"],
+      ["January 1, 1970", "The day of reckoning..."]
+    ]
+    let originalContents = new Set()
+    for (let i = 0; i < testData.length; i++) {
+      originalContents.add((i+1).toString()).add(testData[i][0]).add(testData[i][1])
+    }
+    const tlElement = TestRenderer.create(<Timeline steps={testData} />).toJSON()
+    let orderedContents = new Set()
+    const traverseTree = (tree) => {
+      if (tree && typeof (tree) === "string") {
+        orderedContents.add(tree)
+        return;
+      }
+      if (tree.children) {
+        for (let child of tree?.children) {
+          traverseTree(child)
+        }
+      }
+    }
+    traverseTree(tlElement.children[1].children[1])
+    expect(areSetsEqual(orderedContents, originalContents)).toBe(true)
+  })
   /* test("Gallery", () => {
     const galleryData = [
       { "label": "This is me on a wednesday.", "imgPath": "//test/img" },

@@ -40,6 +40,7 @@ jobs:
       run: npm test -- --coverage
       
     - name: Upload coverage to Codecov
+      if: github.event_name == 'push'
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
@@ -50,6 +51,7 @@ jobs:
         CI: "" # to ignore warnings as errors (bad practice, i know)
         
     - name: Deploy
+      if: github.event_name == 'push'
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
