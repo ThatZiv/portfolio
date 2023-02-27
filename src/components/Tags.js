@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 // https://mui.com/components/material-icons/
+/** @param {import("../types/comps/Tags").Tags} props*/
 export default function Tags(props) {
   const classes = useStyles();
   const tagId = props.children?.replace(' ', '_')
