@@ -52,7 +52,14 @@ const traverseNodes2 = (node, match) => {
  */
 const capFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
-
+//https://stackoverflow.com/questions/31128855/comparing-ecma6-sets-for-equality
+/**
+ * Compare two sets
+ * @param {Set} a 
+ * @param {Set} b 
+ * @returns {boolean}
+ */
+const areSetsEqual = (a, b) => a.size === b.size && [...a].every(value => b.has(value));
 export {
-    traverseNodes, traverseNodes2, capFirstLetter
+    traverseNodes, traverseNodes2, capFirstLetter, areSetsEqual
 }

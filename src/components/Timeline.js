@@ -1,15 +1,15 @@
+import * as React from "react"
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
 import Typography from '@mui/material/Typography';
-import ReactMarkdown from 'react-markdown';
 import { indigo, } from '@material-ui/core/colors/';
 import { Grid } from '@material-ui/core';
 // https://mui.com/components/steppers/
 
-// MAKE SURE "props.steps" IS A MATRIX OF STRINGS (n*2) where n > 1
+/** @param {import("../types/comps/Timeline").TimelineProps} props */
 export default function Timeline(props) {
     const [activeStep, setActiveStep] = useState(0); // all steps will be active
     return (<div style={{ "color": "whitesmoke" }}>
