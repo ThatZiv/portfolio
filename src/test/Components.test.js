@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Tags from "../components/Tags";
 import YouTubeEmbed from "../components/YouTubeEmbed";
 import Objectives from "../components/Objectives";
-import Gallery from "../components/Gallery";
+// import Gallery from "../components/Gallery"; // TODO: 
 import Timeline from "../components/Timeline";
 import { areSetsEqual } from "../utils";
 import Section from "../components/Section";
@@ -111,8 +111,8 @@ describe('Tests components', () => {
       { "label": "This is me on a wednesday.", "imgPath": "//test/img" },
       { "label": "This is me right now.", "imgPath": "//test/img2" },
     ]
-    const gallery = TestRenderer.create(<Gallery images={galleryData} />).toJSON()
-    console.log(gallery)
+    testRenderer = TestRenderer.create(<Gallery images={galleryData} />)
+    console.log(testRenderer.toJSON())
   }) */
 
 });
