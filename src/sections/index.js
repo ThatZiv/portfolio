@@ -142,11 +142,11 @@ const my = {
             "https://img.shields.io/badge/powershell-5391FE?style=for-the-badge&logo=powershell&logoColor=white"
         ],
         secondary: [ // these are frameworks
-            "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
             "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
+            "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
             "https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
-            "https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white",
             "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+            "https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white",
             "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
             "https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white",
             "https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white",
