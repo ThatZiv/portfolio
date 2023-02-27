@@ -23,6 +23,7 @@ function ListItemLink(props) {
     return <ListItem button component="a" {...props} />;
 }
 
+/** @param {import("../types/comps/Objectives").ObjectivesProps} props */
 export default function SimpleList(props) {
     const classes = useStyles();
 
