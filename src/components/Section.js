@@ -10,7 +10,7 @@ import { Typography } from '@material-ui/core';
 import Icon from '@material-ui/core/Icon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
         padding: "10px",
