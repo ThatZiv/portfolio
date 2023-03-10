@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * An customizable accordion component
+ * a customizable accordion component
  * @interface
  */
 export declare interface Section {

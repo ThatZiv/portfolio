@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core"
+import { Divider, Grid } from "@material-ui/core"
 import { Grow, Typography } from "@mui/material"
 import React from "react"
 import MediaCard from "../components/MediaCard"
@@ -36,6 +36,7 @@ export default function Experience() {
     return <Grow in timeout={500}>
         <div>
             <Heading icon="fa-solid fa-book-open-reader" title="Employment" />
+            <Divider style={{ marginBottom: 14 }} />
             <LayoutGrid>
                 {/* Doxim */}
                 <MediaCard {...Doxim.meta} size={12}>
@@ -47,8 +48,8 @@ export default function Experience() {
                     </Section>
                 </MediaCard>
             </LayoutGrid>
-
             <Heading icon="fa-solid fa-book-open-reader" title="Leadership" />
+            <Divider style={{ marginBottom: 14 }} />
             <LayoutGrid>
                 {/* SCD */}
                 <MediaCard prechildren={<Section icon="fa-solid fa-video" title="Videos">
