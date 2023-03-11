@@ -7,6 +7,7 @@ import YouTubeEmbed from "../components/YouTubeEmbed"
 import Doxim from "../sections/Doxim"
 import GDSC from "../sections/GDSC"
 import SCD from "../sections/SCD"
+import WayneHacks1 from "../sections/WayneHacks1"
 
 const styles = {
     heading: {
@@ -25,6 +26,7 @@ const Heading = ({ icon, title }) =>
         <Typography sx={styles.heading}>
             <div><i className={icon} />&nbsp;&nbsp;{title}</div>
         </Typography>
+        <Divider style={{ marginBottom: 14 }} />
     </div>
 
 export const LayoutGrid = ({ children }) => <Grid
@@ -36,7 +38,7 @@ export default function Experience() {
     return <Grow in timeout={500}>
         <div>
             <Heading icon="fa-solid fa-book-open-reader" title="Employment" />
-            <Divider style={{ marginBottom: 14 }} />
+            
             <LayoutGrid>
                 {/* Doxim */}
                 <MediaCard {...Doxim.meta} size={12}>
@@ -48,8 +50,7 @@ export default function Experience() {
                     </Section>
                 </MediaCard>
             </LayoutGrid>
-            <Heading icon="fa-solid fa-book-open-reader" title="Leadership" />
-            <Divider style={{ marginBottom: 14 }} />
+            <Heading icon="fa-solid fa-book-open-reader" title="Organizations" />
             <LayoutGrid>
                 {/* SCD */}
                 <MediaCard prechildren={<Section icon="fa-solid fa-video" title="Videos">
@@ -69,6 +70,18 @@ export default function Experience() {
                     {...GDSC.meta}>
                     <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
                         <GDSC.components.Links />
+                    </Section>
+                </MediaCard>
+                {/* WayneHacks 2023 Hackathon */}
+                <MediaCard prechildren={<Section icon="fa-solid fa-video" title="Videos">
+                    <WayneHacks1.components.Lectures />
+                </Section>}
+                    {...WayneHacks1.meta}>
+                    <Section icon="fa-solid fa-code" title="Code">
+                        <WayneHacks1.components.Contribs />
+                    </Section>
+                    <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                        <WayneHacks1.components.Links />
                     </Section>
                 </MediaCard>
             </LayoutGrid>
