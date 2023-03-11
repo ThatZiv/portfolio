@@ -121,11 +121,11 @@ const TabMenu = (props) => {
         </Box>
     );
 }
-// TODO: add shields.to image badges for other libraries/frameworks
 // static data here
 const my = {
-    "preamble": `A passionate computer science student at Wayne State University seeking to employ innovative new technologies and methodologies in the workplace.`,
+    "preamble": ``,
     "name": "Zavaar Shah",
+    "caption": "Zavaar Shah is a computer science student at Wayne State University.",
     "langs": {
         primary: [ // these are the langs
             "https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E",

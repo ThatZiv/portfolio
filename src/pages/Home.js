@@ -46,7 +46,7 @@ export default function Home() {
                 <Grow timeout={1200} in={isShown} mountOnEnter unmountOnExit>
                     <div>
                         <Typography style={{ fontFamily: "Blinker, sans-serif" }} variant="h3" component="div">Welcome.</Typography>
-                        <Typography color="gray" variant="body1">My name is {my.name}.</Typography>
+                        <Typography color="gray" variant="body1">{my.caption}</Typography>
                         <Typography variant="subtitle1" >
                             {my.preamble}
                         </Typography>
