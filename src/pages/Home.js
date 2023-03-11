@@ -7,7 +7,7 @@ import Delayed from "../components/Delayed";
 import SocialMedia from "../components/SocialMedia";
 import my from "../sections";
 import { Button, Divider, Tooltip } from "@material-ui/core";
-import pages from ".";
+import pages from "./index.js";
 import { capFirstLetter } from "../utils";
 import { Link } from "react-router-dom";
 const useStyles = makeStyles({
