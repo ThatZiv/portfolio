@@ -79,18 +79,14 @@ const TabMenu = (props) => {
                         <Grid item>
                             <Tooltip title="www.github.com/ThatZiv?tab=repositories">
                                 <Link href="https://github.com/ThatZiv?tab=repositories" target="_blank">
-                                    <Fade timeout={575} in mountOnEnter unmountOnExit>
-                                        <img alt="top langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thatziv&layout=compact&theme=dark&count_private=true&&langs_count=11&hide_border=true&bg_color=#121212&border_radius=3&show_owner=true" />
-                                    </Fade>
+                                    <img alt="top langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thatziv&layout=compact&theme=dark&count_private=true&&langs_count=11&hide_border=true&bg_color=#121212&border_radius=3&show_owner=true" />
                                 </Link>
                             </Tooltip>
                         </Grid>
                         <Grid item>
                             <Tooltip title="www.github.com/ThatZiv">
                                 <Link href="https://github.com/ThatZiv" target="_blank">
-                                    <Fade timeout={575} in mountOnEnter unmountOnExit>
-                                        <img alt="gh profile stats" src="https://github-readme-stats.vercel.app/api?username=thatziv&count_private=true&theme=dark&show_icons=true&hide_border=true&hide_rank=true&include_all_commits=true&bg_color=#121212&border_radius=3" />
-                                    </Fade>
+                                    <img alt="gh profile stats" src="https://github-readme-stats.vercel.app/api?username=thatziv&count_private=true&theme=dark&show_icons=true&hide_border=true&hide_rank=true&include_all_commits=true&bg_color=#121212&border_radius=3" />
                                 </Link>
                             </Tooltip>
                         </Grid>
@@ -123,7 +119,6 @@ const TabMenu = (props) => {
 }
 // static data here
 const my = {
-    "preamble": ``,
     "name": "Zavaar Shah",
     "caption": "Zavaar Shah is a computer science student at Wayne State University.",
     "langs": {
@@ -143,8 +138,8 @@ const my = {
         ],
         secondary: [ // these are frameworks
             "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
-            "https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white",
             "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+            "https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white",
             "https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
             "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
             "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
@@ -222,7 +217,48 @@ const my = {
             "https://img.shields.io/badge/tmux-1BB91F?style=for-the-badge&logo=tmux&logoColor=white",
         ]
     },
-    "skills": TabMenu
+    "skills": TabMenu,
+    "random": {
+        quips: [
+            'awkwardly charming',
+            'clumsily talented',
+            'uniquely skilled',
+            'delightfully quirky',
+            'humorously proficient',
+            'incompetently competent',
+            'eccentrically capable',
+            'ironically adept',
+            'unintentionally clever',
+            'hilariously skilled',
+            'unconventionally capable',
+            'quirkily resourceful',
+            'unintentionally skilled',
+            'hilariously talented',
+            'casualy witty',
+            'delightfully odd',
+            'reliably rad',
+            'endearingly blunt',
+            'marvelously flawed',
+            'vivaciously reserved',
+            'quirkily ambitious',
+            'inexpertly an expert',
+            'cynically optimistic',
+            'awkwardly charming'
+        ],
+        hello: [
+            "Welcome",
+            "Willkommen",
+            "Bienvenido",
+            "Benvenuto",
+            "歡迎光臨",
+            "어서 오세요",
+            "ようこそ",
+            "مرحبا",
+            "Välkommen",
+            "Hoş geldin",
+            "добро пожаловать",
+        ]
+    }
 }
 
 export default my;

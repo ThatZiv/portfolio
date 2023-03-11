@@ -60,6 +60,47 @@ const capFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice
  * @returns {boolean}
  */
 const areSetsEqual = (a, b) => a.size === b.size && [...a].every(value => b.has(value));
+
+/**
+ * Compare two arrays
+ * @param {Array<any>} a 
+ * @param {Array<any>} b 
+ * @returns 
+ */
+const areArraysEqual = (a, b) => {
+    if (a == null || b == null) return false;
+    if (a === b) return true;
+    if (a.length !== b.length) return false;
+
+    for (var i = 0; i < a.length; ++i) {
+        if (a[i] !== b[i]) return false;
+    }
+    return true;
+}
+
+/**
+ * Random item generator
+ * @param {Array<any>} arr 
+ * @returns {Generator}
+ */
+const randomItemGenerator = function* (arr) {
+    while (true) {
+        let randIndex = Math.floor(Math.random() * arr.length)
+        yield arr[randIndex]
+    }
+}
+
+/**
+ * Sequential item generator (increments items in array)
+ * @param {Array<any>} arr
+ * @returns {Generator} 
+ */
+const sequentialItemGenerator = function* (arr) {
+    let i = -1;
+    while (true) {
+        yield arr[(++i) % arr.length]
+    }
+}
 export {
-    capFirstLetter, areSetsEqual
+    capFirstLetter, areSetsEqual, areArraysEqual, randomItemGenerator, sequentialItemGenerator
 }
