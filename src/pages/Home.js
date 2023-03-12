@@ -1,14 +1,16 @@
 import { Container, Grid, Typography, Slide, Grow, Fade, Avatar, Collapse, Zoom } from "@mui/material";
 import { makeStyles } from '@material-ui/core/styles';
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
+// import TextTransition, { presets } from "react-text-transition";
+import TextLoop from "react-text-loop";
 import { UserContext } from "../contexts"
 import { indigo } from "@material-ui/core/colors";
 import Delayed from "../components/Delayed";
 import SocialMedia from "../components/SocialMedia";
 import my from "../sections";
 import { Button, Divider, Tooltip } from "@material-ui/core";
-import pages from ".";
-import { capFirstLetter } from "../utils";
+import pages from "./index.js";
+import { capFirstLetter, sequentialItemGenerator } from "../utils";
 import { Link } from "react-router-dom";
 const useStyles = makeStyles({
     root: {
@@ -17,13 +19,26 @@ const useStyles = makeStyles({
     pic: {
         maxWidth: 400,
         maxHeight: "100%"
-    }
+    },
 })
+
+const styling = {
+    centerWhenSmall: { textAlign: { xs: "center", md: "left", sm: "left" } }
+}
 export default function Home() {
     const classes = useStyles()
     const [state, dispatch] = useContext(UserContext)
     const [isShown, setShown] = useState(false)
     const containerRef = useRef(null);
+    /* const helloGen = sequentialItemGenerator(my.random.hello)
+    const [welcome, setWelcome] = useState({ value: "Zavaar Shah" })
+    useEffect(() => {
+        const t = setInterval(() => {
+            setWelcome(helloGen.next())
+        }, 5 * 1000)
+        return () => clearInterval(t)
+    }, [])
+     */
     setTimeout(() => setShown(true), 1000) // Only have one 'delayed' logic just so that justify content looks good and centered before send comp renders in
     return (<Grow in timeout={700}><div style={{ marginTop: 50 }}>
         <Grid container
@@ -45,11 +60,16 @@ export default function Home() {
             <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>
                 <Grow timeout={1200} in={isShown} mountOnEnter unmountOnExit>
                     <div>
-                        <Typography style={{ fontFamily: "Blinker, sans-serif" }} variant="h3" component="div">Welcome.</Typography>
-                        <Typography color="gray" variant="body1">My name is {my.name}.</Typography>
-                        <Typography variant="subtitle1" >
-                            {my.preamble}
+                        {/* style={{ fontFamily: "Blinker, sans-serif" }}  */}
+                        <Typography variant="h3" sx={styling.centerWhenSmall}
+                            style={{ fontFamily: "Blinker, sans-serif", marginTop: 10 }} component="div">
+                            <TextLoop children={my.random.hello} interval={5000}/>
                         </Typography>
+
+                        <Typography color="gray" sx={styling.centerWhenSmall} variant="body1">{my.caption}</Typography>
+                        {/*  <Typography variant="h2" >
+                            <span>{welcome.value}</span>.
+                        </Typography> */}
                     </div>
                 </Grow>
                 {/* 
@@ -67,7 +87,7 @@ export default function Home() {
                     </Slide>
                 </Delayed> */}
                 <Delayed wait={1000}>
-                    <Fade in timeout={5000} mountOnEnter unmountOnExit>
+                    <Fade in timeout={4500} mountOnEnter unmountOnExit>
                         <Grid container spacing={1}>
                             <Grid item>
                                 <SocialMedia showName icon="envelope" name="Email" url="mailto:zavaar.shah123@gmail.com" />
@@ -81,8 +101,8 @@ export default function Home() {
                             {pages.map(({ label, location, icon }) => (
                                 label !== "home" && <Grid item>
                                     <Tooltip title={capFirstLetter(label)}>
-                                        <Link style={{textDecoration: "none"}} to={location}>
-                                            <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd", marginTop: 4}}> {/* Match the style with the "SocialMedia.js" btns */}
+                                        <Link style={{ textDecoration: "none" }} to={location}>
+                                            <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd", marginTop: 4 }}> {/* Match the style with the "SocialMedia.js" btns */}
                                                 <icon className={icon} />&nbsp;&nbsp;<div>{capFirstLetter(label)}</div>
                                             </Button>
                                         </Link>

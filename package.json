@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "homepage": ".",
   "private": false,
   "dependencies": {
@@ -24,8 +24,10 @@
     "react-gist": "^1.2.4",
     "react-markdown": "^8.0.2",
     "react-router-dom": "^6.4.2",
-    "react-scripts": "^5.0.0",
+    "react-scripts": "^5.0.1",
     "react-swipeable-views": "^0.14.0",
+    "react-text-loop": "^2.3.0",
+    "react-text-transition": "^3.0.2",
     "react-transition-group": "^4.4.2",
     "react-wavy-transitions": "^1.1.1",
     "web-vitals": "^2.1.4"
@@ -33,11 +35,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:sitemap": "node src/sitemap-builder.js",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "dev": "docker compose up",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:sitemap && npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

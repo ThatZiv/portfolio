@@ -1,7 +1,7 @@
-import { Home } from "@mui/icons-material";
 import React from "react";
 
 // route declarations
+/** @type {import("../types/pages").Page[]} */
 const pages = [
     {
         label: "home", location: "",
@@ -19,7 +19,6 @@ const pages = [
         component: React.lazy(() => import("./Experience"))
     }
 ]
-
 
 export default pages;
 

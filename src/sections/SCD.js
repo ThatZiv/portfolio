@@ -36,7 +36,7 @@ export default {
 [Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill-building workshops, hackathons, coding nights, and social events!`,
         banner: "/pics/scd.png",
         complete: false,
-        tags: "TypeScript,JavaScript,Python,C/C++,HTML/CSS,Docker,Full Stack,Web Scraping,REST API,JS DOM,MongoDB,React.js,Agile,Pair Programming,SCD",
+        tags: "TypeScript,JavaScript,Python,C/C++,HTML/CSS,Docker,CI/CD,Full Stack,REST API,DOM,MongoDB,React.js,Agile,Pair Programming,Lecturing,SCD,GitHub Actions,Version Control",
         objectives: `Created and hosted programming-related workshop events for students.
 |Tutored and assisted students with coursework and other programming-related content.
 |Developed and managed official club website to display dynamic content using React, Express, and MongoDB.`, // Objectives are seperated by PIPE '|'
@@ -48,12 +48,16 @@ export default {
             ["February 8, 2022", "Participated in WSU SCD 2022 Hackathon (3rd place)."],
             ["February 25, 2022", "Hosted web scraping workshop."],
             ["April 17, 2022", "Hosted REST API workshop."],
-            ["August 2022", "Began development of official club website."],
+            ["August 2022", "Began development of official website."],
             ["September 2022", "Orchestrated month-long dynamic website project with weekly meetings."],
             ["October 2022", "Completed preview build of club website for production."],
             ["October 19, 2022", "Hosted Docker & Containerization workshop."],
+            ["November 2022", "Completed and deployed website to \"scd.cs.wayne.edu\"."],
             ["November 28, 2022", "Hosted React.js (web framework) workshop."],
-            ["January 2023", "Promoted to Vice President"],
+            ["January 2023", "Promoted to Vice President."],
+            ["March 3, 2023", "Hosted JavaScript DOM workshop."],
+            ["March 4, 2023", "Co-hosted Google Firebase workshop."],
+            ["March 5, 2023", "Organized and hosted \"WayneHacks\" - Wayne State's 3rd 48-hour hackathon."],
         ],
     }, components: { Lectures, Lecture, Contribs, Links }
 }
@@ -61,6 +65,8 @@ export default {
 function Lectures() {
     return (
         <Grid container>
+            <Lecture title="Google Firebase" YouTubeID="nUOMTViKsko"/>
+            <Lecture title="JavaScript DOM" YouTubeID="HTxYtiTAsZU"/>
             <Lecture title="React.js" YouTubeID="S7wWg11tZxM" />
             <Lecture title="Docker" YouTubeID="MrE1uvzuJW8" />
             <Lecture title="Full Stack (REST API Part 2)" YouTubeID="9OlMQpivP2Q" />
@@ -76,6 +82,9 @@ function Lectures() {
 
 function Links() {
     return (<Grid container spacing={2}>
+    <Grid item>
+            <SocialMedia name="Website" icon="fa-solid fa-globe" url="https://scd.cs.wayne.edu" />
+        </Grid>
         <Grid item>
             <SocialMedia name="GetInvolved" icon="fa-solid fa-graduation-cap" url="https://getinvolved.wayne.edu/organization/scd" />
         </Grid>
