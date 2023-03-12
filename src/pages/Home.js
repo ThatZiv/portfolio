@@ -2,6 +2,7 @@ import { Container, Grid, Typography, Slide, Grow, Fade, Avatar, Collapse, Zoom 
 import { makeStyles } from '@material-ui/core/styles';
 import { useState, useRef, useContext, useEffect } from "react";
 import TextTransition, { presets } from "react-text-transition";
+import TextLoop from "react-text-loop";
 import { UserContext } from "../contexts"
 import { indigo } from "@material-ui/core/colors";
 import Delayed from "../components/Delayed";
@@ -62,7 +63,7 @@ export default function Home() {
                         {/* style={{ fontFamily: "Blinker, sans-serif" }}  */}
                         <Typography variant="h3" sx={styling.centerWhenSmall}
                             style={{ fontFamily: "Blinker, sans-serif", marginTop: 10 }} component="div">
-                            <TextTransition springConfig={presets.default} inline><div dangerouslySetInnerHTML={{ __html: welcome.value }}></div></TextTransition>
+                            <TextLoop children={my.random.hello} interval={5999}/>
                         </Typography>
 
                         <Typography color="gray" sx={styling.centerWhenSmall} variant="body1">{my.caption}</Typography>
