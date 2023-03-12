@@ -8,7 +8,7 @@ import SocialMedia from "../components/SocialMedia"
 export default {
     meta: {
         title: "WayneHacks Winter 2023 Hackathon",
-        description: `## Co-host & Organizer
+        description: `## Co-Director
 [WayneHacks](https://waynehacks.devpost.com/) is a 48-hour virtual hackathon hosted by Wayne State University students taking place in March 2023! Hackers will have 48 hours to complete a project related to the theme given at the opening ceremony. WayneHacks will also host workshops and two gaming tournaments during the event! $5000 in prizes will be given out at the end to the best hacks. At the end, there were over 100 registrants, 50 active participants, and 16 project submissions.`,
         banner: "/pics/whacks.png",
         complete: true,
@@ -25,7 +25,7 @@ Co-hosted public ceremonies for opening and closing of the Hackathon event.`,
             ["March 3, 2023", "Co-hosted opening ceremony."],
             ["March 3, 2023", "Hosted JavaScript DOM workshop."],
             ["March 4, 2023", "Co-hosted Google Firebase workshop."],
-            ["March 4, 2023", "Ran and hosted game tournament on production-ready Docker servers."],
+            ["March 4, 2023", "Ran game tournament with production-ready Docker servers."],
             ["March 5, 2023", "Co-hosted closing ceremony."],
         ],
     }, components: { Lectures, Lecture, Contribs, Links }

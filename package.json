@@ -26,6 +26,7 @@
     "react-router-dom": "^6.4.2",
     "react-scripts": "^5.0.0",
     "react-swipeable-views": "^0.14.0",
+    "react-text-transition": "^3.0.2",
     "react-transition-group": "^4.4.2",
     "react-wavy-transitions": "^1.1.1",
     "web-vitals": "^2.1.4"
@@ -33,7 +34,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:sitemap": "node src/sitemap-builder.js", 
+    "build:sitemap": "node src/sitemap-builder.js",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "dev": "docker compose up",

@@ -1,6 +1,7 @@
 import { Container, Grid, Typography, Slide, Grow, Fade, Avatar, Collapse, Zoom } from "@mui/material";
 import { makeStyles } from '@material-ui/core/styles';
 import { useState, useRef, useContext, useEffect } from "react";
+import TextTransition, { presets } from "react-text-transition";
 import { UserContext } from "../contexts"
 import { indigo } from "@material-ui/core/colors";
 import Delayed from "../components/Delayed";
@@ -62,7 +63,9 @@ export default function Home() {
                 <Grow timeout={1200} in={isShown} >
                     <div>
                         {/* style={{ fontFamily: "Blinker, sans-serif" }}  */}
-                        <Fade timeout={450} in={animationWelcome}><Typography variant="h2" sx={styling.centerWhenSmall} component="div">{welcome.value}</Typography></Fade>
+                        <Typography variant="h2" sx={styling.centerWhenSmall} component="div">
+                            <TextTransition springConfig={presets.default} inline>{welcome.value}</TextTransition>
+                        </Typography>
                         <Typography color="gray" sx={styling.centerWhenSmall} variant="body1">{my.caption}</Typography>
                         {/*  <Typography variant="h2" >
                             <span>{welcome.value}</span>.

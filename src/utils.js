@@ -98,7 +98,7 @@ const randomItemGenerator = function* (arr) {
 const sequentialItemGenerator = function* (arr) {
     let i = -1;
     while (true) {
-        yield arr[(++i) % arr.length]
+        yield arr[++i % arr.length]
     }
 }
 export {
