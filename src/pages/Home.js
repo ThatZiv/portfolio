@@ -30,12 +30,9 @@ export default function Home() {
     const [isShown, setShown] = useState(false)
     const helloGen = sequentialItemGenerator(my.random.hello)
     const [welcome, setWelcome] = useState({ value: "Zavaar Shah" })
-    const [animationWelcome, setAnimationWelcome] = useState(true)
     const containerRef = useRef(null);
     useEffect(() => {
         const t = setInterval(() => {
-            setAnimationWelcome(false)
-            setTimeout(() => { setAnimationWelcome(true) }, 500)
             setWelcome(helloGen.next())
         }, 5 * 1000)
         return () => clearInterval(t)
@@ -60,12 +57,14 @@ export default function Home() {
                 </Fade>
             </Grid>
             <Grid style={{ marginBottom: 10 }} sm={isShown ? 6 : 0} item>
-                <Grow timeout={1200} in={isShown} >
+                <Grow timeout={1200} in={isShown} mountOnEnter unmountOnExit>
                     <div>
                         {/* style={{ fontFamily: "Blinker, sans-serif" }}  */}
-                        <Typography variant="h2" sx={styling.centerWhenSmall} component="div">
-                            <TextTransition springConfig={presets.default} inline>{welcome.value}</TextTransition>
+                        <Typography variant="h3" sx={styling.centerWhenSmall}
+                            style={{ fontFamily: "Blinker, sans-serif", marginTop: 10 }} component="div">
+                            <TextTransition springConfig={presets.default} inline><div dangerouslySetInnerHTML={{ __html: welcome.value }}></div></TextTransition>
                         </Typography>
+
                         <Typography color="gray" sx={styling.centerWhenSmall} variant="body1">{my.caption}</Typography>
                         {/*  <Typography variant="h2" >
                             <span>{welcome.value}</span>.

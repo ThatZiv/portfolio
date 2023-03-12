@@ -1,6 +1,26 @@
 {
   "short_name": "Zavaar Shah",
   "name": "The Portfolio of Zavaar Shah",
+  "shortcuts": [
+    {
+      "name": "Landing Page",
+      "short_name": "Home",
+      "description": "Technical proficiencies and quick links.",
+      "url": "/#/"
+    },
+    {
+      "name": "Portfolio Page",
+      "short_name": "Portfolio",
+      "description": "View all projects worth showcasing.",
+      "url": "/#/portfolio"
+    },
+    {
+      "name": "Experience Page",
+      "short_name": "Experience",
+      "description": "Employment history and leadership experience.",
+      "url": "/#/experience"
+    }
+  ],
   "icons": [
     {
       "src": "favicon.ico",

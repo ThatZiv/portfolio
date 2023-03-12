@@ -248,16 +248,17 @@ const my = {
         hello: [
             "Welcome",
             "Willkommen",
+            "Welkcom",
             "Bienvenido",
-            "Benvenuto",
+            "Bienvenue",
+            "Bem-vindo",
             "歡迎光臨",
             "어서 오세요",
             "ようこそ",
             "مرحبا",
             "Välkommen",
-            "Hoş geldin",
-            "добро пожаловать",
-        ]
+            "Hoş geldin"
+        ]   
     }
 }
 
