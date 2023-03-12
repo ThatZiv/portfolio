@@ -246,7 +246,7 @@ const my = {
             'awkwardly charming'
         ],
         hello: [
-            "Zavaar Shah",
+            "I'm Zavaar",
             "Welcome",
             "Willkommen",
             "Welkcom",

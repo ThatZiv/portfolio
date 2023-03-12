@@ -7,7 +7,7 @@ import Section from "../components/Section";
 /** @type {import("../types/section").Section} */
 export default {
     meta: {
-        title: "Hackathon '22",
+        title: "WSU Hackathon '22",
         banner: "/pics/hackathon2.jpg",
         complete: true,
         tags: "Python,MIDI,Threading,Processes,Automation,I/O,Daemonization,ctypes (Python library),Console Application,Hackathon,Open-source,Git,Competition",
