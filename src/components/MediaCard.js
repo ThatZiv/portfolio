@@ -46,7 +46,7 @@ export default function MediaCard(props) {
     const [cardSize, setCardSize] = React.useState(props.size || 6);
     const cardRef = React.useRef(null)
     //let cardWidth = 6
-    const executeScroll = () => cardRef.current.scrollIntoView()
+    const executeScroll = () => cardRef.current.scrollIntoView({ behavior: "smooth" })
     const handleExpandClick = () => {
         //setCardSize(6) // TODO: make cards expand to full width for desktop-sized screens
         setCardSize(expanded ? (props.size || 6) : 12)

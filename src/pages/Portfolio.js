@@ -19,6 +19,7 @@ import Garage from '../sections/Garage';
 import Hackathon from '../sections/Hackathon'; // '21
 import Hackathon2 from '../sections/Hackathon2'; // '22
 import BE1200 from '../sections/BE1200';
+import Spartahack8 from '../sections/Spartahack8';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -87,6 +88,21 @@ export default function Portfolio() {
                 </Section>
                 <Section icon="fa-solid fa-chart-line" title="Statistics">
                     <Garage.components.statistics />
+                </Section>
+            </MediaCard>
+            {/* SPARTAHACK8 */}
+            <MediaCard {...Spartahack8.meta}>
+                <Section icon="fa-solid fa-bookmark" title="Description">
+                    <Spartahack8.components.Description />
+                </Section>
+                <Section icon="fa-solid fa-images" title="Gallery">
+                    <Spartahack8.components.Pictures />
+                </Section>
+                <Section icon="fa-solid fa-chart-line" title="Statistics">
+                    <Spartahack8.components.Statistics />
+                </Section>
+                <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                    <Spartahack8.components.Links />
                 </Section>
             </MediaCard>
             {/* WEBSERVER */}

@@ -8,9 +8,9 @@ export default {
         title: "zWebserver",
         banner: "/pics/Webserver.PNG",
         complete: false,
-        tags: "Webserver,NodeJS,JavaScript,Python,RESTful,CRUD,Reverse Proxy,MongoDB,Express,Full Stack,UI/UX,Closed-source,Templating (server-side rendering)",
+        tags: "Webserver,JavaScript,Python,RESTful,CRUD,Reverse Proxy,MongoDB,Express,Full Stack,UI/UX,Closed-source,Templating (server-side rendering)",
         objectives: `Created webserver using Express.js, Pug.js, MongoDB, and Mongoose JS to deploy and develop projects.|Designed user-interface using CSS, Express.js, Bootstrap CSS, and Pug.js to display content.|Built REST API using Express.js, MongoDB, Canvas.js to perform various operations like generating dynamic images.|Programmed data scraper API using Python and Express.js to scrape and parse website data.`,
-        description: `Hosted at www.zavaar.net, this custom-built webserver hosts most of my other projects while also serving the internet. 
+        description: `Hosted at [www.zavaar.net](https://zavaar.net), this custom-built webserver hosts most of my other projects while also serving the internet. 
             Its most popular feature is its content delivery network (CDN) functionality. 
             The Zua application programming interface (API) is also hosted on this platform as it serves dynamic data for those who are authorized. 
             With over 20K users served daily, this service is also a dependency to many other projects including FiveM Bot and zGarage.`,

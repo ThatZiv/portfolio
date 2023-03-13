@@ -16,6 +16,7 @@ ______
 * ~~Redirect page (like linkedin)?~~ - waste of time
 
 # FIXME
+* **Fix peer dependency issue with `react-text-loop`**
 * Mozilla tries to autodownload embedded pdf file on mobile when opening
 * memory leak issue with unmounting animations [?]
 * "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol

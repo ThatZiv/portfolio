@@ -47,7 +47,7 @@ console.log(`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`\`
 `)
 
 
-if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
   navigator.serviceWorker.register("/service-worker.js")
 }
 // If you want to start measuring performance in your app, pass a function
