@@ -19,7 +19,7 @@ export default {
             you can use Earthly to measure against everyday units, compare with your friends, or complete challenges.
             In total, there were over **91 projects** by **500 participants** across **24 different schools**. 
             Our team was the recipient of the _Best Hack for Environmental Sustainability_ award.`,
-        banner: "/pics/spartahack8-ppl.png",
+        banner: "/pics/spartahack8-ppl.PNG",
         complete: true,
         tags: "JavaScript,React.js,HTML/CSS,Supabase,BaaS,PostgreSQL,Agile,Pair Programming,Git,CI/CD,Hackathon,Competition,Team Coordination",
         objectives: `Conducted meetings with team members to stay on track for project deployment using Agile methodology.|
