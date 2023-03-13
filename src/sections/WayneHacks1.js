@@ -3,13 +3,18 @@ import { Grid } from "@material-ui/core"
 import Contributions from "../components/Contributions"
 import Lecture from "../components/Lecture"
 import SocialMedia from "../components/SocialMedia"
+import Status from "../components/Status"
 
 /** @type {import("../types/section").Section} */
 export default {
     meta: {
         title: "WayneHacks Winter 2023 Hackathon",
         description: `## Co-Director
-[WayneHacks](https://waynehacks.devpost.com/) is a 48-hour virtual hackathon hosted by Wayne State University students taking place in March 2023! Hackers will have 48 hours to complete a project related to the theme given at the opening ceremony. WayneHacks will also host workshops and two gaming tournaments during the event! $5000 in prizes will be given out at the end to the best hacks. At the end, there were over 100 registrants, 50 active participants, and 16 project submissions.`,
+
+[WayneHacks](https://waynehacks.devpost.com/) is a 48-hour virtual hackathon hosted by 
+[Wayne State University](https://engineering.wayne.edu/). Hackers have 48 hours to complete a project related to the theme given at the opening ceremony. 
+WayneHacks also hosts workshops and two gaming tournaments during the event! $5000 in prizes are given out at the end to the best hacks. 
+In total, there were over **100 registrants**, **50 active participants**, and **16 project submissions**.`,
         banner: "/pics/whacks.png",
         complete: true,
         tags: "JavaScript,Python,HTML/CSS,Docker,JS DOM,React.js,Agile,Pair Programming,Git,CI/CD,Hackathon,Competition,Team Management",
@@ -28,7 +33,7 @@ Co-hosted public ceremonies for opening and closing of the Hackathon event.`,
             ["March 4, 2023", "Ran game tournament with production-ready Docker servers."],
             ["March 5, 2023", "Co-hosted closing ceremony."],
         ],
-    }, components: { Lectures, Lecture, Contribs, Links }
+    }, components: { Lectures, Contribs, Links }
 }
 
 function Lectures() {
@@ -57,12 +62,22 @@ function Links() {
         <Grid item>
             <SocialMedia icon="fa-solid fa-instagram" url="https://www.instagram.com/wayne.hacks/" />
         </Grid>
+        <Grid xs={12} item>
+            <Status pattern="/WayneHacks/g" url="https://waynehacks.com"/>
+        </Grid>
     </Grid>)
 }
 
 function Contribs() {
-    return <Contributions repos={[
-        "WSU-Society-of-Computer-Developers/workshops",
-        "WSU-Society-of-Computer-Developers/waynehacks-website"
-    ]} title="WSU SCD Repository" />
+    return <Grid container>
+        <Grid item>
+            <Contributions repos={[
+                "WSU-Society-of-Computer-Developers/workshops",
+                "WSU-Society-of-Computer-Developers/waynehacks-website"
+            ]} title="WSU SCD Repository" />
+        </Grid>
+        <Grid item>
+            <Status paper pattern="/WayneHacks/g" url="https://waynehacks.com"/>
+        </Grid>
+    </Grid>
 }

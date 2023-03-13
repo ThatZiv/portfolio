@@ -63,7 +63,7 @@ export default function Home() {
                         {/* style={{ fontFamily: "Blinker, sans-serif" }}  */}
                         <Typography variant="h3" sx={styling.centerWhenSmall}
                             style={{ fontFamily: "Blinker, sans-serif", marginTop: 10 }} component="div">
-                            <TextLoop children={my.random.hello} interval={3500}/>
+                            <TextLoop fade children={my.random.hello} interval={3500}/>
                         </Typography>
 
                         <Typography color="gray" sx={styling.centerWhenSmall} variant="body1">{my.caption}</Typography>

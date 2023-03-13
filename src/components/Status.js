@@ -74,7 +74,7 @@ export default function Status(props) {
                         </Grid>
                     </Typography>
                     <Typography variant="subtitle1" style={{ color: "#979797" }} >
-                        This service is currently {error ? "offline" : "online"} at <Link href={props.url}>{getHostname(props.url)}</Link>
+                        This service is currently {error ? "offline" : "online"} at <Link href={props.url} target="_blank">{getHostname(props.url)}</Link>
                     </Typography>
 
                 </Paper>

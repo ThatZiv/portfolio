@@ -92,7 +92,18 @@ export default function Portfolio() {
             </MediaCard>
             {/* SPARTAHACK8 */}
             <MediaCard {...Spartahack8.meta}>
-    
+                <Section icon="fa-solid fa-bookmark" title="Description">
+                    <Spartahack8.components.Description />
+                </Section>
+                <Section icon="fa-solid fa-images" title="Gallery">
+                    <Spartahack8.components.Pictures />
+                </Section>
+                <Section icon="fa-solid fa-chart-line" title="Statistics">
+                    <Spartahack8.components.Statistics />
+                </Section>
+                <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+                    <Spartahack8.components.Links />
+                </Section>
             </MediaCard>
             {/* WEBSERVER */}
             <MediaCard {...Webserver.meta}>

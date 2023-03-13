@@ -38,7 +38,7 @@ export default function Experience() {
     return <Grow in timeout={500}>
         <div>
             <Heading icon="fa-solid fa-book-open-reader" title="Employment" />
-            
+
             <LayoutGrid>
                 {/* Doxim */}
                 <MediaCard {...Doxim.meta} size={12}>
@@ -56,6 +56,9 @@ export default function Experience() {
                 <MediaCard prechildren={<Section icon="fa-solid fa-video" title="Videos">
                     <SCD.components.Lectures />
                 </Section>} {...SCD.meta}>
+                    <Section icon="fa-solid fa-images" title="Gallery">
+                        <SCD.components.Pictures />
+                    </Section>
                     <Section icon="fa-solid fa-code" title="Code">
                         <SCD.components.Contribs />
                     </Section>

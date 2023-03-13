@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+/** @param {import("../types/comps/Gallery").Gallery} props */
 function SwipeableTextMobileStepper(props) {
     const [state, dispatch] = React.useContext(UserContext);
     const [activeStep, setActiveStep] = React.useState(0);
@@ -94,12 +95,13 @@ function SwipeableTextMobileStepper(props) {
                                     <Box
                                         component="img"
                                         sx={{
-                                            maxHeight: 300,
-                                            display: 'block',
+                                            maxHeight: 400,
+                                            display: "block",
                                             //maxWidth: "auto",
                                             overflow: 'hidden',
                                             width: '100%',
-                                            height: "100%"
+                                            height: "100%",
+                                            cursor: "zoom-in"
                                         }}
                                         src={step.imgPath}
                                         alt={step.label}

@@ -3,6 +3,8 @@ import { Grid } from "@material-ui/core"
 import Contributions from "../components/Contributions"
 import Lecture from "../components/Lecture"
 import SocialMedia from "../components/SocialMedia"
+import Status from "../components/Status"
+import Gallery from "../components/Gallery";
 /* 
 * REACT 
 https://www.linkedin.com/feed/update/urn:li:activity:7000594870914465793
@@ -59,14 +61,14 @@ export default {
             ["March 4, 2023", "Co-hosted Google Firebase workshop."],
             ["March 5, 2023", "Organized and hosted \"WayneHacks\" - Wayne State's 3rd 48-hour hackathon."],
         ],
-    }, components: { Lectures, Lecture, Contribs, Links }
+    }, components: { Lectures, Contribs, Links, Pictures }
 }
 
 function Lectures() {
     return (
         <Grid container>
-            <Lecture title="Google Firebase" YouTubeID="nUOMTViKsko"/>
-            <Lecture title="JavaScript DOM" YouTubeID="HTxYtiTAsZU"/>
+            <Lecture title="Google Firebase" YouTubeID="nUOMTViKsko" />
+            <Lecture title="JavaScript DOM" YouTubeID="HTxYtiTAsZU" />
             <Lecture title="React.js" YouTubeID="S7wWg11tZxM" />
             <Lecture title="Docker" YouTubeID="MrE1uvzuJW8" />
             <Lecture title="Full Stack (REST API Part 2)" YouTubeID="9OlMQpivP2Q" />
@@ -80,9 +82,23 @@ function Lectures() {
     )
 }
 
+function Pictures() {
+    return <Gallery images={[
+        {
+            label: "SCD at Festifall (myself 2nd from the left)",
+            imgPath: "https://se-images-blob.campuslabs.com/documents/204/f0eaec97-9199-4aff-279a-08dab6692024/1500.jpg"
+        },
+        {
+            label: "General Body Meetings",
+            imgPath: "https://se-images-blob.campuslabs.com/documents/204/aee7b032-28ee-4514-dd13-08dabb5f3f2a/600.jpg",
+        }
+
+    ]} />
+}
+
 function Links() {
     return (<Grid container spacing={2}>
-    <Grid item>
+        <Grid item>
             <SocialMedia name="Website" icon="fa-solid fa-globe" url="https://scd.cs.wayne.edu" />
         </Grid>
         <Grid item>
@@ -100,15 +116,25 @@ function Links() {
         <Grid item>
             <SocialMedia icon="fa-brands fa-twitter" url="https://twitter.com/scd_wsu" />
         </Grid>
+        <Grid xs={12} item>
+            <Status url="https://scd.cs.wayne.edu/" />
+        </Grid>
     </Grid>)
 }
 
 function Contribs() {
-    return <Contributions repos={[
-        "WSU-Society-of-Computer-Developers/workshops",
-        "WSU-Society-of-Computer-Developers/website2",
-        "WSU-Society-of-Computer-Developers/dynamic-website-project",
-        "WSU-Society-of-Computer-Developers/verify-service",
-        "WSU-Society-of-Computer-Developers/waynehacks-website"
-    ]} title="WSU SCD Repository" />
+    return <Grid container>
+        <Grid item>
+            <Contributions repos={[
+                "WSU-Society-of-Computer-Developers/workshops",
+                "WSU-Society-of-Computer-Developers/website2",
+                "WSU-Society-of-Computer-Developers/dynamic-website-project",
+                "WSU-Society-of-Computer-Developers/verify-service",
+                "WSU-Society-of-Computer-Developers/waynehacks-website"
+            ]} title="WSU SCD Repository" />
+        </Grid>
+        <Grid item>
+            <Status paper url="https://scd.cs.wayne.edu/" />
+        </Grid>
+    </Grid>
 }
