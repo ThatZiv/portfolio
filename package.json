@@ -35,7 +35,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:sitemap": "node src/sitemap-builder.js",
+    "build:sitemap": "echo \"node src/sitemap-builder.js\"",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "dev": "docker compose up",
