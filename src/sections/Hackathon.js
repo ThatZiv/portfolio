@@ -47,8 +47,7 @@ function pictures() {
             imgPath: "https://raw.githubusercontent.com/ThatZiv/hackathon2021wsu/main/pics/chat.PNG",
         },
     ]} />
-     {/* FIXME: REMOVED AS OF 4/13/23 "Social engineering content detected on zavaar.ent" * */}
-        {/* <br />
+        <br />
         <Divider />
         <br />
         <Typography variant="h6">Presentation Slides</Typography>
@@ -59,7 +58,7 @@ function pictures() {
                 maxHeight: "100%",
                 maxWidth: "100%",
             }} title="View Presentation Slides" src="/pics/ext/Hackathon_Slides.pdf" frameBorder="0">This browser does not support viewing this file.</iframe>
-        </div> */}
+        </div>
     </div>
 }
 
