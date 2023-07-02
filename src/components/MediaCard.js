@@ -11,13 +11,15 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { Divider, Zoom, Grow } from "@material-ui/core";
 import ReactGA from "react-ga";
+import Box from "@mui/material/Box";
+import ReactMarkdown from "react-markdown";
 
 import Tags from "./Tags";
 import Objectives from "./Objectives";
 import Section from "./Section";
 import Timeline from "./Timeline";
 import DateRange from "./DateRange";
-import ReactMarkdown from "react-markdown";
+import Modal from "./Modal";
 // import MainDialog from './MainDialog'
 
 const useStyles = makeStyles((theme) => ({
@@ -65,105 +67,125 @@ export default function MediaCard(props) {
   };
   return (
     /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
-    <Grow in timeout={700}>
-      {/* selection border logic below */}
-      <Grid
-        item
-        xs={12}
-        md={cardSize || props.size}
-        lg={cardSize || props.size}
-      >
-        <Card
-          ref={cardRef}
-          style={expanded ? { border: "2px solid  #3f51b5" } : { border: null }}
-          elevation={3}
+    <>
+      <Grow in timeout={700}>
+        {/* selection border logic below */}
+        <Grid
+          item
+          xs={12}
+          md={cardSize || props.size}
+          lg={cardSize || props.size}
         >
-          <CardActionArea
-            onClick={() => {
-              handleExpandClick();
-              gaCardExpandHandle(props.title);
-            }}
+          <Card
+            ref={cardRef}
+            style={
+              expanded ? { border: "2px solid #3f51b5" } : { border: null }
+            }
+            elevation={3}
           >
-            <CardMedia
-              className={classes.media}
-              image={props.banner}
-              title={props.title}
-            />
-            <CardContent className={classes.cardcontent}>
-              <Grid justifyContent="space-between" container>
-                <Grid item xs={10}>
-                  <Typography
-                    gutterBottom
-                    variant="h3"
-                    style={{ fontFamily: "Bebas Neue" }}
-                    component="h2"
-                  >
-                    {props.title}
+            <CardActionArea
+              onClick={() => {
+                handleExpandClick();
+                gaCardExpandHandle(props.title);
+              }}
+            >
+              <CardMedia
+                className={classes.media}
+                image={props.banner}
+                title={props.title}
+              />
+              <CardContent className={classes.cardcontent}>
+                <Grid justifyContent="space-between" container>
+                  <Grid item xs={10}>
+                    <Typography
+                      gutterBottom
+                      variant="h3"
+                      style={{ fontFamily: "Bebas Neue" }}
+                      component="h2"
+                    >
+                      {props.title}
+                    </Typography>
+                  </Grid>
+                  <Grid item sm>
+                    <DateRange {...props} />
+                  </Grid>
+                </Grid>
+                <Grid item>
+                  <Typography variant="body2" color="textSecondary">
+                    <ReactMarkdown linkTarget="_blank">
+                      {props.description}
+                    </ReactMarkdown>
                   </Typography>
                 </Grid>
-                <Grid item sm>
-                  <DateRange {...props} />
-                </Grid>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2" color="textSecondary">
-                  <ReactMarkdown linkTarget="_blank">
-                    {props.description}
-                  </ReactMarkdown>
+              </CardContent>
+            </CardActionArea>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+              <Divider style={{ marginRight: "18px", marginLeft: "18px" }} />
+              <CardContent>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {props.prechildren}
+                  {props.objectives && (
+                    <Section icon={"fa-solid fa-list"} title="Deliverables">
+                      <Objectives list={props.objectives} />
+                    </Section>
+                  )}
+                  {props.timeline && (
+                    <Section icon={"fa-solid fa-timeline"} title="Timeline">
+                      <Timeline steps={props.timeline} />
+                    </Section>
+                  )}
+                  {props.children}
                 </Typography>
-              </Grid>
-            </CardContent>
-          </CardActionArea>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <Divider style={{ marginRight: "18px", marginLeft: "18px" }} />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {props.prechildren}
-                {props.objectives && (
-                  <Section icon={"fa-solid fa-list"} title="Deliverables">
-                    <Objectives list={props.objectives} />
-                  </Section>
-                )}
-                {props.timeline && (
-                  <Section icon={"fa-solid fa-timeline"} title="Timeline">
-                    <Timeline steps={props.timeline} />
-                  </Section>
-                )}
-                {props.children}
-              </Typography>
-            </CardContent>
-          </Collapse>
-          <CardActions>
-            {typeof props.tags == "string" && (
-              <Grid
-                style={{ overflowY: "scroll", maxHeight: "20vh" }}
-                alignItems="baseline"
-                container
-                spacing={1}
-              >
-                {props.tags.split(",").map((tag) => {
-                  return (
-                    <Grid item>
-                      <Tags>{tag}</Tags>
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            )}
-          </CardActions>
-          <Button
-            onClick={() => {
-              handleExpandClick();
-              gaCardExpandHandle(props.title);
-            }}
-            style={{ paddingBottom: 20, paddingTop: 20 }}
-            size="small"
-            color="primary"
-          >
-            {expanded ? "Less" : "More"}
-          </Button>
-        </Card>
-      </Grid>
-    </Grow>
+              </CardContent>
+            </Collapse>
+            <CardActions>
+              {typeof props.tags == "string" && (
+                <Grid
+                  style={{ overflowY: "scroll", maxHeight: "20vh" }}
+                  alignItems="baseline"
+                  container
+                  spacing={1}
+                >
+                  {props.tags.split(",").map((tag) => {
+                    return (
+                      <Grid item>
+                        <Tags>{tag}</Tags>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              )}
+            </CardActions>
+            <Button
+              onClick={() => {
+                handleExpandClick();
+                gaCardExpandHandle(props.title);
+              }}
+              style={{ paddingBottom: 20, paddingTop: 20 }}
+              size="small"
+              color="primary"
+            >
+              {expanded ? "Less" : "More"}
+            </Button>
+          </Card>
+        </Grid>
+      </Grow>
+      <Modal open={expanded} onClose={handleExpandClick}>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {props.prechildren}
+          {props.objectives && (
+            <Section icon={"fa-solid fa-list"} title="Deliverables">
+              <Objectives list={props.objectives} />
+            </Section>
+          )}
+          {props.timeline && (
+            <Section icon={"fa-solid fa-timeline"} title="Timeline">
+              <Timeline steps={props.timeline} />
+            </Section>
+          )}
+          {props.children}
+        </Typography>
+      </Modal>
+    </>
   );
 }
