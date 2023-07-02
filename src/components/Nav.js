@@ -148,7 +148,7 @@ const SearchAppBar = (props) => {
           node.style = "background-color: #c2a800;";
           setFound((_found) => _found + 1);
           thisUrl = node.getAttribute("tag");
-          //window.find(query) // TODO: make this actually good (atleast make it not stop typing after it found something)
+          //window.find(query)
         }
       });
     } else {
