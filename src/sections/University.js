@@ -75,7 +75,7 @@ ${description}`,
       name: "CSC 2110",
       title: "Computer Science I",
       description:
-        "Rigorous introduction to fundamental object-oriented concepts and techniques of computer programming using an object-oriented language. Introduction to data abstraction; design of abstract data types. Introduction to recursion; programming with generic data types; inheritance; polymorphism; and exception handlers. Concepts applied to console programs and event-driven programming", // TODO get server1 back up so i can continue
+        "Rigorous introduction to fundamental object-oriented concepts and techniques of computer programming using an object-oriented language. Introduction to data abstraction; design of abstract data types. Introduction to recursion; programming with generic data types; inheritance; polymorphism; and exception handlers. Concepts applied to console programs and event-driven programming",
     }),
     new Course({
       name: "CSC 3010",
@@ -95,6 +95,18 @@ ${description}`,
       description:
         "Understanding the Internet using several access methods; required software and tools. Topics include: e-mail, FTP, Telnet, Gopher, Archie, Newsgroups, WWW, HTML, CGI and PHP scripting and how to create an active web site.",
     }),
+    new Course({
+      name: "MAT 2030",
+      title: "Calculus III",
+      description:
+        "Multi-variable calculus with applications. Vectors and vector functions in two and three dimensions; functions of several variables; differentiation; integration; vector calculus.",
+    }),
+    new Course({
+      name: "MAT 2250",
+      title: "Linear Algebra",
+      description:
+        "Systems of linear equations, matrices, vector spaces, basis, dimension, inner products, linear transformations and eigenvalues. Applications presented. ",
+    }), // TODO: show grades too?
   ];
   return <Generic entries={courses} />;
 }

@@ -10,6 +10,7 @@ import GDSC from "../sections/GDSC";
 import SCD from "../sections/SCD";
 import WayneHacks1 from "../sections/WayneHacks1";
 import University from "../sections/University";
+import School from "../sections/School";
 
 const styles = {
   heading: {
@@ -139,6 +140,22 @@ export default function Experience() {
             </Section>
             <Section icon="fa-solid fa-ranking-star" title="GPA">
               3.95/4 Unweighted GPA
+            </Section>
+          </MediaCard>
+          {/* HS */}
+          <MediaCard
+            prechildren={
+              <Section icon="fa-solid fa-map" title="Coursework">
+                <School.components.Coursework />
+              </Section>
+            }
+            {...School.meta}
+          >
+            <Section icon="fa-solid fa-award" title="Awards">
+              <School.components.Awards />
+            </Section>
+            <Section icon="fa-solid fa-ranking-star" title="GPA">
+              3.91/4 Unweighted GPA
             </Section>
           </MediaCard>
         </LayoutGrid>

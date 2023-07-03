@@ -11,15 +11,15 @@ const Section = {
     description: `Card content description`,
     timeline: [["December 31, 1969", "When clocks started to count up!"]],
   },
-  components: { links, statistics },
+  components: { Links, Statistics },
 };
 
 export default Section;
 
-function links() {
+function Links() {
   return <div>...</div>;
 }
 
-function statistics() {
+function Statistics() {
   return <div>...</div>;
 }
