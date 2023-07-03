@@ -52,11 +52,11 @@ export default function MediaCard(props) {
     cardRef.current.scrollIntoView({ behavior: "smooth" });
   const handleExpandClick = () => {
     //setCardSize(6) //makes cards expand to full width for desktop-sized screens
-    setCardSize(expanded ? props.size || 6 : 12);
+    //setCardSize(expanded ? props.size || 6 : 12); // Removed this for the modal update
+    setExpanded(!expanded);
     if (!expanded) {
       executeScroll(); // scroll to focused card
     }
-    setExpanded(!expanded);
   };
   const gaCardExpandHandle = (cardName = "none") => {
     ReactGA.event({
@@ -119,10 +119,11 @@ export default function MediaCard(props) {
                 </Grid>
               </CardContent>
             </CardActionArea>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            {/* (OLD) card content */}
+            <Collapse in={false} timeout="auto" unmountOnExit>
               <Divider style={{ marginRight: "18px", marginLeft: "18px" }} />
               <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
+                {/* <Typography variant="body2" color="textSecondary" component="p">
                   {props.prechildren}
                   {props.objectives && (
                     <Section icon={"fa-solid fa-list"} title="Deliverables">
@@ -135,7 +136,7 @@ export default function MediaCard(props) {
                     </Section>
                   )}
                   {props.children}
-                </Typography>
+                </Typography> */}
               </CardContent>
             </Collapse>
             <CardActions>
@@ -170,7 +171,39 @@ export default function MediaCard(props) {
           </Card>
         </Grid>
       </Grow>
+      {/* Inner-content (NEW) - used to be card expand content */}
       <Modal open={expanded} onClose={handleExpandClick}>
+        <Grid
+          justifyContent="space-between"
+          // style={{
+          //   height: "100%",
+          //   backgroundImage: `url(${props.banner})`,
+          //   backgroundSize: "cover",
+          //   backgroundPosition: "center",
+          // }}
+          container
+        >
+          <Grid item xs={10}>
+            <Typography
+              gutterBottom
+              variant="h3"
+              style={{ fontFamily: "Bebas Neue" }}
+              component="h2"
+            >
+              {props.title}
+            </Typography>
+          </Grid>
+          <Grid item sm>
+            <DateRange {...props} />
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Typography variant="body2" color="textSecondary">
+            <ReactMarkdown linkTarget="_blank">
+              {props.description}
+            </ReactMarkdown>
+          </Typography>
+        </Grid>
         <Typography variant="body2" color="textSecondary" component="p">
           {props.prechildren}
           {props.objectives && (
@@ -184,6 +217,22 @@ export default function MediaCard(props) {
             </Section>
           )}
           {props.children}
+          {typeof props.tags == "string" && (
+            <Grid
+              alignItems="baseline"
+              container
+              style={{ marginTop: 10 }}
+              spacing={1}
+            >
+              {props.tags.split(",").map((tag) => {
+                return (
+                  <Grid item>
+                    <Tags>{tag}</Tags>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          )}
         </Typography>
       </Modal>
     </>

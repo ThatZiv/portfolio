@@ -22,37 +22,42 @@ export default function Modal({ open, onClose, children }) {
             left: "50%",
             transform: "translate(-50%, -50%)",
             [theme.breakpoints.down("sm")]: {
-              maxHeight: "100vh",
+              maxHeight: "93vh",
               width: "100%",
             },
             [theme.breakpoints.up("md")]: {
-              maxHeight: "90vh", // Set the maximum height for scrolling
-              width: "80%",
+              maxHeight: "93vh", // Set the maximum height for scrolling
+              width: "85%",
             },
             bgcolor: "#1e1e1e",
+            maxHeight: "100vh",
+            width: "85%",
             border: "2px solid #000",
             boxShadow: 24,
             p: 4,
             overflow: "auto", // Make the content scrollable
           }}
         >
-          {children}
-          <Box
-            sx={{
-              "& > :not(style)": { m: 1 },
-              mt: 2,
+          <div
+            style={{
+              position: "absolute",
+              top: 7,
+              right: 7,
+              fontSize: 8,
             }}
           >
-            <Fab
-              color="primary"
-              variant="extended"
-              onClick={onClose}
-              aria-label="close"
-            >
-              Close<span> </span>
-              <CloseIcon sx={{ fontSize: 20 }} />
-            </Fab>
-          </Box>
+            <div onClick={onClose}>
+              <CloseIcon
+                sx={{
+                  "&:hover": {
+                    cursor: "pointer",
+                    color: "gray",
+                  },
+                }}
+              />
+            </div>
+          </div>
+          {children}
         </Box>
       </MuiModal>
     </div>

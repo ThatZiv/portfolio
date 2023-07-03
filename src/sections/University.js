@@ -7,6 +7,8 @@ import Generic from "../components/Generic";
 // import ListItemIcon from "@mui/material/ListItemIcon";
 // import ListItemText from "@mui/material/ListItemText";
 // import Divider from "@mui/material/Divider";
+
+// TODO: add more to this section
 /**
  * @type {import("../types/section").Section}
  */
@@ -15,7 +17,7 @@ const Section = {
     title: "Wayne State University",
     banner: "pics/wsu.png",
     complete: true,
-    tags: "Wayne State University,WSU,University,College,Education",
+    tags: "Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Activities,Classes,Coursework,Projects,Leadership",
     description: `## Bachelor of Science in Computer Science
 Wayne State University is a public research university in Detroit, Michigan. 
 It is Michigan's third-largest university. Founded in 1868, Wayne State consists of 
@@ -71,17 +73,29 @@ ${description}`,
     }),
     new Course({
       name: "CSC 2110",
-      title: "...",
-      description: "...", // TODO get server1 back up so i can continue
+      title: "Computer Science I",
+      description:
+        "Rigorous introduction to fundamental object-oriented concepts and techniques of computer programming using an object-oriented language. Introduction to data abstraction; design of abstract data types. Introduction to recursion; programming with generic data types; inheritance; polymorphism; and exception handlers. Concepts applied to console programs and event-driven programming", // TODO get server1 back up so i can continue
+    }),
+    new Course({
+      name: "CSC 3010",
+      title: "Ethics in Computer Science",
+      description:
+        "Students will study the ethical and legal issues that arise with the usage and development of computing technology. Students will learn the responsibilities of the computer professionals and how to make appropriate decisions when faced with legal and ethical issues in computing.",
     }),
     new Course({
       name: "CSC 2200",
-      title: "Data Structures and Algorithms",
+      title: "Computer Science II",
       description:
         "Design and implementation of fundamental abstract data types of computer science (such as stacks, queues, trees, lists, hashing, and graphs), using an object-oriented language. Programming requirements include the implementation of abstract data types using arrays and dynamic links; recursion; sorting and searching; hashing; and string processing. Introduction to algorithm analysis.",
     }),
+    new Course({
+      name: "CSC 3750",
+      title: "Introduction to Web Technology",
+      description:
+        "Understanding the Internet using several access methods; required software and tools. Topics include: e-mail, FTP, Telnet, Gopher, Archie, Newsgroups, WWW, HTML, CGI and PHP scripting and how to create an active web site.",
+    }),
   ];
-  console.log(courses);
   return <Generic entries={courses} />;
 }
 
