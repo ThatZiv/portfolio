@@ -265,6 +265,7 @@ const my = {
       "cynically optimistic",
       "awkwardly charming",
     ],
+    /* cspell:disable */
     hello: [
       "Zavaar Shah",
       "Welcome",
@@ -279,6 +280,7 @@ const my = {
       "Välkommen",
       "Hoş geldin",
     ],
+    /* cspell:enable */
   },
 };
 

@@ -15,7 +15,7 @@ const Section = {
 Troy High School is a public high school in Troy, Michigan, United States. It is a part of the Troy School District. 
 It enrolls approximately 2,000 students in grades 9-12.`,
     timeline: [
-      ["Fall 2017", "Start date."], // club joins, promosions, etc
+      ["Fall 2017", "Start date."], // club joins, promotions, etc
       ["November 2019", "Founded Troy High Cycling Club."],
       ["Spring 2020", "Elected event chair of Troy High Project Lead."],
       ["Spring 2021", "Graduation."],

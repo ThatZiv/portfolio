@@ -15,7 +15,7 @@ export default {
     objectives: `Parsed and extracted data from text files using C# and PowerShell to create billing statements.
         |Managed credit union workflows to ensure organized and optimized month-end billing deliveries.
         |Designed proof-of-concept for virtual machine manager full-stack web project.
-        |Created automation scripts for the composition, storage, and archival of business-critical documents. `, // Objectives are seperated by PIPE '|'
+        |Created automation scripts for the composition, storage, and archival of business-critical documents. `, // Objectives are separated by PIPE '|'
     timeline: [
       ["May 2nd, 2022", "Internship begins."],
       ["April 26th, 2023", "Internship ends."],
