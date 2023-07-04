@@ -124,45 +124,6 @@ export default function Experience() {
             </Section>
           </MediaCard>
         </LayoutGrid>
-        <Heading icon="fa-solid fa-graduation-cap" title="Education" />
-        {/* TODO: put this into a seperate page */}
-        <LayoutGrid>
-          {/* University */}
-          <MediaCard
-            prechildren={
-              <Section icon="fa-solid fa-map" title="Coursework">
-                <University.components.Coursework />
-              </Section>
-            }
-            {...University.meta}
-          >
-            <Section icon="fa-solid fa-award" title="Awards">
-              <University.components.Awards />
-            </Section>
-            <Section icon="fa-solid fa-ranking-star" title="GPA">
-              <University.components.Grade />
-            </Section>
-          </MediaCard>
-          {/* HS */}
-          <MediaCard
-            prechildren={
-              <Section icon="fa-solid fa-map" title="Coursework">
-                <School.components.Coursework />
-              </Section>
-            }
-            {...School.meta}
-          >
-            <Section icon="fa-solid fa-award" title="Awards">
-              <School.components.Awards />
-            </Section>
-            <Section icon="fa-solid fa-ranking-star" title="GPA">
-              <School.components.Grade />
-            </Section>
-            <Section icon="fa-solid fa-table-columns" title="Organizations">
-              <School.components.Organizations />
-            </Section>
-          </MediaCard>
-        </LayoutGrid>
       </div>
     </Grow>
   );
