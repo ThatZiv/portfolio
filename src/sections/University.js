@@ -1,4 +1,7 @@
+import { Button } from "@material-ui/core";
 import Generic from "../components/Generic";
+import SocialMedia from "../components/SocialMedia";
+import { Link } from "react-router-dom";
 // import { Typography } from "@material-ui/core";
 // import Box from "@mui/material/Box";
 // import List from "@mui/material/List";
@@ -9,6 +12,7 @@ import Generic from "../components/Generic";
 // import Divider from "@mui/material/Divider";
 
 // TODO: add more to this section
+const GPA = "3.95";
 /**
  * @type {import("../types/section").Section}
  */
@@ -16,21 +20,25 @@ const Section = {
   meta: {
     title: "Wayne State University",
     banner: "pics/wsu.png",
-    complete: true,
+    complete: true, // to show the date range on the banner
     tags: "Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Activities,Classes,Coursework,Projects,Leadership",
-    description: `## Bachelor of Science in Computer Science
-Wayne State University is a public research university in Detroit, Michigan. 
+    description: `## Bachelor of Science in Computer Science • **${GPA} GPA**
+[Wayne State University](https://wayne.edu) is a public research university in Detroit, Michigan. 
 It is Michigan's third-largest university. Founded in 1868, Wayne State consists of 
 13 schools and colleges offering approximately 350 programs to nearly 24,000 graduate and undergraduate students.`,
     timeline: [
-      ["August 2021", "Start date."],
-      ["May 2025", "Expected graduation date."],
+      ["Fall 2021", "Start date."], // TODO add promotions et al
+      ["Spring 2025", "Expected graduation date."],
     ],
   },
-  components: { Coursework, Awards },
+  components: { Coursework, Awards, Grade },
 };
 
 export default Section;
+
+function Grade() {
+  return <div>{GPA}/4 Unweighted Grade Point Average (GPA)</div>;
+}
 
 function Coursework() {
   class Course {
@@ -120,8 +128,7 @@ function Awards() {
           content: `Awarded [Fall 2021](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2021-46885#cs), 
 [Winter 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2022-48391#cs),
 [Fall 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2022-50373#cs), 
-Fall 2023
-`,
+Fall 2023. This award is given to students who have achieved a GPA of 3.5 or higher as a full-time student.`,
         },
         {
           title: "Warrior Award",

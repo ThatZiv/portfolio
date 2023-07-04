@@ -25,7 +25,7 @@ const styles = {
 
 // TODO: export this to its own component (if i ever need it elsewhere)
 const Heading = ({ icon, title }) => (
-  <div style={{ marginTop: 18 }}>
+  <div id={title} style={{ marginTop: 18 }}>
     <Typography sx={styles.heading}>
       <div>
         <i className={icon} />
@@ -125,6 +125,7 @@ export default function Experience() {
           </MediaCard>
         </LayoutGrid>
         <Heading icon="fa-solid fa-graduation-cap" title="Education" />
+        {/* TODO: put this into a seperate page */}
         <LayoutGrid>
           {/* University */}
           <MediaCard
@@ -139,7 +140,7 @@ export default function Experience() {
               <University.components.Awards />
             </Section>
             <Section icon="fa-solid fa-ranking-star" title="GPA">
-              3.95/4 Unweighted GPA
+              <University.components.Grade />
             </Section>
           </MediaCard>
           {/* HS */}
@@ -155,7 +156,10 @@ export default function Experience() {
               <School.components.Awards />
             </Section>
             <Section icon="fa-solid fa-ranking-star" title="GPA">
-              3.91/4 Unweighted GPA
+              <School.components.Grade />
+            </Section>
+            <Section icon="fa-solid fa-table-columns" title="Organizations">
+              <School.components.Organizations />
             </Section>
           </MediaCard>
         </LayoutGrid>

@@ -12,8 +12,8 @@ import Grid from "@material-ui/core/Grid";
 import { Divider, Zoom, Grow } from "@material-ui/core";
 import ReactGA from "react-ga";
 import Box from "@mui/material/Box";
-import ReactMarkdown from "react-markdown";
 
+import Markdown from "./Markdown";
 import Tags from "./Tags";
 import Objectives from "./Objectives";
 import Section from "./Section";
@@ -112,9 +112,7 @@ export default function MediaCard(props) {
                 </Grid>
                 <Grid item>
                   <Typography variant="body2" color="textSecondary">
-                    <ReactMarkdown linkTarget="_blank">
-                      {props.description}
-                    </ReactMarkdown>
+                    <Markdown>{props.description}</Markdown>
                   </Typography>
                 </Grid>
               </CardContent>
@@ -199,9 +197,7 @@ export default function MediaCard(props) {
         </Grid>
         <Grid item>
           <Typography variant="body2" color="textSecondary">
-            <ReactMarkdown linkTarget="_blank">
-              {props.description}
-            </ReactMarkdown>
+            <Markdown>{props.description}</Markdown>
           </Typography>
         </Grid>
         <Typography variant="body2" color="textSecondary" component="p">
