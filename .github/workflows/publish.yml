@@ -51,6 +51,11 @@ jobs:
         env:
           CI: "" # to ignore warnings as errors (bad practice, i know)
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: out
+          path: build/
+
       - name: Deploy
         if: github.event_name == 'push'
         uses: JamesIves/github-pages-deploy-action@releases/v3
