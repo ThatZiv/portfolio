@@ -2,7 +2,6 @@ import { Container, Grid, Typography, Slide, Grow, Fade, Avatar, Collapse, Zoom 
 import { makeStyles } from '@material-ui/core/styles';
 import { useState, useRef, useContext, useEffect } from "react";
 // import TextTransition, { presets } from "react-text-transition";
-import TextLoop from "react-text-loop";
 import { UserContext } from "../contexts"
 import { indigo } from "@material-ui/core/colors";
 import Delayed from "../components/Delayed";
@@ -63,7 +62,7 @@ export default function Home() {
                         {/* style={{ fontFamily: "Blinker, sans-serif" }}  */}
                         <Typography variant="h3" sx={styling.centerWhenSmall}
                             style={{ fontFamily: "Blinker, sans-serif", marginTop: 10 }} component="div">
-                            <TextLoop fade children={my.random.hello} interval={3500}/>
+                            Welcome.
                         </Typography>
 
                         <Typography color="gray" sx={styling.centerWhenSmall} variant="body1">{my.caption}</Typography>
@@ -102,7 +101,7 @@ export default function Home() {
                                 label !== "home" && <Grid item>
                                     <Tooltip title={capFirstLetter(label)}>
                                         <Link style={{ textDecoration: "none" }} to={location}>
-                                            <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd", marginTop: 4 }}> {/* Match the style with the "SocialMedia.js" btns */}
+                                            <Button style={{ backgroundColor: indigo[500], color: "#fdfdfd", marginTop: 4 }}> {/*Match the style with the "SocialMedia.js" btns*/}
                                                 <icon className={icon} />&nbsp;&nbsp;<div>{capFirstLetter(label)}</div>
                                             </Button>
                                         </Link>
