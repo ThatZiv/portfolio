@@ -71,19 +71,25 @@ function pictures() {
       <br />
       <Typography variant="h6">Presentation Slides</Typography>
       <div className="Media">
-        <iframe
+        <object
           style={{
             height: 300,
             minWidth: "100%",
             maxHeight: "100%",
             maxWidth: "100%",
+            border: null,
           }}
           title="View Presentation Slides"
-          src="/pics/ext/Hackathon_Slides2.pdf"
-          frameBorder="0"
+          data="/pics/ext/Hackathon_Slides2.pdf"
+          type="application/pdf"
         >
-          This browser does not support viewing this file.
-        </iframe>
+          <SocialMedia
+            name="View Presentation"
+            icon="fa-solid fa-file-pdf"
+            showName
+            url="/pics/ext/Hackathon_Slides2.pdf"
+          />
+        </object>
       </div>
     </div>
   );
@@ -92,7 +98,7 @@ function pictures() {
 function links() {
   return (
     <Grid spacing={1} container>
-      <Grid xs={12} item>
+      <Grid xs={6} item>
         <YouTubeEmbed id="MZsUFm2aQ58" />
       </Grid>
       <Grid item>

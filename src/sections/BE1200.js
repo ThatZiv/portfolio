@@ -93,19 +93,25 @@ function pictures() {
       <br />
       <Typography variant="h6">Project Document</Typography>
       <div className="Media">
-        <iframe
+        <object
           style={{
             height: 400,
             minWidth: "100%",
             maxHeight: "100%",
             maxWidth: "100%",
+            border: null,
           }}
           title="View Project PDF"
-          src="/pics/ext/be1200/main.pdf"
-          frameBorder="0"
+          data="/pics/ext/be1200/main.pdf"
+          type="application/pdf"
         >
-          This browser does not support viewing this file.
-        </iframe>
+          <SocialMedia
+            name="View Project PDF"
+            icon="fa-solid fa-file-pdf"
+            showName
+            url="/pics/ext/be1200/main.pdf"
+          />
+        </object>
       </div>
     </div>
   );

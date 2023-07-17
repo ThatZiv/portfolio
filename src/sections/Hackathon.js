@@ -78,19 +78,25 @@ function pictures() {
       <br />
       <Typography variant="h6">Presentation Slides</Typography>
       <div className="Media">
-        <iframe
+        <object
           style={{
             height: 300,
             minWidth: "100%",
             maxHeight: "100%",
             maxWidth: "100%",
+            border: null,
           }}
           title="View Presentation Slides"
-          src="/pics/ext/Hackathon_Slides.pdf"
-          frameBorder="0"
+          data="/pics/ext/Hackathon_Slides.pdf"
+          type="application/pdf"
         >
-          This browser does not support viewing this file.
-        </iframe>
+          <SocialMedia
+            name="View Presentation"
+            icon="fa-solid fa-file-pdf"
+            showName
+            url="/pics/ext/Hackathon_Slides.pdf"
+          />
+        </object>
       </div>
     </div>
   );
