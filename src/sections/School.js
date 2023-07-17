@@ -124,6 +124,10 @@ You'll work on your own and as part of a team to creatively address real-world i
         <Generic
           entries={[
             {
+              title: "AP® Computer Science A",
+              content: "Get familiar with the concepts and tools of computer science as you learn a subset of the Java programming language. You'll do hands-on work to design, write, and test computer programs that solve problems or accomplish tasks."
+            },
+            {
               title: "AP® Macroeconomics",
               content:
                 "Explore the principles of economics that apply to an economic system as a whole. You'll use graphs, charts, and data to analyze, describe, and explain economic concepts.",
