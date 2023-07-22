@@ -9,7 +9,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import { Divider, Zoom, Grow } from "@material-ui/core";
+import { Divider, Zoom, Grow, CircularProgress } from "@material-ui/core";
 import ReactGA from "react-ga";
 import Box from "@mui/material/Box";
 
@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
 export default function MediaCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [imgLoaded, setImgLoaded] = React.useState(false);
   const [cardSize, setCardSize] = React.useState(props.size || 6);
   const cardRef = React.useRef(null);
   //let cardWidth = 6
@@ -91,9 +92,26 @@ export default function MediaCard(props) {
             >
               <CardMedia
                 className={classes.media}
+                style={{ filter: imgLoaded ? "none" : "blur(0.75rem)" }}
                 image={props.banner}
+                component="img"
+                alt={props.title}
+                onLoad={() => setImgLoaded(true)}
                 title={props.title}
               />
+              {!imgLoaded && (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: 10,
+                    marginTop: 10,
+                  }}
+                >
+                  <CircularProgress color="secondary" />
+                </div>
+              )}
               <CardContent className={classes.cardcontent}>
                 <Grid justifyContent="space-between" container>
                   <Grid item xs={10}>
