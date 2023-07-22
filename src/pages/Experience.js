@@ -11,6 +11,7 @@ import SCD from "../sections/SCD";
 import WayneHacks1 from "../sections/WayneHacks1";
 import University from "../sections/University";
 import School from "../sections/School";
+import PFG from "../sections/PFG";
 
 const styles = {
   heading: {
@@ -53,6 +54,17 @@ export default function Experience() {
       <div>
         <Heading icon="fa-solid fa-briefcase" title="Employment" />
 
+        <LayoutGrid>
+          {/* PFG */}
+          <MediaCard {...PFG.meta} size={12}>
+            <Section icon="fa-solid fa-circle-info" title="Info">
+              <PFG.components.MoreInfo />
+            </Section>
+            <Section icon="fa-solid fa-star" title="Welcoming">
+              <PFG.components.Welcoming />
+            </Section>
+          </MediaCard>
+        </LayoutGrid>
         <LayoutGrid>
           {/* Doxim */}
           <MediaCard {...Doxim.meta} size={12}>

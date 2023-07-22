@@ -2,6 +2,7 @@ import SocialMedia from "../components/SocialMedia";
 import Gallery from "../components/Gallery";
 import { Divider, Grid, Typography } from "@mui/material";
 /** @type {import("../types/section").Section} */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   meta: {
     title: "WSU Hackathon '21",
