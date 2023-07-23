@@ -1,27 +1,22 @@
 /* eslint-disable react/jsx-pascal-case */
-import { Divider, Grid } from "@material-ui/core";
-import { Grow, Typography } from "@mui/material";
-import React from "react";
-import MediaCard from "../components/MediaCard";
-import Section from "../components/Section";
-import YouTubeEmbed from "../components/YouTubeEmbed";
-import Doxim from "../sections/Doxim";
-import GDSC from "../sections/GDSC";
-import SCD from "../sections/SCD";
-import WayneHacks1 from "../sections/WayneHacks1";
-import University from "../sections/University";
-import School from "../sections/School";
+import { Grid } from '@material-ui/core'
+import { Grow } from '@mui/material'
+import React from 'react'
+import MediaCard from '../components/MediaCard'
+import Section from '../components/Section'
+import University from '../sections/University'
+import School from '../sections/School'
 
 export const LayoutGrid = ({ children }) => (
   <Grid
     justifyContent="flex-start"
-    style={{ marginTop: "10px" }}
+    style={{ marginTop: '10px' }}
     container
     spacing={2}
   >
     {children}
   </Grid>
-);
+)
 
 export default function Experience() {
   return (
@@ -66,5 +61,5 @@ export default function Experience() {
         </LayoutGrid>
       </div>
     </Grow>
-  );
+  )
 }

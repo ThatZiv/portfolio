@@ -1,93 +1,112 @@
-import React from "react";
-import TestRenderer from 'react-test-renderer';
-import DateRange from "../components/DateRange";
-import Footer from "../components/Footer";
-import Tags from "../components/Tags";
-import YouTubeEmbed from "../components/YouTubeEmbed";
-import Objectives from "../components/Objectives";
-// import Gallery from "../components/Gallery"; // TODO: 
-import Timeline from "../components/Timeline";
-import { areSetsEqual } from "../utils";
-import Section from "../components/Section";
+import React from 'react'
+import TestRenderer from 'react-test-renderer'
+import DateRange from '../components/DateRange'
+import Footer from '../components/Footer'
+import Tags from '../components/Tags'
+import YouTubeEmbed from '../components/YouTubeEmbed'
+import Objectives from '../components/Objectives'
+// import Gallery from "../components/Gallery"; // TODO:
+import Timeline from '../components/Timeline'
+import { areSetsEqual } from '../utils'
+import Section from '../components/Section'
 
 /**
  * Traverses a `TestRenderer` json tree to its constituents
- * @param {*} tree 
- * @param {function} cb 
+ * @param {*} tree
+ * @param {function} cb
  * @void
  */
 const traverseTree = (tree, cb) => {
-  if (tree && typeof (tree) === "string") {
+  if (tree && typeof tree === 'string') {
     cb(tree)
-    return;
+    return
   }
   if (tree.children) {
-    for (let child of tree?.children) {
+    for (let child of tree.children) {
       traverseTree(child, cb)
     }
   }
 }
 
 describe('Tests components', () => {
-  let testRenderer;
-  
+  let testRenderer
+
   afterEach(() => {
     // Clean up the TestRenderer instance
-    if (testRenderer) testRenderer.unmount();
-  });
-
-  test("Footer", () => {
-    testRenderer = TestRenderer.create(<Footer />);
-    expect(testRenderer.toJSON().children.join("")).toContain("Created by Zavaar Shah");
+    if (testRenderer) testRenderer.unmount()
   })
 
-  describe("DateRange", () => {
+  test('Footer', () => {
+    testRenderer = TestRenderer.create(<Footer />)
+    expect(testRenderer.toJSON().children.join('')).toContain(
+      'Created by Zavaar Shah'
+    )
+  })
+
+  describe('DateRange', () => {
     const testData = [
-      ["December 31, 1969", "When clocks started to count up!"],
-      ["January 1, 1970", "The day of reckoning..."]
+      ['December 31, 1969', 'When clocks started to count up!'],
+      ['January 1, 1970', 'The day of reckoning...']
     ]
-    test("Checks date range (ongoing)", () => {
-      const dateRangeIncomplete = TestRenderer.create(<DateRange complete={false} timeline={testData} />)
-      expect(dateRangeIncomplete.toJSON().children[0]).toBe("1969 - Now")
+    test('Checks date range (ongoing)', () => {
+      const dateRangeIncomplete = TestRenderer.create(
+        <DateRange complete={false} timeline={testData} />
+      )
+      expect(dateRangeIncomplete.toJSON().children[0]).toBe('1969 - Now')
       dateRangeIncomplete.unmount()
     })
-    test("Checks full date range (competed)", () => {
-      const dateRangeCompleted = TestRenderer.create(<DateRange complete={true} timeline={testData} />)
-      expect(dateRangeCompleted.toJSON().children[0]).toBe("1969 - 1970")
+    test('Checks full date range (competed)', () => {
+      const dateRangeCompleted = TestRenderer.create(
+        <DateRange complete={true} timeline={testData} />
+      )
+      expect(dateRangeCompleted.toJSON().children[0]).toBe('1969 - 1970')
       dateRangeCompleted.unmount()
     })
   })
 
-  test("Tags", () => {
-    const testContent = "Test-Driven Development"
-    testRenderer = TestRenderer.create(<Tags>{testContent}</Tags>);
-    expect(testRenderer.toJSON().children[0].children[1].children[0]).toBe(testContent)
+  test('Tags', () => {
+    const testContent = 'Test-Driven Development'
+    testRenderer = TestRenderer.create(<Tags>{testContent}</Tags>)
+    expect(testRenderer.toJSON().children[0].children[1].children[0]).toBe(
+      testContent
+    )
   })
 
-  test("YouTubeEmbed", () => {
-    const id = "dQw4w9WgXcQ"
+  test('YouTubeEmbed', () => {
+    const id = 'dQw4w9WgXcQ'
     testRenderer = TestRenderer.create(<YouTubeEmbed id={id} />)
-    expect(testRenderer.toJSON().children[0].props.src).toBe(`https://www.youtube-nocookie.com/embed/${id}`)
+    expect(testRenderer.toJSON().children[0].props.src).toBe(
+      `https://www.youtube-nocookie.com/embed/${id}`
+    )
   })
 
-  test("Objectives", () => {
-    const objectives = "One|Two|Three|Four|Five"
+  test('Objectives', () => {
+    const objectives = 'One|Two|Three|Four|Five'
     testRenderer = TestRenderer.create(<Objectives list={objectives} />)
-    const scrapedObjectives = testRenderer.toJSON().children[0].children.map((objective) => objective.children[0].children[0].children[0])
-    const tArr = objectives.split("|")
+    const scrapedObjectives = testRenderer
+      .toJSON()
+      .children[0].children.map(
+        (objective) => objective.children[0].children[0].children[0]
+      )
+    const tArr = objectives.split('|')
     expect(scrapedObjectives).toEqual(tArr)
   })
 
-  test("Timeline", () => {
+  test('Timeline', () => {
     const testData = [
-      ["December 31, 1969", "When clocks started to count up!"],
-      ["January 1, 1970", "The day of reckoning..."]
+      ['December 31, 1969', 'When clocks started to count up!'],
+      ['January 1, 1970', 'The day of reckoning...']
     ]
     let originalContents = new Set()
     for (let i = 0; i < testData.length; i++) {
-      originalContents.add((i + 1).toString()).add(testData[i][0]).add(testData[i][1])
+      originalContents
+        .add((i + 1).toString())
+        .add(testData[i][0])
+        .add(testData[i][1])
     }
-    const tlElement = TestRenderer.create(<Timeline steps={testData} />).toJSON()
+    const tlElement = TestRenderer.create(
+      <Timeline steps={testData} />
+    ).toJSON()
     let orderedContents = new Set()
 
     traverseTree(tlElement.children[1].children[1], (tree) => {
@@ -96,14 +115,25 @@ describe('Tests components', () => {
     expect(areSetsEqual(orderedContents, originalContents)).toBe(true)
   })
 
-  test("Section", () => {
-    const heading = "My Accordion heading"
-    const icon = "fs-brands fa-facebook"
+  test('Section', () => {
+    const heading = 'My Accordion heading'
+    const icon = 'fs-brands fa-facebook'
     const children = <h1>My inner content</h1>
-    testRenderer = TestRenderer.create(<Section title={heading} icon={icon}>{children}</Section>)
-    let expectedContent = new Set(['  ', 'My Accordion heading', 'expand_more', 'My inner content'])
+    testRenderer = TestRenderer.create(
+      <Section title={heading} icon={icon}>
+        {children}
+      </Section>
+    )
+    let expectedContent = new Set([
+      '  ',
+      'My Accordion heading',
+      'expand_more',
+      'My inner content'
+    ])
     let content = new Set()
-    traverseTree(testRenderer.toJSON(), (val) => { content.add(val) })
+    traverseTree(testRenderer.toJSON(), (val) => {
+      content.add(val)
+    })
     expect(areSetsEqual(expectedContent, content)).toBeTruthy()
   })
   /* test("Gallery", () => {
@@ -114,6 +144,4 @@ describe('Tests components', () => {
     testRenderer = TestRenderer.create(<Gallery images={galleryData} />)
     console.log(testRenderer.toJSON())
   }) */
-
-});
-
+})

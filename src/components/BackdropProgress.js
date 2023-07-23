@@ -1,12 +1,11 @@
-import { Backdrop, CircularProgress, Grid } from '@material-ui/core'
-import React, { useState, useEffect } from 'react'
-import Skeleton from "@mui/material/Skeleton"
+import { CircularProgress } from '@material-ui/core'
+import React from 'react'
 const BackdropProgress = () => {
-
-    return (<div style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
-        <CircularProgress color="inherit" />
-    </div>)
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
+      <CircularProgress color="inherit" />
+    </div>
+  )
 }
-
 
 export default BackdropProgress

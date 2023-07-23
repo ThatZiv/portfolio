@@ -1,8 +1,7 @@
-import SocialMedia from "../components/SocialMedia";
-import Gallery from "../components/Gallery";
-import { Divider, Grid, Typography } from "@mui/material";
-import Gist from "react-gist";
-import Section from "../components/Section";
+/* eslint-disable react/jsx-no-comment-textnodes */
+import SocialMedia from '../components/SocialMedia'
+import Gallery from '../components/Gallery'
+import { Divider, Typography } from '@mui/material'
 
 // NOTE: some images are embedded (base64)
 // TODO: make these NOT embedded (very large)
@@ -10,10 +9,10 @@ import Section from "../components/Section";
 /** @type {import("../types/section").Section} */
 export default {
   meta: {
-    title: "Haptic Walking Device",
-    banner: "/pics/BE1200.png",
+    title: 'Haptic Walking Device',
+    banner: '/pics/BE1200.png',
     complete: true,
-    tags: "C/C++,Arduino,UI/UX,I/O,Telecommunications,Bluetooth,Collaborative,Pair Programming,Mobile App Development,Product Design,Embedded Systems",
+    tags: 'C/C++,Arduino,UI/UX,I/O,Telecommunications,Bluetooth,Collaborative,Pair Programming,Mobile App Development,Product Design,Embedded Systems',
     //objectives: `Usually from resume.`, // Objectives are separated by PIPE '|'
     description: `The goal for this project was to design a device that utilizes sensors to detect
         objects from a certain range and instruct an internal servo to vibrate in response to the
@@ -23,28 +22,28 @@ export default {
         oncoming object. This would ultimately assist the visually-impaired in their day-to-day lives.`,
     timeline: [
       [
-        "October 21, 2021",
-        "Project idea was chosen after a thorough, collaborative brainstorm session with group members.",
+        'October 21, 2021',
+        'Project idea was chosen after a thorough, collaborative brainstorm session with group members.'
       ],
       [
-        "November 15, 2021",
-        "Circuitry and schematics were created alongside 3D printed enclosure for embedded system.",
+        'November 15, 2021',
+        'Circuitry and schematics were created alongside 3D printed enclosure for embedded system.'
       ],
-      ["November 23, 2021", "C++ Arduino code was ready for deployment."],
+      ['November 23, 2021', 'C++ Arduino code was ready for deployment.'],
       [
-        "November 29, 2021",
-        "Electrical components were assembled in housing module.",
+        'November 29, 2021',
+        'Electrical components were assembled in housing module.'
       ],
       [
-        "November 30, 2021",
-        "Posters, graphics, and documentation were finalized.",
+        'November 30, 2021',
+        'Posters, graphics, and documentation were finalized.'
       ],
-      ["December 11, 2021", "Final project submitted."],
-      ["December 15, 2021", "Project received 2nd place for all classes."],
-    ],
+      ['December 11, 2021', 'Final project submitted.'],
+      ['December 15, 2021', 'Project received 2nd place for all classes.']
+    ]
   },
-  components: { links, description, pictures },
-};
+  components: { links, description, pictures }
+}
 
 function links() {
   return (
@@ -62,7 +61,7 @@ function links() {
         url="/pics/ext/be1200/poster.png"
       />
     </div>
-  );
+  )
 }
 function pictures() {
   return (
@@ -71,21 +70,21 @@ function pictures() {
         timeout={7500}
         images={[
           {
-            label: "Project Poster",
-            imgPath: "/pics/ext/be1200/poster.png",
+            label: 'Project Poster',
+            imgPath: '/pics/ext/be1200/poster.png'
           },
           {
-            label: "App UI",
-            imgPath: "/pics/ext/be1200/mobile_ui.png",
+            label: 'App UI',
+            imgPath: '/pics/ext/be1200/mobile_ui.png'
           },
           {
-            label: "Code Block Workflow",
-            imgPath: "/pics/ext/be1200/blocks.png",
+            label: 'Code Block Workflow',
+            imgPath: '/pics/ext/be1200/blocks.png'
           },
           {
-            label: "Schematic",
-            imgPath: "/pics/ext/be1200/schematic.png",
-          },
+            label: 'Schematic',
+            imgPath: '/pics/ext/be1200/schematic.png'
+          }
         ]}
       />
       <br />
@@ -96,10 +95,10 @@ function pictures() {
         <object
           style={{
             height: 400,
-            minWidth: "100%",
-            maxHeight: "100%",
-            maxWidth: "100%",
-            border: null,
+            minWidth: '100%',
+            maxHeight: '100%',
+            maxWidth: '100%',
+            border: null
           }}
           title="View Project PDF"
           data="/pics/ext/be1200/main.pdf"
@@ -114,14 +113,14 @@ function pictures() {
         </object>
       </div>
     </div>
-  );
+  )
 }
 
 function description() {
   /* Description was compiled from pdf -> html -> jsx, formatting is weird because of that*/
   // cspell:disable
   return (
-    <div style={{ overflow: "scroll", height: "500px", fontFamily: "Arial" }}>
+    <div style={{ overflow: 'scroll', height: '500px', fontFamily: 'Arial' }}>
       <h2>
         <i>
           Taken from <a href="/pics/ext/be1200/main.pdf">Project PDF</a> and
@@ -131,56 +130,56 @@ function description() {
       <style
         type="text/css"
         dangerouslySetInnerHTML={{
-          __html: " \n            * {margin:0; padding:0; text-indent:0; }",
+          __html: ' \n            * {margin:0; padding:0; text-indent:0; }'
         }}
       />
 
       <h1
         style={{
-          paddingTop: "10pt",
-          textIndent: "0pt",
-          textAlign: "center",
+          paddingTop: '10pt',
+          textIndent: '0pt',
+          textAlign: 'center'
         }}
       >
         HAPTIC WALKING DEVICE
       </h1>
       <p
         style={{
-          paddingTop: "4pt",
-          textAlign: "center",
+          paddingTop: '4pt',
+          textAlign: 'center'
         }}
       >
         by Zavaar Shah, Masroor Muhib, Aidan Demps, Geovanni Tinoco
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
-      <p style={{ paddingLeft: "28pt", textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ paddingLeft: '28pt', textIndent: '0pt', textAlign: 'left' }}>
         <span />
       </p>
       <img
-        style={{ width: "96%", height: "65%" }}
+        style={{ width: '96%', height: '65%' }}
         src="/pics/ext/be1200/poster.png"
       />
       <p />
       <p
         className="s1"
         style={{
-          paddingTop: "10pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '10pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
         Purpose:
       </p>
       <p
         style={{
-          paddingTop: "9pt",
-          paddingLeft: "5pt",
-          textIndent: "35pt",
-          lineHeight: "109%",
-          textAlign: "left",
+          paddingTop: '9pt',
+          paddingLeft: '5pt',
+          textIndent: '35pt',
+          lineHeight: '109%',
+          textAlign: 'left'
         }}
       >
         The goal for this project is to design a device that utilizes sensors to
@@ -192,14 +191,14 @@ function description() {
         an oncoming object.
       </p>
       <br />
-      <img style={{ width: "96%", height: "65%" }} src="/pics/BE1200.png" />
+      <img style={{ width: '96%', height: '65%' }} src="/pics/BE1200.png" />
       <p
         className="s1"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
         Materials:
@@ -208,10 +207,10 @@ function description() {
         <li data-list-text="">
           <p
             style={{
-              paddingTop: "9pt",
-              paddingLeft: "41pt",
-              textIndent: "-18pt",
-              textAlign: "left",
+              paddingTop: '9pt',
+              paddingLeft: '41pt',
+              textIndent: '-18pt',
+              textAlign: 'left'
             }}
           >
             Arduino UNO Microcontroller
@@ -220,10 +219,10 @@ function description() {
         <li data-list-text="">
           <p
             style={{
-              paddingTop: "1pt",
-              paddingLeft: "41pt",
-              textIndent: "-18pt",
-              textAlign: "left",
+              paddingTop: '1pt',
+              paddingLeft: '41pt',
+              textIndent: '-18pt',
+              textAlign: 'left'
             }}
           >
             Wires (male to male &amp; female to male)
@@ -232,10 +231,10 @@ function description() {
         <li data-list-text="">
           <p
             style={{
-              paddingTop: "1pt",
-              paddingLeft: "41pt",
-              textIndent: "-18pt",
-              textAlign: "left",
+              paddingTop: '1pt',
+              paddingLeft: '41pt',
+              textIndent: '-18pt',
+              textAlign: 'left'
             }}
           >
             Ultrasonic Sensor – HC-SR04
@@ -244,10 +243,10 @@ function description() {
         <li data-list-text="">
           <p
             style={{
-              paddingTop: "1pt",
-              paddingLeft: "41pt",
-              textIndent: "-18pt",
-              textAlign: "left",
+              paddingTop: '1pt',
+              paddingLeft: '41pt',
+              textIndent: '-18pt',
+              textAlign: 'left'
             }}
           >
             HC-05 Bluetooth module
@@ -256,10 +255,10 @@ function description() {
         <li data-list-text="">
           <p
             style={{
-              paddingTop: "1pt",
-              paddingLeft: "41pt",
-              textIndent: "-18pt",
-              textAlign: "left",
+              paddingTop: '1pt',
+              paddingLeft: '41pt',
+              textIndent: '-18pt',
+              textAlign: 'left'
             }}
           >
             Power Supply Module
@@ -268,10 +267,10 @@ function description() {
         <li data-list-text="">
           <p
             style={{
-              paddingTop: "1pt",
-              paddingLeft: "41pt",
-              textIndent: "-18pt",
-              textAlign: "left",
+              paddingTop: '1pt',
+              paddingLeft: '41pt',
+              textIndent: '-18pt',
+              textAlign: 'left'
             }}
           >
             Tower Pro MG996R Servo
@@ -279,10 +278,10 @@ function description() {
           <p
             className="s1"
             style={{
-              paddingTop: "9pt",
-              paddingLeft: "5pt",
-              textIndent: "0pt",
-              textAlign: "left",
+              paddingTop: '9pt',
+              paddingLeft: '5pt',
+              textIndent: '0pt',
+              textAlign: 'left'
             }}
           >
             Instructions:
@@ -291,11 +290,11 @@ function description() {
             <li data-list-text={1}>
               <p
                 style={{
-                  paddingTop: "9pt",
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  lineHeight: "109%",
-                  textAlign: "left",
+                  paddingTop: '9pt',
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  lineHeight: '109%',
+                  textAlign: 'left'
                 }}
               >
                 Upload the c++ code to the Arduino microcontroller using the
@@ -305,11 +304,11 @@ function description() {
                 <li data-list-text="a.">
                   <p
                     style={{
-                      paddingTop: "4pt",
-                      paddingLeft: "77pt",
-                      textIndent: "-18pt",
-                      lineHeight: "109%",
-                      textAlign: "left",
+                      paddingTop: '4pt',
+                      paddingLeft: '77pt',
+                      textIndent: '-18pt',
+                      lineHeight: '109%',
+                      textAlign: 'left'
                     }}
                   >
                     Open Arduino IDE app &gt; click file tab &gt; open existing
@@ -321,40 +320,41 @@ function description() {
                   <p
                     className="s3"
                     style={{
-                      paddingLeft: "77pt",
-                      textIndent: "-18pt",
-                      textAlign: "left",
+                      paddingLeft: '77pt',
+                      textIndent: '-18pt',
+                      textAlign: 'left'
                     }}
                   >
                     <a
                       href="https://zavaar.net/static/be1200/final_project/arduinoCode"
                       className="s2"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       https://zavaar.net/static/be1200/final_project/arduinoCod
                     </a>
                     <span
                       style={{
-                        color: "#9DFFCA",
-                        fontFamily: "Verdana, sans-serif",
-                        fontStyle: "normal",
-                        fontWeight: "normal",
-                        textDecoration: "underline",
-                        fontSize: "11pt",
+                        color: '#9DFFCA',
+                        fontFamily: 'Verdana, sans-serif',
+                        fontStyle: 'normal',
+                        fontWeight: 'normal',
+                        textDecoration: 'underline',
+                        fontSize: '11pt'
                       }}
                     >
                       e
-                    </span>{" "}
-                    <span style={{ color: "#fff" }}>.</span>
+                    </span>{' '}
+                    <span style={{ color: '#fff' }}>.</span>
                   </p>
                 </li>
                 <li data-list-text="c.">
                   <p
                     style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "77pt",
-                      textIndent: "-18pt",
-                      textAlign: "left",
+                      paddingTop: '1pt',
+                      paddingLeft: '77pt',
+                      textIndent: '-18pt',
+                      textAlign: 'left'
                     }}
                   >
                     Verify the code using the verify button on the IDE software
@@ -365,32 +365,34 @@ function description() {
             <li data-list-text={2}>
               <p
                 style={{
-                  paddingTop: "1pt",
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  lineHeight: "109%",
-                  textAlign: "left",
+                  paddingTop: '1pt',
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  lineHeight: '109%',
+                  textAlign: 'left'
                 }}
               >
                 <a
                   href="https://zavaar.net/static/be1200/final_project/haptic_app.apk"
                   style={{
-                    color: "white",
-                    fontFamily: "Verdana, sans-serif",
-                    fontStyle: "normal",
-                    fontWeight: "normal",
-                    textDecoration: "none",
-                    fontSize: "11pt",
+                    color: 'white',
+                    fontFamily: 'Verdana, sans-serif',
+                    fontStyle: 'normal',
+                    fontWeight: 'normal',
+                    textDecoration: 'none',
+                    fontSize: '11pt'
                   }}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Download the .apk file on an android device to install mobile
-                  application{" "}
+                  application{' '}
                 </a>
                 <a
                   href="https://zavaar.net/static/be1200/final_project/haptic_app.apk"
                   className="s2"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   https://zavaar.net/static/be1200/final_project/haptic_app.apk
                 </a>
@@ -399,21 +401,21 @@ function description() {
             <li data-list-text={3}>
               <p
                 style={{
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  textAlign: "left",
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  textAlign: 'left'
                 }}
               >
                 Assemble components based on schematic
               </p>
-              <p style={{ textIndent: "0pt", textAlign: "left" }}>
+              <p style={{ textIndent: '0pt', textAlign: 'left' }}>
                 <br />
               </p>
               <p
                 style={{
-                  paddingLeft: "27pt",
-                  textIndent: "0pt",
-                  textAlign: "left",
+                  paddingLeft: '27pt',
+                  textIndent: '0pt',
+                  textAlign: 'left'
                 }}
               >
                 <span />
@@ -436,11 +438,11 @@ function description() {
             <li data-list-text={4}>
               <p
                 style={{
-                  paddingTop: "7pt",
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  lineHeight: "109%",
-                  textAlign: "left",
+                  paddingTop: '7pt',
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  lineHeight: '109%',
+                  textAlign: 'left'
                 }}
               >
                 Power on the Arduino by connecting the Arduino to your computer
@@ -450,10 +452,10 @@ function description() {
             <li data-list-text={5}>
               <p
                 style={{
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  lineHeight: "13pt",
-                  textAlign: "left",
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  lineHeight: '13pt',
+                  textAlign: 'left'
                 }}
               >
                 Click the “Upload” button on the IDE software
@@ -462,10 +464,10 @@ function description() {
             <li data-list-text={6}>
               <p
                 style={{
-                  paddingTop: "1pt",
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  textAlign: "left",
+                  paddingTop: '1pt',
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  textAlign: 'left'
                 }}
               >
                 Press the “connect” button on the app.
@@ -474,10 +476,10 @@ function description() {
             <li data-list-text={7}>
               <p
                 style={{
-                  paddingTop: "1pt",
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  textAlign: "left",
+                  paddingTop: '1pt',
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  textAlign: 'left'
                 }}
               >
                 Find the “HC-05” Bluetooth device in the device list for
@@ -487,11 +489,11 @@ function description() {
                 <li data-list-text="a.">
                   <p
                     style={{
-                      paddingTop: "1pt",
-                      paddingLeft: "77pt",
-                      textIndent: "-18pt",
-                      lineHeight: "110%",
-                      textAlign: "left",
+                      paddingTop: '1pt',
+                      paddingLeft: '77pt',
+                      textIndent: '-18pt',
+                      lineHeight: '110%',
+                      textAlign: 'left'
                     }}
                   >
                     If you require a password to access the device, please use
@@ -503,10 +505,10 @@ function description() {
             <li data-list-text={8}>
               <p
                 style={{
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  lineHeight: "13pt",
-                  textAlign: "left",
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  lineHeight: '13pt',
+                  textAlign: 'left'
                 }}
               >
                 If the connection was successful, you will see the green
@@ -514,10 +516,10 @@ function description() {
               </p>
               <p
                 style={{
-                  paddingTop: "1pt",
-                  paddingLeft: "41pt",
-                  textIndent: "0pt",
-                  textAlign: "left",
+                  paddingTop: '1pt',
+                  paddingLeft: '41pt',
+                  textIndent: '0pt',
+                  textAlign: 'left'
                 }}
               >
                 underneath the app container.
@@ -526,11 +528,11 @@ function description() {
             <li data-list-text={9}>
               <p
                 style={{
-                  paddingTop: "1pt",
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  lineHeight: "109%",
-                  textAlign: "justify",
+                  paddingTop: '1pt',
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  lineHeight: '109%',
+                  textAlign: 'justify'
                 }}
               >
                 Turn the “trip” slider on to track distance traveled via the
@@ -540,9 +542,9 @@ function description() {
               </p>
               <p
                 style={{
-                  paddingLeft: "77pt",
-                  textIndent: "0pt",
-                  textAlign: "left",
+                  paddingLeft: '77pt',
+                  textIndent: '0pt',
+                  textAlign: 'left'
                 }}
               >
                 <span />
@@ -580,10 +582,10 @@ function description() {
             <li data-list-text={10}>
               <p
                 style={{
-                  paddingTop: "4pt",
-                  paddingLeft: "41pt",
-                  textIndent: "-18pt",
-                  textAlign: "left",
+                  paddingTop: '4pt',
+                  paddingLeft: '41pt',
+                  textIndent: '-18pt',
+                  textAlign: 'left'
                 }}
               >
                 When done, press the disconnect button to terminate the
@@ -594,10 +596,10 @@ function description() {
           <p
             className="s1"
             style={{
-              paddingTop: "9pt",
-              paddingLeft: "5pt",
-              textIndent: "0pt",
-              textAlign: "left",
+              paddingTop: '9pt',
+              paddingLeft: '5pt',
+              textIndent: '0pt',
+              textAlign: 'left'
             }}
           >
             Libraries used:
@@ -607,10 +609,10 @@ function description() {
           <p
             className="s4"
             style={{
-              paddingTop: "9pt",
-              paddingLeft: "41pt",
-              textIndent: "-18pt",
-              textAlign: "left",
+              paddingTop: '9pt',
+              paddingLeft: '41pt',
+              textIndent: '-18pt',
+              textAlign: 'left'
             }}
           >
             Servo@^1.1.8
@@ -619,10 +621,10 @@ function description() {
         <li data-list-text="">
           <p
             style={{
-              paddingTop: "1pt",
-              paddingLeft: "41pt",
-              textIndent: "-18pt",
-              textAlign: "left",
+              paddingTop: '1pt',
+              paddingLeft: '41pt',
+              textIndent: '-18pt',
+              textAlign: 'left'
             }}
           >
             Arduino
@@ -632,31 +634,33 @@ function description() {
       <p
         className="s1"
         style={{
-          paddingTop: "1pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "29pt",
-          textAlign: "left",
+          paddingTop: '1pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '29pt',
+          textAlign: 'left'
         }}
       >
         Arduino C++ code
         <a
           href="https://zavaar.net/static/be1200/final_project/arduinoCode"
           style={{
-            color: "white",
-            fontFamily: "Verdana, sans-serif",
-            fontStyle: "normal",
-            fontWeight: "normal",
-            textDecoration: "none",
-            fontSize: "16pt",
+            color: 'white',
+            fontFamily: 'Verdana, sans-serif',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            textDecoration: 'none',
+            fontSize: '16pt'
           }}
           target="_blank"
+          rel="noreferrer"
         >
-          {" "}
+          {' '}
         </a>
         <a
           href="https://zavaar.net/static/be1200/final_project/arduinoCode"
           target="_blank"
+          rel="noreferrer"
         >
           https://zavaar.net/static/be1200/final_project/arduinoCode
         </a>
@@ -664,10 +668,10 @@ function description() {
       <p
         className="s5"
         style={{
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "19pt",
-          textAlign: "left",
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '19pt',
+          textAlign: 'left'
         }}
       >
         :
@@ -675,71 +679,71 @@ function description() {
       <p
         className="s6"
         style={{
-          paddingTop: "9pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingTop: '9pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
-        #include <span style={{ color: "#E4C07A" }}>&lt;Arduino.h&gt; </span>
-        #include <span style={{ color: "#E4C07A" }}>&lt;Servo.h&gt; </span>
-        <span style={{ color: "#60AEEE" }}>Servo </span>
-        <span style={{ color: "#BABABA" }}>servo;</span>
+        #include <span style={{ color: '#E4C07A' }}>&lt;Arduino.h&gt; </span>
+        #include <span style={{ color: '#E4C07A' }}>&lt;Servo.h&gt; </span>
+        <span style={{ color: '#60AEEE' }}>Servo </span>
+        <span style={{ color: '#BABABA' }}>servo;</span>
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s9"
         style={{
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>int </span>usTrig{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#C578DD" }}>3</span>;{" "}
-        <span style={{ color: "#55B6C2" }}>int </span>usEcho{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#C578DD" }}>4</span>;{" "}
-        <span style={{ color: "#55B6C2" }}>int </span>duration{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#C578DD" }}>0</span>;
+        <span style={{ color: '#55B6C2' }}>int </span>usTrig{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#C578DD' }}>3</span>;{' '}
+        <span style={{ color: '#55B6C2' }}>int </span>usEcho{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#C578DD' }}>4</span>;{' '}
+        <span style={{ color: '#55B6C2' }}>int </span>duration{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#C578DD' }}>0</span>;
       </p>
       <p
         className="s9"
-        style={{ paddingLeft: "5pt", textIndent: "0pt", textAlign: "left" }}
+        style={{ paddingLeft: '5pt', textIndent: '0pt', textAlign: 'left' }}
       >
-        <span style={{ color: "#55B6C2" }}>unsigned int </span>distanceCM{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#C578DD" }}>0</span>;
+        <span style={{ color: '#55B6C2' }}>unsigned int </span>distanceCM{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#C578DD' }}>0</span>;
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "6pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '6pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>unsigned int </span>scaledServoValue{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#C578DD" }}>0</span>;
+        <span style={{ color: '#55B6C2' }}>unsigned int </span>scaledServoValue{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#C578DD' }}>0</span>;
       </p>
       <p
         className="s12"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
         // constants
@@ -747,162 +751,162 @@ function description() {
       <p
         className="s6"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
-        const <span style={{ color: "#55B6C2" }}>char </span>
-        <span style={{ color: "#BABABA" }}>sep </span>={" "}
-        <span style={{ color: "#E4C07A" }}>'$'</span>
-        <span style={{ color: "#BABABA" }}>; </span>const{" "}
-        <span style={{ color: "#55B6C2" }}>char </span>
-        <span style={{ color: "#BABABA" }}>def </span>={" "}
-        <span style={{ color: "#E4C07A" }}>'='</span>
-        <span style={{ color: "#BABABA" }}>;</span>
+        const <span style={{ color: '#55B6C2' }}>char </span>
+        <span style={{ color: '#BABABA' }}>sep </span>={' '}
+        <span style={{ color: '#E4C07A' }}>'$'</span>
+        <span style={{ color: '#BABABA' }}>; </span>const{' '}
+        <span style={{ color: '#55B6C2' }}>char </span>
+        <span style={{ color: '#BABABA' }}>def </span>={' '}
+        <span style={{ color: '#E4C07A' }}>'='</span>
+        <span style={{ color: '#BABABA' }}>;</span>
       </p>
       <p
         className="s12"
-        style={{ paddingLeft: "5pt", textIndent: "0pt", textAlign: "left" }}
+        style={{ paddingLeft: '5pt', textIndent: '0pt', textAlign: 'left' }}
       >
         // vars
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>char </span>incoming{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#C578DD" }}>0</span>;
+        <span style={{ color: '#55B6C2' }}>char </span>incoming{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#C578DD' }}>0</span>;
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>unsigned long </span>time{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#97C379" }}>millis</span>();{" "}
-        <span style={{ color: "#60AEEE" }}>String </span>command{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#E4C07A" }}>""</span>;
+        <span style={{ color: '#55B6C2' }}>unsigned long </span>time{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#97C379' }}>millis</span>();{' '}
+        <span style={{ color: '#60AEEE' }}>String </span>command{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#E4C07A' }}>""</span>;
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s10"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        struct <span style={{ color: "#60AEEE" }}>Settings</span>
+        struct <span style={{ color: '#60AEEE' }}>Settings</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>void </span>
-        <span style={{ color: "#97C379" }}>setValue</span>(
-        <span style={{ color: "#55B6C2" }}>char </span>
-        <span className="s14">label</span>,{" "}
-        <span style={{ color: "#55B6C2" }}>int </span>
-        <span className="s14">val</span>) {"{"}
-        <span style={{ color: "#ABB1BE" }}>value</span>[
+        <span style={{ color: '#55B6C2' }}>void </span>
+        <span style={{ color: '#97C379' }}>setValue</span>(
+        <span style={{ color: '#55B6C2' }}>char </span>
+        <span className="s14">label</span>,{' '}
+        <span style={{ color: '#55B6C2' }}>int </span>
+        <span className="s14">val</span>) {'{'}
+        <span style={{ color: '#ABB1BE' }}>value</span>[
         <span className="s14">label </span>
-        <span style={{ color: "#DF6C75" }}>- </span>
-        <span style={{ color: "#E4C07A" }}>'A'</span>]{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span className="s14">val</span>; {"}"}{" "}
-        <span style={{ color: "#55B6C2" }}>int </span>
-        <span style={{ color: "#97C379" }}>getValue</span>(
-        <span style={{ color: "#55B6C2" }}>char </span>
-        <span className="s14">label</span>){" "}
-        <span style={{ color: "#DF6C75" }}>const </span>
-        {"{"} <span style={{ color: "#DF6C75" }}>return </span>
-        <span style={{ color: "#ABB1BE" }}>value</span>[
+        <span style={{ color: '#DF6C75' }}>- </span>
+        <span style={{ color: '#E4C07A' }}>'A'</span>]{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span className="s14">val</span>; {'}'}{' '}
+        <span style={{ color: '#55B6C2' }}>int </span>
+        <span style={{ color: '#97C379' }}>getValue</span>(
+        <span style={{ color: '#55B6C2' }}>char </span>
+        <span className="s14">label</span>){' '}
+        <span style={{ color: '#DF6C75' }}>const </span>
+        {'{'} <span style={{ color: '#DF6C75' }}>return </span>
+        <span style={{ color: '#ABB1BE' }}>value</span>[
         <span className="s14">label </span>
-        <span style={{ color: "#DF6C75" }}>- </span>
-        <span style={{ color: "#E4C07A" }}>'A'</span>]; {"}"}{" "}
-        <span style={{ color: "#55B6C2" }}>int </span>
-        <span style={{ color: "#ABB1BE" }}>value</span>[
-        <span style={{ color: "#C578DD" }}>5</span>];
+        <span style={{ color: '#DF6C75' }}>- </span>
+        <span style={{ color: '#E4C07A' }}>'A'</span>]; {'}'}{' '}
+        <span style={{ color: '#55B6C2' }}>int </span>
+        <span style={{ color: '#ABB1BE' }}>value</span>[
+        <span style={{ color: '#C578DD' }}>5</span>];
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "2pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '2pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"};
+        {'}'};
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s10"
         style={{
-          paddingTop: "6pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '6pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        class <span style={{ color: "#60AEEE" }}>IO</span>
+        class <span style={{ color: '#60AEEE' }}>IO</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s10"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "-11pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '-11pt',
+          textAlign: 'left'
         }}
       >
         private:
@@ -910,210 +914,210 @@ function description() {
       <p
         className="s8"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        String <span style={{ color: "#ABB1BE" }}>pre</span>
-        <span style={{ color: "#BABABA" }}>;</span>
+        String <span style={{ color: '#ABB1BE' }}>pre</span>
+        <span style={{ color: '#BABABA' }}>;</span>
       </p>
       <p
         className="s8"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        String <span style={{ color: "#ABB1BE" }}>post</span>
-        <span style={{ color: "#BABABA" }}>;</span>
+        String <span style={{ color: '#ABB1BE' }}>post</span>
+        <span style={{ color: '#BABABA' }}>;</span>
       </p>
       <p
         className="s8"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        Settings <span style={{ color: "#ABB1BE" }}>S</span>
-        <span style={{ color: "#BABABA" }}>;</span>
+        Settings <span style={{ color: '#ABB1BE' }}>S</span>
+        <span style={{ color: '#BABABA' }}>;</span>
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s10"
-        style={{ paddingLeft: "5pt", textIndent: "0pt", textAlign: "left" }}
+        style={{ paddingLeft: '5pt', textIndent: '0pt', textAlign: 'left' }}
       >
         public:
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>void </span>
-        <span style={{ color: "#97C379" }}>execute</span>(
-        <span style={{ color: "#60AEEE" }}>String </span>
+        <span style={{ color: '#55B6C2' }}>void </span>
+        <span style={{ color: '#97C379' }}>execute</span>(
+        <span style={{ color: '#60AEEE' }}>String </span>
         <span className="s14">command</span>)
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s15"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          lineHeight: "169%",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          lineHeight: '169%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#DF6C75" }}>this</span>
-        <span style={{ color: "#BABABA" }}>-&gt;</span>pre{" "}
-        <span style={{ color: "#97C379" }}>= </span>pre
-        <span style={{ color: "#BABABA" }}>; </span>
-        <span style={{ color: "#DF6C75" }}>this</span>
-        <span style={{ color: "#BABABA" }}>-&gt;</span>post{" "}
-        <span style={{ color: "#97C379" }}>= </span>post
-        <span style={{ color: "#BABABA" }}>; </span>
-        <span style={{ color: "#DF6C75" }}>this</span>
-        <span style={{ color: "#BABABA" }}>-&gt;</span>S{" "}
-        <span style={{ color: "#97C379" }}>= </span>S
-        <span style={{ color: "#BABABA" }}>;</span>
+        <span style={{ color: '#DF6C75' }}>this</span>
+        <span style={{ color: '#BABABA' }}>-&gt;</span>pre{' '}
+        <span style={{ color: '#97C379' }}>= </span>pre
+        <span style={{ color: '#BABABA' }}>; </span>
+        <span style={{ color: '#DF6C75' }}>this</span>
+        <span style={{ color: '#BABABA' }}>-&gt;</span>post{' '}
+        <span style={{ color: '#97C379' }}>= </span>post
+        <span style={{ color: '#BABABA' }}>; </span>
+        <span style={{ color: '#DF6C75' }}>this</span>
+        <span style={{ color: '#BABABA' }}>-&gt;</span>S{' '}
+        <span style={{ color: '#97C379' }}>= </span>S
+        <span style={{ color: '#BABABA' }}>;</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          lineHeight: "12pt",
-          textAlign: "left",
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          lineHeight: '12pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#DF6C75" }}>for </span>(
-        <span style={{ color: "#55B6C2" }}>unsigned int </span>i{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#C578DD" }}>0</span>; i{" "}
-        <span style={{ color: "#DF6C75" }}>&lt; </span>
+        <span style={{ color: '#DF6C75' }}>for </span>(
+        <span style={{ color: '#55B6C2' }}>unsigned int </span>i{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#C578DD' }}>0</span>; i{' '}
+        <span style={{ color: '#DF6C75' }}>&lt; </span>
         <span className="s14">command</span>.
-        <span style={{ color: "#97C379" }}>length</span>(); i
-        <span style={{ color: "#DF6C75" }}>++</span>)
+        <span style={{ color: '#97C379' }}>length</span>(); i
+        <span style={{ color: '#DF6C75' }}>++</span>)
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          lineHeight: "169%",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          lineHeight: '169%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>char </span>ch{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
+        <span style={{ color: '#55B6C2' }}>char </span>ch{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
         <span className="s14">command</span>
-        <span style={{ color: "#97C379" }}>[</span>i
-        <span style={{ color: "#97C379" }}>]</span>;{" "}
-        <span style={{ color: "#DF6C75" }}>if </span>(ch{" "}
-        <span style={{ color: "#DF6C75" }}>!= </span>def)
+        <span style={{ color: '#97C379' }}>[</span>i
+        <span style={{ color: '#97C379' }}>]</span>;{' '}
+        <span style={{ color: '#DF6C75' }}>if </span>(ch{' '}
+        <span style={{ color: '#DF6C75' }}>!= </span>def)
       </p>
       <p
         className="s9"
         style={{
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          lineHeight: "12pt",
-          textAlign: "left",
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          lineHeight: '12pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "49pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '49pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#DF6C75" }}>if </span>(
+        <span style={{ color: '#DF6C75' }}>if </span>(
         <span className="s14">command</span>.
-        <span style={{ color: "#97C379" }}>indexOf</span>(def, i){" "}
-        <span style={{ color: "#DF6C75" }}>&gt; </span>
-        <span style={{ color: "#C578DD" }}>0</span>)
+        <span style={{ color: '#97C379' }}>indexOf</span>(def, i){' '}
+        <span style={{ color: '#DF6C75' }}>&gt; </span>
+        <span style={{ color: '#C578DD' }}>0</span>)
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "49pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '49pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s15"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "60pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '60pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        pre <span style={{ color: "#97C379" }}>+= </span>
-        <span style={{ color: "#BABABA" }}>ch;</span>
+        pre <span style={{ color: '#97C379' }}>+= </span>
+        <span style={{ color: '#BABABA' }}>ch;</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "49pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '49pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s6"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "49pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '49pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
         else
@@ -1121,527 +1125,527 @@ function description() {
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "49pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '49pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s15"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "60pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '60pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        post <span style={{ color: "#97C379" }}>+= </span>
-        <span style={{ color: "#BABABA" }}>ch;</span>
+        post <span style={{ color: '#97C379' }}>+= </span>
+        <span style={{ color: '#BABABA' }}>ch;</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "49pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '49pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#DF6C75" }}>if </span>(
-        <span style={{ color: "#ABB1BE" }}>post</span>.
-        <span style={{ color: "#97C379" }}>toInt</span>(){" "}
-        <span style={{ color: "#DF6C75" }}>&lt; </span>
-        <span style={{ color: "#C578DD" }}>1000</span>){" "}
+        <span style={{ color: '#DF6C75' }}>if </span>(
+        <span style={{ color: '#ABB1BE' }}>post</span>.
+        <span style={{ color: '#97C379' }}>toInt</span>(){' '}
+        <span style={{ color: '#DF6C75' }}>&lt; </span>
+        <span style={{ color: '#C578DD' }}>1000</span>){' '}
         <span className="s12">// filter out weird obfuscated data</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#ABB1BE" }}>S</span>.
-        <span style={{ color: "#97C379" }}>setValue</span>(
-        <span style={{ color: "#ABB1BE" }}>pre</span>
-        <span style={{ color: "#97C379" }}>[</span>
-        <span style={{ color: "#C578DD" }}>0</span>
-        <span style={{ color: "#97C379" }}>]</span>,{" "}
-        <span style={{ color: "#ABB1BE" }}>post</span>.
-        <span style={{ color: "#97C379" }}>toInt</span>());
+        <span style={{ color: '#ABB1BE' }}>S</span>.
+        <span style={{ color: '#97C379' }}>setValue</span>(
+        <span style={{ color: '#ABB1BE' }}>pre</span>
+        <span style={{ color: '#97C379' }}>[</span>
+        <span style={{ color: '#C578DD' }}>0</span>
+        <span style={{ color: '#97C379' }}>]</span>,{' '}
+        <span style={{ color: '#ABB1BE' }}>post</span>.
+        <span style={{ color: '#97C379' }}>toInt</span>());
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "2pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '2pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s13"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        reset<span style={{ color: "#BABABA" }}>();</span>
+        reset<span style={{ color: '#BABABA' }}>();</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s10"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        void <span style={{ color: "#97C379" }}>reset</span>
-        <span style={{ color: "#BABABA" }}>()</span>
+        void <span style={{ color: '#97C379' }}>reset</span>
+        <span style={{ color: '#BABABA' }}>()</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s15"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          lineHeight: "169%",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          lineHeight: '169%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#DF6C75" }}>this</span>
-        <span style={{ color: "#BABABA" }}>-&gt;</span>pre{" "}
-        <span style={{ color: "#97C379" }}>= </span>pre
-        <span style={{ color: "#BABABA" }}>; </span>
-        <span style={{ color: "#DF6C75" }}>this</span>
-        <span style={{ color: "#BABABA" }}>-&gt;</span>post{" "}
-        <span style={{ color: "#97C379" }}>= </span>post
-        <span style={{ color: "#BABABA" }}>; </span>pre{" "}
-        <span style={{ color: "#97C379" }}>= </span>
-        <span style={{ color: "#E4C07A" }}>""</span>
-        <span style={{ color: "#BABABA" }}>;</span>
+        <span style={{ color: '#DF6C75' }}>this</span>
+        <span style={{ color: '#BABABA' }}>-&gt;</span>pre{' '}
+        <span style={{ color: '#97C379' }}>= </span>pre
+        <span style={{ color: '#BABABA' }}>; </span>
+        <span style={{ color: '#DF6C75' }}>this</span>
+        <span style={{ color: '#BABABA' }}>-&gt;</span>post{' '}
+        <span style={{ color: '#97C379' }}>= </span>post
+        <span style={{ color: '#BABABA' }}>; </span>pre{' '}
+        <span style={{ color: '#97C379' }}>= </span>
+        <span style={{ color: '#E4C07A' }}>""</span>
+        <span style={{ color: '#BABABA' }}>;</span>
       </p>
       <p
         className="s15"
         style={{
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          lineHeight: "12pt",
-          textAlign: "left",
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          lineHeight: '12pt',
+          textAlign: 'left'
         }}
       >
-        post <span style={{ color: "#97C379" }}>= </span>
-        <span style={{ color: "#E4C07A" }}>""</span>
-        <span style={{ color: "#BABABA" }}>;</span>
+        post <span style={{ color: '#97C379' }}>= </span>
+        <span style={{ color: '#E4C07A' }}>""</span>
+        <span style={{ color: '#BABABA' }}>;</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s10"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        int <span style={{ color: "#97C379" }}>get</span>
-        <span style={{ color: "#BABABA" }}>(</span>char{" "}
+        int <span style={{ color: '#97C379' }}>get</span>
+        <span style={{ color: '#BABABA' }}>(</span>char{' '}
         <span className="s14">key</span>
-        <span style={{ color: "#BABABA" }}>)</span>
+        <span style={{ color: '#BABABA' }}>)</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s15"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#DF6C75" }}>this</span>
-        <span style={{ color: "#BABABA" }}>-&gt;</span>S{" "}
-        <span style={{ color: "#97C379" }}>= </span>S
-        <span style={{ color: "#BABABA" }}>;</span>
+        <span style={{ color: '#DF6C75' }}>this</span>
+        <span style={{ color: '#BABABA' }}>-&gt;</span>S{' '}
+        <span style={{ color: '#97C379' }}>= </span>S
+        <span style={{ color: '#BABABA' }}>;</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#DF6C75" }}>return </span>
-        <span style={{ color: "#ABB1BE" }}>S</span>.
-        <span style={{ color: "#97C379" }}>getValue</span>(
+        <span style={{ color: '#DF6C75' }}>return </span>
+        <span style={{ color: '#ABB1BE' }}>S</span>.
+        <span style={{ color: '#97C379' }}>getValue</span>(
         <span className="s14">key</span>);
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s10"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        void <span style={{ color: "#97C379" }}>set</span>
-        <span style={{ color: "#BABABA" }}>(</span>char{" "}
+        void <span style={{ color: '#97C379' }}>set</span>
+        <span style={{ color: '#BABABA' }}>(</span>char{' '}
         <span className="s14">key</span>
-        <span style={{ color: "#BABABA" }}>, </span>int{" "}
+        <span style={{ color: '#BABABA' }}>, </span>int{' '}
         <span className="s14">val</span>
-        <span style={{ color: "#BABABA" }}>)</span>
+        <span style={{ color: '#BABABA' }}>)</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#ABB1BE" }}>S</span>.
-        <span style={{ color: "#97C379" }}>setValue</span>(
+        <span style={{ color: '#ABB1BE' }}>S</span>.
+        <span style={{ color: '#97C379' }}>setValue</span>(
         <span className="s14">key</span>, <span className="s14">val</span>);
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"};
+        {'}'};
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s8"
         style={{
-          paddingTop: "3pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '3pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        IO <span style={{ color: "#BABABA" }}>io;</span>
+        IO <span style={{ color: '#BABABA' }}>io;</span>
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s10"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        void <span style={{ color: "#97C379" }}>setup</span>
-        <span style={{ color: "#BABABA" }}>()</span>
+        void <span style={{ color: '#97C379' }}>setup</span>
+        <span style={{ color: '#BABABA' }}>()</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>set</span>(
-        <span style={{ color: "#E4C07A" }}>'a'</span>,{" "}
-        <span style={{ color: "#C578DD" }}>3</span>);
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>set</span>(
+        <span style={{ color: '#E4C07A' }}>'a'</span>,{' '}
+        <span style={{ color: '#C578DD' }}>3</span>);
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>set</span>(
-        <span style={{ color: "#E4C07A" }}>'b'</span>,{" "}
-        <span style={{ color: "#C578DD" }}>400</span>);
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>set</span>(
+        <span style={{ color: '#E4C07A' }}>'b'</span>,{' '}
+        <span style={{ color: '#C578DD' }}>400</span>);
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>set</span>(
-        <span style={{ color: "#E4C07A" }}>'c'</span>,{" "}
-        <span style={{ color: "#C578DD" }}>150</span>);
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>set</span>(
+        <span style={{ color: '#E4C07A' }}>'c'</span>,{' '}
+        <span style={{ color: '#C578DD' }}>150</span>);
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>set</span>(
-        <span style={{ color: "#E4C07A" }}>'d'</span>,{" "}
-        <span style={{ color: "#C578DD" }}>20</span>);{" "}
-        <span style={{ color: "#60AEEE" }}>Serial</span>.
-        <span style={{ color: "#97C379" }}>begin</span>(
-        <span style={{ color: "#C578DD" }}>9600</span>);{" "}
-        <span style={{ color: "#60AEEE" }}>servo</span>.
-        <span style={{ color: "#97C379" }}>attach</span>(
-        <span style={{ color: "#C578DD" }}>9</span>);{" "}
-        <span style={{ color: "#97C379" }}>pinMode</span>(usTrig,{" "}
-        <span style={{ color: "#97C379" }}>OUTPUT</span>);{" "}
-        <span style={{ color: "#97C379" }}>pinMode</span>(usEcho,{" "}
-        <span style={{ color: "#97C379" }}>INPUT</span>);
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>set</span>(
+        <span style={{ color: '#E4C07A' }}>'d'</span>,{' '}
+        <span style={{ color: '#C578DD' }}>20</span>);{' '}
+        <span style={{ color: '#60AEEE' }}>Serial</span>.
+        <span style={{ color: '#97C379' }}>begin</span>(
+        <span style={{ color: '#C578DD' }}>9600</span>);{' '}
+        <span style={{ color: '#60AEEE' }}>servo</span>.
+        <span style={{ color: '#97C379' }}>attach</span>(
+        <span style={{ color: '#C578DD' }}>9</span>);{' '}
+        <span style={{ color: '#97C379' }}>pinMode</span>(usTrig,{' '}
+        <span style={{ color: '#97C379' }}>OUTPUT</span>);{' '}
+        <span style={{ color: '#97C379' }}>pinMode</span>(usEcho,{' '}
+        <span style={{ color: '#97C379' }}>INPUT</span>);
       </p>
       <p
         className="s9"
-        style={{ paddingLeft: "5pt", textIndent: "0pt", textAlign: "left" }}
+        style={{ paddingLeft: '5pt', textIndent: '0pt', textAlign: 'left' }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "2pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '2pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>int </span>dis{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#C578DD" }}>0</span>;
+        <span style={{ color: '#55B6C2' }}>int </span>dis{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#C578DD' }}>0</span>;
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s9"
         style={{
-          paddingLeft: "16pt",
-          textIndent: "-11pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingLeft: '16pt',
+          textIndent: '-11pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#55B6C2" }}>void </span>
-        <span style={{ color: "#97C379" }}>loop</span>() {"{"}
-        <span style={{ color: "#97C379" }}>digitalWrite</span>(usTrig,{" "}
-        <span style={{ color: "#97C379" }}>LOW</span>);{" "}
-        <span style={{ color: "#97C379" }}>delayMicroseconds</span>(
-        <span style={{ color: "#C578DD" }}>5</span>);{" "}
-        <span style={{ color: "#97C379" }}>digitalWrite</span>(usTrig,{" "}
-        <span style={{ color: "#97C379" }}>HIGH</span>);{" "}
-        <span style={{ color: "#97C379" }}>delayMicroseconds</span>(
-        <span style={{ color: "#C578DD" }}>10</span>);{" "}
-        <span style={{ color: "#97C379" }}>digitalWrite</span>(usTrig,{" "}
-        <span style={{ color: "#97C379" }}>LOW</span>);
+        <span style={{ color: '#55B6C2' }}>void </span>
+        <span style={{ color: '#97C379' }}>loop</span>() {'{'}
+        <span style={{ color: '#97C379' }}>digitalWrite</span>(usTrig,{' '}
+        <span style={{ color: '#97C379' }}>LOW</span>);{' '}
+        <span style={{ color: '#97C379' }}>delayMicroseconds</span>(
+        <span style={{ color: '#C578DD' }}>5</span>);{' '}
+        <span style={{ color: '#97C379' }}>digitalWrite</span>(usTrig,{' '}
+        <span style={{ color: '#97C379' }}>HIGH</span>);{' '}
+        <span style={{ color: '#97C379' }}>delayMicroseconds</span>(
+        <span style={{ color: '#C578DD' }}>10</span>);{' '}
+        <span style={{ color: '#97C379' }}>digitalWrite</span>(usTrig,{' '}
+        <span style={{ color: '#97C379' }}>LOW</span>);
       </p>
       <p
         className="s9"
         style={{
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          lineHeight: "169%",
-          textAlign: "left",
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          lineHeight: '169%',
+          textAlign: 'left'
         }}
       >
-        duration <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#97C379" }}>pulseIn</span>(usEcho,{" "}
-        <span style={{ color: "#97C379" }}>HIGH</span>); distanceCM{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>(duration{" "}
-        <span style={{ color: "#DF6C75" }}>/ </span>
-        <span style={{ color: "#C578DD" }}>2</span>){" "}
-        <span style={{ color: "#DF6C75" }}>/ </span>
-        <span style={{ color: "#C578DD" }}>10</span>;
+        duration <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#97C379' }}>pulseIn</span>(usEcho,{' '}
+        <span style={{ color: '#97C379' }}>HIGH</span>); distanceCM{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>(duration{' '}
+        <span style={{ color: '#DF6C75' }}>/ </span>
+        <span style={{ color: '#C578DD' }}>2</span>){' '}
+        <span style={{ color: '#DF6C75' }}>/ </span>
+        <span style={{ color: '#C578DD' }}>10</span>;
       </p>
       <p
         className="s9"
-        style={{ paddingLeft: "5pt", textIndent: "11pt", textAlign: "left" }}
+        style={{ paddingLeft: '5pt', textIndent: '11pt', textAlign: 'left' }}
       >
-        scaledServoValue <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#97C379" }}>map</span>(distanceCM,{" "}
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>get</span>(
-        <span style={{ color: "#E4C07A" }}>'a'</span>),{" "}
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>get</span>(
-        <span style={{ color: "#E4C07A" }}>'b'</span>),{" "}
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>get</span>(
-        <span style={{ color: "#E4C07A" }}>'c'</span>) ,{" "}
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>get</span>(
-        <span style={{ color: "#E4C07A" }}>'d'</span>));
+        scaledServoValue <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#97C379' }}>map</span>(distanceCM,{' '}
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>get</span>(
+        <span style={{ color: '#E4C07A' }}>'a'</span>),{' '}
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>get</span>(
+        <span style={{ color: '#E4C07A' }}>'b'</span>),{' '}
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>get</span>(
+        <span style={{ color: '#E4C07A' }}>'c'</span>) ,{' '}
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>get</span>(
+        <span style={{ color: '#E4C07A' }}>'d'</span>));
       </p>
       <p
         className="s12"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
         //Serial.println(scaledServoValue);
@@ -1649,287 +1653,291 @@ function description() {
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#60AEEE" }}>servo</span>.
-        <span style={{ color: "#97C379" }}>write</span>(scaledServoValue);{" "}
-        <span style={{ color: "#DF6C75" }}>if </span>(
-        <span style={{ color: "#97C379" }}>millis</span>(){" "}
-        <span style={{ color: "#DF6C75" }}>- </span>time{" "}
-        <span style={{ color: "#DF6C75" }}>&gt; </span>
-        <span style={{ color: "#C578DD" }}>750</span>)
+        <span style={{ color: '#60AEEE' }}>servo</span>.
+        <span style={{ color: '#97C379' }}>write</span>(scaledServoValue);{' '}
+        <span style={{ color: '#DF6C75' }}>if </span>(
+        <span style={{ color: '#97C379' }}>millis</span>(){' '}
+        <span style={{ color: '#DF6C75' }}>- </span>time{' '}
+        <span style={{ color: '#DF6C75' }}>&gt; </span>
+        <span style={{ color: '#C578DD' }}>750</span>)
       </p>
       <p
         className="s9"
-        style={{ paddingLeft: "16pt", textIndent: "0pt", textAlign: "left" }}
+        style={{ paddingLeft: '16pt', textIndent: '0pt', textAlign: 'left' }}
       >
-        {"{"}
+        {'{'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
         }}
       >
         <span className="s12">//int showDist = distanceCM/2.9; </span>
-        <span style={{ color: "#60AEEE" }}>Serial</span>.
-        <span style={{ color: "#97C379" }}>println</span>((
-        <span style={{ color: "#55B6C2" }}>int</span>)(distanceCM)); time{" "}
-        <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#97C379" }}>millis</span>();
+        <span style={{ color: '#60AEEE' }}>Serial</span>.
+        <span style={{ color: '#97C379' }}>println</span>((
+        <span style={{ color: '#55B6C2' }}>int</span>)(distanceCM)); time{' '}
+        <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#97C379' }}>millis</span>();
       </p>
       <p
         className="s9"
-        style={{ paddingLeft: "16pt", textIndent: "0pt", textAlign: "left" }}
+        style={{ paddingLeft: '16pt', textIndent: '0pt', textAlign: 'left' }}
       >
-        {"}"}
-      </p>
-      <p
-        className="s9"
-        style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
-        }}
-      >
-        <span style={{ color: "#DF6C75" }}>if </span>(
-        <span style={{ color: "#60AEEE" }}>Serial</span>.
-        <span style={{ color: "#97C379" }}>available</span>(){" "}
-        <span style={{ color: "#DF6C75" }}>&gt; </span>
-        <span style={{ color: "#C578DD" }}>0</span>)
+        {'}'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"{"}
+        <span style={{ color: '#DF6C75' }}>if </span>(
+        <span style={{ color: '#60AEEE' }}>Serial</span>.
+        <span style={{ color: '#97C379' }}>available</span>(){' '}
+        <span style={{ color: '#DF6C75' }}>&gt; </span>
+        <span style={{ color: '#C578DD' }}>0</span>)
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          lineHeight: "168%",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        incoming <span style={{ color: "#DF6C75" }}>= </span>
-        <span style={{ color: "#60AEEE" }}>Serial</span>.
-        <span style={{ color: "#97C379" }}>read</span>();{" "}
-        <span style={{ color: "#DF6C75" }}>switch </span>(incoming)
+        {'{'}
       </p>
       <p
         className="s9"
-        style={{ paddingLeft: "27pt", textIndent: "0pt", textAlign: "left" }}
+        style={{
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          lineHeight: '168%',
+          textAlign: 'left'
+        }}
       >
-        {"{"}
+        incoming <span style={{ color: '#DF6C75' }}>= </span>
+        <span style={{ color: '#60AEEE' }}>Serial</span>.
+        <span style={{ color: '#97C379' }}>read</span>();{' '}
+        <span style={{ color: '#DF6C75' }}>switch </span>(incoming)
+      </p>
+      <p
+        className="s9"
+        style={{ paddingLeft: '27pt', textIndent: '0pt', textAlign: 'left' }}
+      >
+        {'{'}
       </p>
       <p
         className="s6"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        case <span style={{ color: "#BABABA" }}>sep: </span>
+        case <span style={{ color: '#BABABA' }}>sep: </span>
         <span className="s12">// command completed</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        <span style={{ color: "#60AEEE" }}>io</span>.
-        <span style={{ color: "#97C379" }}>execute</span>(command);
+        <span style={{ color: '#60AEEE' }}>io</span>.
+        <span style={{ color: '#97C379' }}>execute</span>(command);
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        command <span style={{ color: "#97C379" }}>= </span>
-        <span style={{ color: "#E4C07A" }}>""</span>;{" "}
+        command <span style={{ color: '#97C379' }}>= </span>
+        <span style={{ color: '#E4C07A' }}>""</span>;{' '}
         <span className="s12">// reset command</span>
       </p>
       <p
         className="s6"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        break<span style={{ color: "#BABABA" }}>;</span>
+        break<span style={{ color: '#BABABA' }}>;</span>
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         className="s6"
         style={{
-          paddingTop: "6pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '6pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        default<span style={{ color: "#BABABA" }}>:</span>
+        default<span style={{ color: '#BABABA' }}>:</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        command <span style={{ color: "#97C379" }}>+= </span>incoming;
+        command <span style={{ color: '#97C379' }}>+= </span>incoming;
       </p>
       <p
         className="s6"
         style={{
-          paddingTop: "2pt",
-          paddingLeft: "38pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '2pt',
+          paddingLeft: '38pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        break<span style={{ color: "#BABABA" }}>;</span>
+        break<span style={{ color: '#BABABA' }}>;</span>
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "27pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '27pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "16pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '16pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
       <p
         className="s9"
         style={{
-          paddingTop: "8pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          textAlign: "left",
+          paddingTop: '8pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          textAlign: 'left'
         }}
       >
-        {"}"}
+        {'}'}
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
       <p
         style={{
-          paddingTop: "9pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "73%",
-          textAlign: "left",
+          paddingTop: '9pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '73%',
+          textAlign: 'left'
         }}
       >
         <a
           href="https://zavaar.net/static/be1200/final_project/blocks.png"
           style={{
-            color: "white",
-            fontFamily: "Verdana, sans-serif",
-            fontStyle: "normal",
-            fontWeight: "normal",
-            textDecoration: "none",
-            fontSize: "16pt",
+            color: 'white',
+            fontFamily: 'Verdana, sans-serif',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            textDecoration: 'none',
+            fontSize: '16pt'
           }}
           target="_blank"
+          rel="noreferrer"
         >
-          Mobile application code &amp; code blocks:{" "}
+          Mobile application code &amp; code blocks:{' '}
         </a>
         <a
           href="https://zavaar.net/static/be1200/final_project/blocks.png"
           target="_blank"
+          rel="noreferrer"
         >
           https://zavaar.net/static/be1200/final_project/blocks.png
         </a>
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
-      <p style={{ paddingLeft: "24pt", textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ paddingLeft: '24pt', textIndent: '0pt', textAlign: 'left' }}>
         <span />
       </p>
       <img
-        style={{ width: "98%", height: "85%" }}
+        style={{ width: '98%', height: '85%' }}
         src="/pics/ext/be1200/blocks.png"
       />
       <p />
       <p
         className="s1"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "109%",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '109%',
+          textAlign: 'left'
         }}
       >
         Entire app project:
         <a
           href="https://gallery.appinventor.mit.edu/?galleryid=fa4c4c43-bd20-4489-9493-90e3b034cd9e"
           style={{
-            color: "white",
-            fontFamily: "Verdana, sans-serif",
-            fontStyle: "normal",
-            fontWeight: "normal",
-            textDecoration: "none",
-            fontSize: "16pt",
+            color: 'white',
+            fontFamily: 'Verdana, sans-serif',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            textDecoration: 'none',
+            fontSize: '16pt'
           }}
           target="_blank"
+          rel="noreferrer"
         >
-          {" "}
+          {' '}
         </a>
         <a
           href="https://gallery.appinventor.mit.edu/?galleryid=fa4c4c43-bd20-4489-9493-90e3b034cd9e"
           className="s16"
           target="_blank"
+          rel="noreferrer"
         >
           https://gallery.appinventor.mit.edu/?galleryid=fa4c4c43-bd20-4489-9493-90e3b034cd9e
         </a>
@@ -1937,60 +1945,64 @@ function description() {
       <p
         className="s1"
         style={{
-          paddingTop: "7pt",
-          paddingLeft: "5pt",
-          textIndent: "0pt",
-          lineHeight: "109%",
-          textAlign: "left",
+          paddingTop: '7pt',
+          paddingLeft: '5pt',
+          textIndent: '0pt',
+          lineHeight: '109%',
+          textAlign: 'left'
         }}
       >
         Android Package File (.APK):
         <a
           href="https://zavaar.net/static/be1200/final_project/haptic_app.apk"
           style={{
-            color: "white",
-            fontFamily: "Verdana, sans-serif",
-            fontStyle: "normal",
-            fontWeight: "normal",
-            textDecoration: "none",
-            fontSize: "16pt",
+            color: 'white',
+            fontFamily: 'Verdana, sans-serif',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            textDecoration: 'none',
+            fontSize: '16pt'
           }}
           target="_blank"
+          rel="noreferrer"
         >
-          {" "}
+          {' '}
         </a>
         <a
           href="https://zavaar.net/static/be1200/final_project/haptic_app.apk"
           className="a"
           target="_blank"
+          rel="noreferrer"
         >
           https://zavaar.net/static/be1200/final_project/haptic_app.
         </a>
         <a
           href="https://zavaar.net/static/be1200/final_project/haptic_app.apk"
           style={{
-            color: "#9DFFCA",
-            fontFamily: "Verdana, sans-serif",
-            fontStyle: "normal",
-            fontWeight: "normal",
-            textDecoration: "none",
-            fontSize: "16pt",
+            color: '#9DFFCA',
+            fontFamily: 'Verdana, sans-serif',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            textDecoration: 'none',
+            fontSize: '16pt'
           }}
           target="_blank"
+          rel="noreferrer"
         >
-          {" "}
+          {' '}
         </a>
         <a
           href="https://zavaar.net/static/be1200/final_project/haptic_app.apk"
           target="_blank"
+          rel="noreferrer"
         >
           apk
         </a>
       </p>
-      <p style={{ textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ textIndent: '0pt', textAlign: 'left' }}>
         <br />
       </p>
-      <p style={{ paddingLeft: "53pt", textIndent: "0pt", textAlign: "left" }}>
+      <p style={{ paddingLeft: '53pt', textIndent: '0pt', textAlign: 'left' }}>
         <span />
       </p>
       <table border={0} cellSpacing={0} cellPadding={0}>
@@ -2008,6 +2020,6 @@ function description() {
       </table>
       <p />
     </div>
-  );
+  )
   // cspell:enable
 }
