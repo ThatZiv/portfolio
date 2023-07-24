@@ -5,9 +5,9 @@ name: CI/CD
 
 on:
   push:
-    branches: ["master"]
+    branches: ['master']
   pull_request:
-    branches: ["master"]
+    branches: ['master']
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [18.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -31,14 +31,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: 'npm'
       - name: Install dependencies
         run: npm install --force
+
+      - name: Lint
+        run: npm run lint
 
       - name: Spell check
         run: npm run spellcheck
 
-      - name: Run the tests
+      - name: Tests
         run: npm test -- --coverage
 
       - name: Upload coverage to Codecov
@@ -48,8 +51,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          CI: "" # to ignore warnings as errors (bad practice, i know)
 
       - uses: actions/upload-artifact@v3
         with:
