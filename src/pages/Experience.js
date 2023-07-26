@@ -8,7 +8,7 @@ import Doxim from '../sections/Doxim'
 import GDSC from '../sections/GDSC'
 import SCD from '../sections/SCD'
 import WayneHacks1 from '../sections/WayneHacks1'
-// import PFG from '../sections/PFG'
+import PFG from '../sections/PFG'
 
 const styles = {
   heading: {
@@ -51,7 +51,8 @@ export default function Experience() {
       <div>
         <Heading icon="fa-solid fa-briefcase" title="Employment" />
 
-        {/* <LayoutGrid>
+        <LayoutGrid>
+          {/* PFG */}
           <MediaCard {...PFG.meta} size={12}>
             <Section icon="fa-solid fa-circle-info" title="Info">
               <PFG.components.MoreInfo />
@@ -60,7 +61,7 @@ export default function Experience() {
               <PFG.components.Welcoming />
             </Section>
           </MediaCard>
-        </LayoutGrid> */}
+        </LayoutGrid>
         <LayoutGrid>
           {/* Doxim */}
           <MediaCard {...Doxim.meta} size={12}>

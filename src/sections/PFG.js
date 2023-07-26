@@ -11,7 +11,9 @@ export default {
 [Doxim](https://doxim.com/) is the customer communications management and engagement technology leader serving highly regulated markets, including financial services, utilities and healthcare. We provide omnichannel document and payment solutions that transform experiences and strengthen engagement throughout the entire lifecycle.`,
     banner: '/pics/pfg.png',
     complete: false,
-    tags: 'C#,PowerShell,MySQL,Agile,Scripting,Virtualization Environments,Internship,Pair Programming,Doxim',
+    tags: `TypeScript,JavaScript,React,Electron,Python,Amazon Web Services,
+AWS CDK,AWS Lambda,DynamoDB,API Gateway,IaC,S3,Spotify Backstage,Webpack,UI/UX,Docker,Elasticsearch,
+Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Programming,PFG,Principal,Finance`,
     objectives: `Parsed and extracted data from text files using C# and PowerShell to create billing statements.
         |Managed credit union workflows to ensure organized and optimized month-end billing deliveries.
         |Designed proof-of-concept for virtual machine manager full-stack web project.
