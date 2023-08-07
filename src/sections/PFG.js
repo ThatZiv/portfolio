@@ -8,19 +8,19 @@ export default {
   meta: {
     title: 'Principal Financial Group',
     description: `## Software Engineering Intern
-[Doxim](https://doxim.com/) is the customer communications management and engagement technology leader serving highly regulated markets, including financial services, utilities and healthcare. We provide omnichannel document and payment solutions that transform experiences and strengthen engagement throughout the entire lifecycle.`,
+Principal Financial Group is a [Fortune 500](https://fortune.com/company/principal-financial/fortune500/) American global financial investment management and insurance company headquartered in [Des Moines](https://en.wikipedia.org/wiki/Des_Moines), [Iowa](https://en.wikipedia.org/wiki/Des_Moines), U.S.`,
     banner: '/pics/pfg.png',
     complete: false,
     tags: `TypeScript,JavaScript,React,Electron,Python,Amazon Web Services,
 AWS CDK,AWS Lambda,DynamoDB,API Gateway,IaC,S3,Spotify Backstage,Webpack,UI/UX,Docker,Elasticsearch,
 Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Programming,PFG,Principal,Finance`,
-    objectives: `Parsed and extracted data from text files using C# and PowerShell to create billing statements.
-        |Managed credit union workflows to ensure organized and optimized month-end billing deliveries.
-        |Designed proof-of-concept for virtual machine manager full-stack web project.
-        |Created automation scripts for the composition, storage, and archival of business-critical documents. `, // Objectives are separated by PIPE '|'
+    objectives: `Developed frontend executable using React.js, Electron, TypeScript, and AWS services main product, facilitating engineer workstation setups that contribute to enhanced team productivity.
+        |Leveraged AWS Lambda, DynamoDB, React.js, and Electron to develop a scalable solution in company-wide hackathon competition.
+        |Documented architectural decisions, codebase structure, and integration details, aiding seamless knowledge transfer.
+        |Adhered to Agile methodologies, ensuring timely task completion, iterative development, and product deployment with Jira.`, // Objectives are separated by PIPE '|'
     timeline: [
-      ['May 8th, 2022', 'Internship begins.'],
-      ['August 26th, 2023', 'Internship ends.']
+      ['May 8th, 2023', 'Internship begins on DevOps team.'],
+      ['July 13th, 2023', 'Moved to developer portal team.']
     ]
   },
   components: { MoreInfo, Welcoming }
