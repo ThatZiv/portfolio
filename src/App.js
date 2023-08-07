@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles()
-  const [loading, setLoading] = React.useState(false)
+  const [loading] = React.useState(false)
   const [state, dispatch] = React.useContext(UserContext)
   const [, setDialog] = React.useState()
   const location = useLocation()
@@ -63,10 +63,10 @@ function App() {
     }) // dispatch usage SHOULD deprecated now
     document.title = capFirstLetter(state.focus) + ' | Zavaar Shah'
     ReactGA.pageview('/' + state.focus)
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 300)
+    // setLoading(true)
+    // setTimeout(() => {
+    //   setLoading(false)
+    // }, 300)
   }, [location, state.focus])
   React.useEffect(() => {
     setDialog(state.dialog)

@@ -19,6 +19,7 @@ import Section from './Section'
 import Timeline from './Timeline'
 import DateRange from './DateRange'
 import Modal from './Modal'
+import { StringParam, useQueryParam } from 'use-query-params'
 // import MainDialog from './MainDialog'
 
 const useStyles = makeStyles((theme) => ({
@@ -47,6 +48,14 @@ export default function MediaCard(props) {
   const [imgLoaded, setImgLoaded] = React.useState(false)
   const [cardSize] = React.useState(props.size || 6)
   const cardRef = React.useRef(null)
+  const [cardParam, setCardParam] = useQueryParam('expand', StringParam)
+  React.useEffect(() => {
+    if (cardParam && cardParam == props.title) {
+      executeScroll()
+      setExpanded(true)
+    }
+  }, [])
+
   //let cardWidth = 6
   const executeScroll = () =>
     cardRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -55,7 +64,10 @@ export default function MediaCard(props) {
     //setCardSize(expanded ? props.size || 6 : 12); // Removed this for the modal update
     setExpanded(!expanded)
     if (!expanded) {
+      setCardParam(props.title)
       executeScroll() // scroll to focused card
+    } else {
+      setCardParam()
     }
   }
   const gaCardExpandHandle = (cardName = 'none') => {
