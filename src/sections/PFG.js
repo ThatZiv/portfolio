@@ -8,7 +8,7 @@ export default {
   meta: {
     title: 'Principal Financial Group',
     description: `## Software Engineering Intern
-[Principal Financial Group](https://principal.com) is a [Fortune 500](https://fortune.com/company/principal-financial/fortune500/) American global financial investment management and insurance company headquartered in [Des Moines](https://en.wikipedia.org/wiki/Des_Moines), [Iowa](https://en.wikipedia.org/wiki/Des_Moines), U.S.`,
+[Principal](https://principal.com) is a [Fortune 500](https://fortune.com/company/principal-financial/fortune500/) American global financial investment management and insurance company headquartered in [Des Moines](https://en.wikipedia.org/wiki/Des_Moines), [Iowa](https://en.wikipedia.org/wiki/Des_Moines), U.S.`,
     banner: '/pics/pfg.png',
     complete: false,
     tags: `TypeScript,JavaScript,React,Electron,Python,Amazon Web Services,
@@ -20,7 +20,7 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Prog
         |Adhered to Agile methodologies, ensuring timely task completion, iterative development, and product deployment with Jira.`,
     timeline: [
       ['May 8th, 2023', 'Internship begins on DevOps team.'],
-      ['July 13th, 2023', 'Moved to developer portal team.']
+      ['July 13th, 2023', 'Moved to web-dev team.']
     ]
   },
   components: { MoreInfo, Welcoming }

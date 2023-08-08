@@ -4,7 +4,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
-
+import { StringParam, useQueryParam } from 'use-query-params'
 //icons
 import Icon from '@material-ui/core/Icon'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -33,12 +33,26 @@ export const useStyles = makeStyles((theme) => ({
 /** @param {import("../types/comps/Section").Section} props */
 export default function Section(props) {
   const classes = useStyles()
-  const panel = 'section_1'
+  const panel = 'section_1' //we need this for some reason
   const [expanded, setExpanded] = React.useState(props?.open && panel)
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false)
+    setExpandedParam(isExpanded ? 'true' : undefined)
   }
+  // add other expand here
+  const [expandedParam, setExpandedParam] = useQueryParam(
+    props.title,
+    StringParam
+  )
+  React.useEffect(() => {
+    if (expandedParam && expandedParam == 'true') {
+      setExpanded(panel)
+    }
+    return () => {
+      setExpandedParam()
+    }
+  }, [])
   //https://v4.mui.com/components/accordion/
   return (
     <Accordion
