@@ -17,13 +17,13 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Prog
     objectives: `Developed frontend executable using React.js, Electron, TypeScript, and AWS services main product, facilitating engineer workstation setups that contribute to enhanced team productivity.
         |Leveraged AWS Lambda, DynamoDB, React.js, and Electron to develop a scalable solution in company-wide hackathon competition.
         |Documented architectural decisions, codebase structure, and integration details, aiding seamless knowledge transfer.
-        |Adhered to Agile methodologies, ensuring timely task completion, iterative development, and product deployment with Jira.`,
+        |Adhered to Agile methodologies, ensuring timely task completion, iterative development, and product deployment with GitHub and Jira.`,
     timeline: [
       ['May 8th, 2023', 'Internship begins on DevOps team.'],
-      ['July 13th, 2023', 'Moved to web-dev team.']
+      ['July 13th, 2023', 'Joined web-dev team.']
     ]
   },
-  components: { MoreInfo, Welcoming }
+  components: { MoreInfo }
 }
 
 function MoreInfo() {
@@ -31,38 +31,58 @@ function MoreInfo() {
     <div>
       <Grid container>
         <Grid item xs={12}>
-          <YouTubeEmbed id="eU-eX6Akb2w" />
+          <YouTubeEmbed id="RoCzo6tgUjY" />
         </Grid>
         <Grid item sm>
-          <i>Taken from www.doxim.com: </i>
+          <i>
+            Taken from{' '}
+            <a
+              href="https://www.principal.com/about-us/our-company/profile-and-offerings#:~:text=English%20Company%20Profile%20(PDF)"
+              target="_blank"
+              rel="noreferrer"
+            >
+              principal.com
+            </a>
+            :{' '}
+          </i>
           <br />
           <Typography variant="caption">
-            The Doxim Platform helps clients communicate reliably and
-            effectively, improves cross-sell and upsell opportunities, and
-            drives increased loyalty and wallet share through personalized
-            communications and easy-to-use payment processes. The platform
-            addresses key digitization, operational efficiency, and customer
-            experience challenges through our suite of plug-and-play,
-            integrated, SaaS software and technology solutions. Learn more at{' '}
-            <a href="https://www.doxim.com/">www.doxim.com</a>.
+            We help people and companies in Asia, Australia, Europe, Latin
+            America, and North America build and protect their financial
+            well-being. We've been doing it for 143 years.
+            <br />
+            A FORTUNE 500® company, we're known for our innovative ideas and
+            real-life solutions that help customers make financial progress, no
+            matter their income or portfolio size.
+            <br />
+            And while we have employees around the world, we're all bound by a
+            common purpose: to give you the financial tools, resources, and
+            information you need so you can live the life you want. <br />
+            What's most important to us ...
+            <ul>
+              <li>
+                Meet the needs of our more than 62 million customers, who rely
+                on our expertise in retirement, insurance and asset management.
+              </li>
+              <li>
+                Attract, develop and retain the best people in the business,
+                offering them a diverse and inclusive work environment in
+                offices in 27 nations and territories.
+              </li>
+              <li>
+                Give back to the communities where our employees live and work,
+                supporting programs that help people learn more, earn more, and
+                save more.
+              </li>
+              <li>
+                Deliver value for our shareholders, who have placed their trust
+                in us (Nasdaq: PFG). Get to know us better. Read on to find key
+                facts, awards and recognition, and financial highlights.
+              </li>
+            </ul>
           </Typography>
         </Grid>
       </Grid>
-    </div>
-  )
-}
-
-function Welcoming() {
-  return (
-    <div>
-      <iframe
-        src="https://www.linkedin.com/embed/feed/update/urn:li:share:6941068042143510528"
-        height="1000px"
-        width="100%"
-        frameBorder="0"
-        allowFullScreen=""
-        title="Embedded post"
-      ></iframe>
     </div>
   )
 }

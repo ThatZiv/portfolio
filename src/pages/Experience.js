@@ -57,9 +57,6 @@ export default function Experience() {
             <Section icon="fa-solid fa-circle-info" title="Info">
               <PFG.components.MoreInfo />
             </Section>
-            <Section icon="fa-solid fa-star" title="Welcoming">
-              <PFG.components.Welcoming />
-            </Section>
           </MediaCard>
         </LayoutGrid>
         <LayoutGrid>
