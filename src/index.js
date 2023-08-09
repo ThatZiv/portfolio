@@ -5,9 +5,6 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import { QueryParamProvider } from 'use-query-params'
-import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6'
-import queryString from 'query-string'
 import { HashRouter as Router } from 'react-router-dom'
 
 import theme from './Theme'
@@ -21,15 +18,7 @@ ReactDOM.render(
         <ThemeProvider theme={theme}>
           <CssBaseline>
             <Router>
-              <QueryParamProvider
-                adapter={ReactRouter6Adapter}
-                options={{
-                  searchStringToObject: queryString.parse,
-                  objectToSearchString: queryString.stringify
-                }}
-              >
-                <App />
-              </QueryParamProvider>
+              <App />
             </Router>
           </CssBaseline>
         </ThemeProvider>
