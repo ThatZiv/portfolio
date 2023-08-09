@@ -8,12 +8,12 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { QueryParamProvider } from 'use-query-params'
 import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6'
 import queryString from 'query-string'
+import { HashRouter as Router } from 'react-router-dom'
 
 import theme from './Theme'
 //ctx
 import { UserProvider } from './contexts'
 import { ViewportProvider } from './contexts/viewport' // will be used in the future
-import { HashRouter as Router } from 'react-router-dom'
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>

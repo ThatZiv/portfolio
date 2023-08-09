@@ -4,9 +4,9 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
-import { StringParam, useQueryParam } from 'use-query-params'
 //icons
 import Icon from '@material-ui/core/Icon'
+import { useSearchParams } from 'react-router-dom'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const useStyles = makeStyles((theme) => ({
@@ -38,19 +38,27 @@ export default function Section(props) {
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false)
-    setExpandedParam(isExpanded ? 'true' : undefined)
+    setExpandedParam((params) => {
+      isExpanded ? params.set(props.title, true) : params.delete(props.title)
+      return params
+    })
   }
   // add other expand here
-  const [expandedParam, setExpandedParam] = useQueryParam(
-    props.title,
-    StringParam
-  )
+  let [expandedParam, setExpandedParam] = useSearchParams()
   React.useEffect(() => {
-    if (expandedParam && expandedParam == 'true') {
+    if (
+      expandedParam.has(props.title) &&
+      expandedParam.get(props.title) == 'true'
+    ) {
       setExpanded(panel)
     }
     return () => {
-      setExpandedParam()
+      setExpandedParam((params) => {
+        params.delete(props.title)
+        console.log(params)
+        return params
+      })
+      console.log(expandedParam)
     }
   }, [])
   //https://v4.mui.com/components/accordion/

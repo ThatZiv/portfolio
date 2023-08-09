@@ -14,9 +14,9 @@ export default {
     tags: `TypeScript,JavaScript,React,Electron,Python,Amazon Web Services,
 AWS CDK,AWS Lambda,DynamoDB,API Gateway,IaC,S3,Spotify Backstage,Webpack,UI/UX,Docker,SQL,GraphQL,Elasticsearch,
 Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Programming,PFG,Principal,Finance`,
-    objectives: `Developed frontend executable using React.js, Electron, TypeScript, and AWS services main product, facilitating engineer workstation setups that contribute to enhanced team productivity.
-        |Leveraged AWS Lambda, DynamoDB, React.js, and Electron to develop a scalable solution in company-wide hackathon competition.
-        |Documented architectural decisions, codebase structure, and integration details, aiding seamless knowledge transfer.
+    objectives: `Developed full-stack GUI using React.js, Electron, TypeScript, and AWS services, to enhance team productivity.
+        |Managed team and utilized AWS Lambda, DynamoDB, React.js, and Electron to develop a scalable solution in company-wide hackathon competition.
+        |Drove and documented architectural decisions, codebase structure, and integration design to build a long-term resilient product.
         |Adhered to Agile methodologies, ensuring timely task completion, iterative development, and product deployment with GitHub and Jira.`,
     timeline: [
       ['May 8th, 2023', 'Internship begins on DevOps team.'],

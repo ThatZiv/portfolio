@@ -5,10 +5,13 @@ import Footer from '../components/Footer'
 import Tags from '../components/Tags'
 import YouTubeEmbed from '../components/YouTubeEmbed'
 import Objectives from '../components/Objectives'
-// import Gallery from "../components/Gallery"; // TODO:
+import Gallery from '../components/Gallery' // TODO:
 import Timeline from '../components/Timeline'
 import { areSetsEqual } from '../utils'
 import Section from '../components/Section'
+import { QueryParamProvider } from 'use-query-params'
+import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6'
+import queryString from 'query-string'
 
 /**
  * Traverses a `TestRenderer` json tree to its constituents
@@ -120,9 +123,17 @@ describe('Tests components', () => {
     const icon = 'fs-brands fa-facebook'
     const children = <h1>My inner content</h1>
     testRenderer = TestRenderer.create(
-      <Section title={heading} icon={icon}>
-        {children}
-      </Section>
+      <QueryParamProvider
+        adapter={ReactRouter6Adapter}
+        options={{
+          earchStringToObject: queryString.parse,
+          objectToSearchString: queryString.stringify
+        }}
+      >
+        <Section title={heading} icon={icon}>
+          {children}
+        </Section>
+      </QueryParamProvider>
     )
     let expectedContent = new Set([
       '  ',
@@ -136,12 +147,12 @@ describe('Tests components', () => {
     })
     expect(areSetsEqual(expectedContent, content)).toBeTruthy()
   })
-  /* test("Gallery", () => {
+  test('Gallery', () => {
     const galleryData = [
-      { "label": "This is me on a wednesday.", "imgPath": "//test/img" },
-      { "label": "This is me right now.", "imgPath": "//test/img2" },
+      { label: 'This is me on a wednesday.', imgPath: '//test/img' },
+      { label: 'This is me right now.', imgPath: '//test/img2' }
     ]
     testRenderer = TestRenderer.create(<Gallery images={galleryData} />)
     console.log(testRenderer.toJSON())
-  }) */
+  })
 })
