@@ -162,10 +162,10 @@ const my = {
       // these are frameworks
       'https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white',
       'https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB',
-      'https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white',
       'https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB',
       'https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white',
       'https://img.shields.io/badge/Electron-2B2E3A?style=for-the-badge&logo=electron&logoColor=9FEAF9',
+      'https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white',
       'https://img.shields.io/badge/Jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white',
       'https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white',
       'https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white',
@@ -192,12 +192,11 @@ const my = {
     extra: [
       'https://img.shields.io/badge/Brain.js-yellow?style=flat-square',
       'https://img.shields.io/badge/PyGame-informational?style=flat-square',
-      'https://img.shields.io/badge/YTDL-red?style=flat-square',
       'https://img.shields.io/badge/Hugo-blueviolet?style=flat-square',
       'https://img.shields.io/badge/ArcGIS-API-blue?style=flat-square',
       'https://img.shields.io/badge/ActionsOnGoogle-yellowgreen?style=flat-square',
       'https://img.shields.io/badge/MongooseJS-e6557e?style=flat-square',
-      'https://img.shields.io/badge/Deta-CLI-ff69c9?style=flat-square',
+      'https://img.shields.io/badge/Deta.sh-ff69c9?style=flat-square',
       'https://img.shields.io/badge/PM2-Daemon-50b575?style=flat-square'
     ]
   },
@@ -205,6 +204,15 @@ const my = {
     primary:
       'vscode,visualstudio,vim,neovim,atom,idea,arduino,blender,cloudflare,linux,docker,github,git,mongodb,mysql,nginx,raspberrypi,regex,ae,au,ai,pr,ps',
     secondary: [
+      'https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white',
+      'https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white',
+      'https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white',
+      'https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=black&labelColor=white',
+      'https://img.shields.io/badge/PocketBase-bbdbe4?style=for-the-badge',
+      'https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=for-the-badge&logo=Amazon%20DynamoDB&logoColor=white',
+      'https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white',
+      'https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white',
+      'https://img.shields.io/badge/Redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white',
       'https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white',
       'https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white',
       'https://img.shields.io/badge/VIM-%2311AB00.svg?&style=for-the-badge&logo=vim&logoColor=white',
@@ -212,12 +220,7 @@ const my = {
       'https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=aqua',
       'https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white',
       'https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white',
-      'https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white',
-      'https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white',
-      'https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white',
-      'https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white',
-      'https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white',
-      'https://img.shields.io/badge/Redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white',
+      'https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white',
       'https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white',
       'https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white',
       'https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white',
@@ -233,8 +236,7 @@ const my = {
       'https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white',
       'https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white',
       'https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white',
-      'https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white',
-      'https://img.shields.io/badge/tmux-1BB91F?style=for-the-badge&logo=tmux&logoColor=white'
+      'https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white'
     ]
   },
   skills: TabMenu,

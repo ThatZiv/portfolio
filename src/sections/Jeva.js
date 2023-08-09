@@ -35,9 +35,32 @@ export default {
         'Channel reaches 20K subscribers, 2M views, and over 10M impressions.'
       ]
     ],
-    prechildren: <YouTubeEmbed id="Ci-EuLhFeOY" />
+    prechildren: prechildren()
   },
   components: { links, statistics }
+}
+
+function prechildren() {
+  return (
+    <Grid container spacing={1} justifyContent="center" alignItems="center">
+      <Grid item sm>
+        <img
+          className="Media"
+          alt="Views"
+          src="https://img.shields.io/youtube/channel/views/UCI7x329xu2rLbtVvFPVIhiQ"
+          style={{ marginRight: 6 }}
+        />
+        <img
+          className="Media"
+          alt="Subscribers"
+          src="https://img.shields.io/youtube/channel/subscribers/UCI7x329xu2rLbtVvFPVIhiQ?style=social"
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <YouTubeEmbed id="Ci-EuLhFeOY" />
+      </Grid>
+    </Grid>
+  )
 }
 
 function links() {
@@ -109,18 +132,16 @@ function statistics() {
         <iframe
           title="socialBlade1"
           className="Media"
+          style={{ frameBorder: 0, scrolling: 'no' }}
           src="https://socialblade.com/widget?v=1&u=jevajs"
-          scrolling="no"
-          frameBorder="0"
         ></iframe>
       </Grid>
       <Grid item>
         <iframe
           title="socialBlade2"
           className="Media"
+          style={{ frameBorder: 0, scrolling: 'no' }}
           src="https://socialblade.com/widget?v=2&u=jevajs"
-          scrolling="no"
-          frameBorder="0"
         ></iframe>
       </Grid>
     </Grid>
