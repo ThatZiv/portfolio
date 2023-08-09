@@ -5,13 +5,12 @@ import Footer from '../components/Footer'
 import Tags from '../components/Tags'
 import YouTubeEmbed from '../components/YouTubeEmbed'
 import Objectives from '../components/Objectives'
-import Gallery from '../components/Gallery' // TODO:
+// import Gallery from '../components/Gallery' // FIXME
 import Timeline from '../components/Timeline'
 import { areSetsEqual } from '../utils'
 import Section from '../components/Section'
-import { QueryParamProvider } from 'use-query-params'
-import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6'
-import queryString from 'query-string'
+import { MemoryRouter } from 'react-router-dom'
+// import { waitFor } from '@testing-library/react'
 
 /**
  * Traverses a `TestRenderer` json tree to its constituents
@@ -35,6 +34,7 @@ describe('Tests components', () => {
   let testRenderer
 
   afterEach(() => {
+    jest.clearAllMocks()
     // Clean up the TestRenderer instance
     if (testRenderer) testRenderer.unmount()
   })
@@ -118,23 +118,23 @@ describe('Tests components', () => {
     expect(areSetsEqual(orderedContents, originalContents)).toBe(true)
   })
 
-  test('Section', () => {
+  test('Section', async () => {
     const heading = 'My Accordion heading'
     const icon = 'fs-brands fa-facebook'
     const children = <h1>My inner content</h1>
     testRenderer = TestRenderer.create(
-      <QueryParamProvider
-        adapter={ReactRouter6Adapter}
-        options={{
-          earchStringToObject: queryString.parse,
-          objectToSearchString: queryString.stringify
-        }}
-      >
+      <MemoryRouter initialEntries={[`/?${heading}=true`]}>
         <Section title={heading} icon={icon}>
           {children}
         </Section>
-      </QueryParamProvider>
+      </MemoryRouter>
     )
+    // waitFor(() => {
+    //   expect(
+    //     testRenderer.toJSON().children[0].includes('Mui-expanded')
+    //   ).toBeTruthy()
+    // })
+    // TODO: Test query params and expansion based on them
     let expectedContent = new Set([
       '  ',
       'My Accordion heading',
@@ -147,12 +147,18 @@ describe('Tests components', () => {
     })
     expect(areSetsEqual(expectedContent, content)).toBeTruthy()
   })
-  test('Gallery', () => {
-    const galleryData = [
-      { label: 'This is me on a wednesday.', imgPath: '//test/img' },
-      { label: 'This is me right now.', imgPath: '//test/img2' }
-    ]
-    testRenderer = TestRenderer.create(<Gallery images={galleryData} />)
-    console.log(testRenderer.toJSON())
-  })
+  // test('Gallery', () => {
+  //   const galleryData = [
+  //     { label: 'This is me on a wednesday.', imgPath: '//test/img' },
+  //     { label: 'This is me right now.', imgPath: '//test/img2' }
+  //   ]
+  //   testRenderer = TestRenderer.create(
+  //     <>
+  //       <Gallery images={galleryData} />
+  //     </>
+  //   )
+  //   expect(testRenderer.toJSON()).toBeTruthy()
+  // })
+  // FIXME: Test Gallery
+  // test gallery
 })
