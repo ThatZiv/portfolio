@@ -8,7 +8,7 @@ export default {
     title: 'Jeva',
     banner: '/pics/Jeva.jpg',
     complete: false,
-    tags: 'Tutorials,Lua,HTML/CSS,JavaScript,Game Development,Graphic Design,Video Editing,Version Control (Git),Open-source,Programming,Jeva,YouTube',
+    tags: 'Tutorials,Lua,HTML/CSS,JavaScript,Game Development,Graphic Design,Video Editing,Version Control (Git),Open-source,Jeva,YouTube',
     objectives: `Created several YouTube videos for advanced programmers explaining how to use JavaScript, Lua, and HTML/CSS in a gaming environment.
         |Created introductory programming videos about setting up scripting environments.
         |Managed and created community forum and collaborate with others to support those in need of programming help.`,

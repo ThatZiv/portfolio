@@ -52,14 +52,6 @@ export default function Section(props) {
     ) {
       setExpanded(panel)
     }
-    return () => {
-      setExpandedParam((params) => {
-        params.delete(props.title)
-        console.log(params)
-        return params
-      })
-      console.log(expandedParam)
-    }
   }, [])
   //https://v4.mui.com/components/accordion/
   return (
