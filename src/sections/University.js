@@ -125,7 +125,7 @@ function Awards() {
           content: `Awarded [Fall 2021](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2021-46885#cs), 
 [Winter 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2022-48391#cs),
 [Fall 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2022-50373#cs), 
-Fall 2023. This award is given to students who have achieved a GPA of 3.5 or higher as a full-time student.`
+[Winter 2023](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2023-53793#cs). This award is given to students who have achieved a GPA of 3.5 or higher as a full-time student.`
         },
         {
           title: 'Warrior Award',

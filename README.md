@@ -8,8 +8,8 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 
 # TODO
 
-- zhud, osm, hs - portfolio cards
-- Do somehting about card expansion (modal instead?)
+- make 404 page
+- zhud, osm, - portfolio cards
 - Resume?
 - make og:description meta tags have my preamble
 - google analytics (for diff btns) -- **WIP**

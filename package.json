@@ -33,7 +33,7 @@
     "build": "react-scripts build",
     "build:sitemap": "node src/sitemap-builder.js",
     "spellcheck": "cspell ./src/sections/*.js",
-    "test": "jest --transformIgnorePatterns 'node_modules/(?!use-query-params)/'",
+    "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
