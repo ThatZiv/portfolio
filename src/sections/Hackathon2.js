@@ -1,16 +1,16 @@
-import SocialMedia from "../components/SocialMedia";
-import Gallery from "../components/Gallery";
-import { Divider, Grid, Typography } from "@mui/material";
-import YouTubeEmbed from "../components/YouTubeEmbed";
-import Gist from "react-gist";
-import Section from "../components/Section";
+import SocialMedia from '../components/SocialMedia'
+import Gallery from '../components/Gallery'
+import { Divider, Grid, Typography } from '@mui/material'
+import YouTubeEmbed from '../components/YouTubeEmbed'
+import Gist from 'react-gist'
+import Section from '../components/Section'
 /** @type {import("../types/section").Section} */
 export default {
   meta: {
     title: "WSU Hackathon '22",
-    banner: "/pics/hackathon2.jpg",
+    banner: '/pics/hackathon2.jpg',
     complete: true,
-    tags: "Python,MIDI,Threading,Processes,Automation,I/O,Daemonization,ctypes (Python library),Console Application,Hackathon,Open-source,Git,Competition",
+    tags: 'Python,MIDI,Threading,Processes,Automation,I/O,Daemonization,ctypes (Python library),Console Application,Hackathon,Open-source,Git,Competition',
     //objectives: `Usually from resume.`, // Objectives are separated by PIPE '|'
     description: `The theme of this Hackathon was "Life at Home" so
         my project became centered around making life easier at home. Specifically, 
@@ -20,35 +20,35 @@ export default {
         hosted at Wayne State University.`,
     timeline: [
       [
-        "February 4, 2022",
-        "Hackathon begins. I decided to do something with musical instrument digital interface (MIDI) technology as a means of automating tasks with.",
+        'February 4, 2022',
+        'Hackathon begins. I decided to do something with musical instrument digital interface (MIDI) technology as a means of automating tasks with.'
       ],
       [
-        "February 4, 2022",
-        "Research and self-documentation of my personal MIDI keyboard.",
+        'February 4, 2022',
+        'Research and self-documentation of my personal MIDI keyboard.'
       ],
       [
-        "February 4, 2022",
-        "With the research, parsing data influx from the MIDI keyboard became doable.",
+        'February 4, 2022',
+        'With the research, parsing data influx from the MIDI keyboard became doable.'
       ],
       [
-        "February 5, 2022",
-        "Completed dynamically mapped keyboard values in Python for further parsing.",
+        'February 5, 2022',
+        'Completed dynamically mapped keyboard values in Python for further parsing.'
       ],
       [
-        "February 5, 2022",
-        "Translated all keymapped values to certain hard-coded actions executed on the host computer.",
+        'February 5, 2022',
+        'Translated all keymapped values to certain hard-coded actions executed on the host computer.'
       ],
-      ["February 6, 2022", "Finished presentation video and slides."],
+      ['February 6, 2022', 'Finished presentation video and slides.'],
       [
-        "February 6, 2022",
-        "Submitted project on GitHub for judges to evaluate.",
-      ],
+        'February 6, 2022',
+        'Submitted project on GitHub for judges to evaluate.'
+      ]
     ],
-    prechildren: <YouTubeEmbed id="MZsUFm2aQ58" />,
+    prechildren: <YouTubeEmbed id="MZsUFm2aQ58" />
   },
-  components: { links, description, pictures },
-};
+  components: { links, description, pictures }
+}
 
 function pictures() {
   return (
@@ -57,13 +57,13 @@ function pictures() {
         timeout={7500}
         images={[
           {
-            label: "Award Ceremony",
-            imgPath: "/pics/ext/hackathon2Group.jpg",
+            label: 'Award Ceremony',
+            imgPath: '/pics/ext/hackathon2Group.jpg'
           },
           {
-            label: "Awards",
-            imgPath: "/pics/ext/hackathon2Award.jpg",
-          },
+            label: 'Awards',
+            imgPath: '/pics/ext/hackathon2Award.jpg'
+          }
         ]}
       />
       <br />
@@ -71,28 +71,34 @@ function pictures() {
       <br />
       <Typography variant="h6">Presentation Slides</Typography>
       <div className="Media">
-        <iframe
+        <object
           style={{
             height: 300,
-            minWidth: "100%",
-            maxHeight: "100%",
-            maxWidth: "100%",
+            minWidth: '100%',
+            maxHeight: '100%',
+            maxWidth: '100%',
+            border: null
           }}
           title="View Presentation Slides"
-          src="/pics/ext/Hackathon_Slides2.pdf"
-          frameBorder="0"
+          data="/pics/ext/Hackathon_Slides2.pdf"
+          type="application/pdf"
         >
-          This browser does not support viewing this file.
-        </iframe>
+          <SocialMedia
+            name="View Presentation"
+            icon="fa-solid fa-file-pdf"
+            showName
+            url="/pics/ext/Hackathon_Slides2.pdf"
+          />
+        </object>
       </div>
     </div>
-  );
+  )
 }
 
 function links() {
   return (
     <Grid spacing={1} container>
-      <Grid xs={12} item>
+      <Grid xs={6} item>
         <YouTubeEmbed id="MZsUFm2aQ58" />
       </Grid>
       <Grid item>
@@ -113,7 +119,7 @@ function links() {
       <Grid xs={12} item>
         <Section icon="fa-solid fa-star" title="More Information">
           <Grid container>
-            {" "}
+            {' '}
             {/* Another container needed so the gist embed can span to the entire div */}
             <Grid item sm>
               <div className="Media">
@@ -124,17 +130,17 @@ function links() {
         </Section>
       </Grid>
     </Grid>
-  );
+  )
 }
 
 function description() {
   return (
-    <div style={{ overflow: "auto" }}>
+    <div style={{ overflow: 'auto' }}>
       <i>
-        Taken from{" "}
+        Taken from{' '}
         <a href="https://github.com/ThatZiv/hackathon2022wsu/blob/main/README.md">
           README.md
-        </a>{" "}
+        </a>{' '}
         from the repository:
       </i>
       <h1 id="-midi-macros-hackathon-2022-wsu">
@@ -142,7 +148,7 @@ function description() {
       </h1>
       <p>
         <code>MIDI Macros</code> allows users to bind efficient shortcuts/macros
-        to their MIDI keyboard and increase productivity while working at home.{" "}
+        to their MIDI keyboard and increase productivity while working at home.{' '}
       </p>
       <YouTubeEmbed id="MZsUFm2aQ58" />
       <h2>Contributor:</h2>
@@ -154,7 +160,7 @@ function description() {
       <h2>Problem</h2>
       <p>
         When working at home, menial tasks, such as opening specific files or
-        playing music can be less of a burden to do. With{" "}
+        playing music can be less of a burden to do. With{' '}
         <code>MIDI Macros,</code> the program utilizes the MIDI protocol to do
         such tasks at ease. In doing so, certain actions can be performed with a
         press of a button, and with over 128 keys to use (on a traditional MIDI
@@ -203,7 +209,7 @@ function description() {
           media, mute, and set volume.
         </li>
         <li>
-          <code>keys.py</code> is the output of the program. The data fed from{" "}
+          <code>keys.py</code> is the output of the program. The data fed from{' '}
           <code>main.py</code> goes to this file and runs whatever it needs
           based on the data from the main thread. The main function houses the
           switch case logic to execute respective functionalities like: opening
@@ -254,5 +260,5 @@ function description() {
         </a>
       </p>
     </div>
-  );
+  )
 }

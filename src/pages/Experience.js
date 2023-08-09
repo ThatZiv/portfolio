@@ -1,27 +1,25 @@
 /* eslint-disable react/jsx-pascal-case */
-import { Divider, Grid } from "@material-ui/core";
-import { Grow, Typography } from "@mui/material";
-import React from "react";
-import MediaCard from "../components/MediaCard";
-import Section from "../components/Section";
-import YouTubeEmbed from "../components/YouTubeEmbed";
-import Doxim from "../sections/Doxim";
-import GDSC from "../sections/GDSC";
-import SCD from "../sections/SCD";
-import WayneHacks1 from "../sections/WayneHacks1";
-import University from "../sections/University";
-import School from "../sections/School";
+import { Divider, Grid } from '@material-ui/core'
+import { Grow, Typography } from '@mui/material'
+import React from 'react'
+import MediaCard from '../components/MediaCard'
+import Section from '../components/Section'
+import Doxim from '../sections/Doxim'
+import GDSC from '../sections/GDSC'
+import SCD from '../sections/SCD'
+import WayneHacks1 from '../sections/WayneHacks1'
+import PFG from '../sections/PFG'
 
 const styles = {
   heading: {
     fontSize: 25,
-    fontWeight: "regular",
-    fontFamily: "Teko, sans-serif",
-    "@media (max-width:600px)": {
-      textAlign: "center",
-    },
-  },
-};
+    fontWeight: 'regular',
+    fontFamily: 'Teko, sans-serif',
+    '@media (max-width:600px)': {
+      textAlign: 'center'
+    }
+  }
+}
 
 // TODO: export this to its own component (if i ever need it elsewhere)
 const Heading = ({ icon, title }) => (
@@ -34,18 +32,18 @@ const Heading = ({ icon, title }) => (
     </Typography>
     <Divider style={{ marginBottom: 14 }} />
   </div>
-);
+)
 
 export const LayoutGrid = ({ children }) => (
   <Grid
     justifyContent="flex-start"
-    style={{ marginTop: "10px" }}
+    style={{ marginTop: '10px' }}
     container
     spacing={2}
   >
     {children}
   </Grid>
-);
+)
 
 export default function Experience() {
   return (
@@ -53,6 +51,14 @@ export default function Experience() {
       <div>
         <Heading icon="fa-solid fa-briefcase" title="Employment" />
 
+        <LayoutGrid>
+          {/* PFG */}
+          <MediaCard {...PFG.meta} size={12}>
+            <Section icon="fa-solid fa-circle-info" title="Info">
+              <PFG.components.MoreInfo />
+            </Section>
+          </MediaCard>
+        </LayoutGrid>
         <LayoutGrid>
           {/* Doxim */}
           <MediaCard {...Doxim.meta} size={12}>
@@ -126,5 +132,5 @@ export default function Experience() {
         </LayoutGrid>
       </div>
     </Grow>
-  );
+  )
 }

@@ -3,9 +3,9 @@
  * @interface
  */
 export declare interface Tags {
-    /**
-     * Tag content
-     * @type {string}
-     */
-    children: string
+  /**
+   * Tag content
+   * @type {string}
+   */
+  children: string
 }
