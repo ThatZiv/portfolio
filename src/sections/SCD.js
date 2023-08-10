@@ -188,9 +188,9 @@ function Contribs() {
           title="WSU SCD Repository"
         />
       </Grid>
-      <Grid item>
+      {/* <Grid item>
         <Status paper url="https://scd.cs.wayne.edu/" />
-      </Grid>
+      </Grid> */}
     </Grid>
   )
 }
