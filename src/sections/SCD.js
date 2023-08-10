@@ -34,7 +34,7 @@ https://www.linkedin.com/feed/update/urn:li:activity:6903139263051898880
 export default {
   meta: {
     title: 'Society of Computer Developers',
-    description: `## Vice President
+    description: `## President
 [Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill-building workshops, hackathons, coding nights, and social events!`,
     banner: '/pics/scd.png',
     complete: false,
@@ -77,7 +77,9 @@ export default {
       [
         'March 5, 2023',
         'Organized and hosted "WayneHacks" - Wayne State\'s 3rd 48-hour hackathon.'
-      ]
+      ],
+      ['May 2023', 'Inherited role of President.'],
+      ['June 8, 2023', 'Began SCD "Summer Project"']
     ]
   },
   components: { Lectures, Contribs, Links, Pictures }
@@ -176,6 +178,7 @@ function Contribs() {
       <Grid item>
         <Contributions
           repos={[
+            'WSU-Society-of-Computer-Developers/summer-project',
             'WSU-Society-of-Computer-Developers/workshops',
             'WSU-Society-of-Computer-Developers/website2',
             'WSU-Society-of-Computer-Developers/dynamic-website-project',
