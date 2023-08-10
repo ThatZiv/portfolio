@@ -166,7 +166,7 @@ function Links() {
         />
       </Grid>
       <Grid xs={12} item>
-        <Status url="https://scd.cs.wayne.edu/" />
+        <Status url="https://scd.cs.wayne.edu/" paper />
       </Grid>
     </Grid>
   )
