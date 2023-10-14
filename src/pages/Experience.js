@@ -65,9 +65,6 @@ export default function Experience() {
             <Section icon="fa-solid fa-circle-info" title="Info">
               <Doxim.components.MoreInfo />
             </Section>
-            <Section icon="fa-solid fa-star" title="Welcoming">
-              <Doxim.components.Welcoming />
-            </Section>
           </MediaCard>
         </LayoutGrid>
         <Heading icon="fa-solid fa-table-columns" title="Organizations" />
