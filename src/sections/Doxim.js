@@ -7,7 +7,7 @@ import YouTubeEmbed from '../components/YouTubeEmbed'
 export default {
   meta: {
     title: 'Doxim',
-    description: `## Implementation Programming Intern 
+    description: `## Software Intern 
 [Doxim](https://doxim.com/) is the customer communications management and engagement technology leader serving highly regulated markets, including financial services, utilities and healthcare. We provide omnichannel document and payment solutions that transform experiences and strengthen engagement throughout the entire lifecycle.`,
     banner: '/pics/doxim.png',
     complete: true,
