@@ -9,7 +9,7 @@ import Generic from '../components/Generic'
 // import Divider from "@mui/material/Divider";
 
 // TODO: add more to this section
-const GPA = '3.95'
+const GPA = '3.96'
 /**
  * @type {import("../types/section").Section}
  */
