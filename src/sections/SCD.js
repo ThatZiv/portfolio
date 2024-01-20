@@ -39,9 +39,10 @@ export default {
     banner: '/pics/scd.png',
     complete: false,
     tags: 'TypeScript,JavaScript,Python,C/C++,HTML/CSS,Docker,CI/CD,Full Stack,REST API,DOM,MongoDB,React.js,Agile,Pair Programming,Lecturing,SCD,GitHub Actions,Version Control',
-    objectives: `Created and hosted programming-related workshop events for students.
+    objectives: `Oversee all organizational planning and operations.
+|Created and hosted programming-related workshop events for students.
 |Tutored and assisted students with coursework and other programming-related content.
-|Developed and managed official club website to display dynamic content using React, Express, and MongoDB.`, // Objectives are separated by PIPE '|'
+|Developed and maintain official club website with React and GitHub.`,
     timeline: [
       ['September 2021', 'Joined SCD as a member.'],
       ['October 2021', 'Recruited as Secretary.'],

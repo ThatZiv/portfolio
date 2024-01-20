@@ -9,7 +9,9 @@ export default {
     banner: 'pics/gdsc-social-share.png',
     complete: false,
     tags: 'Kotlin,Android Development,App Development,JavaScript,TypeScript,Firebase,BaaS,Git,Pair Programming,Android Studio,GDSC,Google',
-    objectives: `Technical Facilitating at Google Developer Student Club (GDSC) WSU.|Organize and host workshops based on Google technologies.`, // Objectives are separated by PIPE '|'
+    objectives: `Technical Facilitating at Google Developer Student Club (GDSC) WSU.
+|Organize and host workshops based on Google technologies.
+|Oversee all organizational planning and operations.`,
     description: `## President
 [Google Developer Student Clubs](https://gdsc.community.dev/wayne-state-university/) (GDSC) are university-based communities, where students learn about Google technology and use their skills to solve local problems. The GDSC gives students the opportunity to connect and network with individuals from diverse backgrounds and majors. It also allows students to learn about different technical topics through talks, workshops, and events. The GDSC is a great opportunity for students to give back to their community and develop themselves along the way!`,
     timeline: [
@@ -17,7 +19,8 @@ export default {
       ['November 2022', 'Hosted Android Study Jams Event (1/2).'],
       ['December 2022', 'Hosted Android Study Jams Event (2/2).'],
       ['March 4, 2023', 'Co-hosted Google Firebase workshop.'],
-      ['August 2023', 'Promoted to President.']
+      ['August 2023', 'Promoted to President.'],
+      ['November 17, 2023', 'Co-hosted industry speaker event.']
     ]
   },
   components: { Lectures, Links }
@@ -61,6 +64,12 @@ function Links() {
         <SocialMedia
           icon="fa-brands fa-google"
           url="https://developers.google.com/community/gdsc"
+        />
+      </Grid>
+      <Grid item>
+        <SocialMedia
+          icon="fa-brands fa-youtube"
+          url="https://www.youtube.com/channel/UCyDp4aiePo-fFSG41m4sXQg"
         />
       </Grid>
     </Grid>

@@ -18,7 +18,7 @@ const Section = {
     title: 'Wayne State University',
     banner: 'pics/wsu.png',
     complete: true, // to show the date range on the banner
-    tags: 'Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Activities,Classes,Coursework,Projects,Leadership',
+    tags: 'Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Classes,Coursework,Projects,Leadership',
     description: `## Bachelor of Science in Computer Science • **${GPA} GPA**
 [Wayne State University](https://wayne.edu) is a public research university in Detroit, Michigan. 
 It is Michigan's third-largest university. Founded in 1868, Wayne State consists of 
