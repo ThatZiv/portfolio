@@ -91,6 +91,7 @@ function App() {
                 }
               />
             ))}
+            <Route path="*" element={<Redirect to="/" />} />
           </Routes>
         </React.Suspense>
         <br />
