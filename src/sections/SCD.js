@@ -78,8 +78,18 @@ export default {
         'March 5, 2023',
         'Organized and hosted "WayneHacks" - Wayne State\'s 3rd 48-hour hackathon.'
       ],
+      ['April 7, 2023', 'Hosted Next.js (web framework) workshop.'],
       ['May 2023', 'Inherited role of President.'],
-      ['June 8, 2023', 'Began SCD "Summer Project"']
+      ['June 8, 2023', 'Began SCD "Summer Project"'],
+      ['September 2023', 'Halted development for SCD "Summer Project"'],
+      [
+        'October 27, 2023',
+        'Hosted Introduction to Front-End Web Development (HTML/CSS & DOM) workshop.'
+      ],
+      [
+        'January 2024',
+        'Directed and hosted "WayneHacks 2" - Wayne State\'s first in-person hackathon.'
+      ]
     ]
   },
   components: { Lectures, Contribs, Links, Pictures }
@@ -89,6 +99,8 @@ function Lectures() {
   return (
     <Grid container>
       {/* cspell:disable */}
+      <Lecture title="Intro to Front-End" YouTubeID="i9zdb99-LTs" />
+      <Lecture title="Next.js (v12)" YouTubeID="t9YXEcGXAHg" />
       <Lecture title="Google Firebase" YouTubeID="nUOMTViKsko" />
       <Lecture title="JavaScript DOM" YouTubeID="HTxYtiTAsZU" />
       <Lecture title="React.js" YouTubeID="S7wWg11tZxM" />
