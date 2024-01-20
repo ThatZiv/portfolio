@@ -17,10 +17,14 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Prog
     objectives: `Developed full-stack GUI using React.js, Electron, TypeScript, and AWS services to facilitate onboarding for new engineers.
         |Managed team and utilized AWS Lambda, DynamoDB, React.js, and Electron to develop a scalable solution in company-wide hackathon competition.
         |Drove and documented architectural decisions, codebase structure, and integration design to build a long-term resilient product.
-        |Adhered to Agile methodologies, ensuring timely task completion, iterative development, and product deployment with GitHub and Jira.`,
+        |Adhered to Agile methodologies, ensuring timely task completion, iterative development, and product deployment with GitHub and Jira.
+        |Actively engaged in code reviews, offering constructive feedback to team members as well as receiving feedback to overall enhance the quality of the codebase.
+        |Set up CI/CD pipelines with GitHub Actions to automate the testing and deployment process, facilitating rapid and consistent releases.
+        |Collaborated with UX/UI designers and backend developers to ensure a cohesive and user-friendly experience.
+        |Demonstrated strong problem-solving skills by quickly identifying and resolving hot issues, improving application stability and reliability.`,
     timeline: [
       ['May 8th, 2023', 'Internship begins on DevOps team.'],
-      ['July 13th, 2023', 'Joined web-dev team.']
+      ['July 13th, 2023', 'Joined full-stack web development portal team.']
     ]
   },
   components: { MoreInfo }
