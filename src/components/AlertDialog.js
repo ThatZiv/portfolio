@@ -33,6 +33,7 @@ const AlertDialog = (props) => {
     <Dialog
       open={open}
       onClose={handleAbort}
+      data-testid="alert-dialog"
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
