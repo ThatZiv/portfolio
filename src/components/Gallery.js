@@ -78,6 +78,8 @@ function SwipeableTextMobileStepper(props) {
               sx={{
                 maxHeight: 500,
                 display: 'block',
+                backgroundImage: 'url(/bg.svg)',
+                backgroundRepeat: 'repeat',
                 //maxWidth: "auto",
                 objectFit: 'contain',
                 overflow: 'hidden',
