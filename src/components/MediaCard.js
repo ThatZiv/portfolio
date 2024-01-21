@@ -223,7 +223,11 @@ export default function MediaCard(props) {
             <Typography
               gutterBottom
               variant="h3"
-              style={{ fontFamily: 'Bebas Neue' }}
+              style={{
+                fontFamily: 'Blinker',
+                fontWeight: 'bold',
+                color: '#d6d6d6'
+              }}
               component="h2"
             >
               {props.title}
