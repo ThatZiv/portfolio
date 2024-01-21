@@ -13,6 +13,7 @@ import SwipeableViews from 'react-swipeable-views'
 import { autoPlay } from 'react-swipeable-views-utils'
 import theme from '../Theme'
 import { UserContext } from '../contexts'
+import { useViewport } from '../contexts/viewport'
 
 const useStyles = makeStyles((/*theme*/) => ({
   root: {
@@ -27,6 +28,7 @@ const useStyles = makeStyles((/*theme*/) => ({
 /** @param {import("../types/comps/Gallery").Gallery} props */
 function SwipeableTextMobileStepper(props) {
   const Context = React.useContext(UserContext)
+  const { width } = useViewport()
   const dispatch = Context[1]
   const [activeStep, setActiveStep] = React.useState(0)
   const maxSteps = props.images.length
@@ -134,6 +136,7 @@ function SwipeableTextMobileStepper(props) {
         )}
         <MobileStepper
           steps={maxSteps}
+          variant={width > 600 ? 'dots' : 'progress'}
           position="static"
           className={classes.root}
           activeStep={activeStep}
@@ -142,6 +145,7 @@ function SwipeableTextMobileStepper(props) {
               size="small"
               onClick={handleNext}
               disabled={activeStep === maxSteps - 1}
+              sx={{ fontSize: '0.8rem', padding: '6px' }}
             >
               Next
               {theme.direction === 'rtl' ? (
@@ -156,6 +160,7 @@ function SwipeableTextMobileStepper(props) {
               size="small"
               onClick={handleBack}
               disabled={activeStep === 0}
+              sx={{ fontSize: '0.8rem', padding: '6px' }}
             >
               {theme.direction === 'rtl' ? (
                 <KeyboardArrowRight />
@@ -171,7 +176,7 @@ function SwipeableTextMobileStepper(props) {
           variant="subtitle2"
           color="gray"
         >
-          Click picture to enlarge
+          Click image to enlarge
         </Typography>
       </Box>
     </Grid>
