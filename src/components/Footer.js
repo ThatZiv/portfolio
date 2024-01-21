@@ -13,17 +13,15 @@ const useStyles = makeStyles({
 
 export default function Footer() {
   const classes = useStyles()
+  const gh = 'https://github.com/thatziv'
   return (
     <Typography variant="subtitle1" className={classes.root}>
-      Created by {my.name} with&nbsp;
-      <Tooltip title="www.mui.com">
-        <Link href="https://mui.com/">MUI</Link>
-      </Tooltip>{' '}
-      &&nbsp;
-      <Tooltip title="www.reactjs.org">
-        <Link href="https://reactjs.org/">React</Link>
+      &copy; {new Date().getFullYear()}{' '}
+      <Tooltip title={gh}>
+        <Link target="_blank" href={gh}>
+          {my.name}
+        </Link>
       </Tooltip>
-      .
     </Typography>
   )
 }
