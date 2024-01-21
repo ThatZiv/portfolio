@@ -6,7 +6,7 @@ export declare interface Gallery {
   /**
    * List of pictures to use
    */
-  images: Array<Image>
+  images: Image[]
   /**
    * Timeout interval for auto-swiping to next image
    */

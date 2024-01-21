@@ -21,6 +21,7 @@ export declare interface Section {
     /**
      * List of objectives with pipe-separated values
      * @example `I built this tech using [...]|Integrated [...] API using [...]`
+     * @alias "Deliverables"
      */
     objectives: string
     /** Card content description */
