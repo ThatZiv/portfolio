@@ -77,6 +77,7 @@ function SwipeableTextMobileStepper(props) {
                 maxHeight: 500,
                 display: 'block',
                 //maxWidth: "auto",
+                objectFit: 'contain',
                 overflow: 'hidden',
                 width: '100%',
                 height: '100%',
@@ -89,9 +90,9 @@ function SwipeableTextMobileStepper(props) {
         </div>
       </div>
     ))
-  }, [])
+  }, [props.images, dispatch, activeStep])
   return (
-    <Grid item md={7}>
+    <Grid item sx={{ width: '100%' }}>
       <Box sx={{ flexGrow: 1 }} className={[classes.root, 'Media'].join(' ')}>
         <Paper
           square
