@@ -40,6 +40,12 @@ const useStyles = makeStyles((theme) => ({
     float: 'right',
     maxHeight: '34px',
     minWidth: '90%'
+  },
+  title: {
+    fontFamily: 'Blinker',
+    fontWeight: 'bold',
+    color: '#d6d6d6',
+    fontSize: '2.9rem'
   }
 }))
 
@@ -134,11 +140,7 @@ export default function MediaCard(props) {
                     <Typography
                       gutterBottom
                       variant="h3"
-                      style={{
-                        fontFamily: 'Blinker',
-                        fontWeight: 'bold',
-                        color: '#d6d6d6'
-                      }}
+                      className={classes.title}
                       component="h2"
                     >
                       {props.title}
@@ -223,11 +225,7 @@ export default function MediaCard(props) {
             <Typography
               gutterBottom
               variant="h3"
-              style={{
-                fontFamily: 'Blinker',
-                fontWeight: 'bold',
-                color: '#d6d6d6'
-              }}
+              className={classes.title}
               component="h2"
             >
               {props.title}
