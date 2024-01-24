@@ -7,6 +7,31 @@ const MarkdownConfig = {
     <Typography variant="h1" style={{ fontFamily: 'Blinker, sans-serif' }}>
       {children}
     </Typography>
+  ),
+  img: ({ node }) => (
+    <img
+      src={node.properties.src}
+      alt={node.properties.alt}
+      className="Media"
+      title={node.properties.title}
+    />
+  ),
+  code: ({ children }) => (
+    <pre style={{ backgroundColor: '#000', color: 'white', padding: 10 }}>
+      <code style={{ whiteSpace: 'pre-line' }}>{children}</code>
+    </pre>
+  ),
+  blockquote: ({ children }) => (
+    <blockquote
+      style={{
+        padding: 10,
+        paddingTop: 25,
+        marginLeft: 0,
+        borderLeft: '5px solid #ccc'
+      }}
+    >
+      {children}
+    </blockquote>
   )
 }
 
