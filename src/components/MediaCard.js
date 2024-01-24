@@ -45,7 +45,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Blinker',
     fontWeight: 'bold',
     color: '#d6d6d6',
-    fontSize: '2.9rem'
+    fontSize: '2.9rem',
+    // make fontsize smaller for mobile
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem'
+    }
   }
 }))
 
