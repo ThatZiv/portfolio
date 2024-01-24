@@ -4,40 +4,24 @@ exports[`Tests components Footer 1`] = `
 <h6
   className="MuiTypography-root makeStyles-root-1 MuiTypography-subtitle1"
 >
-  Created by 
-  Zavaar Shah
-   with 
-  <a
-    aria-describedby={null}
-    className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-    href="https://mui.com/"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    onTouchEnd={[Function]}
-    onTouchStart={[Function]}
-    title="www.mui.com"
-  >
-    MUI
-  </a>
+  © 
+  2024
    
-  & 
   <a
     aria-describedby={null}
     className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
-    href="https://reactjs.org/"
+    href="https://github.com/thatziv"
     onBlur={[Function]}
     onFocus={[Function]}
     onMouseLeave={[Function]}
     onMouseOver={[Function]}
     onTouchEnd={[Function]}
     onTouchStart={[Function]}
-    title="www.reactjs.org"
+    target="_blank"
+    title="https://github.com/thatziv"
   >
-    React
+    Zavaar Shah
   </a>
-  .
 </h6>
 `;
 
@@ -46,13 +30,13 @@ Array [
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".css-13i4rnv-MuiGrid-root{box-sizing:border-box;margin:0;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}",
+        "__html": ".css-1mum6ye-MuiGrid-root{box-sizing:border-box;margin:0;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;width:100%;}",
       }
     }
-    data-emotion="css 13i4rnv-MuiGrid-root"
+    data-emotion="css 1mum6ye-MuiGrid-root"
   />,
   <div
-    className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-7 css-13i4rnv-MuiGrid-root"
+    className="MuiGrid-root MuiGrid-item css-1mum6ye-MuiGrid-root"
   >
     <style
       dangerouslySetInnerHTML={
@@ -124,14 +108,14 @@ Array [
             <style
               dangerouslySetInnerHTML={
                 Object {
-                  "__html": ".css-16ixpfj{max-height:500px;display:block;overflow:hidden;width:100%;height:100%;cursor:-webkit-zoom-in;cursor:zoom-in;}",
+                  "__html": ".css-u0qz5q{max-height:500px;display:block;background-image:url(/bg.svg);background-repeat:repeat;object-fit:contain;overflow:hidden;width:100%;height:100%;cursor:-webkit-zoom-in;cursor:zoom-in;}",
                 }
               }
-              data-emotion="css 16ixpfj"
+              data-emotion="css u0qz5q"
             />
             <img
               alt="My Pic 1"
-              className="MuiBox-root css-16ixpfj"
+              className="MuiBox-root css-u0qz5q"
               src="https://picsum.photos/200/300"
             />
           </div>
@@ -142,7 +126,7 @@ Array [
           <div>
             <img
               alt="My Pic 2"
-              className="MuiBox-root css-16ixpfj"
+              className="MuiBox-root css-u0qz5q"
               src="https://picsum.photos/200/300"
             />
           </div>
@@ -153,7 +137,7 @@ Array [
           <div>
             <img
               alt="My Pic 3"
-              className="MuiBox-root css-16ixpfj"
+              className="MuiBox-root css-u0qz5q"
               src="https://picsum.photos/200/300"
             />
           </div>
@@ -181,21 +165,21 @@ Array [
         <style
           dangerouslySetInnerHTML={
             Object {
-              "__html": ".css-jl17tt-MuiButton-root{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:500;font-size:0.8125rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:4px 5px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-jl17tt-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-jl17tt-MuiButton-root:hover{background-color:transparent;}}.css-jl17tt-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}",
+              "__html": ".css-dq3ewt-MuiButton-root{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:500;font-size:0.8125rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:4px 5px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;font-size:0.8rem;padding:6px;}.css-dq3ewt-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-dq3ewt-MuiButton-root:hover{background-color:transparent;}}.css-dq3ewt-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}",
             }
           }
-          data-emotion="css jl17tt-MuiButton-root"
+          data-emotion="css dq3ewt-MuiButton-root"
         />
         <style
           dangerouslySetInnerHTML={
             Object {
-              "__html": ".css-1knaqv7-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:500;font-size:0.8125rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:4px 5px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;}.css-1knaqv7-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1knaqv7-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1knaqv7-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1knaqv7-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-1knaqv7-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1knaqv7-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}",
+              "__html": ".css-1tw9yqw-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:500;font-size:0.8125rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:4px 5px;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#1976d2;font-size:0.8rem;padding:6px;}.css-1tw9yqw-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}.css-1tw9yqw-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1tw9yqw-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1tw9yqw-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(25, 118, 210, 0.04);}@media (hover: none){.css-1tw9yqw-MuiButtonBase-root-MuiButton-root:hover{background-color:transparent;}}.css-1tw9yqw-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}",
             }
           }
-          data-emotion="css 1knaqv7-MuiButtonBase-root-MuiButton-root"
+          data-emotion="css 1tw9yqw-MuiButtonBase-root-MuiButton-root"
         />
         <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1tw9yqw-MuiButtonBase-root-MuiButton-root"
           disabled={true}
           onBlur={[Function]}
           onClick={[Function]}
@@ -237,42 +221,45 @@ Array [
         <style
           dangerouslySetInnerHTML={
             Object {
-              "__html": ".css-1384nzf-MuiMobileStepper-dots{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}",
+              "__html": ".css-1txemsz-MuiMobileStepper-progress{width:50%;}",
             }
           }
-          data-emotion="css 1384nzf-MuiMobileStepper-dots"
+          data-emotion="css 1txemsz-MuiMobileStepper-progress"
         />
-        <div
-          className="MuiMobileStepper-dots css-1384nzf-MuiMobileStepper-dots"
+        <style
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": ".css-1be5mm1-MuiLinearProgress-root-MuiMobileStepper-progress{position:relative;overflow:hidden;display:block;height:4px;z-index:0;background-color:rgb(167, 202, 237);width:50%;}@media print{.css-1be5mm1-MuiLinearProgress-root-MuiMobileStepper-progress{-webkit-print-color-adjust:exact;color-adjust:exact;}}",
+            }
+          }
+          data-emotion="css 1be5mm1-MuiLinearProgress-root-MuiMobileStepper-progress"
+        />
+        <span
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
+          className="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate MuiMobileStepper-progress css-1be5mm1-MuiLinearProgress-root-MuiMobileStepper-progress"
+          role="progressbar"
         >
           <style
             dangerouslySetInnerHTML={
               Object {
-                "__html": ".css-26w9jf-MuiMobileStepper-dot{-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;background-color:#1976d2;border-radius:50%;width:8px;height:8px;margin:0 2px;}",
+                "__html": ".css-5xe99f-MuiLinearProgress-bar1{width:100%;position:absolute;left:0;bottom:0;top:0;-webkit-transition:-webkit-transform .4s linear;transition:transform .4s linear;transform-origin:left;background-color:#1976d2;}",
               }
             }
-            data-emotion="css 26w9jf-MuiMobileStepper-dot"
+            data-emotion="css 5xe99f-MuiLinearProgress-bar1"
           />
-          <div
-            className="MuiMobileStepper-dot MuiMobileStepper-dotActive css-26w9jf-MuiMobileStepper-dot"
-          />
-          <style
-            dangerouslySetInnerHTML={
+          <span
+            className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate css-5xe99f-MuiLinearProgress-bar1"
+            style={
               Object {
-                "__html": ".css-114p2tk-MuiMobileStepper-dot{-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;background-color:rgba(0, 0, 0, 0.26);border-radius:50%;width:8px;height:8px;margin:0 2px;}",
+                "transform": "translateX(-100%)",
               }
             }
-            data-emotion="css 114p2tk-MuiMobileStepper-dot"
           />
-          <div
-            className="MuiMobileStepper-dot css-114p2tk-MuiMobileStepper-dot"
-          />
-          <div
-            className="MuiMobileStepper-dot css-114p2tk-MuiMobileStepper-dot"
-          />
-        </div>
+        </span>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1tw9yqw-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -315,7 +302,7 @@ Array [
       <h6
         className="MuiTypography-root MuiTypography-subtitle2 css-13nnq27-MuiTypography-root"
       >
-        Click picture to enlarge
+        Click image to enlarge
       </h6>
     </div>
   </div>,
