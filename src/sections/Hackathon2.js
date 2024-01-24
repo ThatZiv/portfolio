@@ -2,8 +2,6 @@ import SocialMedia from '../components/SocialMedia'
 import Gallery from '../components/Gallery'
 import { Divider, Grid, Typography } from '@mui/material'
 import YouTubeEmbed from '../components/YouTubeEmbed'
-import Gist from 'react-gist'
-import Section from '../components/Section'
 /** @type {import("../types/section").Section} */
 export default {
   meta: {
@@ -115,19 +113,6 @@ function links() {
           showName
           url="/pics/ext/Hackathon_Slides2.pdf"
         />
-      </Grid>
-      <Grid xs={12} item>
-        <Section icon="fa-solid fa-star" title="More Information">
-          <Grid container>
-            {' '}
-            {/* Another container needed so the gist embed can span to the entire div */}
-            <Grid item sm>
-              <div className="Media">
-                <Gist id="2a0564b3eff66cd172a4b1395f474325" type="md" />
-              </div>
-            </Grid>
-          </Grid>
-        </Section>
       </Grid>
     </Grid>
   )

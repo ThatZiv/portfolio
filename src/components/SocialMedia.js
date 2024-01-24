@@ -7,8 +7,10 @@ import { capFirstLetter } from '../utils'
 import { UserContext } from '../contexts'
 import { colors } from '../Theme'
 
+/** @param {import("../types/comps/SocialMedia").SocialMedia} props */
 export default function SocialMedia(props) {
-  const [, dispatch] = useContext(UserContext)
+  const Context = useContext(UserContext)
+  const dispatch = Context[1]
   // eslint-disable-next-line no-unused-vars
   const main = (url, _icon) => {
     const icon = (d, _icon) => (
@@ -36,6 +38,7 @@ export default function SocialMedia(props) {
     showDialog = false // FIXME: currently showing dialogues are disabled here.
     return (
       <div
+        data-testid="social-media-redirect-dialog"
         onClick={() => {
           if (showDialog) {
             dispatch({

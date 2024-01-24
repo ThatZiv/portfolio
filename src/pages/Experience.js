@@ -9,6 +9,7 @@ import GDSC from '../sections/GDSC'
 import SCD from '../sections/SCD'
 import WayneHacks1 from '../sections/WayneHacks1'
 import PFG from '../sections/PFG'
+import WayneHacks2 from '../sections/WayneHacks2'
 
 const styles = {
   heading: {
@@ -65,13 +66,44 @@ export default function Experience() {
             <Section icon="fa-solid fa-circle-info" title="Info">
               <Doxim.components.MoreInfo />
             </Section>
-            <Section icon="fa-solid fa-star" title="Welcoming">
-              <Doxim.components.Welcoming />
-            </Section>
           </MediaCard>
         </LayoutGrid>
         <Heading icon="fa-solid fa-table-columns" title="Organizations" />
         <LayoutGrid>
+          {/* WayneHacks 2 Hackathon */}
+          <MediaCard {...WayneHacks2.meta}>
+            <Section icon="fa-solid fa-images" title="Gallery">
+              <WayneHacks2.components.Pictures />
+            </Section>
+            <Section icon="fa-solid fa-code" title="Code">
+              <WayneHacks2.components.Contribs />
+            </Section>
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
+              <WayneHacks2.components.Links />
+            </Section>
+          </MediaCard>
+          {/* WayneHacks 2023 Hackathon */}
+          <MediaCard
+            prechildren={
+              <Section icon="fa-solid fa-video" title="Videos">
+                <WayneHacks1.components.Lectures />
+              </Section>
+            }
+            {...WayneHacks1.meta}
+          >
+            <Section icon="fa-solid fa-code" title="Code">
+              <WayneHacks1.components.Contribs />
+            </Section>
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
+              <WayneHacks1.components.Links />
+            </Section>
+          </MediaCard>
           {/* SCD */}
           <MediaCard
             prechildren={
@@ -108,25 +140,6 @@ export default function Experience() {
               title="Links"
             >
               <GDSC.components.Links />
-            </Section>
-          </MediaCard>
-          {/* WayneHacks 2023 Hackathon */}
-          <MediaCard
-            prechildren={
-              <Section icon="fa-solid fa-video" title="Videos">
-                <WayneHacks1.components.Lectures />
-              </Section>
-            }
-            {...WayneHacks1.meta}
-          >
-            <Section icon="fa-solid fa-code" title="Code">
-              <WayneHacks1.components.Contribs />
-            </Section>
-            <Section
-              icon="fa-solid fa-arrow-up-right-from-square"
-              title="Links"
-            >
-              <WayneHacks1.components.Links />
             </Section>
           </MediaCard>
         </LayoutGrid>

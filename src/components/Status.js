@@ -5,8 +5,7 @@ import { green, red, grey } from '@material-ui/core/colors/'
 import { Cancel, CheckCircle } from '@material-ui/icons'
 import { styled } from '@mui/material/styles'
 import Badge from '@mui/material/Badge'
-// import Avatar from '@mui/material/Avatar';
-// import Stack from '@mui/material/Stack';
+
 const StyledBadge = styled(Badge, {
   shouldForwardProp: (prop) => prop !== 'color' && prop !== 'status'
   // eslint-disable-next-line no-unused-vars
@@ -39,6 +38,9 @@ const StyledBadge = styled(Badge, {
   }
 }))
 
+/**
+ * @param {import("../types/comps/Status").Status} props
+ */
 export default function Status(props) {
   const [, setWebData] = useState(null)
   const [error, setError] = useState(null)

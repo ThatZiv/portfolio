@@ -12,6 +12,7 @@ import Section from '../components/Section'
 import Jeva from '../sections/Jeva'
 import FiveM from '../sections/FiveM'
 import Webserver from '../sections/Webserver'
+import WanyeHacksWebsite from '../sections/WanyeHacksWebsite'
 import Garage from '../sections/Garage'
 import Hackathon from '../sections/Hackathon' // '21
 import Hackathon2 from '../sections/Hackathon2' // '22
@@ -89,6 +90,15 @@ export default function Portfolio() {
           </Section>
           <Section icon="fa-solid fa-chart-line" title="Statistics">
             <Garage.components.statistics />
+          </Section>
+        </MediaCard>
+        {/* WANYEHACKS.COM */}
+        <MediaCard {...WanyeHacksWebsite.meta}>
+          <Section icon="fa-solid fa-bookmark" title="Description">
+            <WanyeHacksWebsite.components.Description />
+          </Section>
+          <Section icon="fa-solid fa-images" title="Gallery">
+            <WanyeHacksWebsite.components.Pictures />
           </Section>
         </MediaCard>
         {/* SPARTAHACK8 */}

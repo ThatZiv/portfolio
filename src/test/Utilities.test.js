@@ -3,6 +3,7 @@ import * as utils from '../utils'
 describe('Tests utilities', () => {
   test('Capitalize first letter', () => {
     expect(utils.capFirstLetter('zua')).toBe('Zua')
+    expect(utils.capFirstLetter('Zua')).toBe('Zua')
   })
   test('Set comparison', () => {
     const a = new Set([1, 2, 3])
@@ -12,6 +13,7 @@ describe('Tests utilities', () => {
     const d = new Set([7, 8, 9])
     expect(utils.areSetsEqual(c, d)).toBeFalsy()
   })
+
   test('Array comparison', () => {
     const a = [1, 2, 4]
     const b = [1, 2, 3]
@@ -19,6 +21,7 @@ describe('Tests utilities', () => {
     const c = [1, 2, 3]
     expect(utils.areArraysEqual(b, c)).toBeTruthy()
   })
+
   test('Random item generator (replication)', () => {
     const items = ['first', 'second', 'third', 'fourth']
     const itemGen = utils.randomItemGenerator(items)
@@ -31,6 +34,7 @@ describe('Tests utilities', () => {
     }
     expect(utils.areArraysEqual(items.sort(), replicated.sort())).toBeTruthy()
   })
+
   test('Sequential item generator (replication)', () => {
     const items = ['first', 'second', 'third']
     const itemsGen = utils.sequentialItemGenerator(items)

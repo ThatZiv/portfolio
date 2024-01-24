@@ -8,16 +8,16 @@ import Status from '../components/Status'
 /** @type {import("../types/section").Section} */
 export default {
   meta: {
-    title: 'WayneHacks Winter 2023 Hackathon',
+    title: 'WayneHacks Hackathon',
     description: `## Co-Director
 
-[WayneHacks](https://waynehacks.devpost.com/) is a 48-hour virtual hackathon hosted by 
+[WayneHacks](https://waynehacks.devpost.com/) is a 48-hour virtual hackathon hosted at 
 [Wayne State University](https://engineering.wayne.edu/). Hackers have 48 hours to complete a project related to the theme given at the opening ceremony. 
 WayneHacks also hosts workshops and two gaming tournaments during the event! $5000 in prizes are given out at the end to the best hacks. 
 In total, there were over **100 registrants**, **50 active participants**, and **16 project submissions**.`,
     banner: '/pics/whacks.png',
     complete: true,
-    tags: 'JavaScript,Python,HTML/CSS,Docker,JS DOM,React.js,Agile,Pair Programming,Git,CI/CD,Hackathon,Competition,Team Management',
+    tags: 'JavaScript,Python,HTML/CSS,Docker,JS DOM,React.js,Agile,Pair Programming,Git,CI/CD,Hackathon,Competition,Team Management,Co-Director',
     objectives: `Conducted preliminary meetings relating to funding, event schedule, and judging criteria with committee members.|
 Developed interactive JavaScript DOM workshop with JavaScript.|
 Developed interactive Google Firebase workshop with JavaScript and Python.|

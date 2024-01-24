@@ -8,19 +8,19 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 
 # TODO
 
-- make 404 page
+- Add waynehacks.com to `portfolio`
+- Add ess to `experience`
+- Add devfest organizer to `experience`
 - zhud, osm, - portfolio cards
 - Resume?
-- make og:description meta tags have my preamble
 - google analytics (for diff btns) -- **WIP**
-- ~~Redirect page (like linkedin)?~~ - waste of time
 
 # FIXME
 
-- Mozilla tries to autodownload embedded pdf file on mobile when opening
-- memory leak issue with unmounting animations [?]
-- "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
-- Gallery image expand dialogue does not close after clicking continue
-- Can't swipe right on home page tabs
+- [x] Mozilla tries to autodownload embedded pdf file on mobile when opening
+- [ ] memory leak issue with unmounting animations
+- [ ] "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
+- [ ] Gallery image expand dialogue does not close after clicking continue
+- [ ] Can't swipe right on home page tabs
 
 ---

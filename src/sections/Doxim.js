@@ -21,7 +21,7 @@ export default {
       ['April 26th, 2023', 'Internship ends.']
     ]
   },
-  components: { MoreInfo, Welcoming }
+  components: { MoreInfo }
 }
 
 function MoreInfo() {
@@ -46,21 +46,6 @@ function MoreInfo() {
           </Typography>
         </Grid>
       </Grid>
-    </div>
-  )
-}
-
-function Welcoming() {
-  return (
-    <div>
-      <iframe
-        src="https://www.linkedin.com/embed/feed/update/urn:li:share:6941068042143510528"
-        height="1000px"
-        width="100%"
-        frameBorder="0"
-        allowFullScreen=""
-        title="Embedded post"
-      ></iframe>
     </div>
   )
 }

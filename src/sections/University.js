@@ -9,7 +9,7 @@ import Generic from '../components/Generic'
 // import Divider from "@mui/material/Divider";
 
 // TODO: add more to this section
-const GPA = '3.95'
+const GPA = '3.96'
 /**
  * @type {import("../types/section").Section}
  */
@@ -18,7 +18,7 @@ const Section = {
     title: 'Wayne State University',
     banner: 'pics/wsu.png',
     complete: true, // to show the date range on the banner
-    tags: 'Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Activities,Classes,Coursework,Projects,Leadership',
+    tags: 'Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Classes,Coursework,Projects,Leadership',
     description: `## Bachelor of Science in Computer Science • **${GPA} GPA**
 [Wayne State University](https://wayne.edu) is a public research university in Detroit, Michigan. 
 It is Michigan's third-largest university. Founded in 1868, Wayne State consists of 

@@ -40,6 +40,16 @@ const useStyles = makeStyles((theme) => ({
     float: 'right',
     maxHeight: '34px',
     minWidth: '90%'
+  },
+  title: {
+    fontFamily: 'Blinker',
+    fontWeight: 'bold',
+    color: '#d6d6d6',
+    fontSize: '2.9rem',
+    // make fontsize smaller for mobile
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem'
+    }
   }
 }))
 
@@ -134,7 +144,7 @@ export default function MediaCard(props) {
                     <Typography
                       gutterBottom
                       variant="h3"
-                      style={{ fontFamily: 'Bebas Neue' }}
+                      className={classes.title}
                       component="h2"
                     >
                       {props.title}
@@ -219,7 +229,7 @@ export default function MediaCard(props) {
             <Typography
               gutterBottom
               variant="h3"
-              style={{ fontFamily: 'Bebas Neue' }}
+              className={classes.title}
               component="h2"
             >
               {props.title}
