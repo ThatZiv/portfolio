@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import Contributions from '../components/Contributions'
 import SocialMedia from '../components/SocialMedia'
 import Gallery from '../components/Gallery'
@@ -141,9 +141,24 @@ The website is built w/ [Next.js](https://nextjs.org) v14. For styling, we're us
 
 `
   return (
-    <Grid container sx={{ maxWidth: '95%' }}>
-      <Grid item>
-        <Markdown>{d}</Markdown>
+    <Grid container>
+      <Grid
+        item
+        sx={{
+          width: '100%'
+        }}
+      >
+        <Markdown
+          overrideConfig={{
+            p: ({ children }) => (
+              <Typography variant="body1" sx={{ whiteSpace: 'pre-line' }}>
+                {children}
+              </Typography>
+            )
+          }}
+        >
+          {d}
+        </Markdown>
       </Grid>
     </Grid>
   )
@@ -156,6 +171,16 @@ function Pictures() {
         {
           imgPath: '/pics/ext/whacks-website/homepage.png',
           label: 'Home page'
+        },
+        {
+          imgPath:
+            'https://raw.githubusercontent.com/ThatZiv/waynehacks/master/.github/img/diagram.png',
+          label: 'Architecture diagram'
+        },
+        {
+          imgPath:
+            'https://raw.githubusercontent.com/ThatZiv/waynehacks/master/.github/img/public-schema.png',
+          label: 'Database schema'
         },
         {
           imgPath: '/pics/ext/whacks-website/application-apply.png',
