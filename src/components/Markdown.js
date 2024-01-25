@@ -18,14 +18,16 @@ const MarkdownConfig = {
   ),
   code: ({ children }) => (
     <pre style={{ backgroundColor: '#000', color: 'white', padding: 10 }}>
-      <code style={{ whiteSpace: 'pre-line' }}>{children}</code>
+      <code style={{ whiteSpace: 'pre-line', wordBreak: 'break-word' }}>
+        {children}
+      </code>
     </pre>
   ),
   blockquote: ({ children }) => (
     <blockquote
       style={{
         padding: 10,
-        paddingTop: 25,
+        paddingTop: 11,
         marginLeft: 0,
         borderLeft: '5px solid #ccc'
       }}
@@ -35,9 +37,12 @@ const MarkdownConfig = {
   )
 }
 
-function Markdown({ children }) {
+function Markdown({ children, overrideConfig: overrideConfig = {} }) {
   return (
-    <ReactMarkdown linkTarget="_blank" components={MarkdownConfig}>
+    <ReactMarkdown
+      linkTarget="_blank"
+      components={{ ...MarkdownConfig, ...overrideConfig }}
+    >
       {children}
     </ReactMarkdown>
   )
