@@ -7,7 +7,13 @@ export default function Modal({ open, onClose, children }) {
   const theme = useTheme()
   return (
     <div>
-      <MuiModal open={open} onClose={onClose}>
+      <MuiModal
+        sx={{
+          width: '100%'
+        }}
+        open={open}
+        onClose={onClose}
+      >
         <Box
           sx={{
             position: 'absolute',
@@ -27,7 +33,7 @@ export default function Modal({ open, onClose, children }) {
             width: '85%',
             border: '2px solid #000',
             boxShadow: 24,
-            p: 4,
+            p: 2,
             overflow: 'auto' // Make the content scrollable
           }}
         >
@@ -36,12 +42,14 @@ export default function Modal({ open, onClose, children }) {
               position: 'absolute',
               top: 7,
               right: 7,
-              fontSize: 8
+              fontSize: 8,
+              marginBottom: 15
             }}
           >
             <div onClick={onClose}>
               <CloseIcon
                 sx={{
+                  mb: 10,
                   '&:hover': {
                     cursor: 'pointer',
                     color: 'gray'
@@ -50,7 +58,7 @@ export default function Modal({ open, onClose, children }) {
               />
             </div>
           </div>
-          {children}
+          <Box sx={{ mt: 2 }}>{children}</Box>
         </Box>
       </MuiModal>
     </div>
