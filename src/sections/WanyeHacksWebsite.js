@@ -49,7 +49,7 @@ Initiated the development timeline very early on, ensuring a strategic and well-
 }
 
 function Description() {
-  const d = `  
+  const readme = `  
 
 ## WayneHacks.com
 
@@ -157,7 +157,7 @@ The website is built w/ [Next.js](https://nextjs.org) v14. For styling, we're us
             )
           }}
         >
-          {d}
+          {readme}
         </Markdown>
       </Grid>
     </Grid>
@@ -219,24 +219,13 @@ function Links() {
   return (
     <Grid container spacing={2}>
       <Grid item>
-        <SocialMedia
-          name="Project Submissions"
-          icon="fa-solid fa-envelope-circle-check"
-          url="https://waynehacks-2.devpost.com/project-gallery"
-        />
+        <SocialMedia url="https://github.com/thatziv/waynehacks" />
       </Grid>
       <Grid item>
         <SocialMedia
           name="Website"
           icon="fa-solid fa-globe"
           url="https://waynehacks.com/"
-        />
-      </Grid>
-      <Grid item>
-        <SocialMedia
-          name="GetInvolved"
-          icon="fa-solid fa-graduation-cap"
-          url="https://getinvolved.wayne.edu/event/9630763"
         />
       </Grid>
     </Grid>
