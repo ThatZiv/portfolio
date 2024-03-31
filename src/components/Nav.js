@@ -174,7 +174,7 @@ const SearchAppBar = (/*props*/) => {
                       <Avatar
                         sx={{ width: 50, height: 50 }}
                         alt="me"
-                        src="/pics/me_3_prof_bg_2.jpg"
+                        src="/pics/me_4_bg.png"
                       />
                     </Status>
                     <br />

@@ -17,6 +17,7 @@ const MarkdownConfig = {
     />
   ),
   code: ({ children }) => (
+    // TODO: make overflow scrollable to width of parent container
     <pre style={{ backgroundColor: '#000', color: 'white', padding: 10 }}>
       <code style={{ whiteSpace: 'pre-line', wordBreak: 'break-word' }}>
         {children}

@@ -100,6 +100,12 @@ export default function Portfolio() {
           <Section icon="fa-solid fa-images" title="Gallery">
             <WanyeHacksWebsite.components.Pictures />
           </Section>
+          <Section icon="fa-solid fa-code" title="Code">
+            <WanyeHacksWebsite.components.Contribs />
+          </Section>
+          <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <WanyeHacksWebsite.components.Links />
+          </Section>
         </MediaCard>
         {/* SPARTAHACK8 */}
         <MediaCard {...Spartahack8.meta}>
@@ -109,8 +115,8 @@ export default function Portfolio() {
           <Section icon="fa-solid fa-images" title="Gallery">
             <Spartahack8.components.Pictures />
           </Section>
-          <Section icon="fa-solid fa-chart-line" title="Statistics">
-            <Spartahack8.components.Statistics />
+          <Section icon="fa-solid fa-code" title="Code">
+            <Spartahack8.components.Contribs />
           </Section>
           <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
             <Spartahack8.components.Links />

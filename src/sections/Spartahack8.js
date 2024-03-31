@@ -4,6 +4,7 @@ import Gallery from '../components/Gallery'
 import SocialMedia from '../components/SocialMedia'
 import Status from '../components/Status'
 import Generic from '../components/Generic'
+import Contributions from '../components/Contributions'
 
 /** @type {import("../types/section").Section} */
 export default {
@@ -42,7 +43,7 @@ export default {
       ]
     ]
   },
-  components: { Pictures, Links, Statistics, Description }
+  components: { Pictures, Links, Description, Contribs }
 }
 
 function Pictures() {
@@ -63,6 +64,13 @@ function Pictures() {
       ]}
     />
   )
+}
+
+function Contribs() {
+  return Contributions({
+    repos: ['mlyoung25/earthly'],
+    title: 'Earthly Repository'
+  })
 }
 
 function Description() {
@@ -138,14 +146,3 @@ function Links() {
     </Grid>
   )
 }
-
-function Statistics() {
-  return <Status paper url="https://earthly.zavaar.net/" />
-}
-/* 
-function Contribs() {
-    return <Contributions repos={[
-        "WSU-Society-of-Computer-Developers/workshops",
-        "WSU-Society-of-Computer-Developers/waynehacks-website"
-    ]} title="WSU SCD Repository" />
-} */
