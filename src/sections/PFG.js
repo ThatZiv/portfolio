@@ -15,6 +15,7 @@ export default {
 AWS CDK,AWS Lambda,DynamoDB,API Gateway,IaC,S3,Spotify Backstage,Webpack,UI/UX,Docker,SQL,GraphQL,Elasticsearch,
 Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Programming,PFG,Principal,Finance`,
     objectives: `Developed full-stack GUI using React.js, Electron, TypeScript, and AWS services to facilitate onboarding for new engineers.
+        |Contributed to internal company-wide developer portal, leveraging React.js, AWS, and Spotify Backstage, enhancing the workflow of ~15K engineers daily.
         |Managed team and utilized AWS Lambda, DynamoDB, React.js, and Electron to develop a scalable solution in company-wide hackathon competition.
         |Drove and documented architectural decisions, codebase structure, and integration design to build a long-term resilient product.
         |Adhered to Agile methodologies, ensuring timely task completion, iterative development, and product deployment with GitHub and Jira.
