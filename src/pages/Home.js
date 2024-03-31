@@ -57,7 +57,7 @@ export default function Home() {
                 sx={{ width: 275, height: 275, bgcolor: indigo[500] }}
                 className={['Media', classes.pic].join(' ')}
                 alt={my.name}
-                src="/pics/me_3_prof_bg_2.jpg"
+                src="/pics/me_4_bg.png"
               />
             </Fade>
           </Grid>
