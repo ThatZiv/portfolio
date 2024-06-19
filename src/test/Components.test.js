@@ -14,6 +14,7 @@ import Status from '../components/Status'
 import { green, red } from '@mui/material/colors'
 import '@testing-library/jest-dom'
 import SocialMedia from '../components/SocialMedia'
+// import { fireEvent } from '@testing-library/react'
 
 // eslint-disable-next-line no-undef
 global.fetch = jest.fn(() => {
@@ -79,12 +80,18 @@ describe('Tests components', () => {
   test('Tags', () => {
     const testContent = 'Test-Driven Development'
     testRenderer = TestRenderer.create(<Tags>{testContent}</Tags>)
+    expect(testRenderer.toJSON().children[0].children[1].children[0]).toBe(
+      testContent
+    )
     expect(testRenderer.toJSON()).toMatchSnapshot()
   })
 
   test('YouTubeEmbed', () => {
     const id = 'dQw4w9WgXcQ'
     testRenderer = TestRenderer.create(<YouTubeEmbed id={id} />)
+    expect(testRenderer.toJSON().children[0].props.src).toBe(
+      `https://www.youtube-nocookie.com/embed/${id}`
+    )
     expect(testRenderer.toJSON()).toMatchSnapshot()
   })
 
@@ -294,32 +301,15 @@ describe('Tests components', () => {
     })
 
     test.todo(
-      'handles click event and shows confirmation dialog' /*,async () => {
-      const testRenderer = TestRenderer.create(
-        <SocialMedia url={url} confirmation />
-      )
-      // Simulate click event
-      const dialog = testRenderer.root.findByProps({
-        'data-testid': 'social-media-redirect-dialog'
-      })
-      dialog.props.onClick()
-      // Log the tree structure to understand the rendered components
-      await new Promise((resolve) => setTimeout(resolve, 0))
-
-      try {
-        // Attempt to find the element with the specified data-testid
-        const alertDialog = testRenderer.root.findByProps({
-          'data-testid': 'alert-dialog'
-        })
-
-        await new Promise((resolve) => setTimeout(resolve, 5))
-
-        expect(alertDialog.props.open).toBe(true)
-      } catch (error) {
-        // Log the error to understand the issue
-        console.error(error)
-      }
-    })*/
+      'handles click event and shows confirmation dialog',
+      // () => {
+      //   const testRenderer = TestRenderer.create(
+      //     <SocialMedia url={url} confirmation />
+      //   )
+      //   const button = testRenderer.getInstance().root.findByType('div')
+      //   fireEvent.click(button)
+      //   expect(testRenderer.toJSON()).toMatchSnapshot()
+      // }
     )
   })
 })
