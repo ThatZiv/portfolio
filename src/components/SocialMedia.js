@@ -15,9 +15,8 @@ export default function SocialMedia(props) {
   const main = (url, _icon) => {
     const icon = (d, _icon) => (
       <i
-        className={`fa-${d ? 'brands' : 'solid'} fa-${
-          d ? d.toLowerCase() : _icon
-        }`}
+        className={`fa-${d ? 'brands' : 'solid'} fa-${d ? d.toLowerCase() : _icon
+          }`}
       ></i>
     )
     var service
@@ -60,8 +59,8 @@ export default function SocialMedia(props) {
             service
               ? capFirstLetter(service)
               : (props?.showName && props.url !== '#'
-                  ? props.url
-                  : props?.name) || props.icon
+                ? props.url
+                : props?.name) || props.icon
           }
         >
           <Link

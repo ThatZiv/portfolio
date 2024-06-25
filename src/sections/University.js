@@ -9,7 +9,7 @@ import Generic from '../components/Generic'
 // import Divider from "@mui/material/Divider";
 
 // TODO: add more to this section
-const GPA = '3.96'
+const GPA = '3.97'
 /**
  * @type {import("../types/section").Section}
  */
@@ -20,12 +20,17 @@ const Section = {
     complete: true, // to show the date range on the banner
     tags: 'Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Classes,Coursework,Projects,Leadership',
     description: `## Bachelor of Science in Computer Science • **${GPA} GPA**
+---
+## Master of Science in Computer Science • Artificial Intelligence Concentration
+---
 [Wayne State University](https://wayne.edu) is a public research university in Detroit, Michigan. 
 It is Michigan's third-largest university. Founded in 1868, Wayne State consists of 
 13 schools and colleges offering approximately 350 programs to nearly 24,000 graduate and undergraduate students.`,
     timeline: [
       ['Fall 2021', 'Start date.'], // TODO add promotions et al
-      ['Spring 2025', 'Expected graduation date.']
+      ['Fall 2024', 'Start accelerated graduate program (AGRADE).',],
+      ['Spring 2025', 'Expected graduation date for Bachelor\'s in Computer Science.',],
+      ['Spring 2026', 'Expected graduation date for Master\'s in Computer Science.',]
     ]
   },
   components: { Coursework, Awards, Grade }
