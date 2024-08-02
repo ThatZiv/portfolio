@@ -307,6 +307,22 @@ describe('Tests components', () => {
       expect(testRenderer.toJSON()).toMatchSnapshot()
     })
 
+    test('renders with URL, confirmation dialog, and name', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia url={url} confirmation name={name} />
+      )
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+
+    })
+
+    test('renders with URL with no name but url instead', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia showName url={url} />
+      )
+
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+
+    })
     test.todo(
       'handles click event and shows confirmation dialog',
       // () => {
