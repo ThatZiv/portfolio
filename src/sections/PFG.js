@@ -11,9 +11,9 @@ export default {
 [Principal](https://principal.com) is a [Fortune 500®](https://fortune.com/company/principal-financial/fortune500/) American global financial investment management and insurance company headquartered in [Des Moines](https://en.wikipedia.org/wiki/Des_Moines), Iowa, U.S.`,
     banner: '/pics/pfg.png',
     complete: false,
-    tags: `TypeScript,JavaScript,React,Electron,Python,Amazon Web Services,
+    tags: `Java,TypeScript,JavaScript,React,Electron,Python,Spring boot,Amazon Web Services,
 AWS CDK,AWS Lambda,DynamoDB,API Gateway,IaC,S3,Spotify Backstage,Webpack,UI/UX,Docker,SQL,GraphQL,Elasticsearch,
-Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Programming,PFG,Principal,Finance`,
+Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Principal`,
     objectives: `Developed full-stack GUI using React.js, Electron, TypeScript, and AWS services to facilitate onboarding for new engineers.
         |Contributed to internal company-wide developer portal, leveraging React.js, AWS, and Spotify Backstage, enhancing the workflow of ~15K engineers daily.
         |Managed team and utilized AWS Lambda, DynamoDB, React.js, and Electron to develop a scalable solution in company-wide hackathon competition.
@@ -23,9 +23,20 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,Pair Prog
         |Set up CI/CD pipelines with GitHub Actions to automate the testing and deployment process, facilitating rapid and consistent releases.
         |Collaborated with UX/UI designers and backend developers to ensure a cohesive and user-friendly experience.
         |Demonstrated strong problem-solving skills by quickly identifying and resolving hot issues, improving application stability and reliability.`,
+    // TODO: add ifs team add
     timeline: [
-      ['May 8th, 2023', 'Internship begins on DevOps team.'],
-      ['July 13th, 2023', 'Joined full-stack web development portal team.']
+      [
+        'May 8, 2023',
+        'Internship begins on DevOps team. Tools used: TypeScript/JavaScript, React, Electron.js, Python, Ansible, Bash, Powershell, Docker, GitHub, CI/CD, AWS, Artifactory.'
+      ],
+      [
+        'July 13, 2023',
+        'Joined full-stack web development portal team. Tools used: TypeScript/JavaScript, React, Spotify Backstage, Python, AWS (IaC), Docker, GraphQL, GitHub.'
+      ],
+      [
+        'May 7, 2024',
+        'Joined Integrated Finance Solutions (IFS) team for actuarial modernization efforts. Tools used: Java, Spring Boot, TypeScript/JavaScript, React, AWS, SQL, Docker, Excel add-in API.'
+      ]
     ]
   },
   components: { MoreInfo }
