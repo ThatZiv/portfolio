@@ -323,6 +323,17 @@ describe('Tests components', () => {
       expect(testRenderer.toJSON()).toMatchSnapshot()
 
     })
+
+    // test tooltips
+
+    test('renders with URL and icon with tooltip', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia url={url} icon={icon} tooltip />
+      )
+
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+    })
+
     test.todo(
       'handles click event and shows confirmation dialog',
       // () => {
