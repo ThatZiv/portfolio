@@ -300,6 +300,13 @@ describe('Tests components', () => {
       expect(testRenderer.toJSON()).toMatchSnapshot()
     })
 
+    test('renders with URL, confirmation dialog, and icon', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia url={url} confirmation icon={icon} />
+      )
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+    })
+
     test.todo(
       'handles click event and shows confirmation dialog',
       // () => {
