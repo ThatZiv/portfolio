@@ -53,10 +53,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: out
-          path: build/
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: out
+      #     path: build/
 
       - name: Deploy
         if: github.event_name == 'push'
