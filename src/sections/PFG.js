@@ -23,7 +23,7 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Princ
         |Set up CI/CD pipelines with GitHub Actions to automate the testing and deployment process, facilitating rapid and consistent releases.
         |Collaborated with UX/UI designers and backend developers to ensure a cohesive and user-friendly experience.
         |Demonstrated strong problem-solving skills by quickly identifying and resolving hot issues, improving application stability and reliability.`,
-    // TODO: add ifs team add
+    // TODO: add ifs team deliverables. ideas: asynchronous/parallel programming, rest api dev, runtime analysis, big data, data warehouse interaction.
     timeline: [
       [
         'May 8, 2023',
