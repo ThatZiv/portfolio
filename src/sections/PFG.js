@@ -22,8 +22,11 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Princ
         |Actively engaged in code reviews, offering constructive feedback to team members as well as receiving feedback to overall enhance the quality of the codebase.
         |Set up CI/CD pipelines with GitHub Actions to automate the testing and deployment process, facilitating rapid and consistent releases.
         |Collaborated with UX/UI designers and backend developers to ensure a cohesive and user-friendly experience.
-        |Demonstrated strong problem-solving skills by quickly identifying and resolving hot issues, improving application stability and reliability.`,
-    // TODO: add ifs team deliverables. ideas: asynchronous/parallel programming, rest api dev, runtime analysis, big data, data warehouse interaction.
+        |Demonstrated strong problem-solving skills by quickly identifying and resolving hot issues, improving application stability and reliability.
+        |Contributed to actuarial/accountant application using Java/Spring Boot, SQL, Docker, AWS and JavaScript/React.
+        |Improved product performance with asynchronous programming and run-time analysis in Java/SQL.
+        |Leveraged Docker for containerization, ensuring consistent deployment environments and faster development cycles.
+        |Designed and developed REST APIs for seamless integration with existing financial systems.`,
     timeline: [
       [
         'May 8, 2023',
@@ -31,11 +34,15 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Princ
       ],
       [
         'July 13, 2023',
-        'Joined full-stack web development portal team. Tools used: TypeScript/JavaScript, React, Spotify Backstage, Python, AWS (IaC), Docker, GraphQL, GitHub.'
+        'Joined full-stack web development company-wide developer portal team. Tools used: TypeScript/JavaScript, React, Spotify Backstage, Python, AWS (IaC), Docker, GraphQL, GitHub.'
       ],
       [
         'May 7, 2024',
         'Joined Integrated Finance Solutions (IFS) team for actuarial modernization efforts. Tools used: Java, Spring Boot, TypeScript/JavaScript, React, AWS, SQL, Docker, Excel add-in API.'
+      ],
+      [
+        'September 2024',
+        'Joined IFS Data team for building and maintaining internal company-wide data lake and respective infrastructure. Tools used: Python, AWS, CDK, IaC, Docker.'
       ]
     ]
   },
