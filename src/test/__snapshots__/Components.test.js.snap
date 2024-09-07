@@ -483,7 +483,7 @@ exports[`Tests components SocialMedia renders with URL and icon with tooltip 1`]
 </div>
 `;
 
-exports[`Tests components SocialMedia renders with URL and icon with tooltip 2`] = `
+exports[`Tests components SocialMedia renders with URL and icon with tooltip and name 1`] = `
 <div>
   <div
     data-testid="social-media-redirect-dialog"
