@@ -312,7 +312,6 @@ describe('Tests components', () => {
         <SocialMedia url={url} confirmation name={name} />
       )
       expect(testRenderer.toJSON()).toMatchSnapshot()
-
     })
 
     test('renders with URL with no name but url instead', () => {
@@ -321,7 +320,6 @@ describe('Tests components', () => {
       )
 
       expect(testRenderer.toJSON()).toMatchSnapshot()
-
     })
 
     // test tooltips
@@ -334,8 +332,16 @@ describe('Tests components', () => {
       expect(testRenderer.toJSON()).toMatchSnapshot()
     })
 
+    test('renders with URL and icon with tooltip and name', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia url={url} name={'test'} icon={icon} showName />
+      )
+
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+    })
+
     test.todo(
-      'handles click event and shows confirmation dialog',
+      'handles click event and shows confirmation dialog'
       // () => {
       //   const testRenderer = TestRenderer.create(
       //     <SocialMedia url={url} confirmation />
