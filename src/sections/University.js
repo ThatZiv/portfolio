@@ -74,6 +74,7 @@ ${description}`
       )}`
     }
   }
+  // TODO: update courses
   const courses = [
     new Course({
       name: 'CSC 1100',
