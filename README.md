@@ -12,6 +12,7 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 - Add devfest organizer to `experience`
 - zhud, osm, - portfolio cards
 - Resume?
+- Remove/fix Status paper cards
 - use archive.org links for old projects
 - google analytics (for diff btns) -- **WIP**
 
