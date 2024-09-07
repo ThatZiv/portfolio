@@ -24,6 +24,7 @@ const MarkdownConfig = {
       </code>
     </pre>
   ),
+  hr: () => <hr style={{ border: '1.5px solid #737373', borderRadius: 5 }} />,
   blockquote: ({ children }) => (
     <blockquote
       style={{

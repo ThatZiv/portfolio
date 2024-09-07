@@ -425,7 +425,305 @@ exports[`Tests components SocialMedia renders with URL and icon 1`] = `
 </div>
 `;
 
+exports[`Tests components SocialMedia renders with URL and icon with tooltip 1`] = `
+<div>
+  <div
+    data-testid="social-media-redirect-dialog"
+    onClick={[Function]}
+  >
+    <a
+      aria-describedby={null}
+      className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-h4 MuiTypography-colorPrimary"
+      href="https://www.facebook.com"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      target="_blank"
+      title="Facebook"
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3f51b5",
+            "color": "#fdfdfd",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <i
+            className="fa-brands fa-facebook"
+          />
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Tests components SocialMedia renders with URL and icon with tooltip and name 1`] = `
+<div>
+  <div
+    data-testid="social-media-redirect-dialog"
+    onClick={[Function]}
+  >
+    <a
+      aria-describedby={null}
+      className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-h4 MuiTypography-colorPrimary"
+      href="https://www.facebook.com"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      target="_blank"
+      title="https://www.facebook.com"
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3f51b5",
+            "color": "#fdfdfd",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <i
+            className="fa-solid fa-fs-brands fa-facebook"
+          />
+          <div>
+              
+            test
+          </div>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Tests components SocialMedia renders with URL and name 1`] = `
+<div>
+  <div
+    data-testid="social-media-redirect-dialog"
+    onClick={[Function]}
+  >
+    <a
+      aria-describedby={null}
+      className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-h4 MuiTypography-colorPrimary"
+      href="https://www.facebook.com"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      target="_blank"
+      title="Facebook"
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3f51b5",
+            "color": "#fdfdfd",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <i
+            className="fa-brands fa-facebook"
+          />
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Tests components SocialMedia renders with URL with no name but url instead 1`] = `
+<div>
+  <div
+    data-testid="social-media-redirect-dialog"
+    onClick={[Function]}
+  >
+    <a
+      aria-describedby={null}
+      className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-h4 MuiTypography-colorPrimary"
+      href="https://www.facebook.com"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      target="_blank"
+      title="Facebook"
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3f51b5",
+            "color": "#fdfdfd",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <i
+            className="fa-brands fa-facebook"
+          />
+          <div>
+              
+            Facebook
+          </div>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Tests components SocialMedia renders with URL, confirmation dialog, and icon 1`] = `
+<div>
+  <div
+    data-testid="social-media-redirect-dialog"
+    onClick={[Function]}
+  >
+    <a
+      aria-describedby={null}
+      className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-h4 MuiTypography-colorPrimary"
+      href="https://www.facebook.com"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      target="_blank"
+      title="Facebook"
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-text"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#3f51b5",
+            "color": "#fdfdfd",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          <i
+            className="fa-brands fa-facebook"
+          />
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Tests components SocialMedia renders with URL, confirmation dialog, and name 1`] = `
 <div>
   <div
     data-testid="social-media-redirect-dialog"

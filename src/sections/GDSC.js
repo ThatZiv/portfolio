@@ -7,7 +7,7 @@ export default {
   meta: {
     title: 'Google Developer Student Club at WSU',
     banner: 'pics/gdsc-social-share.png',
-    complete: false,
+    complete: true,
     tags: 'Kotlin,Android Development,App Development,JavaScript,TypeScript,Firebase,BaaS,Git,Pair Programming,Android Studio,GDSC,Google',
     objectives: `Technical Facilitating at Google Developer Student Club (GDSC) WSU.
 |Organize and host workshops based on Google technologies.
@@ -20,7 +20,8 @@ export default {
       ['December 2022', 'Hosted Android Study Jams Event (2/2).'],
       ['March 4, 2023', 'Co-hosted Google Firebase workshop.'],
       ['August 2023', 'Promoted to President.'],
-      ['November 17, 2023', 'Co-hosted industry speaker event.']
+      ['November 17, 2023', 'Co-hosted industry speaker event.'],
+      ['August 2024', 'Stepped down as President.']
     ]
   },
   components: { Lectures, Links }

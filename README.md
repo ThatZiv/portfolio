@@ -8,11 +8,11 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 
 # TODO
 
-- Add waynehacks.com to `portfolio`
 - Add ess to `experience`
 - Add devfest organizer to `experience`
 - zhud, osm, - portfolio cards
 - Resume?
+- use archive.org links for old projects
 - google analytics (for diff btns) -- **WIP**
 
 # FIXME

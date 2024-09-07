@@ -14,14 +14,8 @@ import Status from '../components/Status'
 import { green, red } from '@mui/material/colors'
 import '@testing-library/jest-dom'
 import SocialMedia from '../components/SocialMedia'
-
-// eslint-disable-next-line no-undef
-global.fetch = jest.fn(() => {
-  return Promise.resolve({
-    text: () => Promise.resolve('<html><title>sad</title></html>'),
-    json: () => Promise.resolve({ data: '12345' })
-  })
-})
+const { act } = TestRenderer
+// import { fireEvent } from '@testing-library/react'
 
 /**
  * Traverses a `TestRenderer` json tree to its constituents
@@ -46,6 +40,13 @@ describe('Tests components', () => {
 
   afterEach(() => {
     jest.clearAllMocks()
+    // eslint-disable-next-line no-undef
+    global.fetch = jest.fn(() => {
+      return Promise.resolve({
+        text: () => Promise.resolve('<html><title>google</title></html>'),
+        json: () => Promise.resolve({ data: '12345' })
+      })
+    })
     // Clean up the TestRenderer instance
     if (testRenderer) testRenderer.unmount()
   })
@@ -79,12 +80,18 @@ describe('Tests components', () => {
   test('Tags', () => {
     const testContent = 'Test-Driven Development'
     testRenderer = TestRenderer.create(<Tags>{testContent}</Tags>)
+    expect(testRenderer.toJSON().children[0].children[1].children[0]).toBe(
+      testContent
+    )
     expect(testRenderer.toJSON()).toMatchSnapshot()
   })
 
   test('YouTubeEmbed', () => {
     const id = 'dQw4w9WgXcQ'
     testRenderer = TestRenderer.create(<YouTubeEmbed id={id} />)
+    expect(testRenderer.toJSON().children[0].props.src).toBe(
+      `https://www.youtube-nocookie.com/embed/${id}`
+    )
     expect(testRenderer.toJSON()).toMatchSnapshot()
   })
 
@@ -183,13 +190,19 @@ describe('Tests components', () => {
     const pattern = '/google/'
     // when good, color: rgb(67, 160, 71);
     // when bad, color: rgb(229, 57, 53);
-    test('renders status CARD correctly', () => {
+    test('renders status CARD correctly', async () => {
+      // eslint-disable-next-line no-undef
+      jest.spyOn(global, 'fetch').mockImplementationOnce(() =>
+        Promise.resolve({
+          text: () => Promise.resolve('<html><title>google</title></html>')
+        })
+      )
       testRenderer = TestRenderer.create(
         React.createElement(Status, { url, pattern, paper: true })
       )
-
       expect(testRenderer.toJSON()).toMatchSnapshot()
       const renderedString = JSON.stringify(testRenderer.toJSON())
+      console.log(renderedString)
       expect(renderedString).toContain(
         JSON.stringify({
           color: green[600]
@@ -206,20 +219,22 @@ describe('Tests components', () => {
         .mockImplementationOnce(() =>
           Promise.reject(new Error('Failed to fetch'))
         )
-      testRenderer = TestRenderer.create(
-        React.createElement(Status, { url, pattern, paper: true })
-      )
-      // allow the reject to be processed
-      await new Promise((resolve) => setTimeout(resolve, 0))
-      expect(testRenderer.toJSON()).toMatchSnapshot()
-      const renderedString = JSON.stringify(testRenderer.toJSON())
-      expect(renderedString).toContain(
-        JSON.stringify({
-          color: red[600]
-        })
-      )
-      expect(renderedString).toContain('Offline')
-      testRenderer.unmount()
+      await act(async () => {
+        testRenderer = TestRenderer.create(
+          React.createElement(Status, { url, pattern, paper: true })
+        )
+        // allow the reject to be processed
+        await new Promise((resolve) => setTimeout(resolve, 0))
+        expect(testRenderer.toJSON()).toMatchSnapshot()
+        const renderedString = JSON.stringify(testRenderer.toJSON())
+        expect(renderedString).toContain(
+          JSON.stringify({
+            color: red[600]
+          })
+        )
+        expect(renderedString).toContain('Offline')
+        testRenderer.unmount()
+      })
     })
 
     test('renders status DOT correctly', async () => {
@@ -233,19 +248,21 @@ describe('Tests components', () => {
     })
 
     test("renders status DOT correctly when it's offline", async () => {
-      testRenderer = TestRenderer.create(
-        React.createElement(Status, { url, pattern, dot: true })
-      )
-
-      await new Promise((resolve) => setTimeout(resolve, 0))
-      jest
-        // eslint-disable-next-line no-undef
-        .spyOn(global, 'fetch')
-        .mockImplementationOnce(() =>
-          Promise.reject(new Error('Failed to fetch'))
+      await act(async () => {
+        testRenderer = TestRenderer.create(
+          React.createElement(Status, { url, pattern, dot: true })
         )
 
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+        await new Promise((resolve) => setTimeout(resolve, 0))
+        jest
+          // eslint-disable-next-line no-undef
+          .spyOn(global, 'fetch')
+          .mockImplementationOnce(() =>
+            Promise.reject(new Error('Failed to fetch'))
+          )
+
+        expect(testRenderer.toJSON()).toMatchSnapshot()
+      })
     })
   })
 
@@ -293,33 +310,56 @@ describe('Tests components', () => {
       expect(testRenderer.toJSON()).toMatchSnapshot()
     })
 
-    test.todo(
-      'handles click event and shows confirmation dialog' /*,async () => {
+    test('renders with URL, confirmation dialog, and icon', () => {
       const testRenderer = TestRenderer.create(
-        <SocialMedia url={url} confirmation />
+        <SocialMedia url={url} confirmation icon={icon} />
       )
-      // Simulate click event
-      const dialog = testRenderer.root.findByProps({
-        'data-testid': 'social-media-redirect-dialog'
-      })
-      dialog.props.onClick()
-      // Log the tree structure to understand the rendered components
-      await new Promise((resolve) => setTimeout(resolve, 0))
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+    })
 
-      try {
-        // Attempt to find the element with the specified data-testid
-        const alertDialog = testRenderer.root.findByProps({
-          'data-testid': 'alert-dialog'
-        })
+    test('renders with URL, confirmation dialog, and name', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia url={url} confirmation name={name} />
+      )
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+    })
 
-        await new Promise((resolve) => setTimeout(resolve, 5))
+    test('renders with URL with no name but url instead', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia showName url={url} />
+      )
 
-        expect(alertDialog.props.open).toBe(true)
-      } catch (error) {
-        // Log the error to understand the issue
-        console.error(error)
-      }
-    })*/
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+    })
+
+    // test tooltips
+
+    test('renders with URL and icon with tooltip', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia url={url} icon={icon} tooltip />
+      )
+
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+    })
+
+    test('renders with URL and icon with tooltip and name', () => {
+      const testRenderer = TestRenderer.create(
+        <SocialMedia url={url} name={'test'} icon={icon} showName />
+      )
+
+      expect(testRenderer.toJSON()).toMatchSnapshot()
+    })
+
+    test.todo(
+      'handles click event and shows confirmation dialog'
+      // () => {
+      //   const testRenderer = TestRenderer.create(
+      //     <SocialMedia url={url} confirmation />
+      //   )
+      //   const button = testRenderer.getInstance().root.findByType('div')
+      //   fireEvent.click(button)
+      //   expect(testRenderer.toJSON()).toMatchSnapshot()
+      // }
     )
   })
 })

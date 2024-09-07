@@ -150,11 +150,10 @@ const my = {
       'https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white',
       'https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue',
       'https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white',
+      'https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white',
       'https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white',
       'https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white',
       'https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white',
-      'https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
-      'https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white',
       'https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white',
       'https://img.shields.io/badge/powershell-5391FE?style=for-the-badge&logo=powershell&logoColor=white'
     ],
@@ -169,6 +168,7 @@ const my = {
       'https://img.shields.io/badge/Jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white',
       'https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white',
       'https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white',
+      "https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white&textColor=black)",
       'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white',
       'https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white',
       'https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white',
@@ -232,7 +232,8 @@ const my = {
       'https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white',
       'https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white',
       'https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white',
-      'https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white'
+      'https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white',
+      'https://img.shields.io/badge/prettier-1A2B34?style=for-the-badge&logo=prettier&logoColor=white'
     ]
   },
   skills: TabMenu,

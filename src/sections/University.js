@@ -9,7 +9,7 @@ import Generic from '../components/Generic'
 // import Divider from "@mui/material/Divider";
 
 // TODO: add more to this section
-const GPA = '3.96'
+const GPA = '3.97'
 /**
  * @type {import("../types/section").Section}
  */
@@ -20,12 +20,23 @@ const Section = {
     complete: true, // to show the date range on the banner
     tags: 'Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Classes,Coursework,Projects,Leadership',
     description: `## Bachelor of Science in Computer Science • **${GPA} GPA**
+---
+## Master of Science in Computer Science • Artificial Intelligence Concentration
+---
 [Wayne State University](https://wayne.edu) is a public research university in Detroit, Michigan. 
 It is Michigan's third-largest university. Founded in 1868, Wayne State consists of 
 13 schools and colleges offering approximately 350 programs to nearly 24,000 graduate and undergraduate students.`,
     timeline: [
       ['Fall 2021', 'Start date.'], // TODO add promotions et al
-      ['Spring 2025', 'Expected graduation date.']
+      ['Fall 2024', 'Start accelerated graduate program (AGRADE).'],
+      [
+        'Spring 2025',
+        "Expected graduation date for Bachelor's in Computer Science."
+      ],
+      [
+        'Spring 2026',
+        "Expected graduation date for Master's in Computer Science."
+      ]
     ]
   },
   components: { Coursework, Awards, Grade }
@@ -63,6 +74,7 @@ ${description}`
       )}`
     }
   }
+  // TODO: update courses
   const courses = [
     new Course({
       name: 'CSC 1100',
@@ -125,12 +137,24 @@ function Awards() {
           content: `Awarded [Fall 2021](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2021-46885#cs), 
 [Winter 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2022-48391#cs),
 [Fall 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2022-50373#cs), 
-[Winter 2023](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2023-53793#cs). This award is given to students who have achieved a GPA of 3.5 or higher as a full-time student.`
+[Winter 2023](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2023-53793#cs),
+[Fall 2023](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2023-61446#cs),
+[Winter 2024](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2024-62445#cs). This award is given to students who have achieved a GPA of 3.5 or higher as a full-time student.`
         },
         {
           title: 'Warrior Award',
           content:
             'Awarded Fall 2021-Winter 2025. The [Warrior Award](https://wayne.edu/scholarships/warrior) is up to $6,000 per year for four consecutive years and is offered to the strongest admissions applicants based on GPA and ACT/SAT scores.'
+        },
+        {
+          title: '50th Anniversary Engineering Alumni Scholarship',
+          content:
+            "Awarded Fall 2024-2025. 'Established to recognize scholastic achievement' - More [info](https://web.archive.org/web/20240708092425/https://engineering.wayne.edu/admissions/scholarships/undergrad-endowed#ann-50)."
+        },
+        {
+          title: 'Harley Ellis Devereaux Endowed Scholarship Award',
+          content:
+            'Awarded Fall 2024-2025. More [info](https://web.archive.org/web/20240708092425/https://engineering.wayne.edu/admissions/scholarships/undergrad-endowed#devereaux).'
         }
       ]}
     />

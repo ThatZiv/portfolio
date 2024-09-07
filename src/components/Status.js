@@ -52,7 +52,7 @@ export default function Status(props) {
     fetch(props.url)
       .then((response) => response.text())
       .then((text) => {
-        const regex = eval(props.pattern)
+        const regex = new RegExp(props.pattern)
         if (regex) {
           if (!text.match(regex)) {
             throw new Error('Regular expression pattern mismatch.')
@@ -62,7 +62,9 @@ export default function Status(props) {
         }
         setWebData(text)
       })
-      .catch((err) => setError(err.message))
+      .catch((err) => {
+        setError(err.message)
+      })
   }, [error])
   return (
     <div className="Media">
