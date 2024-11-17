@@ -44,7 +44,8 @@ Initiated the development timeline very early on, ensuring a strategic and well-
       ['Late-December 2023', 'Added applicant check-in for admins.'],
       ['Early-January, 2024', 'Last-minute hotfix(s).'],
       ['January 2024', 'WayneHacks 2 Hackathon event takes place.'],
-      ['June 2024', 'Site redesign and prep for WayneHacks 3.']
+      ['June 2024', 'Site redesign and prep for WayneHacks 3.'],
+      ['September 2024', 'Backend security audit fixes.']
     ]
   },
   components: { Contribs, Pictures, Links, Description }
