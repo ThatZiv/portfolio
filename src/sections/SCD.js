@@ -42,7 +42,8 @@ export default {
     objectives: `Oversee all organizational planning and operations.
 |Created and hosted programming-related workshop events for students.
 |Tutored and assisted students with coursework and other programming-related content.
-|Developed and maintain official club website with React and GitHub.`,
+|Developed and maintain official club website with React and GitHub.
+|Fostered partnerships with local tech companies, securing sponsorships, collaborations, and even internships.`,
     timeline: [
       ['September 2021', 'Joined SCD as a member.'],
       ['October 2021', 'Recruited as Secretary.'],
