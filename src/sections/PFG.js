@@ -14,7 +14,7 @@ export default {
     tags: `Java,TypeScript,JavaScript,React,Electron,Python,Spring boot,Amazon Web Services,
 AWS CDK,AWS Lambda,DynamoDB,API Gateway,IaC,S3,Spotify Backstage,Webpack,UI/UX,Docker,SQL,GraphQL,Elasticsearch,
 Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Principal`,
-    objectives: `Developed full-stack GUI using React.js, Electron, TypeScript, and AWS services to facilitate onboarding for new engineers.
+    objectives: `Developed full-stack GUI using React.js, Electron, TypeScript, and AWS services to facilitate on-boarding for new engineers.
         |Contributed to internal company-wide developer portal, leveraging React.js, AWS, and Spotify Backstage, enhancing the workflow of ~15K engineers daily.
         |Managed team and utilized AWS Lambda, DynamoDB, React.js, and Electron to develop a scalable solution in company-wide hackathon competition.
         |Drove and documented architectural decisions, codebase structure, and integration design to build a long-term resilient product.
@@ -22,11 +22,11 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Princ
         |Actively engaged in code reviews, offering constructive feedback to team members as well as receiving feedback to overall enhance the quality of the codebase.
         |Set up CI/CD pipelines with GitHub Actions to automate the testing and deployment process, facilitating rapid and consistent releases.
         |Collaborated with UX/UI designers and backend developers to ensure a cohesive and user-friendly experience.
-        |Demonstrated strong problem-solving skills by quickly identifying and resolving hot issues, improving application stability and reliability.
-        |Contributed to actuarial/accountant application using Java/Spring Boot, SQL, Docker, AWS and JavaScript/React.
+        |Managed on-call responsibilities, proactively resolving hot technical issues and minimizing downtime for critical systems, ensuring quality service delivery.
+        |Contributed to internal actuarial/auditing tool using Java/Spring Boot, SQL, Docker, AWS and JavaScript/React.
         |Improved product performance with asynchronous programming and run-time analysis in Java/SQL.
         |Leveraged Docker for containerization, ensuring consistent deployment environments and faster development cycles.
-        |Designed and developed REST APIs for seamless integration with existing financial systems.`,
+        |Designed and developed REST API endpoints for seamless integration with existing financial systems.`,
     timeline: [
       [
         'May 8, 2023',
