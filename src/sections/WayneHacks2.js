@@ -21,7 +21,8 @@ In total, there were **97 registrants**, **34 active participants** from all acr
     objectives: `Oversaw a wide range of operational responsibilities, such as catering logistics, finances, procurement, and other assorted tasks.|
 Lead bi-weekly meetings for website development and all other operational tasks with committee members.|
 Developed, architected, and maintained waynehacks.com platform using TypeScript, Next.js (v14), Vercel, TailwindCSS, and Supabase.|
-Hosted opening and closing ceremonies in front of live audience.`,
+Hosted opening and closing ceremonies in front of live audience.|
+Raised over $4,500 in funds from corporate sponsors and donors to help offset costs.`,
     timeline: [
       ['August 2023', 'Created committee for event planning.'],
       [

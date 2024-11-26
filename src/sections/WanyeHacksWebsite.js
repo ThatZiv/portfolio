@@ -16,7 +16,7 @@ export default {
  status changes, and dynamic global site settings. Applicants have a dashboard to view their status, 
  check-in, event schedule, and withdraw their application.`,
     banner: '/pics/whacks-website-home.gif',
-    complete: true,
+    complete: false,
     tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Full Stack,UI/UX,GitHub',
     objectives: `Developed, architected, and maintained waynehacks.com platform using TypeScript, Next.js (v14), Vercel, TailwindCSS, and Supabase.|
 Led a cross-functional development team of two members following agile methodologies.|
@@ -42,7 +42,10 @@ Initiated the development timeline very early on, ensuring a strategic and well-
         'Implemented dynamic event schedule exporting as iCal feed.'
       ],
       ['Late-December 2023', 'Added applicant check-in for admins.'],
-      ['Early-January, 2024', 'Last-minute hotfix(s).']
+      ['Early-January, 2024', 'Last-minute hotfix(s).'],
+      ['January 2024', 'WayneHacks 2 Hackathon event takes place.'],
+      ['June 2024', 'Site redesign and prep for WayneHacks 3.'],
+      ['September 2024', 'Backend security audit fixes.']
     ]
   },
   components: { Contribs, Pictures, Links, Description }

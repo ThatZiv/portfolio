@@ -42,7 +42,8 @@ export default {
     objectives: `Oversee all organizational planning and operations.
 |Created and hosted programming-related workshop events for students.
 |Tutored and assisted students with coursework and other programming-related content.
-|Developed and maintain official club website with React and GitHub.`,
+|Developed and maintain official club website with React and GitHub.
+|Fostered partnerships with local tech companies, securing sponsorships, collaborations, and even internships.`,
     timeline: [
       ['September 2021', 'Joined SCD as a member.'],
       ['October 2021', 'Recruited as Secretary.'],
@@ -100,6 +101,15 @@ function Lectures() {
   return (
     <Grid container>
       {/* cspell:disable */}
+      <Lecture
+        title="Git/GitHub: An Overview of Version Control [Round 2]"
+        YouTubeID="qeF2FUBSX4o"
+      />
+      <Lecture
+        title="Git/GitHub: An Overview of Version Control"
+        YouTubeID="6Glbmo7ysSY"
+      />
+      <Lecture title="Svelte.js Workshop" YouTubeID="bvSBPHdmAl0" />
       <Lecture title="Intro to Front-End" YouTubeID="i9zdb99-LTs" />
       <Lecture title="Next.js (v12)" YouTubeID="t9YXEcGXAHg" />
       <Lecture title="Google Firebase" YouTubeID="nUOMTViKsko" />
@@ -131,6 +141,10 @@ function Pictures() {
           label: 'General Body Meetings',
           imgPath:
             'https://se-images-blob.campuslabs.com/documents/204/aee7b032-28ee-4514-dd13-08dabb5f3f2a/600.jpg'
+        },
+        {
+          label: 'SCD at Winterfest 2024 (myself pictured)',
+          imgPath: 'pics/winterfest_24.jpg'
         }
       ]}
     />
