@@ -132,6 +132,10 @@ function Pictures() {
           label: 'General Body Meetings',
           imgPath:
             'https://se-images-blob.campuslabs.com/documents/204/aee7b032-28ee-4514-dd13-08dabb5f3f2a/600.jpg'
+        },
+        {
+          label: 'SCD at Winterfest 2024 (myself pictured)',
+          imgPath: 'pics/winterfest_24.jpg'
         }
       ]}
     />
