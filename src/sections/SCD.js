@@ -101,6 +101,15 @@ function Lectures() {
   return (
     <Grid container>
       {/* cspell:disable */}
+      <Lecture
+        title="Git/GitHub: An Overview of Version Control [Round 2]"
+        YouTubeID="qeF2FUBSX4o"
+      />
+      <Lecture
+        title="Git/GitHub: An Overview of Version Control"
+        YouTubeID="6Glbmo7ysSY"
+      />
+      <Lecture title="Svelte.js Workshop" YouTubeID="bvSBPHdmAl0" />
       <Lecture title="Intro to Front-End" YouTubeID="i9zdb99-LTs" />
       <Lecture title="Next.js (v12)" YouTubeID="t9YXEcGXAHg" />
       <Lecture title="Google Firebase" YouTubeID="nUOMTViKsko" />
