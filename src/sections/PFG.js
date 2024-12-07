@@ -34,15 +34,15 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Princ
       ],
       [
         'July 13, 2023',
-        'Joined full-stack web development company-wide developer portal team. Tools used: TypeScript/JavaScript, React, Spotify Backstage, Python, AWS (IaC), Docker, GraphQL, GitHub.'
+        'Joined full-stack web development company-wide developer portal team. Tools used: TypeScript/JavaScript, React, Spotify Backstage, Python, AWS (CDK, Lambda, S3, SQS), Docker, GraphQL, GitHub.'
       ],
       [
         'May 7, 2024',
-        'Joined Integrated Finance Solutions (IFS) team for actuarial modernization efforts. Tools used: Java, Spring Boot, TypeScript/JavaScript, React, AWS, SQL, Docker, Excel add-in API.'
+        'Joined financial solutions project team for actuarial modernization efforts. Tools used: Java, Spring Boot, TypeScript/JavaScript, React, AWS (Lambda, API Gateway, S3, CDK), SQL, Docker, Excel add-in API.'
       ],
       [
         'September 2024',
-        'Joined IFS Data team for building and maintaining internal company-wide data lake and respective infrastructure. Tools used: Python, AWS, CDK, IaC, Docker.'
+        'Joined financial solutions data team for building and maintaining internal company-wide data lake and respective infrastructure. Tools used: Python, AWS (Glue, S3, Athena, CloudFormation), Docker.'
       ]
     ]
   },
