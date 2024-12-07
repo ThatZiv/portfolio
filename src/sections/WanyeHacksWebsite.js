@@ -9,7 +9,7 @@ import Markdown from '../components/Markdown'
 export default {
   meta: {
     title: 'WayneHacks.com',
-    description: `[www.waynehacks.com](https://waynehacks.com/) is a purpose-built **Hackathon Management Platform** 
+    description: `[www.waynehacks.com](https://waynehacks.com/) is a purpose-built **Hackathon Management System** 
  developed for [WayneHacks 2](/#/experience?expand=WayneHacks+2+Hackathon). It's built with TypeScript, [Next.js](https://nextjs.org),
  [Supabase](https://supabase.com/), deployed with [Vercel](https://vercel.com), and styled with [Tailwind](https://tailwindcss.com/). 
  The platform provides an admin dashboard to manage relevant data with real-time synchronization, applicant check-in, 
