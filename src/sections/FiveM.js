@@ -1,25 +1,25 @@
 import { Button, Grid } from '@material-ui/core'
 import YouTubeEmbed from '../components/YouTubeEmbed'
-import Status from '../components/Status'
 import SocialMedia from '../components/SocialMedia'
 
-const getDate = () => {
-  let d = new Date()
-  return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
-}
+// const getDate = () => {
+//   let d = new Date()
+//   return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
+// }
 /** @type {import("../types/section").Section} */
 export default {
   meta: {
     title: 'FiveM Bot',
     banner: '/pics/FiveM.png',
     complete: false,
-    tags: 'JavaScript,NodeJS,Deployment Pipelines,MongoDB,Chat Bot,Agile,React,Docker,Version Control,Server Management,Database Migration & Management',
+    tags: 'JavaScript,NodeJS,Deployment Pipelines,MongoDB,Discord,Chat Bot,Docker,Version Control,Server Management,Database Migration & Management',
     description: `FiveM Bot is a Discord chat bot that makes monitoring game servers for server administrators easy. 
     Users can view game server metadata such as player count, player retention, server status, and more through Discord.
     This automation suite is used by tens of thousands of people every day, while maintaining a 99.7% service uptime.`,
     objectives: `Built monitoring process using custom-built API and database infrastructure
     |Integrated Patreon REST API to process monetary subscription purchases.
-    |Encrypted and stored user-data with AES encryption to secure user data in database.`,
+    |Encrypted and stored user-data with AES encryption to secure user data in database.
+    |Developed failover service to deploy FiveM Bot on Railway (PaaS) when primary server goes down to ensure uptime.`,
     timeline: [
       ['August 2018', 'FiveM Bot project begins early-developmental stages.'],
       ['Early-September 2018', 'FiveM Bot releases beta program for testing.'],
@@ -49,9 +49,15 @@ export default {
         "FiveM Bot obtains partnership with Snowside Hosting. Use code 'Zua' for 25% off recurring."
       ],
       [
+        'December 2022',
+        'Containerized FiveM Bot with Docker for easier deployment and management.'
+      ],
+      [
         'January 2022',
         'FiveM Bot is apart of 14K servers and has served over 5M users.'
-      ]
+      ],
+      ['May 2024', 'Integrated failover service with Railway (PaaS).'],
+      ['December 2024', 'FiveM Bot is apart of 26K servers.']
     ]
   },
   components: { statistics, links }
@@ -60,13 +66,6 @@ export default {
 function statistics() {
   return (
     <Grid container spacing={1}>
-      <Grid item>
-        <Status
-          paper
-          pattern="/FiveM/g"
-          url="https://discord.com/api/guilds/406653822929207298/widget.json"
-        />
-      </Grid>
       <Grid item>
         <img
           alt="FiveM Chat Bot"
@@ -100,17 +99,11 @@ function statistics() {
           src="https://top.gg/api/widget/owner/483787947070586880.svg"
           alt="Discord Bots"
         />
-      </Grid>
-      <Grid style={{ width: '100%', minHeight: 500 }} item>
-        <iframe
-          id="trends-widget-2"
-          src={`https://trends.google.com/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22fivem%20bot%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%222013-01-01%20${getDate()}%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&tz=240&forceMobileMode=false&isPreviewMode=true&eq=date%3Dall%26q%3Dfivem%2520bot&hl=enUS`}
-          width="100%"
-          height="450px"
-          frameBorder="0"
-          scrolling="0"
-          style={{ borderRadius: 5 }}
-          title="fivembot_trends"
+        <SocialMedia
+          icon="server"
+          showName
+          name="Uptime"
+          url="https://stats.uptimerobot.com/ExyQJtWJJ8/785361751"
         />
       </Grid>
     </Grid>
@@ -123,8 +116,15 @@ function links() {
       <SocialMedia
         icon="arrow-up-right-from-square"
         name="Use the bot"
+        showName
         url="https://top.gg/bot/483787947070586880"
         confirmation
+      />
+      <SocialMedia
+        icon="server"
+        showName
+        name="Uptime"
+        url="https://stats.uptimerobot.com/ExyQJtWJJ8/785361751"
       />
       {/* cspell:disable-next-line */}
       <YouTubeEmbed id="qphtBvXSusE" />
