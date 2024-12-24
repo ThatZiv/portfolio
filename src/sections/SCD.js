@@ -91,7 +91,21 @@ export default {
       [
         'January 2024',
         'Directed and hosted "WayneHacks 2" - Wayne State\'s first in-person hackathon.'
-      ]
+      ],
+      ['February 2024', 'Hosted Svelte.js workshop.'],
+      [
+        'June 2024',
+        'Hosted Git/GitHub: An Overview of Version Control workshop.'
+      ],
+      [
+        'October 2024',
+        'Hosted Introduction to Mobile App Development workshop (React Native).'
+      ],
+      [
+        'November 2024',
+        'Hosted Git/GitHub: An Overview of Version Control [part 2] workshop.'
+      ],
+      ['December 2024', 'Hosted Intro to Backend Web API Development workshop.']
     ]
   },
   components: { Lectures, Contribs, Links, Pictures }
@@ -133,6 +147,10 @@ function Pictures() {
     <Gallery
       images={[
         {
+          label: 'SCD at Winterfest 2024 (myself pictured)',
+          imgPath: 'pics/winterfest_24.jpg'
+        },
+        {
           label: 'SCD at Festifall (myself 2nd from the left)',
           imgPath:
             'https://se-images-blob.campuslabs.com/documents/204/f0eaec97-9199-4aff-279a-08dab6692024/1500.jpg'
@@ -141,10 +159,6 @@ function Pictures() {
           label: 'General Body Meetings',
           imgPath:
             'https://se-images-blob.campuslabs.com/documents/204/aee7b032-28ee-4514-dd13-08dabb5f3f2a/600.jpg'
-        },
-        {
-          label: 'SCD at Winterfest 2024 (myself pictured)',
-          imgPath: 'pics/winterfest_24.jpg'
         }
       ]}
     />
