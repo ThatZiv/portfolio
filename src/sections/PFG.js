@@ -27,7 +27,8 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Princ
         |Utilized PySpark, AWS Glue, and Athena to create pipelines for ingesting and transforming raw data into data lake.
         |Improved product performance with asynchronous programming and run-time analysis in Java/SQL.
         |Leveraged Docker for containerization, ensuring consistent deployment environments and faster development cycles.
-        |Designed and developed REST API endpoints for seamless integration with existing financial systems.`,
+        |Designed and developed REST API endpoints for seamless integration with existing financial systems.
+        |Contributed to customer-facing digital investment platform with Next.js (micro-frontend) and AWS services.`,
     timeline: [
       [
         'May 8, 2023',
