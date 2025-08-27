@@ -91,6 +91,9 @@ export default function Portfolio() {
           {/* <Section icon="fa-solid fa-code" title="Code">
             <MarketPulse.components.Contributions />
           </Section> */}
+          <Section icon="fa-solid fa-images" title="Gallery">
+            <MarketPulse.components.Pictures />
+          </Section>
           <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
             <MarketPulse.components.Links />
           </Section>

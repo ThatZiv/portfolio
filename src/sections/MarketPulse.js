@@ -1,3 +1,4 @@
+import Gallery from '../components/Gallery'
 /**
  * @type {import("../types/section").Section}
  */
@@ -60,7 +61,69 @@ function Contributions() {
 }
 
 function Pictures() {
-  return <div>...</div>
+  const root = 'pics/ext/marketpulse/screenshots'
+  return (
+    <Gallery
+      images={[
+        {
+          label: 'Project poster',
+          imgPath: `/pics/ext/marketpulse/poster.png`
+        },
+        {
+          label: 'Home page',
+          imgPath: `${root}/dashboard1.png`
+        },
+        {
+          label: 'Transaction history',
+          imgPath: `${root}/edit.png`
+        },
+        {
+          label: 'Stock page',
+          imgPath: `${root}/stock.png`
+        },
+        {
+          label: 'Predictions',
+          imgPath: `${root}/stock_forecast.png`
+        },
+        {
+          label: 'Historical predictions (advanced view)',
+          imgPath: `${root}/stock_historical_predictions_advanced.png`
+        },
+        {
+          label: 'Current sentiment (social media and news)',
+          imgPath: `${root}/stock_sentiment.png`
+        },
+        {
+          label: 'Historical social media sentiment (advanced view)',
+          imgPath: `${root}/stock_historical_social.png`
+        },
+        {
+          label: 'Transaction history and performance',
+          imgPath: `${root}/stock_transaction_history.png`
+        },
+        {
+          label: 'MarketPulse AI summary (LLM-generated)',
+          imgPath: `${root}/stock_mp_ai.png`
+        },
+        {
+          label: 'Login',
+          imgPath: `${root}/login1.png`
+        },
+        {
+          label: 'Settings (1/3)',
+          imgPath: `${root}/settings1.png`
+        },
+        {
+          label: 'Settings (2/3)',
+          imgPath: `${root}/settings2.png`
+        },
+        {
+          label: 'Settings (3/3)',
+          imgPath: `${root}/settings3.png`
+        }
+      ]}
+    />
+  )
 }
 
 function Links() {
