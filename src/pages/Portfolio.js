@@ -12,6 +12,7 @@ import Section from '../components/Section'
 import Jeva from '../sections/Jeva'
 import FiveM from '../sections/FiveM'
 import Webserver from '../sections/Webserver'
+import MarketPulse from '../sections/MarketPulse'
 import WanyeHacksWebsite from '../sections/WanyeHacksWebsite'
 import Garage from '../sections/Garage'
 import Hackathon from '../sections/Hackathon' // '21
@@ -83,13 +84,18 @@ export default function Portfolio() {
             <FiveM.components.links />
           </Section>
         </MediaCard>
-        {/* Garage */}
-        <MediaCard {...Garage.meta}>
-          <Section icon="fa-solid fa-images" title="Gallery">
-            <Garage.components.pictures />
+        <MediaCard {...MarketPulse.meta}>
+          <Section icon="fa-solid fa-bookmark" title="Description">
+            <MarketPulse.components.Description />
           </Section>
-          <Section icon="fa-solid fa-chart-line" title="Statistics">
-            <Garage.components.statistics />
+          <Section icon="fa-solid fa-images" title="Gallery">
+            <MarketPulse.components.Pictures />
+          </Section>
+          <Section icon="fa-solid fa-code" title="Code">
+            <MarketPulse.components.Contributions />
+          </Section>
+          <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <MarketPulse.components.Links />
           </Section>
         </MediaCard>
         {/* WANYEHACKS.COM */}
@@ -105,6 +111,15 @@ export default function Portfolio() {
           </Section>
           <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
             <WanyeHacksWebsite.components.Links />
+          </Section>
+        </MediaCard>
+        {/* Garage */}
+        <MediaCard {...Garage.meta}>
+          <Section icon="fa-solid fa-images" title="Gallery">
+            <Garage.components.pictures />
+          </Section>
+          <Section icon="fa-solid fa-chart-line" title="Statistics">
+            <Garage.components.statistics />
           </Section>
         </MediaCard>
         {/* SPARTAHACK8 */}
