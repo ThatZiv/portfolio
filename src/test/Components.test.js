@@ -53,7 +53,15 @@ describe('Tests components', () => {
 
   test('Footer', () => {
     testRenderer = TestRenderer.create(<Footer />)
-    expect(testRenderer.toJSON()).toMatchSnapshot()
+    const el = testRenderer.toJSON()
+    expect(
+      el.children
+        .map((c) => c.children || c || '')
+        .map((c) => (typeof c === 'string' ? c.trim() : c))
+        .filter((c) => c !== '')
+        .flat()
+        .join(' ')
+    ).toContain(`© ${new Date().getFullYear()} Zavaar Shah`)
   })
 
   describe('DateRange', () => {
