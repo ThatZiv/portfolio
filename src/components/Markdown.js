@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Typography } from '@mui/material'
+import remarkGfm from 'remark-gfm'
 const MarkdownConfig = {
   // eslint-disable-next-line no-unused-vars
   h1: ({ node, children }) => (
-    <Typography variant="h1" style={{ fontFamily: 'Blinker, sans-serif' }}>
+    <Typography variant="h2" style={{ fontFamily: 'Blinker, sans-serif' }}>
       {children}
     </Typography>
   ),
@@ -43,6 +44,7 @@ function Markdown({ children, overrideConfig: overrideConfig = {} }) {
   return (
     <ReactMarkdown
       linkTarget="_blank"
+      remarkPlugins={[remarkGfm]}
       components={{ ...MarkdownConfig, ...overrideConfig }}
     >
       {children}
