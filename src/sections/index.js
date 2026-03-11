@@ -142,7 +142,7 @@ const TabMenu = () => {
 const my = {
   name: 'Zavaar Shah',
   caption:
-    'Zavaar Shah is a computer science student at Wayne State University.',
+    'Zavaar Shah is a computer science graduate from Wayne State University.',
   langs: {
     primary: [
       // these are the langs
@@ -168,7 +168,7 @@ const my = {
       'https://img.shields.io/badge/Jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white',
       'https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white',
       'https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white',
-      "https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white&textColor=black)",
+      'https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white&textColor=black)',
       'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white',
       'https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white',
       'https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white',
