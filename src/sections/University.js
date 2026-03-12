@@ -29,14 +29,8 @@ It is Michigan's third-largest university. Founded in 1868, Wayne State consists
     timeline: [
       ['Fall 2021', 'Start date.'], // TODO add promotions et al
       ['Fall 2024', 'Start accelerated graduate program (AGRADE).'],
-      [
-        'Spring 2025',
-        "Expected graduation date for Bachelor's in Computer Science."
-      ],
-      [
-        'Spring 2026',
-        "Expected graduation date for Master's in Computer Science."
-      ]
+      ['Spring 2025', "Graduated with Bachelor's in Computer Science."],
+      ['Spring 2026', "Graduated with Master's in Computer Science."]
     ]
   },
   components: { Coursework, Awards, Grade }
