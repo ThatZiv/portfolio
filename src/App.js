@@ -57,17 +57,18 @@ function App() {
   const [, setDialog] = React.useState()
   const location = useLocation()
   React.useEffect(() => {
+    const focus = location.pathname.split('/').pop() || 'home'
     dispatch({
       type: 'UI_nav',
-      focus: location.pathname.split('/').pop() || 'home'
+      focus
     }) // dispatch usage SHOULD deprecated now
-    document.title = capFirstLetter(state.focus) + ' | Zavaar Shah'
-    ReactGA.pageview('/' + state.focus)
+    document.title = capFirstLetter(focus) + ' | Zavaar Shah'
+    ReactGA.pageview('/' + focus)
     // setLoading(true)
     // setTimeout(() => {
     //   setLoading(false)
     // }, 300)
-  }, [location, state.focus])
+  }, [location, dispatch])
   React.useEffect(() => {
     setDialog(state.dialog)
   }, [state.dialog])
