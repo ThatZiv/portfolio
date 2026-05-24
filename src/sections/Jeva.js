@@ -1,4 +1,4 @@
-import { Button, Grid } from '@material-ui/core'
+import { Button, Grid } from '@mui/material'
 //import MediaCard from '../components/MediaCard';
 import YouTubeEmbed from '../components/YouTubeEmbed'
 // all static content of the Jeva project

@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material'
 import Generic from '../components/Generic'
 import Markdown from '../components/Markdown'
 import { useViewport } from '../contexts/viewport'

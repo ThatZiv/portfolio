@@ -1,7 +1,7 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Chip from '@material-ui/core/Chip'
-import Icon from '@material-ui/core/Icon'
+import { makeStyles } from '@mui/styles'
+import Chip from '@mui/material/Chip'
+import Icon from '@mui/material/Icon'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',

@@ -1,4 +1,4 @@
-import { Button, Grid } from '@material-ui/core'
+import { Button, Grid } from '@mui/material'
 import YouTubeEmbed from '../components/YouTubeEmbed'
 import SocialMedia from '../components/SocialMedia'
 

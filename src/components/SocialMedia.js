@@ -1,5 +1,5 @@
-import { Button, Link, Tooltip } from '@material-ui/core'
-// import { indigo } from '@material-ui/core/colors'
+import { Button, Link, Tooltip } from '@mui/material'
+// import { indigo } from '@mui/material/colors'
 import { useContext } from 'react'
 import ReactGA from 'react-ga'
 import { capFirstLetter } from '../utils'

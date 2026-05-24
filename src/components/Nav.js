@@ -23,7 +23,7 @@ import {
   Slide,
   ButtonGroup,
   Tooltip
-} from '@material-ui/core'
+} from '@mui/material'
 import EastIcon from '@mui/icons-material/East'
 import Stack from '@mui/material/Stack'
 import preval from 'preval.macro'
@@ -35,7 +35,7 @@ import { capFirstLetter } from '../utils'
 import pages from '../pages'
 import { Link } from 'react-router-dom'
 // import { Launch } from '@mui/icons-material'
-import { ArrowDropDown } from '@material-ui/icons'
+import ArrowDropDown from '@mui/icons-material/ArrowDropDown'
 import { colors } from '../Theme'
 const dateCompiled = preval(
   `module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`
@@ -218,7 +218,10 @@ const SearchAppBar = (/*props*/) => {
                           to={location}
                         >
                           <Button
-                            style={{ width: '100%', marginBottom: 5 }}
+                            sx={{
+                              width: '100%',
+                              marginBottom: '5px'
+                            }}
                             variant="outlined"
                             key={`${label}_drawer`}
                           >

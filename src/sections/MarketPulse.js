@@ -1,5 +1,5 @@
 import Gallery from '../components/Gallery'
-import { Grid } from '@material-ui/core'
+import { Grid } from '@mui/material'
 import Contribs from '../components/Contributions'
 import SocialMedia from '../components/SocialMedia'
 import Markdown from '../components/Markdown'

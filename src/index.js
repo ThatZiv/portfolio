@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { ThemeProvider } from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 import { HashRouter as Router } from 'react-router-dom'
 
 import theme from './Theme'
@@ -15,13 +15,14 @@ ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
       <ViewportProvider>
-        <ThemeProvider theme={theme}>
-          <CssBaseline>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
             <Router>
               <App />
             </Router>
-          </CssBaseline>
-        </ThemeProvider>
+          </ThemeProvider>
+        </StyledEngineProvider>
       </ViewportProvider>
     </UserProvider>
   </React.StrictMode>,

@@ -2,8 +2,7 @@
 import React from 'react'
 
 import MediaCard from '../components/MediaCard'
-import Grid from '@material-ui/core/Grid'
-import Grow from '@mui/material/Grow'
+import { Grid, Grow } from '@mui/material'
 
 import Section from '../components/Section'
 //import Status from './components/Status';
@@ -19,39 +18,6 @@ import Hackathon from '../sections/Hackathon' // '21
 import Hackathon2 from '../sections/Hackathon2' // '22
 import BE1200 from '../sections/BE1200'
 import Spartahack8 from '../sections/Spartahack8'
-
-// import { makeStyles } from '@material-ui/core/styles'
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1
-//   },
-//   bg: {
-//     backgroundColor: '#161616',
-//     padding: '20px',
-//     borderRadius: '5px',
-//     boxShadow: '8px 5px 5px #111111'
-//   },
-//   heading: {
-//     fontSize: theme.typography.pxToRem(23),
-//     fontWeight: theme.typography.fontWeightRegular
-//   },
-//   listView: {
-//     width: '100%',
-//     padding: '10px',
-//     borderRadius: '5px',
-//     backgroundColor: theme.palette.background.default
-//   },
-//   paper: {
-//     padding: theme.spacing(2)
-//   }
-// }))
-
-// const columnProps = {
-//   container: true,
-//   item: true,
-//   xs: 6,
-//   direction: 'column'
-// }
 
 // TODO: Make Desktop & Mobile component render from the same way (not statically like this)
 export default function Portfolio() {

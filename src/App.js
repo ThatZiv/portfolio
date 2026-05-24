@@ -1,10 +1,10 @@
 import './App.css'
 import React from 'react'
 import { UserContext } from './contexts'
-import { Container } from '@material-ui/core'
+import Container from '@mui/material/Container'
 import { Backdrop, CircularProgress } from '@mui/material'
-import { makeStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@mui/styles'
+import Grid from '@mui/material/Grid'
 import { capFirstLetter } from './utils'
 import ReactGA from 'react-ga'
 import {

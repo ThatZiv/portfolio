@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Tooltip } from '@material-ui/core'
+import { Grid, Tooltip } from '@mui/material'
 
 // this component utilizes github  gh-card.dev picture api
 export default function Contributions(props) {

@@ -1,8 +1,8 @@
-import { Chip, Grid, Link, Paper } from '@material-ui/core'
-import { Typography } from '@material-ui/core'
+import { Chip, Grid, Link, Paper, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { green, red, grey } from '@material-ui/core/colors/'
-import { Cancel, CheckCircle } from '@material-ui/icons'
+import { green, red, grey } from '@mui/material/colors'
+import Cancel from '@mui/icons-material/Cancel'
+import CheckCircle from '@mui/icons-material/CheckCircle'
 import { styled } from '@mui/material/styles'
 import Badge from '@mui/material/Badge'
 

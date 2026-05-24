@@ -4,7 +4,7 @@ import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import SwipeableView from '../components/SwipeableView'
 import theme from '../Theme'
-import { Divider, Grid, Link, Tooltip } from '@material-ui/core'
+import { Divider, Grid, Link, Tooltip } from '@mui/material'
 const parseTopicFromURL = (url) => {
   // works only for img.shields.to badges
   try {
@@ -65,7 +65,7 @@ const TabMenu = () => {
         <Tab value={2} label="Tools" />
       </Tabs>
       <SwipeableView
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} // FIXME: cant swipe right
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
         interval={8500}
         onChangeIndex={handleChangeIndex}

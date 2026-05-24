@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
-import { Grid } from '@material-ui/core'
-import { Grow } from '@mui/material'
+import { Grid, Grow } from '@mui/material'
 import React from 'react'
 import MediaCard from '../components/MediaCard'
 import Section from '../components/Section'

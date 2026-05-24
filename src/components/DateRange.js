@@ -1,4 +1,4 @@
-import { Typography } from '@material-ui/core'
+import Typography from '@mui/material/Typography'
 
 export default function DateRange(props) {
   const initialYear = props.timeline[0][0].match('[0-9]{4}')[0]

@@ -1,5 +1,5 @@
-import { Typography, Link, Tooltip } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { Typography, Link, Tooltip } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import my from '../sections'
 
 const useStyles = makeStyles({

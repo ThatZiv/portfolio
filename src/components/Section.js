@@ -1,11 +1,11 @@
 import React from 'react'
-import Accordion from '@material-ui/core/Accordion'
-import AccordionSummary from '@material-ui/core/AccordionSummary'
-import AccordionDetails from '@material-ui/core/AccordionDetails'
-import { makeStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
+import Accordion from '@mui/material/Accordion'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import { makeStyles } from '@mui/styles'
+import Typography from '@mui/material/Typography'
 //icons
-import Icon from '@material-ui/core/Icon'
+import Icon from '@mui/material/Icon'
 import { useSearchParams } from 'react-router-dom'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -13,8 +13,7 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     padding: '10px',
-    borderRadius: '5px',
-    backgroundColor: theme.palette.background.default
+    borderRadius: '5px'
   },
   bg: {
     backgroundColor: '#151515',

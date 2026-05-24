@@ -1,6 +1,5 @@
 import React from 'react'
-import { Grid, Divider } from '@material-ui/core'
-import { Typography } from '@mui/material'
+import { Grid, Divider, Typography } from '@mui/material'
 import YouTubeEmbed from '../components/YouTubeEmbed'
 
 /* 

@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core'
+import { Grid } from '@mui/material'
 import Status from '../components/Status'
 import SocialMedia from '../components/SocialMedia'
 
