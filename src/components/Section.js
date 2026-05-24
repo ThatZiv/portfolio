@@ -31,7 +31,7 @@ export const useStyles = makeStyles((theme) => ({
 }))
 
 /** @param {import("../types/comps/Section").Section} props */
-export default function Section(props) {
+function Section(props) {
   const classes = useStyles()
   const panel = 'section_1' //we need this for some reason
   const [expanded, setExpanded] = React.useState(props?.open && panel)
@@ -77,3 +77,5 @@ export default function Section(props) {
     </Accordion>
   )
 }
+
+export default React.memo(Section)

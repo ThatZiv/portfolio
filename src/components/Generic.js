@@ -3,7 +3,7 @@ import React from 'react'
 import Markdown from './Markdown'
 
 /** @param {import("../types/comps/Generic").Generic} props */
-export default function Generic(props) {
+function Generic(props) {
   return (
     <Grid direction="row" container>
       {props.entries.map(({ title, content }) => (
@@ -23,3 +23,5 @@ export default function Generic(props) {
     </Grid>
   )
 }
+
+export default React.memo(Generic)
