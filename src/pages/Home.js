@@ -57,8 +57,12 @@ export default function Home() {
           <Grid item>
             <Fade in timeout={500}>
               <Avatar
-                sx={{ width: 275, height: 275, bgcolor: indigo[500] }}
-                className={['Media', classes.pic].join(' ')}
+                sx={{
+                  width: 275,
+                  height: 275,
+                  bgcolor: indigo[500]
+                }}
+                className={classes.pic}
                 alt={my.name}
                 src="/pics/me_4_bg.png"
               />
