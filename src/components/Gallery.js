@@ -9,8 +9,7 @@ import Grid from '@mui/material/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
-import SwipeableViews from 'react-swipeable-views'
-import { autoPlay } from 'react-swipeable-views-utils'
+import SwipeableView from './SwipeableView'
 import theme from '../Theme'
 import { UserContext } from '../contexts'
 import { useViewport } from '../contexts/viewport'
@@ -44,13 +43,6 @@ function SwipeableTextMobileStepper(props) {
   const handleStepChange = (step) => {
     setActiveStep(step)
   }
-  const AutoPlaySwipeableViews = React.useMemo(() => {
-    if (typeof window !== 'undefined') {
-      return autoPlay(SwipeableViews)
-    }
-    return null
-  }, [])
-
   const imageComps = React.useMemo(() => {
     return props.images.map((step, index) => (
       <div
@@ -118,24 +110,16 @@ function SwipeableTextMobileStepper(props) {
             </Link>
           </Typography>
         </Paper>
-        {!AutoPlaySwipeableViews ? (
-          // this is for snapshot testing
-          <Box>{imageComps}</Box>
-        ) : (
-          <AutoPlaySwipeableViews
-            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-            index={activeStep}
-            sx={{
-              maxHeight: '100%',
-              maxWidth: '100%'
-            }}
-            interval={props.timeout || 7500}
-            onChangeIndex={handleStepChange}
-            enableMouseEvents
-          >
-            {imageComps}
-          </AutoPlaySwipeableViews>
-        )}
+        <SwipeableView
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={activeStep}
+          interval={props.timeout || 7500}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents
+          style={{ maxHeight: '100%', maxWidth: '100%' }}
+        >
+          {imageComps}
+        </SwipeableView>
         <MobileStepper
           steps={maxSteps}
           variant={width > 600 ? 'dots' : 'progress'}
@@ -185,4 +169,4 @@ function SwipeableTextMobileStepper(props) {
   )
 }
 
-export default SwipeableTextMobileStepper
+export default React.memo(SwipeableTextMobileStepper)

@@ -1,6 +1,6 @@
 import { Grid, Typography, Slide, Grow, Fade, Avatar } from '@mui/material'
 import { makeStyles } from '@material-ui/core/styles'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 // import TextTransition, { presets } from "react-text-transition";
 // import { UserContext } from '../contexts'
 import { indigo } from '@material-ui/core/colors'
@@ -38,7 +38,10 @@ export default function Home() {
         return () => clearInterval(t)
     }, [])
      */
-  setTimeout(() => setShown(true), 1000) // Only have one 'delayed' logic just so that justify content looks good and centered before send comp renders in
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setShown(true), 1000)
+    return () => clearTimeout(timeoutId)
+  }, [])
   return (
     <Grow in timeout={700}>
       <div style={{ marginTop: 50 }}>
@@ -143,7 +146,7 @@ export default function Home() {
                               >
                                 {' '}
                                 {/*Match the style with the "SocialMedia.js" btns*/}
-                                <icon className={icon} />
+                                <i className={icon} />
                                 &nbsp;&nbsp;<div>{capFirstLetter(label)}</div>
                               </Button>
                             </Link>

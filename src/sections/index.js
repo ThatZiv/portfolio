@@ -2,12 +2,9 @@ import React from 'react'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
-import SwipeableViews from 'react-swipeable-views'
-import { autoPlay } from 'react-swipeable-views-utils'
+import SwipeableView from '../components/SwipeableView'
 import theme from '../Theme'
 import { Divider, Grid, Link, Tooltip } from '@material-ui/core'
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
-
 const parseTopicFromURL = (url) => {
   // works only for img.shields.to badges
   try {
@@ -67,7 +64,7 @@ const TabMenu = () => {
         <Tab value={1} label="Frameworks & Libraries" />
         <Tab value={2} label="Tools" />
       </Tabs>
-      <AutoPlaySwipeableViews
+      <SwipeableView
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} // FIXME: cant swipe right
         index={value}
         interval={8500}
@@ -134,7 +131,7 @@ const TabMenu = () => {
             </Grid>
           </Grid>
         </TabEntry>
-      </AutoPlaySwipeableViews>
+      </SwipeableView>
     </Box>
   )
 }

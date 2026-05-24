@@ -74,47 +74,90 @@ Array [
         </p>
       </div>
       <div
-        className="MuiBox-root css-0"
+        onMouseDown={[Function]}
+        style={
+          Object {
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "overflow": "hidden",
+            "width": "100%",
+          }
+        }
       >
         <div
-          onClick={[Function]}
+          style={
+            Object {
+              "display": "flex",
+              "transform": "translateX(0%)",
+              "transition": "transform 300ms ease",
+              "width": "300%",
+            }
+          }
         >
-          <div>
-            <style
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": ".css-u0qz5q{max-height:500px;display:block;background-image:url(/bg.svg);background-repeat:repeat;object-fit:contain;overflow:hidden;width:100%;height:100%;cursor:-webkit-zoom-in;cursor:zoom-in;}",
-                }
+          <div
+            style={
+              Object {
+                "flex": "0 0 33.333333333333336%",
               }
-              data-emotion="css u0qz5q"
-            />
-            <img
-              alt="My Pic 1"
-              className="MuiBox-root css-u0qz5q"
-              src="https://picsum.photos/200/300"
-            />
+            }
+          >
+            <div
+              onClick={[Function]}
+            >
+              <div>
+                <style
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": ".css-u0qz5q{max-height:500px;display:block;background-image:url(/bg.svg);background-repeat:repeat;object-fit:contain;overflow:hidden;width:100%;height:100%;cursor:-webkit-zoom-in;cursor:zoom-in;}",
+                    }
+                  }
+                  data-emotion="css u0qz5q"
+                />
+                <img
+                  alt="My Pic 1"
+                  className="MuiBox-root css-u0qz5q"
+                  src="https://picsum.photos/200/300"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div
-          onClick={[Function]}
-        >
-          <div>
-            <img
-              alt="My Pic 2"
-              className="MuiBox-root css-u0qz5q"
-              src="https://picsum.photos/200/300"
-            />
+          <div
+            style={
+              Object {
+                "flex": "0 0 33.333333333333336%",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+            >
+              <div>
+                <img
+                  alt="My Pic 2"
+                  className="MuiBox-root css-u0qz5q"
+                  src="https://picsum.photos/200/300"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div
-          onClick={[Function]}
-        >
-          <div>
-            <img
-              alt="My Pic 3"
-              className="MuiBox-root css-u0qz5q"
-              src="https://picsum.photos/200/300"
-            />
+          <div
+            style={
+              Object {
+                "flex": "0 0 33.333333333333336%",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+            >
+              <div>
+                <img
+                  alt="My Pic 3"
+                  className="MuiBox-root css-u0qz5q"
+                  src="https://picsum.photos/200/300"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

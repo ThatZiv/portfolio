@@ -49,23 +49,28 @@ export default function Status(props) {
     return _url.hostname
   }
   useEffect(() => {
-    fetch(props.url)
+    const controller = new AbortController()
+    setError(null)
+    setWebData(null)
+    fetch(props.url, { signal: controller.signal })
       .then((response) => response.text())
       .then((text) => {
-        const regex = new RegExp(props.pattern)
-        if (regex) {
-          if (!text.match(regex)) {
+        if (props.pattern) {
+          const regex = new RegExp(props.pattern)
+          if (!regex.test(text)) {
             throw new Error('Regular expression pattern mismatch.')
-          } else {
-            setWebData(true)
           }
         }
         setWebData(text)
       })
       .catch((err) => {
+        if (err.name === 'AbortError') {
+          return
+        }
         setError(err.message)
       })
-  }, [error])
+    return () => controller.abort()
+  }, [props.url, props.pattern])
   return (
     <div className="Media">
       {props.paper ? (
