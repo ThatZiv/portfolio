@@ -4,7 +4,7 @@ import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import SwipeableView from '../components/SwipeableView'
 import theme from '../Theme'
-import { Divider, Grid, Link, Tooltip } from '@mui/material'
+import { Grid, Link, Tooltip } from '@mui/material'
 const parseTopicFromURL = (url) => {
   // works only for img.shields.to badges
   try {
@@ -81,30 +81,6 @@ const TabMenu = () => {
           >
             <Grid item container spacing={1}>
               <ShieldsIoBadges data={my.langs.primary} />
-            </Grid>
-            <Divider />
-            <Grid item>
-              <Tooltip title="www.github.com/ThatZiv?tab=repositories">
-                <Link
-                  href="https://github.com/ThatZiv?tab=repositories"
-                  target="_blank"
-                >
-                  <img
-                    alt="top langs"
-                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=thatziv&layout=compact&theme=dark&count_private=true&&langs_count=11&hide_border=true&bg_color=#121212&border_radius=3&show_owner=true"
-                  />
-                </Link>
-              </Tooltip>
-            </Grid>
-            <Grid item>
-              <Tooltip title="www.github.com/ThatZiv">
-                <Link href="https://github.com/ThatZiv" target="_blank">
-                  <img
-                    alt="gh profile stats"
-                    src="https://github-readme-stats.vercel.app/api?username=thatziv&count_private=true&theme=dark&show_icons=true&hide_border=true&hide_rank=true&include_all_commits=true&bg_color=#121212&border_radius=3"
-                  />
-                </Link>
-              </Tooltip>
             </Grid>
           </Grid>
         </TabEntry>
