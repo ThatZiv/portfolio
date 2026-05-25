@@ -51,6 +51,7 @@
   },
   "jest": {
     "verbose": true,
+    "testEnvironment": "jsdom",
     "transform": {
       "^.+\\.js?$": "babel-jest"
     },

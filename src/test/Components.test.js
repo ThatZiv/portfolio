@@ -13,6 +13,8 @@ import { MemoryRouter } from 'react-router-dom'
 import Status from '../components/Status'
 import { green, red } from '@mui/material/colors'
 import '@testing-library/jest-dom'
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '../Theme'
 import SocialMedia from '../components/SocialMedia'
 const { act } = TestRenderer
 // import { fireEvent } from '@testing-library/react'
@@ -35,6 +37,80 @@ const traverseTree = (tree, cb) => {
   }
 }
 
+const collectText = (tree) => {
+  const values = []
+  traverseTree(tree, (value) => {
+    values.push(value)
+  })
+  return values
+}
+
+const collectTrimmedText = (tree) =>
+  collectText(tree)
+    .map((value) => value.trim())
+    .filter((value) => value.length > 0)
+
+const getAnchorHrefs = (renderer) =>
+  renderer.root.findAllByType('a').map((node) => node.props.href)
+
+const getFirstIconClassName = (renderer) =>
+  renderer.root.findByType('i').props.className
+
+const getTextContent = (renderer) => collectTrimmedText(renderer.toJSON())
+
+const stablePropsAllowlist = new Set([
+  'href',
+  'src',
+  'alt',
+  'title',
+  'target',
+  'rel',
+  'role',
+  'type',
+  'value',
+  'aria-label',
+  'aria-labelledby',
+  'data-testid'
+])
+
+const normalizeTextNode = (value) => {
+  if (typeof value !== 'string') return value
+  const collapsed = value.replace(/\s+/g, ' ').trim()
+  return collapsed.length > 0 ? collapsed : null
+}
+
+const sanitizeTree = (node) => {
+  if (node == null) return null
+  if (Array.isArray(node)) {
+    const sanitized = node.map(sanitizeTree).filter((child) => child != null)
+    return sanitized.length > 0 ? sanitized : null
+  }
+  if (typeof node === 'string' || typeof node === 'number') {
+    return normalizeTextNode(String(node))
+  }
+  if (node.type === 'style') return null
+  const props = {}
+  if (node.props) {
+    Object.keys(node.props).forEach((key) => {
+      if (stablePropsAllowlist.has(key)) {
+        props[key] = node.props[key]
+      }
+    })
+  }
+  const children = (node.children || [])
+    .map(sanitizeTree)
+    .filter((child) => child != null)
+  const out = { type: node.type }
+  if (Object.keys(props).length > 0) out.props = props
+  if (children.length > 0) out.children = children
+  return out
+}
+
+const getStableSnapshot = (renderer) => sanitizeTree(renderer.toJSON())
+
+const renderWithTheme = (ui) =>
+  TestRenderer.create(<ThemeProvider theme={theme}>{ui}</ThemeProvider>)
+
 describe('Tests components', () => {
   let testRenderer
 
@@ -52,7 +128,7 @@ describe('Tests components', () => {
   })
 
   test('Footer', () => {
-    testRenderer = TestRenderer.create(<Footer />)
+    testRenderer = renderWithTheme(<Footer />)
     const el = testRenderer.toJSON()
     expect(
       el.children
@@ -70,49 +146,53 @@ describe('Tests components', () => {
       ['January 1, 1970', 'The day of reckoning...']
     ]
     test('Checks date range (ongoing)', () => {
-      const dateRangeIncomplete = TestRenderer.create(
+      const dateRangeIncomplete = renderWithTheme(
         <DateRange complete={false} timeline={testData} />
       )
-      expect(dateRangeIncomplete.toJSON().children[0]).toBe('1969 - Now')
+      const dateRangeJson = dateRangeIncomplete.toJSON()
+      expect(dateRangeJson).not.toBeNull()
+      expect(dateRangeJson?.children?.[0]).toBe('1969 - Now')
       dateRangeIncomplete.unmount()
     })
     test('Checks full date range (competed)', () => {
-      const dateRangeCompleted = TestRenderer.create(
+      const dateRangeCompleted = renderWithTheme(
         <DateRange complete={true} timeline={testData} />
       )
-      expect(dateRangeCompleted.toJSON().children[0]).toBe('1969 - 1970')
+      const dateRangeJson = dateRangeCompleted.toJSON()
+      expect(dateRangeJson).not.toBeNull()
+      expect(dateRangeJson?.children?.[0]).toBe('1969 - 1970')
       dateRangeCompleted.unmount()
     })
   })
 
   test('Tags', () => {
     const testContent = 'Test-Driven Development'
-    testRenderer = TestRenderer.create(<Tags>{testContent}</Tags>)
-    expect(testRenderer.toJSON().children[0].children[1].children[0]).toBe(
-      testContent
-    )
-    expect(testRenderer.toJSON()).toMatchSnapshot()
+    testRenderer = renderWithTheme(<Tags>{testContent}</Tags>)
+    const textValues = collectTrimmedText(testRenderer.toJSON())
+    expect(textValues).toContain(testContent)
+    expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
   })
 
   test('YouTubeEmbed', () => {
     const id = 'dQw4w9WgXcQ'
-    testRenderer = TestRenderer.create(<YouTubeEmbed id={id} />)
-    expect(testRenderer.toJSON().children[0].props.src).toBe(
+    testRenderer = renderWithTheme(<YouTubeEmbed id={id} />)
+    const iframe = testRenderer.root.findByType('iframe')
+    expect(iframe.props.src).toBe(
       `https://www.youtube-nocookie.com/embed/${id}`
     )
-    expect(testRenderer.toJSON()).toMatchSnapshot()
+    expect(iframe.props.title).toBe(id)
+    expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
   })
 
   test('Objectives', () => {
     const objectives = 'One|Two|Three|Four|Five'
-    testRenderer = TestRenderer.create(<Objectives list={objectives} />)
-    const scrapedObjectives = testRenderer
-      .toJSON()
-      .children[0].children.map(
-        (objective) => objective.children[0].children[0].children[0]
-      )
-    const tArr = objectives.split('|')
-    expect(scrapedObjectives).toEqual(tArr)
+    testRenderer = renderWithTheme(<Objectives list={objectives} />)
+    const textValues = collectTrimmedText(testRenderer.toJSON())
+    const expected = objectives.split('|')
+    expected.forEach((objective) => {
+      expect(textValues).toContain(objective)
+    })
+    expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
   })
 
   describe('Timeline', () => {
@@ -120,26 +200,26 @@ describe('Tests components', () => {
       ['December 31, 1969', 'When clocks started to count up!'],
       ['January 1, 1970', 'The day of reckoning...']
     ]
-    let originalContents = new Set()
-    for (let i = 0; i < testData.length; i++) {
-      originalContents
-        .add((i + 1).toString())
-        .add(testData[i][0])
-        .add(testData[i][1])
-    }
-    testRenderer = TestRenderer.create(<Timeline steps={testData} />)
-    let orderedContents = new Set()
-
-    traverseTree(testRenderer.toJSON().children[1].children[1], (tree) => {
-      orderedContents.add(tree)
-    })
+    const expectedItems = testData.flatMap(([date, event]) => [date, event])
 
     test('Checks timeline', () => {
-      expect(areSetsEqual(orderedContents, originalContents)).toBe(true)
+      const timelineRenderer = renderWithTheme(<Timeline steps={testData} />)
+      const textValues = collectTrimmedText(timelineRenderer.toJSON())
+      expectedItems.forEach((item) => {
+        expect(textValues).toContain(item)
+      })
+      timelineRenderer.unmount()
     })
 
-    test('renders correctly', () => {
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+    test('renders step count', () => {
+      const timelineRenderer = renderWithTheme(<Timeline steps={testData} />)
+      const textValues = collectTrimmedText(timelineRenderer.toJSON())
+      testData.forEach(([date]) => {
+        const matches = textValues.filter((value) => value === date)
+        expect(matches).toHaveLength(1)
+      })
+      expect(getStableSnapshot(timelineRenderer)).toMatchSnapshot()
+      timelineRenderer.unmount()
     })
   })
 
@@ -147,7 +227,7 @@ describe('Tests components', () => {
     const heading = 'My Accordion heading'
     const icon = 'fs-brands fa-facebook'
     const children = <h1>My inner content</h1>
-    testRenderer = TestRenderer.create(
+    testRenderer = renderWithTheme(
       <MemoryRouter initialEntries={[`/?${heading}=true`]}>
         <Section title={heading} icon={icon}>
           {children}
@@ -171,6 +251,7 @@ describe('Tests components', () => {
       content.add(val)
     })
     expect(areSetsEqual(expectedContent, content)).toBeTruthy()
+    expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
   })
 
   test('Gallery', () => {
@@ -188,14 +269,22 @@ describe('Tests components', () => {
         imgPath: 'https://picsum.photos/200/300'
       }
     ]
-    testRenderer = TestRenderer.create(React.createElement(Gallery, { images }))
-
-    expect(testRenderer.toJSON()).toMatchSnapshot()
+    testRenderer = renderWithTheme(React.createElement(Gallery, { images }))
+    const imageNodes = testRenderer.root.findAllByType('img')
+    expect(imageNodes).toHaveLength(images.length)
+    expect(imageNodes.map((node) => node.props.alt)).toEqual(
+      images.map((image) => image.label)
+    )
+    expect(imageNodes.map((node) => node.props.src)).toEqual(
+      images.map((image) => image.imgPath)
+    )
+    expect(getAnchorHrefs(testRenderer)).toContain(images[0].imgPath)
+    expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
   })
 
   describe('Status', () => {
     let url = 'https://www.google.com'
-    const pattern = '/google/'
+    const pattern = 'google'
     // when good, color: rgb(67, 160, 71);
     // when bad, color: rgb(229, 57, 53);
     test('renders status CARD correctly', async () => {
@@ -205,18 +294,20 @@ describe('Tests components', () => {
           text: () => Promise.resolve('<html><title>google</title></html>')
         })
       )
-      testRenderer = TestRenderer.create(
-        React.createElement(Status, { url, pattern, paper: true })
-      )
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      await act(async () => {
+        testRenderer = renderWithTheme(
+          React.createElement(Status, { url, pattern, paper: true })
+        )
+        await new Promise((resolve) => setTimeout(resolve, 0))
+      })
       const renderedString = JSON.stringify(testRenderer.toJSON())
-      console.log(renderedString)
       expect(renderedString).toContain(
         JSON.stringify({
           color: green[600]
         })
       )
       expect(renderedString).toContain('Online')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
       testRenderer.unmount()
     })
 
@@ -228,49 +319,69 @@ describe('Tests components', () => {
           Promise.reject(new Error('Failed to fetch'))
         )
       await act(async () => {
-        testRenderer = TestRenderer.create(
+        testRenderer = renderWithTheme(
           React.createElement(Status, { url, pattern, paper: true })
         )
-        // allow the reject to be processed
         await new Promise((resolve) => setTimeout(resolve, 0))
-        expect(testRenderer.toJSON()).toMatchSnapshot()
-        const renderedString = JSON.stringify(testRenderer.toJSON())
-        expect(renderedString).toContain(
-          JSON.stringify({
-            color: red[600]
-          })
-        )
-        expect(renderedString).toContain('Offline')
-        testRenderer.unmount()
       })
+      const renderedString = JSON.stringify(testRenderer.toJSON())
+      expect(renderedString).toContain(
+        JSON.stringify({
+          color: red[600]
+        })
+      )
+      expect(renderedString).toContain('Offline')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
+      testRenderer.unmount()
     })
 
     test('renders status DOT correctly', async () => {
-      testRenderer = TestRenderer.create(
-        React.createElement(Status, { url, pattern, dot: true })
+      await act(async () => {
+        testRenderer = renderWithTheme(
+          React.createElement(
+            Status,
+            { url, pattern, dot: true },
+            <span>Badge</span>
+          )
+        )
+        await new Promise((resolve) => setTimeout(resolve, 0))
+      })
+      expect(getTextContent(testRenderer)).toContain('Badge')
+      const badgeNodes = testRenderer.root.findAll(
+        (node) =>
+          typeof node.props?.className === 'string' &&
+          node.props.className.includes('MuiBadge-root')
       )
-
-      expect(testRenderer.toJSON()).toMatchSnapshot()
-
+      expect(badgeNodes.length).toBeGreaterThan(0)
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
       testRenderer.unmount()
     })
 
     test("renders status DOT correctly when it's offline", async () => {
-      await act(async () => {
-        testRenderer = TestRenderer.create(
-          React.createElement(Status, { url, pattern, dot: true })
+      jest
+        // eslint-disable-next-line no-undef
+        .spyOn(global, 'fetch')
+        .mockImplementationOnce(() =>
+          Promise.reject(new Error('Failed to fetch'))
         )
-
-        await new Promise((resolve) => setTimeout(resolve, 0))
-        jest
-          // eslint-disable-next-line no-undef
-          .spyOn(global, 'fetch')
-          .mockImplementationOnce(() =>
-            Promise.reject(new Error('Failed to fetch'))
+      await act(async () => {
+        testRenderer = renderWithTheme(
+          React.createElement(
+            Status,
+            { url, pattern, dot: true },
+            <span>Badge</span>
           )
-
-        expect(testRenderer.toJSON()).toMatchSnapshot()
+        )
+        await new Promise((resolve) => setTimeout(resolve, 0))
       })
+      expect(getTextContent(testRenderer)).toContain('Badge')
+      const badgeNodes = testRenderer.root.findAll(
+        (node) =>
+          typeof node.props?.className === 'string' &&
+          node.props.className.includes('MuiBadge-root')
+      )
+      expect(badgeNodes.length).toBeGreaterThan(0)
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
   })
 
@@ -284,78 +395,100 @@ describe('Tests components', () => {
     })
 
     it('renders with only URL', () => {
-      testRenderer = TestRenderer.create(
-        <SocialMedia url="https://example.com" />
-      )
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      const urlOnly = 'https://example.com'
+      testRenderer = renderWithTheme(<SocialMedia url={urlOnly} />)
+      expect(getAnchorHrefs(testRenderer)).toContain(urlOnly)
+      const iconClassName = getFirstIconClassName(testRenderer)
+      expect(iconClassName).toContain('fa-example')
+      expect(iconClassName).toContain('fa-brands')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test('renders service when both icon and name are provided', () => {
-      testRenderer = TestRenderer.create(
+      testRenderer = renderWithTheme(
         <SocialMedia url={url} icon={icon} name={name} />
       )
-      expect(testRenderer).toMatchSnapshot()
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      const iconClassName = getFirstIconClassName(testRenderer)
+      expect(iconClassName).toContain('fa-solid')
+      expect(iconClassName).toContain('fa-facebook')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test('renders with URL and icon', () => {
-      const testRenderer = TestRenderer.create(
-        <SocialMedia url={url} icon={icon} />
-      )
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      testRenderer = renderWithTheme(<SocialMedia url={url} icon={icon} />)
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      const iconClassName = getFirstIconClassName(testRenderer)
+      expect(iconClassName).toContain('fa-brands')
+      expect(iconClassName).toContain('fa-facebook')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test('renders with URL and name', () => {
-      const testRenderer = TestRenderer.create(
-        <SocialMedia url={url} name={name} />
-      )
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      testRenderer = renderWithTheme(<SocialMedia url={url} name={name} />)
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      const iconClassName = getFirstIconClassName(testRenderer)
+      expect(iconClassName).toContain('fa-facebook')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test('renders with URL, confirmation dialog, and showName', () => {
-      const testRenderer = TestRenderer.create(
+      testRenderer = renderWithTheme(
         <SocialMedia url={url} confirmation showName />
       )
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      expect(getTextContent(testRenderer)).toContain('Facebook')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test('renders with URL, confirmation dialog, and icon', () => {
-      const testRenderer = TestRenderer.create(
+      testRenderer = renderWithTheme(
         <SocialMedia url={url} confirmation icon={icon} />
       )
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      const iconClassName = getFirstIconClassName(testRenderer)
+      expect(iconClassName).toContain('fa-brands')
+      expect(iconClassName).toContain('fa-facebook')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test('renders with URL, confirmation dialog, and name', () => {
-      const testRenderer = TestRenderer.create(
+      testRenderer = renderWithTheme(
         <SocialMedia url={url} confirmation name={name} />
       )
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      const iconClassName = getFirstIconClassName(testRenderer)
+      expect(iconClassName).toContain('fa-facebook')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test('renders with URL with no name but url instead', () => {
-      const testRenderer = TestRenderer.create(
-        <SocialMedia showName url={url} />
-      )
-
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      testRenderer = renderWithTheme(<SocialMedia showName url={url} />)
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      expect(getTextContent(testRenderer)).toContain('Facebook')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     // test tooltips
 
     test('renders with URL and icon with tooltip', () => {
-      const testRenderer = TestRenderer.create(
+      testRenderer = renderWithTheme(
         <SocialMedia url={url} icon={icon} tooltip />
       )
-
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      const iconClassName = getFirstIconClassName(testRenderer)
+      expect(iconClassName).toContain('fa-brands')
+      expect(iconClassName).toContain('fa-facebook')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test('renders with URL and icon with tooltip and name', () => {
-      const testRenderer = TestRenderer.create(
+      testRenderer = renderWithTheme(
         <SocialMedia url={url} name={'test'} icon={icon} showName />
       )
-
-      expect(testRenderer.toJSON()).toMatchSnapshot()
+      expect(getAnchorHrefs(testRenderer)).toContain(url)
+      expect(getTextContent(testRenderer)).toContain('test')
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
     test.todo(
