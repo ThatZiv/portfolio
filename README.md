@@ -22,6 +22,6 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 - [ ] memory leak issue with unmounting animations
 - [ ] "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
 - [ ] Gallery image expand dialogue does not close after clicking continue
-- [ ] Can't swipe right on home page tabs
+- [x] Can't swipe right on home page tabs
 
 ---
