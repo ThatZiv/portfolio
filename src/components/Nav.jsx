@@ -27,7 +27,7 @@ import {
 import EastIcon from '@mui/icons-material/East'
 import Stack from '@mui/material/Stack'
 import SocialMedia from './SocialMedia'
-import my from '../sections'
+import my from '@/sections'
 import Status from './Status'
 import { capFirstLetter } from '../utils'
 // import Section from './Section'
