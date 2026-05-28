@@ -297,9 +297,21 @@ Object {
           "children": Array [
             Object {
               "children": Array [
-                "expand_more",
+                Object {
+                  "type": "path",
+                },
+                Object {
+                  "children": Array [
+                    "expand_more",
+                  ],
+                  "type": "title",
+                },
               ],
-              "type": "span",
+              "props": Object {
+                "data-testid": "ExpandMoreIcon",
+                "role": "img",
+              },
+              "type": "svg",
             },
           ],
           "type": "div",
@@ -968,9 +980,15 @@ Object {
       "children": Array [
         Object {
           "children": Array [
-            "tag",
+            Object {
+              "type": "path",
+            },
           ],
-          "type": "span",
+          "props": Object {
+            "data-testid": "NumbersIcon",
+            "role": undefined,
+          },
+          "type": "svg",
         },
         Object {
           "children": Array [

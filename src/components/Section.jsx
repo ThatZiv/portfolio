@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import { makeStyles } from '@mui/styles'
 import Typography from '@mui/material/Typography'
 //icons
-import Icon from '@mui/material/Icon'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useSearchParams } from 'react-router-dom'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -61,9 +61,7 @@ function Section(props) {
       expanded={expanded === panel}
     >
       <AccordionSummary
-        expandIcon={
-          <Icon className="material-icons-outlined">expand_more</Icon>
-        }
+        expandIcon={<ExpandMoreIcon titleAccess="expand_more" />}
       >
         <Typography className={classes.heading}>
           <div>

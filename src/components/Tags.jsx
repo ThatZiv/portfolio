@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
 import Chip from '@mui/material/Chip'
-import Icon from '@mui/material/Icon'
+import NumbersIcon from '@mui/icons-material/Numbers'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -22,7 +22,7 @@ export default function Tags(props) {
       <Chip
         tag={tagId}
         color="primary"
-        icon={<Icon className="material-icons-outlined">tag</Icon>}
+        icon={<NumbersIcon />}
         label={props.children}
       />
     </div>
