@@ -17,7 +17,7 @@ function formatXml(xml, tab) {
 
 async function createSitemap() {
   const site_url = await fs.readFile('public/CNAME', 'utf-8')
-  const pagesCode = await fs.readFile('./src/pages/index.js', 'utf-8')
+  const pagesCode = await fs.readFile('./src/pages/index.jsx', 'utf-8')
   // cant import it because its a module file, so ill just eval the pages array here after i scrape that file (really dumb i know)
   let codeToEval = '[\n'
   let toggle

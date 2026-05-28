@@ -24,7 +24,7 @@ import Footer from './components/Footer'
 import AlertDialog from './components/AlertDialog'
 import BackdropProgress from './components/BackdropProgress'
 
-import pages from './pages/index.js'
+import pages from './pages/index'
 
 // component pre-loader (react.lazy)
 /* var preloadedPages = {}

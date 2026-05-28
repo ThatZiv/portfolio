@@ -26,7 +26,6 @@ import {
 } from '@mui/material'
 import EastIcon from '@mui/icons-material/East'
 import Stack from '@mui/material/Stack'
-import preval from 'preval.macro'
 import SocialMedia from './SocialMedia'
 import my from '../sections'
 import Status from './Status'
@@ -37,9 +36,15 @@ import { Link } from 'react-router-dom'
 // import { Launch } from '@mui/icons-material'
 import ArrowDropDown from '@mui/icons-material/ArrowDropDown'
 import { colors } from '../Theme'
-const dateCompiled = preval(
-  `module.exports = new Date().toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });`
-)
+const dateCompiled =
+  typeof __BUILD_DATE__ !== 'undefined'
+    ? __BUILD_DATE__
+    : new Date().toLocaleDateString(undefined, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
 
 // TODO: this file is too big: split nav bar and drawer into two separate subcomponents.
 
