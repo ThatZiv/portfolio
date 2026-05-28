@@ -38,39 +38,74 @@ const StyledBadge = styled(Badge, {
   }
 }))
 
+const parsePattern = (pattern) => {
+  if (!pattern) {
+    return null
+  }
+  if (pattern instanceof RegExp) {
+    return pattern
+  }
+  if (typeof pattern !== 'string') {
+    throw new Error('Invalid pattern type.')
+  }
+  const match = pattern.match(/^\/(.*)\/([a-z]*)$/i)
+  if (match) {
+    return new RegExp(match[1], match[2])
+  }
+  return new RegExp(pattern)
+}
+
 /**
  * @param {import("../types/comps/Status").Status} props
  */
 export default function Status(props) {
   const [, setWebData] = useState(null)
   const [error, setError] = useState(null)
+  const patternKey =
+    typeof props.pattern === 'string'
+      ? props.pattern
+      : props.pattern?.toString() || ''
   const getHostname = (url) => {
     var _url = new URL(url)
     return _url.hostname
   }
   useEffect(() => {
     const controller = new AbortController()
+    let isActive = true
     setError(null)
     setWebData(null)
+    let regex = null
+    try {
+      regex = parsePattern(props.pattern)
+    } catch (err) {
+      setError(err.message)
+      return () => {
+        isActive = false
+        controller.abort()
+      }
+    }
     fetch(props.url, { signal: controller.signal })
       .then((response) => response.text())
       .then((text) => {
-        if (props.pattern) {
-          const regex = new RegExp(props.pattern)
-          if (!regex.test(text)) {
-            throw new Error('Regular expression pattern mismatch.')
-          }
+        if (!isActive) {
+          return
+        }
+        if (regex && !regex.test(text)) {
+          throw new Error('Regular expression pattern mismatch.')
         }
         setWebData(text)
       })
       .catch((err) => {
-        if (err.name === 'AbortError') {
+        if (!isActive || err.name === 'AbortError') {
           return
         }
         setError(err.message)
       })
-    return () => controller.abort()
-  }, [props.url, props.pattern])
+    return () => {
+      isActive = false
+      controller.abort()
+    }
+  }, [props.url, patternKey])
   return (
     <div className="Media">
       {props.paper ? (

@@ -168,33 +168,34 @@ const SearchAppBar = (/*props*/) => {
           <Container>
             <List key="descriptionMe">
               <br />
-              <Grid container>
+              <Grid container alignItems="center" spacing={1}>
                 <Grid item>
-                  <Stack direction="row" spacing={2}>
+                  <Stack direction="row" spacing={2} alignItems="center">
                     <Status
                       dot
                       pattern='/\"Zua\"/g'
                       url="https://discord.com/api/guilds/406653822929207298/widget.json"
                     >
                       <Avatar
-                        sx={{ width: 50, height: 50 }}
+                        sx={{ width: 45, height: 45 }}
                         alt="me"
                         src="/pics/me_4_bg.png"
                       />
                     </Status>
-                    <br />
-                    <br />
                   </Stack>
                 </Grid>
                 <Grid item>
                   <Typography
                     variant="h4"
-                    style={{
+                    sx={{
                       fontFamily: 'Arvo, sans-serif',
-                      color: 'whitesmoke'
+                      color: 'whitesmoke',
+                      display: 'flex',
+                      alignItems: 'center',
+                      lineHeight: 1
                     }}
                   >
-                    &nbsp;&nbsp;{my.name}
+                    {my.name}
                   </Typography>
                 </Grid>
               </Grid>
@@ -207,7 +208,18 @@ const SearchAppBar = (/*props*/) => {
                     orientation="vertical"
                     aria-label="vertical contained button group"
                     variant="text"
-                    style={{ width: '100%' }}
+                    sx={{
+                      width: '100%',
+                      '& .MuiButton-root': {
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        borderColor: 'rgba(255, 255, 255, 0.3)',
+                        '&:hover': {
+                          color: '#fff',
+                          borderColor: '#fff',
+                          backgroundColor: 'rgba(255, 255, 255, 0.08)'
+                        }
+                      }
+                    }}
                   >
                     {pages.map(({ label, location, icon }) => (
                       <Tooltip
