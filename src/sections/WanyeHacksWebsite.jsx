@@ -151,17 +151,7 @@ The website is built w/ [Next.js](https://nextjs.org) v14. For styling, we're us
           width: '100%'
         }}
       >
-        <Markdown
-          overrideConfig={{
-            p: ({ children }) => (
-              <Typography variant="body1" sx={{ whiteSpace: 'pre-line' }}>
-                {children}
-              </Typography>
-            )
-          }}
-        >
-          {readme}
-        </Markdown>
+        <Markdown>{readme}</Markdown>
       </Grid>
     </Grid>
   )
