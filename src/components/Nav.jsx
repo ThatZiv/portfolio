@@ -346,7 +346,14 @@ const SearchAppBar = (/*props*/) => {
 
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 <Grid container justifyContent="flex-end">
-                  <ButtonGroup variant="text">
+                  <ButtonGroup
+                    variant="text"
+                    sx={{
+                      '& .MuiButtonGroup-grouped': {
+                        borderColor: 'rgba(255, 255, 255, 0.25)'
+                      }
+                    }}
+                  >
                     {pages
                       .filter(({ label }) => label !== state.focus)
                       .map(({ label, location, icon }) => (
