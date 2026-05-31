@@ -9,6 +9,20 @@ const MarkdownConfig = {
       {children}
     </Typography>
   ),
+  h2: ({ node, children }) => (
+    <Typography
+      variant="h5"
+      color="secondary"
+      style={{ fontFamily: 'Blinker, sans-serif' }}
+    >
+      {children}
+    </Typography>
+  ),
+  p: ({ node, children }) => (
+    <Typography variant="body2" color="secondary">
+      {children}
+    </Typography>
+  ),
   img: ({ node }) => (
     <img
       src={node.properties.src}
