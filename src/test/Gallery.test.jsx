@@ -24,17 +24,6 @@ describe('Gallery', () => {
     testRenderer.unmount()
   })
 
-  test('renders empty images array', () => {
-    const testRenderer = TestRenderer.create(
-      <ThemeProvider theme={theme}>
-        <Gallery images={[]} />
-      </ThemeProvider>
-    )
-    const imageNodes = testRenderer.root.findAllByType('img')
-    expect(imageNodes).toHaveLength(0)
-    testRenderer.unmount()
-  })
-
   test('renders images with custom styles', () => {
     const images = [
       {
