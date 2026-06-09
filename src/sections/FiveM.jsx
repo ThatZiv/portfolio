@@ -72,6 +72,8 @@ function statistics() {
           alt="FiveM Chat Bot"
           className="Media"
           src="https://gh-card.dev/repos/thatziv/fivem-bot.svg?fullname="
+          loading="lazy"
+          decoding="async"
         />
       </Grid>
       <Grid item>
@@ -80,23 +82,30 @@ function statistics() {
             className="Media"
             src="https://top.gg/api/widget/483787947070586880.svg"
             alt="FiveM Chat Bot"
+            loading="lazy"
+            decoding="async"
           />
         </a>
       </Grid>
       <Grid item sm>
-        <img
-          src="https://top.gg/api/widget/status/483787947070586880.svg"
-          alt="Discord Bots"
-        />
+        <img loading="lazy" decoding="async" />
         <img
           src="https://top.gg/api/widget/upvotes/483787947070586880.svg"
           alt="Discord Bots"
+          loading="lazy"
+          decoding="async"
         />
         <img
           src="https://top.gg/api/widget/servers/483787947070586880.svg"
           alt="Discord Bots"
+          loading="lazy"
+          decoding="async"
         />
         <img
+          src="https://top.gg/api/widget/owner/483787947070586880.svg"
+          alt="Discord Bots"
+          loading="lazy"
+          decoding="async"
           src="https://top.gg/api/widget/owner/483787947070586880.svg"
           alt="Discord Bots"
         />

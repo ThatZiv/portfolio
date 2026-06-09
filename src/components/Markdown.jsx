@@ -27,6 +27,8 @@ const MarkdownConfig = {
     <img
       src={node.properties.src}
       alt={node.properties.alt}
+      loading="lazy"
+      decoding="async"
       className="Media"
       title={node.properties.title}
     />

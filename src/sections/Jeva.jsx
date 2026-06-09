@@ -50,11 +50,15 @@ function prechildren() {
           alt="Views"
           src="https://img.shields.io/youtube/channel/views/UCI7x329xu2rLbtVvFPVIhiQ"
           style={{ marginRight: 6 }}
+          loading="lazy"
+          decoding="async"
         />
         <img
           className="Media"
           alt="Subscribers"
           src="https://img.shields.io/youtube/channel/subscribers/UCI7x329xu2rLbtVvFPVIhiQ?style=social"
+          loading="lazy"
+          decoding="async"
         />
       </Grid>
       <Grid item xs={12}>
@@ -126,6 +130,8 @@ function statistics() {
             className="Media"
             alt="githubJevaCard"
             src="https://gh-card.dev/repos/jevajs/jeva.svg"
+            loading="lazy"
+            decoding="async"
           />
         </a>
       </Grid>

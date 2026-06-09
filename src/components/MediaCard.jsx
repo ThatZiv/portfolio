@@ -12,8 +12,6 @@ import Grid from '@mui/material/Grid'
 import Divider from '@mui/material/Divider'
 import Grow from '@mui/material/Grow'
 import CircularProgress from '@mui/material/CircularProgress'
-import ReactGA from 'react-ga'
-
 import Markdown from './Markdown'
 import Tags from './Tags'
 import Objectives from './Objectives'
@@ -27,7 +25,8 @@ import { useSearchParams } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   media: {
-    height: 140
+    height: 140,
+    aspectRatio: '16/9'
   },
   cardcontent: {
     '&:last-child': {
@@ -55,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function MediaCard(props) {
+function MediaCard(props) {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
   const [imgLoaded, setImgLoaded] = React.useState(false)
@@ -88,11 +87,12 @@ export default function MediaCard(props) {
     }
   }
   const gaCardExpandHandle = (cardName = 'none') => {
-    ReactGA.event({
-      category: 'z_ui-card-expand',
-      label: cardName,
-      action: cardName
-    }) // TODO: see if this works on prod
+    if (window.gtag) {
+      window.gtag('event', 'card_expand', {
+        event_category: 'z_ui-card-expand',
+        event_label: cardName
+      })
+    }
   }
   return (
     /* <Grid item xs={12} sm> */ // FOR ONLY ROWS
@@ -286,3 +286,5 @@ export default function MediaCard(props) {
     </>
   )
 }
+
+export default MediaCard

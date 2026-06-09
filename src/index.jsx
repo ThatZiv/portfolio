@@ -58,3 +58,16 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
 if (import.meta.env.DEV && window.location.search.includes('vitals')) {
   reportWebVitals(console.log)
 }
+
+if (import.meta.env.PROD) {
+  reportWebVitals((metric) => {
+    if (window.gtag) {
+      window.gtag('event', metric.name, {
+        value: Math.round(metric.value),
+        event_category: 'Web Vitals',
+        event_label: metric.id,
+        non_interaction: true
+      })
+    }
+  })
+}

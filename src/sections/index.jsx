@@ -7,6 +7,7 @@ import theme from '../Theme'
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
 import Tooltip from '@mui/material/Tooltip'
+
 const parseTopicFromURL = (url) => {
   // works only for img.shields.to badges
   try {
@@ -15,6 +16,37 @@ const parseTopicFromURL = (url) => {
   } catch (e) {
     return null
   }
+}
+
+const TabEntry = (props) => {
+  return (
+    <Box sx={{ padding: 2 }}>
+      <div>{props.children}</div>
+    </Box>
+  )
+}
+
+const ShieldsIoBadges = (props) => {
+  return props.data.map((val, index) => {
+    var topic = parseTopicFromURL(val)
+    return (
+      <Grid key={`${val}:${index}:${topic}`} item>
+        <Tooltip
+          title={decodeURIComponent(topic).replace('_', ' ')}
+          target="_blank"
+        >
+          <Link href={`https://google.com/search?q=${topic.replace('_', ' ')}`}>
+            <img
+              alt={`secondary lang ${index} ${topic}`}
+              src={val}
+              loading="lazy"
+              decoding="async"
+            />
+          </Link>
+        </Tooltip>
+      </Grid>
+    )
+  })
 }
 
 const TabMenu = () => {
@@ -26,37 +58,7 @@ const TabMenu = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
-  const TabEntry = (props) => {
-    return (
-      <Box sx={{ padding: 2 }}>
-        <div value={value}>{props.children}</div>
-      </Box>
-    )
-  }
-  const ShieldsIoBadges = (props) => {
-    return props.data.map((val, index) => {
-      var topic = parseTopicFromURL(val)
-      return (
-        <Grid key={`${val}:${index}:${topic}`} item>
-          <Tooltip
-            title={decodeURIComponent(topic).replace('_', ' ')}
-            target="_blank"
-          >
-            <Link
-              href={`https://google.com/search?q=${topic.replace('_', ' ')}`}
-            >
-              <img
-                alt={`secondary lang ${index} ${topic}`}
-                src={val}
-                loading="lazy"
-                decoding="async"
-              />
-            </Link>
-          </Tooltip>
-        </Grid>
-      )
-    })
-  }
+
   return (
     <Box sx={{ width: '100%' }}>
       <Tabs

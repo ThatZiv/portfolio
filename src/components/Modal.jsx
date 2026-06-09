@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import MuiModal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
 import { useTheme } from '@mui/material/styles'

@@ -7,7 +7,6 @@ import CircularProgress from '@mui/material/CircularProgress'
 import { makeStyles } from '@mui/styles'
 import Grid from '@mui/material/Grid'
 import { capFirstLetter } from './utils'
-import ReactGA from 'react-ga'
 import {
   Route,
   Routes,
@@ -15,25 +14,15 @@ import {
   useLocation
 } from 'react-router-dom'
 
-/* // Main pages
-import Portfolio from "./pages/Portfolio"
-import Home from "./pages/Home" */
-
 // Comps
-import Nav from './components/Nav'
-import Footer from './components/Footer'
-import AlertDialog from './components/AlertDialog'
-import BackdropProgress from './components/BackdropProgress'
+const Nav = React.lazy(() => import('./components/Nav'))
+const Footer = React.lazy(() => import('./components/Footer'))
+const AlertDialog = React.lazy(() => import('./components/AlertDialog'))
+const BackdropProgress = React.lazy(() =>
+  import('./components/BackdropProgress')
+)
 
 import pages from './pages/index'
-
-// component pre-loader (react.lazy)
-/* var preloadedPages = {}
-pages.map(({ label, component }) => preloadedPages[label] = React.lazy(() => import(component)))
-console.log(preloadedPages) */
-// Google Analytics
-const TRACKING_ID = 'G-48EJRL7D42'
-ReactGA.initialize(TRACKING_ID)
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,7 +53,9 @@ function App() {
       focus
     }) // dispatch usage SHOULD deprecated now
     document.title = capFirstLetter(focus) + ' | Zavaar Shah'
-    ReactGA.pageview('/' + focus)
+    if (window.gtag) {
+      window.gtag('event', 'page_view', { page_path: '/' + focus })
+    }
     // setLoading(true)
     // setTimeout(() => {
     //   setLoading(false)

@@ -41,6 +41,23 @@ export default defineConfig(({ mode }) => {
     base: '/',
     define: {
       __BUILD_DATE__: JSON.stringify(buildDate)
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            mui: [
+              '@mui/material',
+              '@mui/icons-material',
+              '@mui/styles',
+              '@emotion/react',
+              '@emotion/styled'
+            ],
+            vendors: ['react', 'react-dom', 'react-router-dom'],
+            markdown: ['react-markdown', 'remark-gfm']
+          }
+        }
+      }
     }
   }
 })

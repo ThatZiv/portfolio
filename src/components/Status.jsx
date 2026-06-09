@@ -62,7 +62,7 @@ const parsePattern = (pattern) => {
 /**
  * @param {import("../types/comps/Status").Status} props
  */
-export default function Status(props) {
+const Status = (props) => {
   const [, setWebData] = useState(null)
   const [error, setError] = useState(null)
   const patternKey =
@@ -157,3 +157,5 @@ export default function Status(props) {
     </div>
   )
 }
+
+export default Status

@@ -8,7 +8,7 @@ import DraftsIcon from '@material-ui/icons/Drafts'; */
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    padding: '10px',
+    padding: '5px',
     borderRadius: '5px',
     backgroundColor: theme.palette.background.default
   }

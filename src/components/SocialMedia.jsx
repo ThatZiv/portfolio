@@ -3,7 +3,6 @@ import Link from '@mui/material/Link'
 import Tooltip from '@mui/material/Tooltip'
 // import { indigo } from '@mui/material/colors'
 import { useContext } from 'react'
-import ReactGA from 'react-ga'
 import { capFirstLetter } from '../utils'
 //import AlertDialog from './AlertDialog';
 import { UserContext } from '../contexts'
@@ -28,11 +27,12 @@ export default function SocialMedia(props) {
       var _url = new URL(url)
       var urlSplit = _url.hostname.split('.')
       service = urlSplit.length === 3 ? urlSplit[1] : urlSplit[0]
-      ReactGA.event({
-        category: 'z_ui-button-redirect',
-        label: service,
-        action: service
-      }) // TODO: see if this works on prod
+      if (window.gtag) {
+        window.gtag('event', 'button_redirect', {
+          event_category: 'z_ui-button-redirect',
+          event_label: service
+        })
+      }
     } catch (e) {
       /* empty */
     }
