@@ -1,4 +1,5 @@
-import { Grid, Typography } from '@mui/material'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
 import Generic from '../components/Generic'
 import Markdown from '../components/Markdown'
 import { useViewport } from '../contexts/viewport'

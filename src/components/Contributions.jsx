@@ -1,5 +1,6 @@
 import React from 'react'
-import { Grid, Tooltip } from '@mui/material'
+import Grid from '@mui/material/Grid'
+import Tooltip from '@mui/material/Tooltip'
 
 // this component utilizes github  gh-card.dev picture api
 export default function Contributions(props) {
@@ -17,6 +18,8 @@ export default function Contributions(props) {
                 alt={`${props.title} #${index + 1}`}
                 className="Media"
                 src={`https://gh-card.dev/repos/${val}.svg?fullname=`}
+                loading="lazy"
+                decoding="async"
               />
             </a>
           </Tooltip>

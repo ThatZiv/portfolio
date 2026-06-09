@@ -79,6 +79,8 @@ function SwipeableTextMobileStepper(props) {
                 height: '100%',
                 cursor: 'zoom-in'
               }}
+              loading={index === activeStep ? 'eager' : 'lazy'}
+              decoding="async"
               src={step.imgPath}
               alt={step.label}
             />

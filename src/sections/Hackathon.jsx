@@ -1,6 +1,8 @@
 import SocialMedia from '../components/SocialMedia'
 import Gallery from '../components/Gallery'
-import { Divider, Grid, Typography } from '@mui/material'
+import Divider from '@mui/material/Divider'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
 /** @type {import("../types/section").Section} */
 export default {
   meta: {

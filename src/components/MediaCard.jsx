@@ -124,6 +124,8 @@ export default function MediaCard(props) {
                 image={props.banner}
                 component="img"
                 alt={props.title}
+                loading="lazy"
+                decoding="async"
                 onLoad={() => setImgLoaded(true)}
                 title={props.title}
               />

@@ -2,7 +2,8 @@
 import React from 'react'
 
 import MediaCard from '../components/MediaCard'
-import { Grid, Grow } from '@mui/material'
+import Grid from '@mui/material/Grid'
+import Grow from '@mui/material/Grow'
 
 import Section from '../components/Section'
 //import Status from './components/Status';

@@ -15,6 +15,7 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 - update fivembot updates
 - update coursework (seperate by degree)
 - add GPA for ms?
+- update pfg
 - zhud, osm, - portfolio cards
 - Resume?
 - Remove/fix Status paper cards

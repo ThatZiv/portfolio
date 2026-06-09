@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from '@mui/material'
+import Grid from '@mui/material/Grid'
 import Contributions from '../components/Contributions'
 import SocialMedia from '../components/SocialMedia'
 import Gallery from '../components/Gallery'

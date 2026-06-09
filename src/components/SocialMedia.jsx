@@ -1,4 +1,6 @@
-import { Button, Link, Tooltip } from '@mui/material'
+import Button from '@mui/material/Button'
+import Link from '@mui/material/Link'
+import Tooltip from '@mui/material/Tooltip'
 // import { indigo } from '@mui/material/colors'
 import { useContext } from 'react'
 import ReactGA from 'react-ga'

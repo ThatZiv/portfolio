@@ -1,8 +1,12 @@
 /* eslint-disable react/jsx-pascal-case */
-import { Divider, Grid, Grow, Typography } from '@mui/material'
+import Divider from '@mui/material/Divider'
+import Grid from '@mui/material/Grid'
+import Grow from '@mui/material/Grow'
+import Typography from '@mui/material/Typography'
 import React from 'react'
 import MediaCard from '../components/MediaCard'
 import Section from '../components/Section'
+
 import Doxim from '../sections/Doxim'
 import GDSC from '../sections/GDSC'
 import SCD from '../sections/SCD'
@@ -77,10 +81,7 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <WayneHacks2.components.Contribs />
             </Section>
-            <Section
-              icon="fa-solid fa-arrow-up-right-from-square"
-              title="Links"
-            >
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
               <WayneHacks2.components.Links />
             </Section>
           </MediaCard>
@@ -96,10 +97,7 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <WayneHacks1.components.Contribs />
             </Section>
-            <Section
-              icon="fa-solid fa-arrow-up-right-from-square"
-              title="Links"
-            >
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
               <WayneHacks1.components.Links />
             </Section>
           </MediaCard>
@@ -118,10 +116,7 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <SCD.components.Contribs />
             </Section>
-            <Section
-              icon="fa-solid fa-arrow-up-right-from-square"
-              title="Links"
-            >
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
               <SCD.components.Links />
             </Section>
           </MediaCard>
@@ -134,10 +129,7 @@ export default function Experience() {
             }
             {...GDSC.meta}
           >
-            <Section
-              icon="fa-solid fa-arrow-up-right-from-square"
-              title="Links"
-            >
+            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
               <GDSC.components.Links />
             </Section>
           </MediaCard>

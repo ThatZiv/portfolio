@@ -4,7 +4,9 @@ import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import SwipeableView from '../components/SwipeableView'
 import theme from '../Theme'
-import { Grid, Link, Tooltip } from '@mui/material'
+import Grid from '@mui/material/Grid'
+import Link from '@mui/material/Link'
+import Tooltip from '@mui/material/Tooltip'
 const parseTopicFromURL = (url) => {
   // works only for img.shields.to badges
   try {
@@ -43,7 +45,12 @@ const TabMenu = () => {
             <Link
               href={`https://google.com/search?q=${topic.replace('_', ' ')}`}
             >
-              <img alt={`secondary lang ${index} ${topic}`} src={val} />
+              <img
+                alt={`secondary lang ${index} ${topic}`}
+                src={val}
+                loading="lazy"
+                decoding="async"
+              />
             </Link>
           </Tooltip>
         </Grid>

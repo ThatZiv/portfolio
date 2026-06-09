@@ -1,5 +1,7 @@
 import * as React from 'react'
-import { Modal as MuiModal, Box, useTheme } from '@mui/material'
+import MuiModal from '@mui/material/Modal'
+import Box from '@mui/material/Box'
+import { useTheme } from '@mui/material/styles'
 
 import CloseIcon from '@mui/icons-material/Close'
 

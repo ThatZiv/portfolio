@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import SocialMedia from '../components/SocialMedia'
 import Gallery from '../components/Gallery'
-import { Divider, Typography } from '@mui/material'
+import Divider from '@mui/material/Divider'
+import Typography from '@mui/material/Typography'
 
 // NOTE: some images are embedded (base64)
 // TODO: make these NOT embedded (very large)

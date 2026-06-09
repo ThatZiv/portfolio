@@ -1,4 +1,6 @@
-import { Typography, Link, Tooltip } from '@mui/material'
+import Typography from '@mui/material/Typography'
+import Link from '@mui/material/Link'
+import Tooltip from '@mui/material/Tooltip'
 import { makeStyles } from '@mui/styles'
 import my from '../sections'
 
