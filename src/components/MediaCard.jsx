@@ -244,7 +244,11 @@ export default function MediaCard(props) {
           </Grid>
         </Grid>
         <Grid item>
-          <Typography variant="body2" color="textSecondary">
+          <Typography
+            variant="body2"
+            sx={{ marginBottom: 2 }}
+            color="textSecondary"
+          >
             <Markdown>{props.description}</Markdown>
           </Typography>
         </Grid>
