@@ -32,7 +32,7 @@ export default defineConfig(({ mode }) => {
     ],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src')
+        '@': path.resolve(new URL('./src', import.meta.url).pathname)
       }
     },
     esbuild: {
