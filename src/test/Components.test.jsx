@@ -7,6 +7,8 @@ import Tags from '../components/Tags'
 import YouTubeEmbed from '../components/YouTubeEmbed'
 import Objectives from '../components/Objectives'
 import Timeline from '../components/Timeline'
+import SwipeableView from '../components/SwipeableView'
+import { ViewportProvider } from '../contexts/viewport'
 import { areSetsEqual } from '../utils'
 import Section from '../components/Section'
 import { MemoryRouter } from 'react-router-dom'
@@ -383,6 +385,150 @@ describe('Tests components', () => {
       expect(badgeNodes.length).toBeGreaterThan(0)
       expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
+
+    test('renders with null pattern', async () => {
+      jest
+        // eslint-disable-next-line no-undef
+        .spyOn(global, 'fetch')
+        .mockImplementationOnce(() =>
+          Promise.resolve({
+            text: () => Promise.resolve('<html>test</html>')
+          })
+        )
+      await act(async () => {
+        testRenderer = renderWithTheme(
+          React.createElement(Status, { url, pattern: null, paper: true })
+        )
+        await new Promise((resolve) => setTimeout(resolve, 0))
+      })
+      expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
+      testRenderer.unmount()
+    })
+  })
+
+  describe('SwipeableView', () => {
+    test('does nothing when onChangeIndex is not provided', () => {
+      const testRenderer = TestRenderer.create(
+        <SwipeableView index={0} interval={1000}>
+          <div>Item 1</div>
+          <div>Item 2</div>
+        </SwipeableView>
+      )
+      expect(testRenderer.toJSON()).not.toBeNull()
+    })
+
+    test('does nothing when count is 1', () => {
+      const testRenderer = TestRenderer.create(
+        <SwipeableView index={0} onChangeIndex={() => {}}>
+          <div>Only item</div>
+        </SwipeableView>
+      )
+      expect(testRenderer.toJSON()).not.toBeNull()
+    })
+
+    test('auto-advances when interval is provided', (done) => {
+      const handleChangeIndex = jest.fn()
+      const testRenderer = TestRenderer.create(
+        <SwipeableView
+          index={0}
+          onChangeIndex={handleChangeIndex}
+          interval={100}
+        >
+          <div>Item 1</div>
+          <div>Item 2</div>
+        </SwipeableView>
+      )
+
+      setTimeout(() => {
+        expect(handleChangeIndex).toHaveBeenCalled()
+        testRenderer.unmount()
+        done()
+      }, 150)
+    })
+
+    test('handles x-reverse axis correctly', () => {
+      const testRenderer = TestRenderer.create(
+        <SwipeableView index={1} axis="x-reverse" onChangeIndex={() => {}}>
+          <div>Item 1</div>
+          <div>Item 2</div>
+        </SwipeableView>
+      )
+      expect(testRenderer.toJSON()).not.toBeNull()
+    })
+
+    test('handles mouse events when enabled', () => {
+      const testRenderer = TestRenderer.create(
+        <SwipeableView index={0} enableMouseEvents onChangeIndex={() => {}}>
+          <div>Item 1</div>
+          <div>Item 2</div>
+        </SwipeableView>
+      )
+      expect(testRenderer.toJSON()).not.toBeNull()
+    })
+  })
+
+  describe('ViewportProvider', () => {
+    test('provides width and height context', () => {
+      const testRenderer = TestRenderer.create(
+        <ViewportProvider>
+          <div data-testid="viewport-test">Test</div>
+        </ViewportProvider>
+      )
+      expect(testRenderer.toJSON()).not.toBeNull()
+    })
+  })
+
+  describe('Gallery', () => {
+    test('renders single image', () => {
+      const images = [
+        {
+          label: 'Single Image',
+          imgPath: 'https://picsum.photos/200/300'
+        }
+      ]
+      testRenderer = renderWithTheme(React.createElement(Gallery, { images }))
+      const imageNodes = testRenderer.root.findAllByType('img')
+      expect(imageNodes).toHaveLength(1)
+      expect(imageNodes[0].props.alt).toBe('Single Image')
+      expect(imageNodes[0].props.src).toBe('https://picsum.photos/200/300')
+      testRenderer.unmount()
+    })
+
+    test('renders images with custom styles', () => {
+      const images = [
+        {
+          label: 'Styled Image',
+          imgPath: 'https://picsum.photos/200/300'
+        }
+      ]
+      testRenderer = renderWithTheme(
+        React.createElement(Gallery, {
+          images,
+          style: { border: '1px solid red' }
+        })
+      )
+      const imageNodes = testRenderer.root.findAllByType('img')
+      expect(imageNodes).toHaveLength(1)
+      testRenderer.unmount()
+    })
+  })
+
+  describe('Section', () => {
+    test('renders with multiple children', () => {
+      const heading = 'Multi Child Section'
+      const icon = 'fs-brands fa-facebook'
+      testRenderer = renderWithTheme(
+        <MemoryRouter initialEntries={[`/?${heading}=true`]}>
+          <Section title={heading} icon={icon}>
+            <div>Child 1</div>
+            <div>Child 2</div>
+          </Section>
+        </MemoryRouter>
+      )
+      const json = testRenderer.toJSON()
+      expect(json).not.toBeNull()
+      testRenderer.unmount()
+    })
   })
 
   describe('SocialMedia', () => {
@@ -394,7 +540,7 @@ describe('Tests components', () => {
       testRenderer && testRenderer.unmount()
     })
 
-    it('renders with only URL', () => {
+    test('renders with only URL', () => {
       const urlOnly = 'https://example.com'
       testRenderer = renderWithTheme(<SocialMedia url={urlOnly} />)
       expect(getAnchorHrefs(testRenderer)).toContain(urlOnly)
@@ -469,8 +615,6 @@ describe('Tests components', () => {
       expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
 
-    // test tooltips
-
     test('renders with URL and icon with tooltip', () => {
       testRenderer = renderWithTheme(
         <SocialMedia url={url} icon={icon} tooltip />
@@ -490,17 +634,5 @@ describe('Tests components', () => {
       expect(getTextContent(testRenderer)).toContain('test')
       expect(getStableSnapshot(testRenderer)).toMatchSnapshot()
     })
-
-    test.todo(
-      'handles click event and shows confirmation dialog'
-      // () => {
-      //   const testRenderer = TestRenderer.create(
-      //     <SocialMedia url={url} confirmation />
-      //   )
-      //   const button = testRenderer.getInstance().root.findByType('div')
-      //   fireEvent.click(button)
-      //   expect(testRenderer.toJSON()).toMatchSnapshot()
-      // }
-    )
   })
 })

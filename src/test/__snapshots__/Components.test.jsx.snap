@@ -973,6 +973,75 @@ Object {
 }
 `;
 
+exports[`Tests components Status renders with null pattern 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "children": Array [
+                        Object {
+                          "children": Array [
+                            Object {
+                              "type": "path",
+                            },
+                          ],
+                          "props": Object {
+                            "data-testid": "CheckCircleIcon",
+                            "role": undefined,
+                          },
+                          "type": "svg",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "children": Array [
+                    "Online",
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "children": Array [
+            "This service is currently",
+            "online",
+            "at",
+            Object {
+              "children": Array [
+                "www.google.com",
+              ],
+              "props": Object {
+                "href": "https://www.google.com",
+                "target": "_blank",
+              },
+              "type": "a",
+            },
+          ],
+          "type": "h6",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  "type": "div",
+}
+`;
+
 exports[`Tests components Tags 1`] = `
 Object {
   "children": Array [
