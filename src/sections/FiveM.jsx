@@ -106,8 +106,6 @@ function statistics() {
           alt="Discord Bots"
           loading="lazy"
           decoding="async"
-          src="https://top.gg/api/widget/owner/483787947070586880.svg"
-          alt="Discord Bots"
         />
         <SocialMedia
           icon="server"
