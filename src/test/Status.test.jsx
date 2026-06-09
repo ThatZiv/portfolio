@@ -141,4 +141,65 @@ describe('Status', () => {
       await new Promise((resolve) => setTimeout(resolve, 0))
     })
   })
+
+  test('renders status CHIP correctly', async () => {
+    jest
+      // eslint-disable-next-line no-undef
+      .spyOn(global, 'fetch')
+      .mockImplementationOnce(() =>
+        Promise.resolve({
+          text: () => Promise.resolve('<html><title>google</title></html>')
+        })
+      )
+    let testRenderer
+    await act(async () => {
+      testRenderer = TestRenderer.create(
+        <ThemeProvider theme={theme}>
+          <Status url={url} pattern={pattern} />
+        </ThemeProvider>
+      )
+      await new Promise((resolve) => setTimeout(resolve, 0))
+    })
+    expect(testRenderer.toJSON()).not.toBeNull()
+  })
+
+  test('renders status CHIP correctly when its offline', async () => {
+    jest
+      // eslint-disable-next-line no-undef
+      .spyOn(global, 'fetch')
+      .mockImplementationOnce(() =>
+        Promise.reject(new Error('Failed to fetch'))
+      )
+    let testRenderer
+    await act(async () => {
+      testRenderer = TestRenderer.create(
+        <ThemeProvider theme={theme}>
+          <Status url={url} pattern={pattern} />
+        </ThemeProvider>
+      )
+      await new Promise((resolve) => setTimeout(resolve, 0))
+    })
+    expect(testRenderer.toJSON()).not.toBeNull()
+  })
+
+  test('renders with invalid pattern', async () => {
+    jest
+      // eslint-disable-next-line no-undef
+      .spyOn(global, 'fetch')
+      .mockImplementationOnce(() =>
+        Promise.resolve({
+          text: () => Promise.resolve('<html><title>google</title></html>')
+        })
+      )
+    let testRenderer
+    await act(async () => {
+      testRenderer = TestRenderer.create(
+        <ThemeProvider theme={theme}>
+          <Status url={url} pattern="invalid" />
+        </ThemeProvider>
+      )
+      await new Promise((resolve) => setTimeout(resolve, 0))
+    })
+    expect(testRenderer.toJSON()).not.toBeNull()
+  })
 })

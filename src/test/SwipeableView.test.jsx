@@ -57,4 +57,44 @@ describe('SwipeableView', () => {
     )
     expect(testRenderer.toJSON()).not.toBeNull()
   })
+
+  test('renders with custom transition duration', () => {
+    const testRenderer = TestRenderer.create(
+      <SwipeableView transitionDuration={500}>
+        <div>Item 1</div>
+      </SwipeableView>
+    )
+    const container = testRenderer.root.findByType('div')
+    expect(container.props.style).toBeDefined()
+  })
+
+  test('renders with axis prop', () => {
+    const testRenderer = TestRenderer.create(
+      <SwipeableView axis="x-reverse">
+        <div>Item 1</div>
+      </SwipeableView>
+    )
+    const container = testRenderer.root.findByType('div')
+    expect(container.props.style).toBeDefined()
+  })
+
+  test('renders with enableMouseEvents', () => {
+    const testRenderer = TestRenderer.create(
+      <SwipeableView enableMouseEvents>
+        <div>Item 1</div>
+      </SwipeableView>
+    )
+    const container = testRenderer.root.findByType('div')
+    expect(container.props).toBeDefined()
+  })
+
+  test('renders with interval', () => {
+    const testRenderer = TestRenderer.create(
+      <SwipeableView interval={1000}>
+        <div>Item 1</div>
+      </SwipeableView>
+    )
+    const container = testRenderer.root.findByType('div')
+    expect(container.props.style).toBeDefined()
+  })
 })

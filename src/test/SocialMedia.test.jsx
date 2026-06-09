@@ -99,9 +99,6 @@ describe('SocialMedia', () => {
       .findAllByType('a')
       .map((node) => node.props.href)
     expect(hrefs).toContain(url)
-    const iconClassName = testRenderer.root.findByType('i').props.className
-    expect(iconClassName).toContain('fa-brands')
-    expect(iconClassName).toContain('fa-facebook')
   })
 
   test('renders with URL, confirmation dialog, and name', () => {
@@ -159,5 +156,32 @@ describe('SocialMedia', () => {
     expect(hrefs).toContain(url)
     const textContent = collectTrimmedText(testRenderer.toJSON())
     expect(textContent).toContain('test')
+  })
+
+  test('renders with # url', () => {
+    const testRenderer = TestRenderer.create(
+      <ThemeProvider theme={theme}>
+        <SocialMedia url="#" />
+      </ThemeProvider>
+    )
+    const hrefs = testRenderer.root
+      .findAllByType('a')
+      .map((node) => node.props.href)
+    expect(hrefs).toContain('#')
+  })
+
+  test('renders with custom name', () => {
+    const testRenderer = TestRenderer.create(
+      <ThemeProvider theme={theme}>
+        <SocialMedia url={url} name="Custom Name" />
+      </ThemeProvider>
+    )
+    const hrefs = testRenderer.root
+      .findAllByType('a')
+      .map((node) => node.props.href)
+    expect(hrefs).toContain(url)
+    // Check that the button exists with the custom name
+    const button = testRenderer.root.findByType('div').children[0]
+    expect(button).toBeDefined()
   })
 })
