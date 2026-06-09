@@ -5,10 +5,12 @@
     // "plugin:prettier/recommended"
   ],
   "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "parser": "@babel/eslint-parser",
   "env": {
     "browser": true,
     "es2021": true,

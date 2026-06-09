@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-undef
 module.exports = {
-  presets: ['@babel/preset-env'],
-  plugins: [
+  presets: [
+    '@babel/preset-env',
     [
-      '@babel/plugin-transform-react-jsx',
+      '@babel/preset-react',
       {
         runtime: 'automatic'
       }

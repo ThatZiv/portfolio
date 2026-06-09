@@ -1,0 +1,65 @@
+/* eslint-disable react/jsx-pascal-case */
+import Grid from '@mui/material/Grid'
+import Grow from '@mui/material/Grow'
+import React from 'react'
+import MediaCard from '../components/MediaCard'
+import Section from '../components/Section'
+import University from '../sections/University'
+import School from '../sections/School'
+
+export const LayoutGrid = ({ children }) => (
+  <Grid
+    justifyContent="flex-start"
+    style={{ marginTop: '10px' }}
+    container
+    spacing={2}
+  >
+    {children}
+  </Grid>
+)
+
+export default function Experience() {
+  return (
+    <Grow in timeout={500}>
+      <div>
+        <LayoutGrid>
+          {/* University */}
+          <MediaCard
+            prechildren={
+              <Section icon="fa-solid fa-map" title="Coursework">
+                <University.components.Coursework />
+              </Section>
+            }
+            {...University.meta}
+          >
+            <Section icon="fa-solid fa-award" title="Awards">
+              <University.components.Awards />
+            </Section>
+            <Section icon="fa-solid fa-ranking-star" title="GPA">
+              <University.components.Grade />
+            </Section>
+          </MediaCard>
+          {/* HS */}
+          <MediaCard
+            prechildren={
+              <Section icon="fa-solid fa-map" title="Coursework">
+                <School.components.Coursework />
+              </Section>
+            }
+            {...School.meta}
+          >
+            <Section icon="fa-solid fa-award" title="Awards">
+              <School.components.Awards />
+            </Section>
+            <Section icon="fa-solid fa-ranking-star" title="GPA">
+              <School.components.Grade />
+            </Section>
+            <Section icon="fa-solid fa-table-columns" title="Organizations">
+              <School.components.Organizations />
+            </Section>
+          </MediaCard>
+        </LayoutGrid>
+      </div>
+    </Grow>
+  )
+}
