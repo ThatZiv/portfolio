@@ -18,7 +18,7 @@ const Section = {
     title: 'Wayne State University',
     banner: 'pics/wsu.png',
     complete: true, // to show the date range on the banner
-    tags: 'Wayne State University,WSU,University,College,Education,Extracurricular,Clubs,Organizations,Classes,Coursework,Projects,Leadership',
+    tags: "Wayne State University,WSU,University,Extracurricular,Bachelor's, Master's,Graduate,Undergraduate",
     description: `## Bachelor of Science in Computer Science • **${GPA} GPA**
 ---
 ## Master of Science in Computer Science • Artificial Intelligence Concentration
