@@ -14,8 +14,6 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 - update zwebserver milestones
 - update fivembot updates
 - add GPA for ms?
-- remove socialblade (jeva > statistics)
-- update pfg
 - zhud, osm, - portfolio cards
 - Resume?
 - Remove/fix Status paper cards
