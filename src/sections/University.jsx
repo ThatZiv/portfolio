@@ -128,27 +128,42 @@ function Awards() {
       entries={[
         {
           title: "Dean's List",
-          content: `Awarded [Fall 2021](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2021-46885#cs), 
-[Winter 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2022-48391#cs),
-[Fall 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2022-50373#cs), 
-[Winter 2023](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2023-53793#cs),
-[Fall 2023](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2023-61446#cs),
-[Winter 2024](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2024-62445#cs). This award is given to students who have achieved a GPA of 3.5 or higher as a full-time student.`
+          content: `Awarded all of the following semesters:
+- [Fall 2021](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2021-46885#cs)
+- [Winter 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2022-48391#cs)
+- [Fall 2022](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2022-50373#cs)
+- [Winter 2023](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2023-53793#cs)
+- [Fall 2023](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2023-61446#cs)
+- [Winter 2024](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2024-62445#cs)
+- [Fall 2024](https://engineering.wayne.edu/news/undergraduate-deans-list-for-fall-2024-65252#cs)
+- [Winter 2025](https://engineering.wayne.edu/news/undergraduate-deans-list-for-winter-2025-66740#cs)
+
+This award is given to students who have achieved a GPA of 3.5 or higher as a full-time student.`
         },
         {
           title: 'Warrior Award',
           content:
-            'Awarded Fall 2021-Winter 2025. The [Warrior Award](https://wayne.edu/scholarships/warrior) is up to $6,000 per year for four consecutive years and is offered to the strongest admissions applicants based on GPA and ACT/SAT scores.'
+            'Awarded Fall 2021 to Winter 2025. The [Warrior Award](https://wayne.edu/scholarships/warrior) is up to $6,000 per year for four consecutive years and is offered to the strongest admissions applicants based on GPA and ACT/SAT scores.'
+        },
+        {
+          title: "Engineering Dean's Award",
+          content:
+            'Awarded Fall 2023 to 2025. Awarded to the Engineering Student Senate (ESS) vice president.'
         },
         {
           title: '50th Anniversary Engineering Alumni Scholarship',
           content:
-            "Awarded Fall 2024-2025. 'Established to recognize scholastic achievement' - More [info](https://web.archive.org/web/20240708092425/https://engineering.wayne.edu/admissions/scholarships/undergrad-endowed#ann-50)."
+            "Awarded Fall 2024 to 2025. 'Established to recognize scholastic achievement' - More [info](https://web.archive.org/web/20240708092425/https://engineering.wayne.edu/admissions/scholarships/undergrad-endowed#ann-50)."
         },
         {
           title: 'Harley Ellis Devereaux Endowed Scholarship Award',
           content:
-            'Awarded Fall 2024-2025. More [info](https://web.archive.org/web/20240708092425/https://engineering.wayne.edu/admissions/scholarships/undergrad-endowed#devereaux).'
+            'Awarded Fall 2024 to 2025. More [info](https://web.archive.org/web/20240708092425/https://engineering.wayne.edu/admissions/scholarships/undergrad-endowed#devereaux).'
+        },
+        {
+          title: 'Danto Scholarship',
+          content:
+            'Awarded Fall 2025 to 2026 to the Engineering Student Senate (ESS) president. More [info](https://web.archive.org/web/20240708092425/https://engineering.wayne.edu/admissions/scholarships/undergrad-endowed#Marvin%20Danto:~:text=Family%20Endowed%20Scholarship-,Marvin%20Danto%20Annual%20Scholarship%20for%20Engineering%20Students,-Marvin%20Danto%20Annual).'
         }
       ]}
     />
