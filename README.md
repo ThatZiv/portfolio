@@ -13,7 +13,6 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 - remove dumb frameworks/tools
 - update zwebserver milestones
 - update fivembot updates
-- update coursework (seperate by degree)
 - add GPA for ms?
 - remove socialblade (jeva > statistics)
 - update pfg

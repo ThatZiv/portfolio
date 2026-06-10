@@ -68,7 +68,6 @@ ${description}`
       )}`
     }
   }
-  // TODO: update courses
   const courses = [
     new Course({
       name: 'CSC 1100',
@@ -101,12 +100,6 @@ ${description}`
         'Design and implementation of fundamental abstract data types of computer science (such as stacks, queues, trees, lists, hashing, and graphs), using an object-oriented language. Programming requirements include the implementation of abstract data types using arrays and dynamic links; recursion; sorting and searching; hashing; and string processing. Introduction to algorithm analysis.'
     }),
     new Course({
-      name: 'CSC 3750',
-      title: 'Introduction to Web Technology',
-      description:
-        'Understanding the Internet using several access methods; required software and tools. Topics include: e-mail, FTP, Telnet, Gopher, Archie, Newsgroups, WWW, HTML, CGI and PHP scripting and how to create an active web site.'
-    }),
-    new Course({
       name: 'MAT 2030',
       title: 'Calculus III',
       description:
@@ -117,7 +110,138 @@ ${description}`
       title: 'Linear Algebra',
       description:
         'Systems of linear equations, matrices, vector spaces, basis, dimension, inner products, linear transformations and eigenvalues. Applications presented. '
-    }) // TODO: show grades too?
+    }),
+    new Course({
+      name: 'CSC 3020',
+      title: 'Java Programming',
+      description:
+        'Programming in Java. Object-oriented programming concepts and techniques. Java language features.'
+    }),
+    new Course({
+      name: 'CSC 3400',
+      title: 'Human Computer Interaction',
+      description:
+        'User interface design, usability, evaluation, user-centered design.'
+    }),
+
+    new Course({
+      name: 'CSC 3100',
+      title: 'Computer Architecture and Organization',
+      description:
+        'Organization and architecture of computer systems. Topics include: digital logic and digital systems; machine-level representation of data and programs; assembly level machine organization and programming; register-level description of computer execution and the functional organization of a computer; role and function of programming languages, libraries and operating systems; performance evaluation; systems programming.'
+    }),
+
+    new Course({
+      name: 'CSC 4500',
+      title: 'Introduction to Theoretical Computer Science',
+      description:
+        'Finite automata and regular expressions; context-free grammars; pushdown automata; Turing machines; hierarchy of formal languages and automata; computability and decidability.'
+    }),
+
+    new Course({
+      name: 'CSC 3110',
+      title: 'Algorithm Design and Analysis',
+      description:
+        'Formal techniques to support design and analysis of algorithms: underlying mathematical theory and practical considerations of efficiency. Topics include asymptotic complexity bounds, techniques of analysis, algorithmic strategies, advanced data and file structures, and introduction to automata theory and its application to language translation.'
+    }),
+
+    new Course({
+      name: 'CSC 4110',
+      title: 'Software Engineering',
+      description:
+        'Software life cycle; software requirement analysis; software system design; software implementation and testing; software maintenance; team programming; ethics and programmers.'
+    }),
+
+    new Course({
+      name: 'CSC 4420',
+      title: 'Computer Operating Systems',
+      description:
+        'Operating system services; file systems; CPU scheduling; memory management; virtual memory; disk scheduling; deadlocks; concurrent processes.'
+    }),
+
+    new Course({
+      name: 'CSC 4710',
+      title: 'Introduction to Database Management Systems',
+      description:
+        'Topics include: database concepts, ER modeling, schemas and constraints, SQL and relational algebra, web-based database applications, triggers and views, physical organization and indexing, query processing, query optimization, NoSQL databases.'
+    }),
+
+    new Course({
+      name: 'CSC 5430',
+      title: 'Game Programming and Design I',
+      description:
+        'Fundamentals of game programming and game design using C++, DirectX, Windows, and C#.'
+    }),
+
+    new Course({
+      name: 'CSC 5272',
+      title: 'Principles of Cyber Security',
+      description:
+        "This course addresses the broad range of industry best practices, knowledge, and skills expected of an IT security manager or officer. Students will learn both the theory and the requirements for practical implementation of core security concepts, practices, monitoring, and compliance. Students will also learn to identify and implement cost-effective security controls that align closely with business requirements and industry standards. *This was completed for my Master's program.*"
+    }),
+
+    new Course({
+      name: 'CSC 5825',
+      title: 'Introduction to Machine Learning and Applications',
+      description:
+        "Through algorithmic investigation, brainstorming, and case analysis, students develop the skills and strategies that are necessary for effective learning from data, including Big Data emerging from science and engineering. *This was completed for my Master's program.*"
+    }),
+
+    new Course({
+      name: 'CSC 6800',
+      title: 'Artificial Intelligence I',
+      description:
+        "Basic concepts; topics include: recursive problem solving, knowledge representation using semantic networks and frames, state space search methods, planning and problem solving, game playing and adversarial search methods, rules and production systems (RETE networks), constraint satisfaction techniques and applications, optimization algorithms including genetic algorithms, logic programming. *This was completed for my Master's program.*"
+    }),
+
+    new Course({
+      name: 'CSC 4996',
+      title: 'Senior Capstone Project',
+      description:
+        'Development of skills for planning, managing, implementing, and documenting complex software projects. Project management techniques; software development teams; data management, privacy, and security.'
+    }),
+
+    new Course({
+      name: 'CSC 7800',
+      title: 'Artificial Intelligence II',
+      description:
+        "Advanced topics from these areas: machine learning techniques (inductive and deductive), neural networks and perceptrons, genetic algorithms, advanced concepts in knowledge-based system design, inexact inference, constraint satisfaction techniques and applications. *This was completed for my Master's program.*"
+    }),
+
+    new Course({
+      name: 'CSC 6995',
+      title: 'Internship in Computer Science',
+      description:
+        "Experience in industry using tools from the computer science curriculum. Students provide a written report based on the internship experience. The internship in question was with Principal Financial Group during the summer of 2025. *This was completed for my Master's program.*"
+    }),
+
+    new Course({
+      name: 'CSC 5750',
+      title: 'Principles of Web Technology',
+      description:
+        "History and development of the world-wide web. Techniques for authoring static and dynamic content for the world-wide web. Web security techniques. Electronic commerce on the web. Lab exercises required. *This was completed for my Master's program.*"
+    }),
+
+    new Course({
+      name: 'CSC 6580',
+      title: 'Design and Analysis of Algorithms',
+      description:
+        "Best case, worst case, and expected case complexity analysis; asymptotic approximations; solutions of recurrence equations; probabilistic techniques; divide-and-conquer; the greedy approach; dynamic programming; branch and bound; NP-completeness; parallel algorithms. *This was completed for my Master's program.*"
+    }),
+
+    new Course({
+      name: 'CSC 5372',
+      title: 'Digital Forensics',
+      description:
+        "Digital Forensics and Incident Response (DFIR) is essential for understanding how intrusions occur, uncovering malicious behavior, explaining exactly what happened, and restoring integrity across digital environments. DFIR combines cybersecurity, threat hunting, and investigative techniques to identify, analyze, respond to, and proactively hunt cyber threats and criminal activity. *This was completed for my Master's program.*"
+    }),
+
+    new Course({
+      name: 'CSC 6430',
+      title: 'Game Programming and Design II',
+      description:
+        "Game design methods, team development, languages for game design, debugging and testing, game platforms, memory management and I/O, game physics, character animation, AI agents, AI path programming, networking, online and multiplayer gaming. *This was completed for my Master's program.*"
+    })
   ]
   return <Generic entries={courses} />
 }
