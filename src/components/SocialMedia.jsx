@@ -59,8 +59,8 @@ export default function SocialMedia(props) {
       >
         <Tooltip
           title={
-            service
-              ? capFirstLetter(service)
+            service && !props.showName
+              ? props.name || capFirstLetter(service)
               : (props?.showName && props.url !== '#'
                   ? props.url
                   : props?.name) || props.icon
