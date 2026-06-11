@@ -51,7 +51,7 @@ export default {
       ],
       [
         '2024',
-        'Migrated webserver to homelab (dedicated server) for better performance and reliability.'
+        'Migrated webserver to home-lab (dedicated server) for better performance and reliability.'
       ],
       [
         'April 2026',

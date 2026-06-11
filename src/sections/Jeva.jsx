@@ -40,7 +40,7 @@ export default {
         'Jeva officially discontinues production of FiveM-related.'
       ],
       ['2023', 'The Jeva Patreon page is closed.'],
-      ['August 2024', 'Started livestreaming on YouTube.']
+      ['August 2024', 'Started live-streaming on YouTube.']
     ],
     prechildren: prechildren()
   },

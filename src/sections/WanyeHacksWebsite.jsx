@@ -99,7 +99,7 @@ The site features:
 
 ## Technicalities
 
-The website is built w/ [Next.js](https://nextjs.org) v14. For styling, we're using tailwindcss and for the backend, we're using [Supabase](https://supabase.com) BaaS (firebase alternative). The next configuration we're running is serverless since Vercel - the place where this app is deployed - automatically handles it for us. With that, we almost fully have a SSR application with custom-protected middleware routing. The user will never directly interact with our supabase instance - it all goes through our server first.
+The website is built w/ [Next.js](https://nextjs.org) v14. For styling, we're using TailwindCSS and for the backend, we're using [Supabase](https://supabase.com) BaaS (firebase alternative). The next configuration we're running is serverless since Vercel - the place where this app is deployed - automatically handles it for us. With that, we almost fully have a SSR application with custom-protected middleware routing. The user will never directly interact with our supabase instance - it all goes through our server first.
 
 ### Database (public) [Schema](/supabase/migrations/20231122005059_remote_commit.sql)
 
