@@ -10,6 +10,7 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 
 - Add ess to `experience`
 - Add waynehacks 3,4 to `experience`
+- update waynehacks.com
 - remove dumb frameworks/tools
 - add GPA for ms?
 - zhud, osm, - portfolio cards
@@ -20,9 +21,7 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 
 # FIXME
 
-- tag section is scrollable
 - home page tabs hidden ones make the page too tall
-- side view nav buttons have a blue border and the last one (Education) is white. The hover state color is a brighter. Needs to be white and the hover state should be a brighter white.
 - memory leak issue with unmounting animations
 - "Database migration & management" tag doesn't go to it on search presumably because of the '&' symbol
 - Gallery image expand dialogue does not close after clicking continue

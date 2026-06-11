@@ -9,7 +9,7 @@ const MarkdownConfig = {
       {children}
     </Typography>
   ),
-  h2: ({ node, children }) => (
+  h2: ({ children }) => (
     <Typography
       variant="h5"
       color="secondary"
@@ -18,7 +18,7 @@ const MarkdownConfig = {
       {children}
     </Typography>
   ),
-  p: ({ node, children }) => (
+  p: ({ children }) => (
     <Typography variant="body2" color="secondary">
       {children}
     </Typography>
@@ -33,14 +33,28 @@ const MarkdownConfig = {
       title={node.properties.title}
     />
   ),
-  code: ({ children }) => (
-    // TODO: make overflow scrollable to width of parent container
-    <pre style={{ backgroundColor: '#000', color: 'white', padding: 10 }}>
-      <code style={{ whiteSpace: 'pre-line', wordBreak: 'break-word' }}>
+  code: ({ inline, children }) =>
+    inline ? (
+      <code
+        style={{
+          backgroundColor: '#1e1e1e',
+          color: '#d4d4d4',
+          padding: '2px 6px',
+          borderRadius: 4,
+          fontFamily: 'monospace',
+          fontSize: '0.9em'
+        }}
+      >
         {children}
       </code>
-    </pre>
-  ),
+    ) : (
+      // TODO: make overflow scrollable to width of parent container
+      <pre style={{ backgroundColor: '#000', color: 'white', padding: 10 }}>
+        <code style={{ whiteSpace: 'pre-line', wordBreak: 'break-word' }}>
+          {children}
+        </code>
+      </pre>
+    ),
   hr: () => <hr style={{ border: '1.5px solid #737373', borderRadius: 5 }} />,
   blockquote: ({ children }) => (
     <blockquote
