@@ -43,6 +43,19 @@ export default {
       [
         '2022',
         'v1.2.6 - Zua API (v1.1) deploys analytics API with custom metrics and API wrapper implementation.'
+      ],
+      ['2023', 'Cloudflare is added as a reverse proxy.'],
+      [
+        'September 2024',
+        'Containerized webserver with Docker and Docker Compose and integrated mailing services with AWS SES.'
+      ],
+      [
+        '2024',
+        'Migrated webserver to homelab (dedicated server) for better performance and reliability.'
+      ],
+      [
+        'April 2026',
+        'v1.2.13 - Updated dependencies, proper cloudflare logging, and other optimizations.'
       ]
     ]
   },

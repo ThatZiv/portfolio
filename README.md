@@ -11,8 +11,6 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 - Add ess to `experience`
 - Add waynehacks 3,4 to `experience`
 - remove dumb frameworks/tools
-- update zwebserver milestones
-- update fivembot updates
 - add GPA for ms?
 - zhud, osm, - portfolio cards
 - Resume?
