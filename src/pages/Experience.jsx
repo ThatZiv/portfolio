@@ -13,6 +13,7 @@ import SCD from '../sections/SCD'
 import WayneHacks1 from '../sections/WayneHacks1'
 import PFG from '../sections/PFG'
 import WayneHacks2 from '../sections/WayneHacks2'
+import ESS from '@/sections/ESS'
 
 const styles = {
   heading: {
@@ -81,7 +82,10 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <WayneHacks2.components.Contribs />
             </Section>
-            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
               <WayneHacks2.components.Links />
             </Section>
           </MediaCard>
@@ -97,8 +101,20 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <WayneHacks1.components.Contribs />
             </Section>
-            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
               <WayneHacks1.components.Links />
+            </Section>
+          </MediaCard>
+          {/* ESS */}
+          <MediaCard {...ESS.meta}>
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
+              <ESS.components.Links />
             </Section>
           </MediaCard>
           {/* SCD */}
@@ -116,7 +132,10 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <SCD.components.Contribs />
             </Section>
-            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
               <SCD.components.Links />
             </Section>
           </MediaCard>
@@ -129,7 +148,10 @@ export default function Experience() {
             }
             {...GDSC.meta}
           >
-            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
               <GDSC.components.Links />
             </Section>
           </MediaCard>
