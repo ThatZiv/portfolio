@@ -1,4 +1,5 @@
-import { Link, Typography } from '@mui/material'
+import { Link, Typography, Grid } from '@mui/material'
+import SocialMedia from '../components/SocialMedia'
 
 /**
  * @type {import("../types/section").Section}
@@ -60,7 +61,19 @@ Wayne State University (WSU) [Engineering Student Senate (ESS)](https://www.link
 export default Section
 
 function Links() {
-  return <div>...</div>
+  return (
+    <Grid container spacing={2}>
+      <Grid item>
+        <SocialMedia
+          showName
+          url="https://www.linkedin.com/company/wayne-state-university-engineering-student-senate/"
+        />
+      </Grid>
+      <Grid item>
+        <SocialMedia showName url="https://www.instagram.com/wsu_ess/" />
+      </Grid>
+    </Grid>
+  )
 }
 
 function Statistics() {
