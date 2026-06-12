@@ -36,7 +36,8 @@ import ArrowDropDown from '@mui/icons-material/ArrowDropDown'
 import { colors } from '../Theme'
 const dateCompiled =
   typeof __BUILD_DATE__ !== 'undefined'
-    ? __BUILD_DATE__
+    ? // eslint-disable-next-line no-undef
+      __BUILD_DATE__
     : new Date().toLocaleDateString(undefined, {
         weekday: 'long',
         year: 'numeric',

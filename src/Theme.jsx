@@ -68,6 +68,19 @@ export default createTheme({
           borderColor: textPrimary
         }
       }
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#3997ff',
+          '&:visited': {
+            color: '#3489eb'
+          },
+          '&:hover': {
+            textDecoration: 'underline'
+          }
+        }
+      }
     }
   }
 })

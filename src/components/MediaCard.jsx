@@ -54,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+/**
+ * @type {import("../types/comps/MediaCard").MediaCard}
+ */
 function MediaCard(props) {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)

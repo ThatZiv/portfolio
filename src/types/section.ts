@@ -35,6 +35,10 @@ export declare interface Section {
      * ]
      */
     timeline: Array<[string, string]>
+    /**
+     * Any extra components to be rendered before the children of the card (e.g. "Deliverables" and "Timeline" section(s))
+     */
+    prechildren?: () => JSX.Element
   }
   /** Any extra components in the card */
   components: { [key: string]: () => JSX.Element }
