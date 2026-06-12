@@ -17,7 +17,7 @@ In total, there were **97 registrants**, **34 active participants** from all acr
 *We were projecting over 60 participants but uncooperative weather conditions made it difficult for many to attend.*`,
     banner: '/pics/whacks2_banner.png',
     complete: true,
-    tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Team Management,Trello,Leadership,Director,Public Speaking',
+    tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Team Management,Trello,Leadership,Director,Event Planning,Public Speaking',
     objectives: `Oversaw a wide range of operational responsibilities, such as catering logistics, finances, procurement, and other assorted tasks.|
 Lead bi-weekly meetings for website development and all other operational tasks with committee members.|
 Developed, architected, and maintained waynehacks.com platform using TypeScript, Next.js (v14), Vercel, TailwindCSS, and Supabase.|

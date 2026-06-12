@@ -8,8 +8,14 @@ const Section = {
     title: 'Engineering Student Senate',
     banner: '/pics/ess_banner.png',
     complete: true,
-    tags: 'Tags,Are,Separated,Only,With,Commas', // TODO
-    objectives: `Usually from resume.|test`, // TODO:
+    tags: 'Wayne State University,WSU,Engineering Student Senate,ESS,Student Government,Leadership,Student Affairs,Engineering,Extracurricular,Event Planning,Advocacy,Community Outreach',
+    objectives: `Represented and advocated for student concerns and worked with faculty and administration to improve the overall student experience.
+|Planned and hosted professional, academic, and social events that encouraged student involvement and community engagement.
+|Promoted leadership development and student success through initiatives, resources, and peer collaboration.
+|Collaborated with engineering organizations, student groups, and university departments on events and shared initiatives.
+|Gathered student feedback, identified areas for improvement, and helped develop solutions to address student needs.
+|Strengthened connections between engineering students, the university, and the Detroit community through outreach and service opportunities.
+|Conducted bi-weekly meetings to discuss student concerns, plan events, and coordinate initiatives.`,
     description: `
 ## President
 

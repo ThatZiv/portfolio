@@ -17,7 +17,7 @@ WayneHacks also hosts workshops and two gaming tournaments during the event! $50
 In total, there were over **100 registrants**, **50 active participants**, and **16 project submissions**.`,
     banner: '/pics/whacks.png',
     complete: true,
-    tags: 'JavaScript,Python,HTML/CSS,Docker,JS DOM,React.js,Agile,Pair Programming,Git,CI/CD,Hackathon,Competition,Team Management,Co-Director',
+    tags: 'JavaScript,Python,HTML/CSS,Docker,JS DOM,React.js,Agile,Pair Programming,Git,CI/CD,Hackathon,Competition,Team Management,Co-Director,Event Planning',
     objectives: `Conducted preliminary meetings relating to funding, event schedule, and judging criteria with committee members.|
 Developed interactive JavaScript DOM workshop with JavaScript.|
 Developed interactive Google Firebase workshop with JavaScript and Python.|
