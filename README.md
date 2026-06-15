@@ -8,7 +8,6 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 
 # TODO
 
-- Add ess to `experience`
 - Add waynehacks 3,4 to `experience`
 - update SCD
 - remove dumb frameworks/tools

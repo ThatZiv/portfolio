@@ -13,7 +13,10 @@ const MarkdownConfig = {
     <Typography
       variant="h5"
       color="secondary"
-      style={{ fontFamily: 'Blinker, sans-serif' }}
+      style={{
+        fontFamily: 'Blinker, sans-serif',
+        wordSpacing: '1.2px'
+      }}
     >
       {children}
     </Typography>

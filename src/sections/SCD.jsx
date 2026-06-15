@@ -34,10 +34,10 @@ https://www.linkedin.com/feed/update/urn:li:activity:6903139263051898880
 export default {
   meta: {
     title: 'Society of Computer Developers',
-    description: `## President
+    description: `## President, Vice President, Software Lead, Secretary
 [Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill-building workshops, hackathons, coding nights, and social events!`,
     banner: '/pics/scd.png',
-    complete: false,
+    complete: true,
     tags: 'TypeScript,JavaScript,Python,C/C++,HTML/CSS,Docker,CI/CD,Full Stack,REST API,DOM,MongoDB,React.js,Agile,Pair Programming,Lecturing,SCD,GitHub Actions,Version Control',
     objectives: `Oversee all organizational planning and operations.
 |Created and hosted programming-related workshop events for students.
@@ -81,7 +81,7 @@ export default {
         'Organized and hosted "WayneHacks" - Wayne State\'s 3rd 48-hour hackathon.'
       ],
       ['April 7, 2023', 'Hosted Next.js (web framework) workshop.'],
-      ['May 2023', 'Inherited role of President.'],
+      ['May 2023', 'Became President of SCD.'],
       ['June 8, 2023', 'Began SCD "Summer Project"'],
       ['September 2023', 'Halted development for SCD "Summer Project"'],
       [
@@ -105,7 +105,23 @@ export default {
         'November 2024',
         'Hosted Git/GitHub: An Overview of Version Control [part 2] workshop.'
       ],
-      ['December 2024', 'Hosted Intro to Backend Web API Development workshop.']
+      [
+        'December 2024',
+        'Hosted Intro to Backend Web API Development workshop.'
+      ],
+      ['February 2025', 'Held Game/Social Night event.'],
+      ['December 2025', 'Started WayneHacks 4 planning (using SCD resources).'],
+      ['February 2026', 'Intro to Quantum Computing with Qiskit workshop.'],
+      [
+        'April 11-12, 2026',
+        'WayneHacks 4 hackathon takes place (majority of volunteers being SCD board members). '
+      ],
+      [
+        'April 2026',
+        'Held collaborative Game Night event with 5 other student organizations.'
+      ],
+      //
+      ['May 2026', 'Stepped down as President after graduation.']
     ]
   },
   components: { Lectures, Contribs, Links, Pictures }
