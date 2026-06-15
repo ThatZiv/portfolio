@@ -110,6 +110,9 @@ export default function Experience() {
           </MediaCard>
           {/* ESS */}
           <MediaCard {...ESS.meta}>
+            <Section icon="fa-solid fa-images" title="Gallery">
+              <ESS.components.Gallery />
+            </Section>
             <Section
               icon="fa-solid fa-arrow-up-right-from-square"
               title="Links"

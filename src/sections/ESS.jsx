@@ -1,4 +1,5 @@
 import { Link, Typography, Grid } from '@mui/material'
+import InstagramCarousel from '../components/InstagramCarousel'
 import SocialMedia from '../components/SocialMedia'
 
 /**
@@ -55,7 +56,7 @@ Wayne State University (WSU) [Engineering Student Senate (ESS)](https://www.link
       </div>
     )
   },
-  components: { Links, Statistics }
+  components: { Links, Gallery }
 }
 
 export default Section
@@ -76,6 +77,11 @@ function Links() {
   )
 }
 
-function Statistics() {
-  return <div>...</div>
+function Gallery() {
+  return <InstagramCarousel posts={instagramPosts} title="ESS on Instagram" />
 }
+
+const instagramPosts = [
+  'https://www.instagram.com/p/DQ7alz_EqSx/?utm_source=ig_embed&utm_campaign=loading',
+  'https://www.instagram.com/p/C_OScKPPR6j/?utm_source=ig_embed&utm_campaign=loading'
+]
