@@ -21,6 +21,17 @@ const MarkdownConfig = {
       {children}
     </Typography>
   ),
+  h3: ({ children }) => (
+    <Typography
+      variant="subtitle1"
+      color="secondary"
+      style={{
+        fontFamily: 'Blinker, sans-serif'
+      }}
+    >
+      {children}
+    </Typography>
+  ),
   p: ({ children }) => (
     <Typography variant="body2" color="secondary">
       {children}

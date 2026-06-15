@@ -13,6 +13,8 @@ export default {
 |Organize and host workshops based on Google technologies.
 |Oversee all organizational planning and operations.`,
     description: `## President
+  
+### *Previously Technical Lead*
 [Google Developer Student Clubs](https://gdsc.community.dev/wayne-state-university/) (GDSC) are university-based communities, where students learn about Google technology and use their skills to solve local problems. The GDSC gives students the opportunity to connect and network with individuals from diverse backgrounds and majors. It also allows students to learn about different technical topics through talks, workshops, and events. The GDSC is a great opportunity for students to give back to their community and develop themselves along the way!`,
     timeline: [
       ['October 2022', 'Recruited as Technical Lead.'],

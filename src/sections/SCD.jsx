@@ -34,7 +34,8 @@ https://www.linkedin.com/feed/update/urn:li:activity:6903139263051898880
 export default {
   meta: {
     title: 'Society of Computer Developers',
-    description: `## President, Vice President, Software Lead, Secretary
+    description: `## President
+### *Previously Vice President, Software Lead, and Secretary*
 [Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill-building workshops, hackathons, coding nights, and social events!`,
     banner: '/pics/scd.png',
     complete: true,

@@ -18,8 +18,9 @@ const Section = {
 |Strengthened connections between engineering students, the university, and the Detroit community through outreach and service opportunities.
 |Conducted bi-weekly meetings to discuss student concerns, plan events, and coordinate initiatives.`,
     description: `
-## President, Vice President
+## President
 
+### *Previously Vice President*
 Wayne State University (WSU) [Engineering Student Senate (ESS)](https://www.linkedin.com/company/wayne-state-university-engineering-student-senate/) is a student organization that serves as a liaison between the student body and the College of Engineering administration. We advocate for the needs and concerns of engineering students, organize events and initiatives to enhance the student experience, and work to foster a sense of community among engineering students.
 `,
     //  As President, I lead the executive board in planning and executing our initiatives, representing the student body in meetings with administration, and ensuring that our organization runs smoothly and effectively.
