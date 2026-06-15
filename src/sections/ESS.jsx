@@ -55,7 +55,7 @@ Wayne State University (WSU) [Engineering Student Senate (ESS)](https://www.link
       </div>
     )
   },
-  components: { Links, Statistics }
+  components: { Links, Gallery }
 }
 
 export default Section
@@ -76,6 +76,6 @@ function Links() {
   )
 }
 
-function Statistics() {
+function Gallery() {
   return <div>...</div>
 }
