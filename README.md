@@ -10,6 +10,7 @@ Created by Zavaar Shah with [MUI](https://mui.com) and [React](https://reactjs.o
 
 - Add waynehacks 3,4 to `experience`
 - update waynehacks.com for 3,4
+- add Domino's
 - remove dumb frameworks/tools
 - add GPA for ms?
 - zhud, osm, - portfolio cards
