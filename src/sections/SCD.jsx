@@ -111,6 +111,7 @@ export default {
         'Hosted Intro to Backend Web API Development workshop.'
       ],
       ['February 2025', 'Held Game/Social Night event.'],
+      ['May 2025', 'SCD wins the Michael Darson Award for 2nd best student organization at Wayne State University - College of Engineering.'],
       ['December 2025', 'Started WayneHacks 4 planning (using SCD resources).'],
       ['February 2026', 'Intro to Quantum Computing with Qiskit workshop.'],
       [
@@ -167,15 +168,20 @@ function Pictures() {
           label: 'SCD at Winterfest 2024 (myself pictured)',
           imgPath: 'pics/winterfest_24.jpg'
         },
-        {
-          label: 'SCD at Festifall (myself 2nd from the left)',
-          imgPath:
-            'https://se-images-blob.campuslabs.com/documents/204/f0eaec97-9199-4aff-279a-08dab6692024/1500.jpg'
-        },
+        // taking this out temporarily bcz campuslabs broke it
+        // {
+        //   label: 'SCD at Festifall (myself 2nd from the left)',
+        //   imgPath:
+        //     'https://se-images-blob.campuslabs.com/documents/204/f0eaec97-9199-4aff-279a-08dab6692024/1500.jpg'
+        // },
         {
           label: 'General Body Meetings',
           imgPath:
-            'https://se-images-blob.campuslabs.com/documents/204/aee7b032-28ee-4514-dd13-08dabb5f3f2a/600.jpg'
+            'pics/ext/scd-gbm.jpg'
+        },
+        {
+          label: 'SCD being awarded the 2025 Michael Darson Award at the Induction Ceremony (myself on the right)',
+          imgPath: 'pics/ext/scd-award.png'
         }
       ]}
     />
