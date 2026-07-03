@@ -1,5 +1,6 @@
 import { Link, Typography, Grid } from '@mui/material'
 import SocialMedia from '../components/SocialMedia'
+import Gallery from '@/components/Gallery'
 
 /**
  * @type {import("../types/section").Section}
@@ -27,7 +28,10 @@ Wayne State University (WSU) [Engineering Student Senate (ESS)](https://www.link
     timeline: [
       ['August 2023', 'Joined ESS as Vice President for the 2023-2024 term.'],
       ['August 2024', 'Continued as Vice President for the 2024-2025 term.'],
+      ['February 18, 2025', 'Hosted college-wide Town Hall with the Dean of the College of Engineering.'],
+      ['May 2, 2025', 'Attended the 65th Annual Induction Ceremony for the College of Engineering as ESS Vice President.'],
       ['August 2025', 'Elected President of ESS for 2025-2026 term.'],
+      ['May 8, 2026', 'Hosted part of the 66th Annual Induction Ceremony for the College of Engineering as ESS President.'],
       ['May 2026', 'Stepped down as President of ESS after graduation.']
     ],
     prechildren: (
@@ -57,7 +61,7 @@ Wayne State University (WSU) [Engineering Student Senate (ESS)](https://www.link
       </div>
     )
   },
-  components: { Links, Gallery }
+  components: { Links, Pictures }
 }
 
 export default Section
@@ -78,6 +82,11 @@ function Links() {
   )
 }
 
-function Gallery() {
-  return <div>...</div>
+function Pictures() {
+  return <Gallery images={[
+    { imgPath: '/pics/ext/ess/ess-2026-intro.jpg', label: 'Introduction to ESS 2026' },
+    { imgPath: '/pics/ext/ess/ess-2025-team.png', label: 'ESS 2025 Executive Board' },
+    { imgPath: '/pics/ext/ess/ess-2025-vp-award.png', label: 'Associate Dean awarding ESS Vice President (myself) the Vice President Award (scholarship).' },
+    { imgPath: '/pics/ext/ess/ess-2025-intro.jpg', label: 'Introduction to ESS 2025' },
+  ]} />
 }
