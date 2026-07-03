@@ -11,13 +11,13 @@ export default {
     description: `## Director
 
 [WayneHacks 2](https://waynehacks-2.devpost.com/) is a 24-hour in-person hackathon hosted at 
-[Wayne State University](https://engineering.wayne.edu/). Hackers have 24 hours to collaborate and create a project
+[Wayne State University](https://engineering.wayne.edu/) on January 13, 2024. Hackers have 24 hours to collaborate and create a project
  that solves real-world problems. Over $1400 in prizes are given out at the end to the best hacks. 
 In total, there were **97 registrants**, **34 active participants** from all across Southeast Michigan, and **10 project submissions**.
-*We were projecting over 60 participants but uncooperative weather conditions made it difficult for many to attend.*`,
+*The winter storm that weekend made it difficult for many to attend.*`,
     banner: '/pics/whacks2_banner.png',
     complete: true,
-    tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Team Management,Trello,Leadership,Director,Event Planning,Public Speaking',
+    tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Team Management,Trello,Leadership,Director,Event Planning,Public Speaking,WayneHacks 2',
     objectives: `Oversaw a wide range of operational responsibilities, such as catering logistics, finances, procurement, and other assorted tasks.|
 Lead bi-weekly meetings for website development and all other operational tasks with committee members.|
 Developed, architected, and maintained waynehacks.com platform using TypeScript, Next.js (v14), Vercel, TailwindCSS, and Supabase.|
@@ -122,13 +122,15 @@ function Links() {
         <SocialMedia
           name="Project Submissions"
           icon="fa-solid fa-envelope-circle-check"
+          showName
           url="https://waynehacks-2.devpost.com/project-gallery"
         />
       </Grid>
       <Grid item>
         <SocialMedia
-          name="Website"
+          name="Waynehacks.com"
           icon="fa-solid fa-globe"
+          showName
           url="https://waynehacks.com/"
         />
       </Grid>
@@ -136,6 +138,7 @@ function Links() {
         <SocialMedia
           name="GetInvolved"
           icon="fa-solid fa-graduation-cap"
+          showName
           url="https://getinvolved.wayne.edu/event/9630763"
         />
       </Grid>
@@ -149,7 +152,7 @@ function Contribs() {
       <Grid item>
         <Contributions
           repos={['thatziv/waynehacks']}
-          title="WSU SCD Repository"
+          title="WayneHacks website"
         />
       </Grid>
     </Grid>

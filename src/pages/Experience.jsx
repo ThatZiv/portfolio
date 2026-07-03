@@ -14,6 +14,7 @@ import WayneHacks1 from '../sections/WayneHacks1'
 import PFG from '../sections/PFG'
 import WayneHacks2 from '../sections/WayneHacks2'
 import ESS from '@/sections/ESS'
+import WayneHacks3 from '@/sections/WayneHacks3'
 
 const styles = {
   heading: {
@@ -74,6 +75,21 @@ export default function Experience() {
         </LayoutGrid>
         <Heading icon="fa-solid fa-table-columns" title="Organizations" />
         <LayoutGrid>
+          {/* WayneHacks 3 Hackathon */}
+          <MediaCard {...WayneHacks3.meta}>
+            <Section icon="fa-solid fa-images" title="Gallery">
+              <WayneHacks3.components.Pictures />
+            </Section>
+            <Section icon="fa-solid fa-code" title="Code">
+              <WayneHacks3.components.Contribs />
+            </Section>
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
+              <WayneHacks3.components.Links />
+            </Section>
+          </MediaCard>
           {/* WayneHacks 2 Hackathon */}
           <MediaCard {...WayneHacks2.meta}>
             <Section icon="fa-solid fa-images" title="Gallery">

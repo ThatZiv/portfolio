@@ -168,7 +168,8 @@ function Pictures() {
           label: 'SCD at Winterfest 2024 (myself pictured)',
           imgPath: 'pics/winterfest_24.jpg'
         },
-        // taking this out temporarily bcz campuslabs broke it
+        
+        // taking this out temporarily bcz campus-labs broke it
         // {
         //   label: 'SCD at Festifall (myself 2nd from the left)',
         //   imgPath:
