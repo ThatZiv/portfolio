@@ -77,7 +77,14 @@ export default function Experience() {
         <Heading icon="fa-solid fa-table-columns" title="Organizations" />
         <LayoutGrid>
           {/* WayneHacks 4 Hackathon */}
-          <MediaCard {...WayneHacks4.meta}>
+          <MediaCard
+            {...WayneHacks4.meta}
+            prechildren={
+              <Section icon="fa-solid fa-hashtag" title="Highlights">
+                <WayneHacks4.components.Socials />
+              </Section>
+            }
+          >
             <Section icon="fa-solid fa-images" title="Gallery">
               <WayneHacks4.components.Pictures />
             </Section>
