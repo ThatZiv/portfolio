@@ -124,7 +124,7 @@ const TabMenu = () => {
 const my = {
   name: 'Zavaar Shah',
   caption:
-    'Zavaar Shah is a computer science graduate from Wayne State University.',
+    "Zavaar Shah is a computer science graduate from Wayne State University. Currently doing Software @ Domino's.",
   langs: {
     primary: [
       // these are the langs

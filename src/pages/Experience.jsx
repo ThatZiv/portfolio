@@ -16,6 +16,7 @@ import WayneHacks2 from '../sections/WayneHacks2'
 import ESS from '@/sections/ESS'
 import WayneHacks3 from '@/sections/WayneHacks3'
 import WayneHacks4 from '@/sections/WayneHacks4'
+import DPZ from '../sections/DPZ'
 
 const styles = {
   heading: {
@@ -57,8 +58,13 @@ export default function Experience() {
     <Grow in timeout={500}>
       <div>
         <Heading icon="fa-solid fa-briefcase" title="Employment" />
-
         <LayoutGrid>
+          {/* DPZ */}
+          <MediaCard {...DPZ.meta} size={12}>
+            <Section icon="fa-solid fa-circle-info" title="Info">
+              <DPZ.components.MoreInfo />
+            </Section>
+          </MediaCard>
           {/* PFG */}
           <MediaCard {...PFG.meta} size={12}>
             <Section icon="fa-solid fa-circle-info" title="Info">
