@@ -65,7 +65,10 @@ Initiated the development timeline very early on, ensuring a strategic and well-
         'March 2026',
         'Updated documentation from work related to WayneHacks 4.'
       ],
-      ['April 11-12, 2026', 'WayneHacks 4 Hackathon takes place.']
+      [
+        'April 11-12, 2026',
+        'WayneHacks 4 Hackathon takes place. Peak traffic reached.'
+      ]
     ]
   },
   components: { Contribs, Pictures, Links, Description }
@@ -312,10 +315,26 @@ function Links() {
       </Grid>
       <Grid item>
         <SocialMedia
-          name="Website"
+          name="WayneHacks.com 2024"
           showName
           icon="fa-solid fa-globe"
-          url="https://waynehacks.com/"
+          url="https://web.archive.org/web/20240321091905/https://www.waynehacks.com/"
+        />
+      </Grid>
+      <Grid item>
+        <SocialMedia
+          name="WayneHacks.com 2025"
+          showName
+          icon="fa-solid fa-globe"
+          url="https://web.archive.org/web/20250307070842/https://www.waynehacks.com/"
+        />
+      </Grid>
+      <Grid item>
+        <SocialMedia
+          name="WayneHacks.com 2026"
+          showName
+          icon="fa-solid fa-globe"
+          url="https://web.archive.org/web/20260704012342/https://www.waynehacks.com/"
         />
       </Grid>
     </Grid>
