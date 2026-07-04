@@ -10,12 +10,12 @@ export default {
 [Domino's Pizza](https://www.dominos.com) is a [Fortune 500®](https://fortune.com/company/dominos-pizza/) American multinational pizza restaurant chain headquartered in [Ann Arbor](https://en.wikipedia.org/wiki/Ann_Arbor), Michigan, U.S.`,
     banner: '/pics/dpz-banner.png',
     complete: false,
-    tags: `Java,Spring Boot,Kubernetes,Ecommerce,DPZ,Domino's Pizza`,
+    tags: `Java,Spring Boot,Kubernetes,E-commerce,DPZ,Domino's Pizza`,
     objectives: `Stay tuned...`,
     timeline: [
       [
         'June 2026',
-        'Started first rotation in the Ecommerce fulfillment team for dominos.com.'
+        'Started first rotation in the E-commerce fulfillment team for dominos.com.'
       ]
     ]
   },
