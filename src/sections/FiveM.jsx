@@ -29,7 +29,7 @@ export default {
       ],
       [
         'October 2018',
-        'FiveM Bot is apart of over 500 servers and has served over 10K users'
+        'FiveM Bot is a part of over 500 servers and has served over 10K users'
       ],
       [
         'Early-May 2019',
@@ -41,7 +41,7 @@ export default {
       ],
       [
         'May 2020',
-        'FiveM Bot V8 is an entire re-write of the original bot and now utilizes the Patreon API for the new monetization platform.'
+        'FiveM Bot V8 is an entire rewrite of the original bot and now utilizes the Patreon API for the new monetization platform.'
       ],
       ['Early-October 2021', 'Revenue peaks at an all-time high.'],
       [
@@ -54,13 +54,13 @@ export default {
       ],
       [
         'January 2022',
-        'FiveM Bot is apart of 14K servers and has served over 5M users.'
+        'FiveM Bot is a part of 14K servers and has served over 5M users.'
       ],
       ['May 2024', 'Integrated failover service with Railway (PaaS).'],
-      ['December 2024', 'FiveM Bot is apart of 26K servers.'],
+      ['December 2024', 'FiveM Bot is a part of 26K servers.'],
       [
         'May 2026',
-        'FiveMBot V10 focuses on performance improvements: reduced latency, better caching, proper database pooling, customer feedback form, security improvements, and more.'
+        'FiveM Bot V10 focuses on performance improvements: reduced latency, better caching, proper database pooling, customer feedback form, security improvements, and more.'
       ]
     ]
   },

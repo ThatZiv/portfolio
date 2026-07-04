@@ -32,7 +32,7 @@ Sponsored entirely by [Detroit Hacker House](https://detroithackerhouse.com/).`,
     complete: true,
     tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Team Management,Trello,Leadership,Director,Event Planning,Public Speaking',
     objectives: `Oversaw a wide range of operational responsibilities, such as catering logistics, finances, procurement, and other assorted tasks.|
-Lead bi-weekly meetings for website development and all other operational tasks with committee members.|
+Led bi-weekly meetings for website development and other operational tasks with committee members.|
 Developed, architected, and maintained waynehacks.com platform using TypeScript, Next.js (v16), Vercel, TailwindCSS, and Supabase.|
 Hosted all events and ceremonies in front of live audience.|
 Secured Detroit Hacker House as the sole sponsor, covering all event costs and ending with a budget surplus.`,

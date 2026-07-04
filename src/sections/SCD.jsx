@@ -43,7 +43,7 @@ export default {
     objectives: `Oversee all organizational planning and operations.
 |Created and hosted programming-related workshop events for students.
 |Tutored and assisted students with coursework and other programming-related content.
-|Developed and maintain official club website with React and GitHub.
+|Developed and maintained the official club website with React and GitHub.
 |Fostered partnerships with local tech companies, securing sponsorships, collaborations, and even internships.`,
     timeline: [
       ['September 2021', 'Joined SCD as a member.'],
@@ -84,7 +84,7 @@ export default {
       ['April 7, 2023', 'Hosted Next.js (web framework) workshop.'],
       ['May 2023', 'Became President of SCD.'],
       ['June 8, 2023', 'Began SCD "Summer Project"'],
-      ['September 2023', 'Halted development for SCD "Summer Project"'],
+      ['September 2023', 'Halted development on SCD "Summer Project"'],
       [
         'October 27, 2023',
         'Hosted Introduction to Front-End Web Development (HTML/CSS & DOM) workshop.'
@@ -116,7 +116,7 @@ export default {
       ['February 2026', 'Intro to Quantum Computing with Qiskit workshop.'],
       [
         'April 11-12, 2026',
-        'WayneHacks 4 hackathon takes place (majority of volunteers being SCD board members). '
+        'WayneHacks 4 hackathon takes place (with the majority of volunteers being SCD board members). '
       ],
       [
         'April 2026',

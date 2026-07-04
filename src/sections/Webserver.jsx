@@ -13,11 +13,11 @@ export default {
     description: `Hosted at [www.zavaar.net](https://zavaar.net), this custom-built webserver hosts most of my other projects while also serving the internet. 
             Its most popular feature is its content delivery network (CDN) functionality. 
             The Zua application programming interface (API) is also hosted on this platform as it serves dynamic data for those who are authorized. 
-            With over 20K users served daily, this service is also a dependency to many other projects including FiveM Bot and zGarage.`,
+            With over 20K users served daily, this service is also a dependency for many other projects including FiveM Bot and zGarage.`,
     timeline: [
       [
         'Mid-2017',
-        `Created webserver initially to serve static files from an live directory using Express.js.`
+        `Created webserver initially to serve static files from a live directory using Express.js.`
       ],
       [
         '2018',

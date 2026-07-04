@@ -18,7 +18,7 @@ In total, there were **105 applicants**, **43 active participants** from all acr
     complete: true,
     tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Team Management,Trello,Leadership,Director,Event Planning,Public Speaking,WayneHacks 3',
     objectives: `Oversaw a wide range of operational responsibilities, such as catering logistics, finances, procurement, and other assorted tasks.|
-Lead bi-weekly meetings for website development and all other operational tasks with committee members.|
+Led bi-weekly meetings for website development and other operational tasks with committee members.|
 Developed, architected, and maintained waynehacks.com platform using TypeScript, Next.js (v14), Vercel, TailwindCSS, and Supabase.|
 Hosted all events and ceremonies in front of live audience.|
 Raised over $2,500 in funds from the College of Engineering to offset costs - ending with budget surplus.`,

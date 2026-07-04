@@ -28,9 +28,9 @@ It is Michigan's third-largest university. Founded in 1868, Wayne State consists
 13 schools and colleges offering approximately 350 programs to nearly 24,000 graduate and undergraduate students.`,
     timeline: [
       ['Fall 2021', 'Start date.'], // TODO add promotions et al
-      ['Fall 2024', 'Start accelerated graduate program (AGRADE).'],
-      ['Spring 2025', "Graduated with Bachelor's in Computer Science."],
-      ['Spring 2026', "Graduated with Master's in Computer Science."]
+      ['Fall 2024', 'Started the accelerated graduate program (AGRADE).'],
+      ['Spring 2025', "Graduated with a Bachelor's in Computer Science."],
+      ['Spring 2026', "Graduated with a Master's in Computer Science."]
     ]
   },
   components: { Coursework, Awards, Grade }
