@@ -149,7 +149,6 @@ function MediaCard(props) {
                 <Grid justifyContent="space-between" container>
                   <Grid item xs={10}>
                     <Typography
-                      gutterBottom
                       variant="h3"
                       className={classes.title}
                       component="h2"
