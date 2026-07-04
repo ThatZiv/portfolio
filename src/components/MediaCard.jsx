@@ -54,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+/**
+ * @type {import("../types/comps/MediaCard").MediaCard}
+ */
 function MediaCard(props) {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
@@ -146,7 +149,6 @@ function MediaCard(props) {
                 <Grid justifyContent="space-between" container>
                   <Grid item xs={10}>
                     <Typography
-                      gutterBottom
                       variant="h3"
                       className={classes.title}
                       component="h2"

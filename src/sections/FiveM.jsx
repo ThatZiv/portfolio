@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import YouTubeEmbed from '../components/YouTubeEmbed'
 import SocialMedia from '../components/SocialMedia'
@@ -30,7 +29,7 @@ export default {
       ],
       [
         'October 2018',
-        'FiveM Bot is apart of over 500 servers and has served over 10K users'
+        'FiveM Bot is a part of over 500 servers and has served over 10K users'
       ],
       [
         'Early-May 2019',
@@ -42,7 +41,7 @@ export default {
       ],
       [
         'May 2020',
-        'FiveM Bot V8 is an entire re-write of the original bot and now utilizes the Patreon API for the new monetization platform.'
+        'FiveM Bot V8 is an entire rewrite of the original bot and now utilizes the Patreon API for the new monetization platform.'
       ],
       ['Early-October 2021', 'Revenue peaks at an all-time high.'],
       [
@@ -55,10 +54,14 @@ export default {
       ],
       [
         'January 2022',
-        'FiveM Bot is apart of 14K servers and has served over 5M users.'
+        'FiveM Bot is a part of 14K servers and has served over 5M users.'
       ],
       ['May 2024', 'Integrated failover service with Railway (PaaS).'],
-      ['December 2024', 'FiveM Bot is apart of 26K servers.']
+      ['December 2024', 'FiveM Bot is a part of 26K servers.'],
+      [
+        'May 2026',
+        'FiveM Bot V10 focuses on performance improvements: reduced latency, better caching, proper database pooling, customer feedback form, security improvements, and more.'
+      ]
     ]
   },
   components: { statistics, links }
@@ -121,54 +124,49 @@ function statistics() {
 function links() {
   return (
     <div>
-      <SocialMedia
-        icon="arrow-up-right-from-square"
-        name="Use the bot"
-        showName
-        url="https://top.gg/bot/483787947070586880"
-        confirmation
-      />
-      <SocialMedia
-        icon="server"
-        showName
-        name="Uptime"
-        url="https://stats.uptimerobot.com/ExyQJtWJJ8/785361751"
-      />
       {/* cspell:disable-next-line */}
-      <YouTubeEmbed id="qphtBvXSusE" />
-      <br />
-      <Grid alignItems="baseline" container spacing={1}>
-        <Grid item sm>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: '#ddd', color: '#333' }}
-            href="https://github.com/thatziv/fivem-bot"
-          >
-            <i className="fa-brands fa-github" />
-            &nbsp;GitHub
-          </Button>
+      <Grid container spacing={2} sx={{ marginBottom: 2 }}>
+        <Grid item>
+          <SocialMedia
+            name="GitHub"
+            showName
+            url="https://github.com/thatziv/fivem-bot"
+          />
         </Grid>
-        <Grid item sm>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: '#f96854', color: '#052d49' }}
-            href="https://patreon.com/fivembot"
-          >
-            <i className="fa-brands fa-patreon" />
-            &nbsp;Patreon
-          </Button>
+        <Grid item>
+          <SocialMedia
+            name="Patreon"
+            showName
+            url="https://patreon.com/fivembot"
+          />
         </Grid>
-        <Grid item sm>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: '#5865F2', color: '#ffffff' }}
-            href="https://discord.gg/yWddFpQ"
-          >
-            <i className="fa-brands fa-discord" />
-            &nbsp;Discord
-          </Button>
+        <Grid item>
+          <SocialMedia
+            name="Discord"
+            showName
+            url="https://discord.gg/yWddFpQ"
+          />
+        </Grid>
+        <Grid item>
+          <SocialMedia
+            icon="server"
+            showName
+            name="Uptime"
+            url="https://stats.uptimerobot.com/ExyQJtWJJ8/785361751"
+          />
+        </Grid>
+        <Grid item>
+          <SocialMedia
+            icon="arrow-up-right-from-square"
+            name="Use the bot"
+            showName
+            url="https://top.gg/bot/483787947070586880"
+            confirmation
+          />
         </Grid>
       </Grid>
+      {/* cspell:disable-next-line */}
+      <YouTubeEmbed id="qphtBvXSusE" />
     </div>
   )
 }

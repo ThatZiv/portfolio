@@ -13,6 +13,10 @@ import SCD from '../sections/SCD'
 import WayneHacks1 from '../sections/WayneHacks1'
 import PFG from '../sections/PFG'
 import WayneHacks2 from '../sections/WayneHacks2'
+import ESS from '@/sections/ESS'
+import WayneHacks3 from '@/sections/WayneHacks3'
+import WayneHacks4 from '@/sections/WayneHacks4'
+import DPZ from '../sections/DPZ'
 
 const styles = {
   heading: {
@@ -54,8 +58,13 @@ export default function Experience() {
     <Grow in timeout={500}>
       <div>
         <Heading icon="fa-solid fa-briefcase" title="Employment" />
-
         <LayoutGrid>
+          {/* DPZ */}
+          <MediaCard {...DPZ.meta} size={12}>
+            <Section icon="fa-solid fa-circle-info" title="Info">
+              <DPZ.components.MoreInfo />
+            </Section>
+          </MediaCard>
           {/* PFG */}
           <MediaCard {...PFG.meta} size={12}>
             <Section icon="fa-solid fa-circle-info" title="Info">
@@ -73,6 +82,43 @@ export default function Experience() {
         </LayoutGrid>
         <Heading icon="fa-solid fa-table-columns" title="Organizations" />
         <LayoutGrid>
+          {/* WayneHacks 4 Hackathon */}
+          <MediaCard
+            {...WayneHacks4.meta}
+            prechildren={
+              <Section icon="fa-solid fa-hashtag" title="Highlights">
+                <WayneHacks4.components.Socials />
+              </Section>
+            }
+          >
+            <Section icon="fa-solid fa-images" title="Gallery">
+              <WayneHacks4.components.Pictures />
+            </Section>
+            <Section icon="fa-solid fa-code" title="Code">
+              <WayneHacks4.components.Contribs />
+            </Section>
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
+              <WayneHacks4.components.Links />
+            </Section>
+          </MediaCard>
+          {/* WayneHacks 3 Hackathon */}
+          <MediaCard {...WayneHacks3.meta}>
+            <Section icon="fa-solid fa-images" title="Gallery">
+              <WayneHacks3.components.Pictures />
+            </Section>
+            <Section icon="fa-solid fa-code" title="Code">
+              <WayneHacks3.components.Contribs />
+            </Section>
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
+              <WayneHacks3.components.Links />
+            </Section>
+          </MediaCard>
           {/* WayneHacks 2 Hackathon */}
           <MediaCard {...WayneHacks2.meta}>
             <Section icon="fa-solid fa-images" title="Gallery">
@@ -81,7 +127,10 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <WayneHacks2.components.Contribs />
             </Section>
-            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
               <WayneHacks2.components.Links />
             </Section>
           </MediaCard>
@@ -97,8 +146,23 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <WayneHacks1.components.Contribs />
             </Section>
-            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
               <WayneHacks1.components.Links />
+            </Section>
+          </MediaCard>
+          {/* ESS */}
+          <MediaCard {...ESS.meta}>
+            <Section icon="fa-solid fa-images" title="Gallery">
+              <ESS.components.Pictures />
+            </Section>
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
+              <ESS.components.Links />
             </Section>
           </MediaCard>
           {/* SCD */}
@@ -116,7 +180,10 @@ export default function Experience() {
             <Section icon="fa-solid fa-code" title="Code">
               <SCD.components.Contribs />
             </Section>
-            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
               <SCD.components.Links />
             </Section>
           </MediaCard>
@@ -129,7 +196,10 @@ export default function Experience() {
             }
             {...GDSC.meta}
           >
-            <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
+            <Section
+              icon="fa-solid fa-arrow-up-right-from-square"
+              title="Links"
+            >
               <GDSC.components.Links />
             </Section>
           </MediaCard>

@@ -35,14 +35,15 @@ export default {
   meta: {
     title: 'Society of Computer Developers',
     description: `## President
+### *Previously Vice President, Software Lead, and Secretary*
 [Society of Computer Developers](https://getinvolved.wayne.edu/organization/scd) (SCD) at [Wayne State University](https://wayne.edu) is focused on creating opportunities for students interested in coding and development. We aim to provide a community of peers that support one another in coding, resume building, networking, and developing new skills. We invite industry speakers, allow members to present a project they developed, give organization updates, and practice coding problems. We also host events which include, skill-building workshops, hackathons, coding nights, and social events!`,
     banner: '/pics/scd.png',
-    complete: false,
+    complete: true,
     tags: 'TypeScript,JavaScript,Python,C/C++,HTML/CSS,Docker,CI/CD,Full Stack,REST API,DOM,MongoDB,React.js,Agile,Pair Programming,Lecturing,SCD,GitHub Actions,Version Control',
     objectives: `Oversee all organizational planning and operations.
 |Created and hosted programming-related workshop events for students.
 |Tutored and assisted students with coursework and other programming-related content.
-|Developed and maintain official club website with React and GitHub.
+|Developed and maintained the official club website with React and GitHub.
 |Fostered partnerships with local tech companies, securing sponsorships, collaborations, and even internships.`,
     timeline: [
       ['September 2021', 'Joined SCD as a member.'],
@@ -81,9 +82,9 @@ export default {
         'Organized and hosted "WayneHacks" - Wayne State\'s 3rd 48-hour hackathon.'
       ],
       ['April 7, 2023', 'Hosted Next.js (web framework) workshop.'],
-      ['May 2023', 'Inherited role of President.'],
+      ['May 2023', 'Became President of SCD.'],
       ['June 8, 2023', 'Began SCD "Summer Project"'],
-      ['September 2023', 'Halted development for SCD "Summer Project"'],
+      ['September 2023', 'Halted development on SCD "Summer Project"'],
       [
         'October 27, 2023',
         'Hosted Introduction to Front-End Web Development (HTML/CSS & DOM) workshop.'
@@ -105,7 +106,24 @@ export default {
         'November 2024',
         'Hosted Git/GitHub: An Overview of Version Control [part 2] workshop.'
       ],
-      ['December 2024', 'Hosted Intro to Backend Web API Development workshop.']
+      [
+        'December 2024',
+        'Hosted Intro to Backend Web API Development workshop.'
+      ],
+      ['February 2025', 'Held Game/Social Night event.'],
+      ['May 2025', 'SCD wins the Michael Darson Award for 2nd best student organization at Wayne State University - College of Engineering.'],
+      ['December 2025', 'Started WayneHacks 4 planning (using SCD resources).'],
+      ['February 2026', 'Intro to Quantum Computing with Qiskit workshop.'],
+      [
+        'April 11-12, 2026',
+        'WayneHacks 4 hackathon takes place (with the majority of volunteers being SCD board members). '
+      ],
+      [
+        'April 2026',
+        'Held collaborative Game Night event with 5 other student organizations.'
+      ],
+      //
+      ['May 2026', 'Stepped down as President after graduation.']
     ]
   },
   components: { Lectures, Contribs, Links, Pictures }
@@ -150,15 +168,21 @@ function Pictures() {
           label: 'SCD at Winterfest 2024 (myself pictured)',
           imgPath: 'pics/winterfest_24.jpg'
         },
-        {
-          label: 'SCD at Festifall (myself 2nd from the left)',
-          imgPath:
-            'https://se-images-blob.campuslabs.com/documents/204/f0eaec97-9199-4aff-279a-08dab6692024/1500.jpg'
-        },
+        
+        // taking this out temporarily bcz campus-labs broke it
+        // {
+        //   label: 'SCD at Festifall (myself 2nd from the left)',
+        //   imgPath:
+        //     'https://se-images-blob.campuslabs.com/documents/204/f0eaec97-9199-4aff-279a-08dab6692024/1500.jpg'
+        // },
         {
           label: 'General Body Meetings',
           imgPath:
-            'https://se-images-blob.campuslabs.com/documents/204/aee7b032-28ee-4514-dd13-08dabb5f3f2a/600.jpg'
+            'pics/ext/scd-gbm.jpg'
+        },
+        {
+          label: 'SCD being awarded the 2025 Michael Darson Award at the Induction Ceremony (myself on the right)',
+          imgPath: 'pics/ext/scd-award.png'
         }
       ]}
     />

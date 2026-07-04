@@ -8,7 +8,7 @@ export default {
   meta: {
     title: 'Doxim',
     description: `## Software Intern 
-[Doxim](https://doxim.com/) is the customer communications management and engagement technology leader serving highly regulated markets, including financial services, utilities and healthcare. We provide omnichannel document and payment solutions that transform experiences and strengthen engagement throughout the entire lifecycle.`,
+[Doxim](https://doxim.com/) provides customer communications and document management solutions for regulated industries.`,
     banner: '/pics/doxim.png',
     complete: true,
     tags: 'C#,PowerShell,MySQL,Agile,Scripting,Virtualization Environments,Internship,Pair Programming,Doxim',

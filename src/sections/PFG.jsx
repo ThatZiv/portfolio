@@ -10,7 +10,7 @@ export default {
     description: `## Software Engineering Intern
 [Principal](https://principal.com) is a [Fortune 500®](https://fortune.com/company/principal-financial/fortune500/) American global financial investment management and insurance company headquartered in [Des Moines](https://en.wikipedia.org/wiki/Des_Moines), Iowa, U.S.`,
     banner: '/pics/pfg.png',
-    complete: false,
+    complete: true,
     tags: `Java,TypeScript,JavaScript,React,Electron,Python,Spring boot,Amazon Web Services,
 AWS CDK,AWS Lambda,DynamoDB,API Gateway,IaC,S3,Spotify Backstage,Webpack,UI/UX,Docker,SQL,GraphQL,Elasticsearch,
 Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Principal`,
@@ -35,6 +35,10 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Princ
         'Internship begins on DevOps team. Tools used: TypeScript/JavaScript, React, Electron.js, Python, Ansible, Bash, Powershell, Docker, GitHub, CI/CD, AWS, Artifactory.'
       ],
       [
+        'June 2023',
+        "Participated in company-wide intern hackathon competition 'CodeJam'. We did not win,"
+      ],
+      [
         'July 13, 2023',
         'Joined full-stack web development company-wide developer portal team. Tools used: TypeScript/JavaScript, React, Spotify Backstage, Python, AWS (CDK, Lambda, S3, SQS), Docker, GraphQL, GitHub.'
       ],
@@ -43,9 +47,22 @@ Powershell,Bash,Ansible,GitHub,CI/CD,Agile,SCRUM,DevOps,LCM,Internship,PFG,Princ
         'Joined financial solutions project team for actuarial modernization efforts. Tools used: Java, Spring Boot, TypeScript/JavaScript, React, AWS (Lambda, API Gateway, S3, CDK), SQL, Docker, Excel add-in API.'
       ],
       [
+        'June 2024',
+        "Participated in company-wide intern hackathon competition 'CodeJam'. We did not win, but did get finalist recognition for our project."
+      ],
+      [
         'September 2024',
         'Joined financial solutions data team for building and maintaining internal company-wide data lake and respective infrastructure. Tools used: Python, AWS (Glue, S3, Athena, CloudFormation), Docker.'
-      ]
+      ],
+      [
+        'May 2025',
+        'Joined customer-facing digital investment platform team. Tools used: TypeScript/JavaScript, Next.js, React, AWS (Lambda, API Gateway, S3), Docker.'
+      ],
+      [
+        'June 2025',
+        "Participated in company-wide intern hackathon competition 'CodeJam'. We did not win."
+      ],
+      ['June 2026', 'Left Principal Financial Group for other opportunities.']
     ]
   },
   components: { MoreInfo }

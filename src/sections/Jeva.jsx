@@ -1,6 +1,6 @@
-import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 //import MediaCard from '../components/MediaCard';
+import SocialMedia from '../components/SocialMedia'
 import YouTubeEmbed from '../components/YouTubeEmbed'
 // all static content of the Jeva project
 /** @type {import("../types/section").Section} */
@@ -8,7 +8,7 @@ export default {
   meta: {
     title: 'Jeva',
     banner: '/pics/Jeva.jpg',
-    complete: false,
+    complete: true,
     tags: 'Tutorials,Lua,HTML/CSS,JavaScript,Game Development,Graphic Design,Video Editing,Version Control (Git),Open-source,Jeva,YouTube',
     objectives: `Created several YouTube videos for advanced programmers explaining how to use JavaScript, Lua, and HTML/CSS in a gaming environment.
         |Created introductory programming videos about setting up scripting environments.
@@ -34,7 +34,13 @@ export default {
       [
         'June 2, 2021',
         'Channel reaches 20K subscribers, 2M views, and over 10M impressions.'
-      ]
+      ],
+      [
+        'September 2021',
+        'Jeva officially discontinues production of FiveM-related.'
+      ],
+      ['2023', 'The Jeva Patreon page is closed.'],
+      ['August 2024', 'Started live-streaming on YouTube.']
     ],
     prechildren: prechildren()
   },
@@ -70,53 +76,21 @@ function prechildren() {
 
 function links() {
   return (
-    <div>
-      <YouTubeEmbed id="Ci-EuLhFeOY" />
-      <br />
-      <Grid container spacing={1}>
-        {' '}
-        {/* // TODO: these links are not SocialMedia comps, convert them (for confirmation dialog)... */}
-        <Grid item xs>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: '#e6342e', color: 'white' }}
-            href="https://youtube.com/jevajs"
-          >
-            <i className="fa-brands fa-youtube" /> &nbsp;YouTube
-          </Button>
-        </Grid>
-        <Grid item xs>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: '#ddd', color: '#333' }}
-            href="https://github.com/jevajs"
-          >
-            <i className="fa-brands fa-github" />
-            &nbsp;GitHub
-          </Button>
-        </Grid>
-        <Grid item xs>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: '#f96854', color: '#052d49' }}
-            href="https://patreon.com/jevajs"
-          >
-            <i className="fa-brands fa-patreon" />
-            &nbsp;Patreon
-          </Button>
-        </Grid>
-        <Grid item xs>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: '#5865F2', color: '#ffffff' }}
-            href="https://discord.com/invite/PAaZ86d"
-          >
-            <i className="fa-brands fa-discord" />
-            &nbsp;Discord
-          </Button>
-        </Grid>
+    <Grid container spacing={2}>
+      <Grid item>
+        <SocialMedia name="YouTube" showName url="https://youtube.com/jevajs" />
       </Grid>
-    </div>
+      <Grid item>
+        <SocialMedia name="GitHub" showName url="https://github.com/jevajs" />
+      </Grid>
+      <Grid item>
+        <SocialMedia
+          name="Discord"
+          showName
+          url="https://discord.com/invite/PAaZ86d"
+        />
+      </Grid>
+    </Grid>
   )
 }
 
@@ -134,22 +108,6 @@ function statistics() {
             decoding="async"
           />
         </a>
-      </Grid>
-      <Grid item>
-        <iframe
-          title="socialBlade1"
-          className="Media"
-          style={{ frameBorder: 0, scrolling: 'no' }}
-          src="https://socialblade.com/widget?v=1&u=jevajs"
-        ></iframe>
-      </Grid>
-      <Grid item>
-        <iframe
-          title="socialBlade2"
-          className="Media"
-          style={{ frameBorder: 0, scrolling: 'no' }}
-          src="https://socialblade.com/widget?v=2&u=jevajs"
-        ></iframe>
       </Grid>
     </Grid>
   )

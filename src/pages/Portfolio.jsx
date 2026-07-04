@@ -13,7 +13,7 @@ import Jeva from '../sections/Jeva'
 import FiveM from '../sections/FiveM'
 import Webserver from '../sections/Webserver'
 import MarketPulse from '../sections/MarketPulse'
-import WanyeHacksWebsite from '../sections/WanyeHacksWebsite'
+import WayneHacksWebsite from '../sections/WayneHacksWebsite'
 import Garage from '../sections/Garage'
 import Hackathon from '../sections/Hackathon' // '21
 import Hackathon2 from '../sections/Hackathon2' // '22
@@ -66,18 +66,18 @@ export default function Portfolio() {
           </Section>
         </MediaCard>
         {/* WANYEHACKS.COM */}
-        <MediaCard {...WanyeHacksWebsite.meta}>
+        <MediaCard {...WayneHacksWebsite.meta}>
           <Section icon="fa-solid fa-bookmark" title="Description">
-            <WanyeHacksWebsite.components.Description />
+            <WayneHacksWebsite.components.Description />
           </Section>
           <Section icon="fa-solid fa-images" title="Gallery">
-            <WanyeHacksWebsite.components.Pictures />
+            <WayneHacksWebsite.components.Pictures />
           </Section>
           <Section icon="fa-solid fa-code" title="Code">
-            <WanyeHacksWebsite.components.Contribs />
+            <WayneHacksWebsite.components.Contribs />
           </Section>
           <Section icon="fa-solid fa-arrow-up-right-from-square" title="Links">
-            <WanyeHacksWebsite.components.Links />
+            <WayneHacksWebsite.components.Links />
           </Section>
         </MediaCard>
         {/* Garage */}
