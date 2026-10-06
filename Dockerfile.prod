@@ -2,9 +2,10 @@ FROM node:18.11.0 as build
 WORKDIR /usr/src/app
 COPY package.json .
 RUN npm install
-RUN npm run build
 COPY . .
+RUN npm run build
 
 FROM nginx
-COPY --from=build /usr/src/app/build /usr/share/nginx/html
+# vite outputs to dist/, not build/
+COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 EXPOSE 8080:80
