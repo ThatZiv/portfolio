@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
 /** @param {import("../types/comps/Tags").Tags} props*/
 export default function Tags(props) {
   const classes = useStyles()
-  const tagId = props.children?.replace(' ', '_')
+  // replace all spaces so multi-word tags stay searchable
+  const tagId = props.children?.replace(/ /g, '_')
   return (
     <div className={classes.root}>
       <Chip

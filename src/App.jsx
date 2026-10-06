@@ -7,6 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress'
 import { makeStyles } from '@mui/styles'
 import Grid from '@mui/material/Grid'
 import { capFirstLetter } from './utils'
+import { trackPageView } from './analytics'
 import {
   Route,
   Routes,
@@ -53,9 +54,7 @@ function App() {
       focus
     }) // dispatch usage SHOULD deprecated now
     document.title = capFirstLetter(focus) + ' | Zavaar Shah'
-    if (window.gtag) {
-      window.gtag('event', 'page_view', { page_path: '/' + focus })
-    }
+    trackPageView('/' + focus, document.title)
     // setLoading(true)
     // setTimeout(() => {
     //   setLoading(false)

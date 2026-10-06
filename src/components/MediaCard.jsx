@@ -21,6 +21,7 @@ import DateRange from './DateRange'
 import Modal from './Modal'
 // import { StringParam, useQueryParam } from 'use-query-params'
 import { useSearchParams } from 'react-router-dom'
+import { trackCardExpand, trackCardCollapse } from '../analytics'
 // import MainDialog from './MainDialog'
 
 const useStyles = makeStyles((theme) => ({
@@ -63,38 +64,40 @@ function MediaCard(props) {
   const [imgLoaded, setImgLoaded] = React.useState(false)
   const [cardSize] = React.useState(props.size || 6)
   const cardRef = React.useRef(null)
+  const expandedAtRef = React.useRef(null)
   const _expand = 'expand'
   const [cardParam, setCardParam] = useSearchParams()
   React.useEffect(() => {
     if (cardParam.has(_expand) && cardParam.get('expand') == props.title) {
       executeScroll()
       setExpanded(true)
+      expandedAtRef.current = Date.now()
+      trackCardExpand(props.title, 'url_param') // opened via shared/deep link
     }
   }, [])
 
   //let cardWidth = 6
   const executeScroll = () =>
     cardRef.current.scrollIntoView({ behavior: 'smooth' })
-  const handleExpandClick = () => {
+  const handleExpandClick = (method = 'card_click') => {
     //setCardSize(6) //makes cards expand to full width for desktop-sized screens
     //setCardSize(expanded ? props.size || 6 : 12); // Removed this for the modal update
     setExpanded(!expanded)
     if (!expanded) {
+      expandedAtRef.current = Date.now()
+      trackCardExpand(props.title, method)
       setCardParam((params) => {
         params.set(_expand, props.title)
         return params
       })
       executeScroll() // scroll to focused card
     } else {
+      trackCardCollapse(
+        props.title,
+        expandedAtRef.current ? Date.now() - expandedAtRef.current : 0
+      )
+      expandedAtRef.current = null
       setCardParam(new URLSearchParams())
-    }
-  }
-  const gaCardExpandHandle = (cardName = 'none') => {
-    if (window.gtag) {
-      window.gtag('event', 'card_expand', {
-        event_category: 'z_ui-card-expand',
-        event_label: cardName
-      })
     }
   }
   return (
@@ -115,12 +118,7 @@ function MediaCard(props) {
             }
             elevation={3}
           >
-            <CardActionArea
-              onClick={() => {
-                handleExpandClick()
-                gaCardExpandHandle(props.title)
-              }}
-            >
+            <CardActionArea onClick={() => handleExpandClick('card_click')}>
               <CardMedia
                 className={classes.media}
                 style={{ filter: imgLoaded ? 'none' : 'blur(0.75rem)' }}
@@ -206,10 +204,7 @@ function MediaCard(props) {
               )}
             </CardActions>
             <Button
-              onClick={() => {
-                handleExpandClick()
-                gaCardExpandHandle(props.title)
-              }}
+              onClick={() => handleExpandClick('more_button')}
               style={{ paddingBottom: 20, paddingTop: 20 }}
               size="small"
               color="primary"
@@ -220,7 +215,7 @@ function MediaCard(props) {
         </Grid>
       </Grow>
       {/* Inner-content (NEW) - used to be card expand content */}
-      <Modal open={expanded} onClose={handleExpandClick}>
+      <Modal open={expanded} onClose={() => handleExpandClick('modal_close')}>
         <Grid
           justifyContent="space-between"
           // style={{

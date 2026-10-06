@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 //icons
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useSearchParams } from 'react-router-dom'
+import { trackSectionOpen } from '../analytics'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const useStyles = makeStyles((theme) => ({
@@ -37,6 +38,10 @@ function Section(props) {
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false)
+    if (isExpanded) {
+      // "expand" url param holds the parent card's title
+      trackSectionOpen(props.title, expandedParam.get('expand') || undefined)
+    }
     setExpandedParam((params) => {
       isExpanded ? params.set(props.title, true) : params.delete(props.title)
       return params

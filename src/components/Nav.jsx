@@ -31,6 +31,7 @@ import { capFirstLetter } from '../utils'
 
 import pages from '../pages'
 import { Link } from 'react-router-dom'
+import { trackSearch } from '../analytics'
 // import { Launch } from '@mui/icons-material'
 import ArrowDropDown from '@mui/icons-material/ArrowDropDown'
 import { colors } from '../Theme'
@@ -117,10 +118,11 @@ const SearchAppBar = (/*props*/) => {
   const goSearch = (e) => {
     // on tag search bar enter or that search button click
     if ((e.key === 'Enter' || e.type === 'click') && thisUrl) {
+      trackSearch(thisUrl, found)
       const targetTag = document.querySelector(
         `div[tag="${thisUrl}"].MuiChip-colorPrimary`
       )
-      targetTag.scrollIntoView({ behavior: 'smooth' })
+      targetTag?.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
   }
 
@@ -131,30 +133,22 @@ const SearchAppBar = (/*props*/) => {
     }, [location]); */
   const doSearch = (e) => {
     setFound(0)
-    let query = e.target.value
+    thisUrl = ''
+    const query = e.target.value
     const allTags = document.querySelectorAll('div[tag].MuiChip-colorPrimary') // all tags
-    const defaultStyle = allTags[0].style
-    if (query?.length) {
-      allTags.forEach((node) => {
-        node.style = defaultStyle // to reset
-        if (
-          node
-            ?.getAttribute('tag')
-            ?.toLowerCase()
-            .includes(query.toLowerCase().replace(' ', '_'))
-        ) {
-          // this equates the potential tag name with the search query looking for tags
-          node.style = 'background-color: #c2a800;'
-          setFound((_found) => _found + 1)
-          thisUrl = node.getAttribute('tag')
-          //window.find(query)
-        }
-      })
-    } else {
-      allTags.forEach((node) => {
-        node.style = defaultStyle // reset all values [redundant]
-      })
-    }
+    // normalize like Tags.jsx: all spaces become underscores
+    const normalized = query?.toLowerCase().replace(/ /g, '_')
+    allTags.forEach((node) => {
+      node.style.backgroundColor = '' // reset highlight
+      if (
+        normalized?.length &&
+        node.getAttribute('tag')?.toLowerCase().includes(normalized)
+      ) {
+        node.style.backgroundColor = '#c2a800'
+        setFound((_found) => _found + 1)
+        thisUrl = node.getAttribute('tag')
+      }
+    })
   }
   /*  // FOR QOTD
         fetch("https://zenquotes.io/api?api=today", { mode: "no-cors",headers: {"Access-Control-Allow-Origin": "*"} })

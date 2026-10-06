@@ -91,7 +91,6 @@ function statistics() {
         </a>
       </Grid>
       <Grid item sm>
-        <img loading="lazy" decoding="async" />
         <img
           src="https://top.gg/api/widget/upvotes/483787947070586880.svg"
           alt="Discord Bots"

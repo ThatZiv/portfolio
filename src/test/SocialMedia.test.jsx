@@ -25,7 +25,8 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(urlOnly)
+    // redirect dialog handles navigation, so no direct href
+    expect(hrefs).not.toContain(urlOnly)
     const iconClassName = testRenderer.root.findByType('i').props.className
     expect(iconClassName).toContain('fa-example')
     expect(iconClassName).toContain('fa-brands')
@@ -55,7 +56,7 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(url)
+    expect(hrefs).not.toContain(url)
     const iconClassName = testRenderer.root.findByType('i').props.className
     expect(iconClassName).toContain('fa-brands')
     expect(iconClassName).toContain('fa-facebook')
@@ -70,7 +71,7 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(url)
+    expect(hrefs).not.toContain(url)
     const iconClassName = testRenderer.root.findByType('i').props.className
     expect(iconClassName).toContain('fa-facebook')
   })
@@ -84,7 +85,7 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(url)
+    expect(hrefs).not.toContain(url)
     const textContent = collectTrimmedText(testRenderer.toJSON())
     expect(textContent).toContain('Facebook')
   })
@@ -98,7 +99,7 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(url)
+    expect(hrefs).not.toContain(url)
   })
 
   test('renders with URL, confirmation dialog, and name', () => {
@@ -110,7 +111,7 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(url)
+    expect(hrefs).not.toContain(url)
     const iconClassName = testRenderer.root.findByType('i').props.className
     expect(iconClassName).toContain('fa-facebook')
   })
@@ -124,7 +125,7 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(url)
+    expect(hrefs).not.toContain(url)
     const textContent = collectTrimmedText(testRenderer.toJSON())
     expect(textContent).toContain('Facebook')
   })
@@ -138,7 +139,7 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(url)
+    expect(hrefs).not.toContain(url)
     const iconClassName = testRenderer.root.findByType('i').props.className
     expect(iconClassName).toContain('fa-brands')
     expect(iconClassName).toContain('fa-facebook')
@@ -179,7 +180,7 @@ describe('SocialMedia', () => {
     const hrefs = testRenderer.root
       .findAllByType('a')
       .map((node) => node.props.href)
-    expect(hrefs).toContain(url)
+    expect(hrefs).not.toContain(url)
     // Check that the button exists with the custom name
     const button = testRenderer.root.findByType('div').children[0]
     expect(button).toBeDefined()

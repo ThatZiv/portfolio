@@ -37,7 +37,7 @@ const ShieldsIoBadges = (props) => {
         >
           <Link href={`https://google.com/search?q=${topic.replace('_', ' ')}`}>
             <img
-              alt={`secondary lang ${index} ${topic}`}
+              alt={`${decodeURIComponent(topic).replace('_', ' ')} badge`}
               src={val}
               loading="lazy"
               decoding="async"
