@@ -100,11 +100,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 // }
 const navBarItemStyling = { fontWeight: 500 }
 
-var thisUrl = ''
 const SearchAppBar = (/*props*/) => {
   // const [page, setPage] = React.useState("/")
   const [drawer, setDrawer] = React.useState(false)
   const [found, setFound] = React.useState(0)
+  const [searchTerm, setSearchTerm] = React.useState('')
+  const [matchedTag, setMatchedTag] = React.useState('')
   const [state] = React.useContext(UserContext)
   const toggleDrawer = (open) => (event) => {
     if (
@@ -117,11 +118,13 @@ const SearchAppBar = (/*props*/) => {
   }
   const goSearch = (e) => {
     // on tag search bar enter or that search button click
-    if ((e.key === 'Enter' || e.type === 'click') && thisUrl) {
-      trackSearch(thisUrl, found)
-      const targetTag = document.querySelector(
-        `div[tag="${thisUrl}"].MuiChip-colorPrimary`
-      )
+    if ((e.key === 'Enter' || e.type === 'click') && searchTerm.trim()) {
+      trackSearch(searchTerm, found)
+      const targetTag = matchedTag
+        ? document.querySelector(
+            `div[tag="${matchedTag}"].MuiChip-colorPrimary`
+          )
+        : null
       targetTag?.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
   }
@@ -133,11 +136,13 @@ const SearchAppBar = (/*props*/) => {
     }, [location]); */
   const doSearch = (e) => {
     setFound(0)
-    thisUrl = ''
     const query = e.target.value
+    setSearchTerm(query)
     const allTags = document.querySelectorAll('div[tag].MuiChip-colorPrimary') // all tags
     // normalize like Tags.jsx: all spaces become underscores
     const normalized = query?.toLowerCase().replace(/ /g, '_')
+    let resultCount = 0
+    let lastMatchedTag = ''
     allTags.forEach((node) => {
       node.style.backgroundColor = '' // reset highlight
       if (
@@ -145,10 +150,12 @@ const SearchAppBar = (/*props*/) => {
         node.getAttribute('tag')?.toLowerCase().includes(normalized)
       ) {
         node.style.backgroundColor = '#c2a800'
-        setFound((_found) => _found + 1)
-        thisUrl = node.getAttribute('tag')
+        resultCount += 1
+        lastMatchedTag = node.getAttribute('tag') || ''
       }
     })
+    setFound(resultCount)
+    setMatchedTag(lastMatchedTag)
   }
   /*  // FOR QOTD
         fetch("https://zenquotes.io/api?api=today", { mode: "no-cors",headers: {"Access-Control-Allow-Origin": "*"} })
@@ -387,6 +394,7 @@ const SearchAppBar = (/*props*/) => {
                     <StyledInputBase
                       placeholder="Terms"
                       inputProps={{ 'aria-label': 'search' }}
+                      value={searchTerm}
                     />
 
                     <Button onClick={goSearch} variant="contained">

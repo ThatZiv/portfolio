@@ -59,7 +59,7 @@ function App() {
     // setTimeout(() => {
     //   setLoading(false)
     // }, 300)
-  }, [location, dispatch])
+  }, [location.pathname, dispatch])
   React.useEffect(() => {
     setDialog(state.dialog)
   }, [state.dialog])
