@@ -46,7 +46,7 @@ export default function SocialMedia(props) {
                 title: `${service ? 'External ' : ''}Redirect Notice`,
                 content: `Would you like to leave this site and continue to ${url}`,
                 callback: () => {
-                  window.open(url, '_blank')
+                  window.open(url, '_blank', 'noopener,noreferrer')
                 }
               }
             })
