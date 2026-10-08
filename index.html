@@ -12,6 +12,7 @@
     <meta property="og:description" content="The Portfolio of Zavaar Shah" />
     <meta property="og:image" content="/pics/me_4_bg.png" />
     <meta property="og:url" content="https://showcase.zavaar.net" />
+    <link rel="canonical" href="https://showcase.zavaar.net/" />
     <meta name="author" content="Zavaar Shah" />
     <meta name="og:title" property="og:title" content="Zavaar Shah" />
     <meta name="theme-color" content="#202223" />
@@ -40,7 +41,23 @@
         dataLayer.push(arguments)
       }
       gtag('js', new Date())
-      gtag('config', 'G-48EJRL7D42')
+      // the app sends page_view on route change; avoids double-counting the first page
+      gtag('config', 'G-48EJRL7D42', { send_page_view: false })
+    </script>
+    <script>
+      ;(function (c, l, a, r, i, t, y) {
+        if (!i) return
+        c[a] =
+          c[a] ||
+          function () {
+            ;(c[a].q = c[a].q || []).push(arguments)
+          }
+        t = l.createElement(r)
+        t.async = 1
+        t.src = 'https://www.clarity.ms/tag/' + i
+        y = l.getElementsByTagName(r)[0]
+        y.parentNode.insertBefore(t, y)
+      })(window, document, 'clarity', 'script', 'ytmqqchaat')
     </script>
     <!--
       manifest.json provides metadata used when your web app is installed on a

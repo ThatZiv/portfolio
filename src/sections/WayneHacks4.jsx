@@ -25,14 +25,14 @@ export default {
     description: `## Director
 [WayneHacks 4](https://waynehacks-4.devpost.com/) is a 24-hour in-person hackathon hosted at 
 [Wayne State University](https://engineering.wayne.edu/) on April 11, 2026. Hackers have 24 hours to collaborate and create a project
- that solves real-world problems. Over $1400 in prizes are given out at the end to the best hacks. 
+ that solves real-world problems. Over $1500 in prizes are given out at the end to the best hacks. 
 In total, there were **142 applicants**, **66 active participants** from all across Southeast Michigan, and **27 project submissions**. 
 Sponsored entirely by [Detroit Hacker House](https://detroithackerhouse.com/).`,
     banner: '/pics/whacks4_banner.png',
     complete: true,
-    tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Team Management,Trello,Leadership,Director,Event Planning,Public Speaking',
-    objectives: `Oversaw a wide range of operational responsibilities, such as catering logistics, finances, procurement, and other assorted tasks.|
-Led bi-weekly meetings for website development and other operational tasks with committee members.|
+    tags: 'TypeScript,Next.js,Supabase,PostgreSQL,Vercel,TailwindCSS,Agile,Git,CI/CD,Hackathon,Competition,Team Management,Trello,Leadership,Director,Event Planning,Public Speaking,WayneHacks 4',
+    objectives: `Oversaw a wide range of operational responsibilities, such as catering logistics, finances, procurement, and other core tasks.|
+Led bi-weekly meetings for website development and other operational tasks with team members.|
 Developed, architected, and maintained waynehacks.com platform using TypeScript, Next.js (v16), Vercel, TailwindCSS, and Supabase.|
 Hosted all events and ceremonies in front of live audience.|
 Secured Detroit Hacker House as the sole sponsor, covering all event costs and ending with a budget surplus.`,

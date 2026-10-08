@@ -11,8 +11,7 @@ services:
     container_name: portfolio-dev
     restart: always
     environment:
-      - WATCHPACK_POLLING=true
-      - CHOKIDAR_USEPOLLING=true # outdated watch method
+      - CHOKIDAR_USEPOLLING=true # needed for file watching on some docker hosts
     ports:
-      - 3000:3000
-    command: npm run start
+      - 5173:5173 # vite default port
+    command: npm run start -- --host

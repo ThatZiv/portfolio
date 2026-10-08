@@ -14,7 +14,7 @@ describe('YouTubeEmbed', () => {
     )
     const iframe = testRenderer.root.findByType('iframe')
     expect(iframe.props.src).toBe(
-      `https://www.youtube-nocookie.com/embed/${id}`
+      `https://www.youtube-nocookie.com/embed/${id}?enablejsapi=1`
     )
     expect(iframe.props.title).toBe(id)
   })

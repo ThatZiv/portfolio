@@ -20,13 +20,15 @@ const AlertDialog = (props) => {
   };
   */
   const handleAbort = () => {
+    // reducer reads action.dialog, not top-level fields
     dispatch({
       type: 'UI_dialog',
-      open: false,
-      content: '',
-      title: '',
-      callback: () => {}
+      dialog: { open: false, content: '', title: '', callback: () => {} }
     })
+  }
+  const handleContinue = () => {
+    if (typeof callback === 'function') callback()
+    handleAbort()
   }
   const [, dispatch] = React.useContext(UserContext)
   return (
@@ -47,7 +49,7 @@ const AlertDialog = (props) => {
         <Button style={btnStyle} onClick={handleAbort}>
           Cancel
         </Button>
-        <Button style={btnStyle} onClick={callback} autoFocus>
+        <Button style={btnStyle} onClick={handleContinue} autoFocus>
           Continue
         </Button>
       </DialogActions>

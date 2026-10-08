@@ -3,6 +3,7 @@ import Link from '@mui/material/Link'
 import Tooltip from '@mui/material/Tooltip'
 import { makeStyles } from '@mui/styles'
 import my from '../sections'
+import { trackOutboundClick } from '../analytics'
 
 const useStyles = makeStyles({
   root: {
@@ -20,7 +21,11 @@ export default function Footer() {
     <Typography variant="subtitle1" className={classes.root}>
       &copy; {new Date().getFullYear()}{' '}
       <Tooltip title={gh}>
-        <Link target="_blank" href={gh}>
+        <Link
+          target="_blank"
+          href={gh}
+          onClick={() => trackOutboundClick(gh, 'github', 'footer')}
+        >
           {my.name}
         </Link>
       </Tooltip>

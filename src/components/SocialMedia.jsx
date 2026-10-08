@@ -7,6 +7,7 @@ import { capFirstLetter } from '../utils'
 //import AlertDialog from './AlertDialog';
 import { UserContext } from '../contexts'
 import { colors } from '../Theme'
+import { trackOutboundClick } from '../analytics'
 
 /** @param {import("../types/comps/SocialMedia").SocialMedia} props */
 export default function SocialMedia(props) {
@@ -27,21 +28,16 @@ export default function SocialMedia(props) {
       var _url = new URL(url)
       var urlSplit = _url.hostname.split('.')
       service = urlSplit.length === 3 ? urlSplit[1] : urlSplit[0]
-      if (window.gtag) {
-        window.gtag('event', 'button_redirect', {
-          event_category: 'z_ui-button-redirect',
-          event_label: service
-        })
-      }
     } catch (e) {
       /* empty */
     }
-    let showDialog = service || props.confirmation
-    showDialog = false // FIXME: currently showing dialogues are disabled here.
+    const showDialog = Boolean(service || props.confirmation)
     return (
       <div
         data-testid="social-media-redirect-dialog"
         onClick={() => {
+          // track on interaction, not on render
+          trackOutboundClick(url, service || props.name || url, 'social_media')
           if (showDialog) {
             dispatch({
               type: 'UI_dialog',
@@ -50,7 +46,7 @@ export default function SocialMedia(props) {
                 title: `${service ? 'External ' : ''}Redirect Notice`,
                 content: `Would you like to leave this site and continue to ${url}`,
                 callback: () => {
-                  window.open(url, '_blank')
+                  window.open(url, '_blank', 'noopener,noreferrer')
                 }
               }
             })
@@ -69,7 +65,8 @@ export default function SocialMedia(props) {
           <Link
             underline="none"
             variant="h4"
-            {...(showDialog || { href: url })}
+            // spreading a truthy string here used to inject junk props into Link
+            {...(showDialog ? {} : { href: url })}
             target={props.url === '#' ? '_self' : '_blank'}
           >
             {/* OLD STYLE:  { backgroundColor: "#fdfdfd", color: "#1f1f1f" } */}

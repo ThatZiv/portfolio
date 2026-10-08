@@ -13,6 +13,7 @@ import SwipeableView from './SwipeableView'
 import theme from '../Theme'
 import { UserContext } from '../contexts'
 import { useViewport } from '../contexts/viewport'
+import { trackGalleryImage } from '../analytics'
 
 const useStyles = makeStyles((/*theme*/) => ({
   root: {
@@ -48,6 +49,7 @@ function SwipeableTextMobileStepper(props) {
       <div
         key={`gallery:${index}:${step.label}`}
         onClick={() => {
+          trackGalleryImage(step.label, step.imgPath, 'click')
           dispatch({
             type: 'UI_dialog',
             dialog: {
@@ -57,6 +59,7 @@ function SwipeableTextMobileStepper(props) {
                 .split('/')
                 .pop()}?`,
               callback: () => {
+                trackGalleryImage(step.label, step.imgPath, 'open')
                 window.open(step.imgPath, '_blank')
               }
             }

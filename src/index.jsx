@@ -64,8 +64,9 @@ if (import.meta.env.PROD) {
     if (window.gtag) {
       window.gtag('event', metric.name, {
         value: Math.round(metric.value),
-        event_category: 'Web Vitals',
-        event_label: metric.id,
+        metric_id: metric.id,
+        metric_value: metric.value,
+        metric_delta: metric.delta,
         non_interaction: true
       })
     }

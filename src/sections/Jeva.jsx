@@ -53,7 +53,7 @@ function prechildren() {
       <Grid item sm>
         <img
           className="Media"
-          alt="Views"
+          alt="Jeva YouTube channel total views"
           src="https://img.shields.io/youtube/channel/views/UCI7x329xu2rLbtVvFPVIhiQ"
           style={{ marginRight: 6 }}
           loading="lazy"
@@ -61,7 +61,7 @@ function prechildren() {
         />
         <img
           className="Media"
-          alt="Subscribers"
+          alt="Jeva YouTube channel subscribers"
           src="https://img.shields.io/youtube/channel/subscribers/UCI7x329xu2rLbtVvFPVIhiQ?style=social"
           loading="lazy"
           decoding="async"
